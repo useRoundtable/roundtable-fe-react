@@ -10,7 +10,7 @@ export const Home = () => {
 					<nav className="light">
 						<ul>
 							<li>
-								<a href="dash.html">
+								<a href="/dashboard">
 									<h6>Dashboard</h6>
 								</a>
 							</li>

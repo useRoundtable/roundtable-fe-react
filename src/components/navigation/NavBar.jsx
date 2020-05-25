@@ -8,7 +8,7 @@ export const NavBar = () => {
 		<nav>
 			<ul>
 				<li>
-					<Link to="/home">
+					<Link to="/">
 						<h6>Home</h6>
 					</Link>
 				</li>
@@ -39,7 +39,3 @@ export const NavBar = () => {
 		</nav>
 	);
 };
-
-// export const NavBar = () => {
-// 	return
-// }

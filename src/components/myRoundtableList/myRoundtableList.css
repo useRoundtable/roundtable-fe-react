@@ -1,0 +1,139 @@
+article.myRoundtables {
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 100px 0;
+	text-align: left;
+}
+section.table {
+	position: relative;
+	margin: 0 0 30px 0;
+	padding: 2em 2em 2em 15em;
+	min-height: 8em;
+	max-width: 100%;
+	border-radius: 10px;
+	border-radius: 50px;
+	box-shadow: 0px 0px 0 rgba(15, 30, 30, 0);
+	border-top-left-radius: 250px;
+	border-bottom-left-radius: 250px;
+	transition: all 0.15s ease-in-out;
+}
+section.table:hover,
+section.table.selected {
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 15px 20px 30px 10px rgba(15, 30, 30, 0.05),
+		0 0 15px 0 rgba(150, 30, 30, 0.03);
+	transition: all 0.15s ease-in-out, box-shadow 0.35s ease-in-out;
+}
+section.table ul.roundtable {
+	position: absolute;
+	top: 50%;
+	left: 2.5em;
+	transform: translate(-50%, -4em);
+}
+section.table h2 {
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+section.table ul.stats {
+	font-size: 0;
+	padding: 5px 0 0 0;
+}
+section.table ul.stats li {
+	position: relative;
+	display: inline-block;
+	margin: 0 0.5em 0 0;
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+section.table ul.stats li:after {
+	content: "";
+	position: relative;
+	display: inline-block;
+	width: 0.25em;
+	height: 0.25em;
+	margin: 0 0 0 0.5em;
+	vertical-align: middle;
+	border-radius: 50%;
+	background: rgba(15, 30, 30, 1);
+}
+section.table ul.stats li:last-child:after {
+	display: none;
+}
+section.table > .issue {
+	position: relative;
+	margin: 20px 0 0 0;
+	padding: 1.5rem 10px 5px;
+	font-weight: 700;
+	border: 1px solid rgba(15, 30, 30, 0.1);
+	background: rgba(255, 255, 255, 0.35);
+	box-shadow: 3px 3px 0 rgba(15, 30, 30, 0.05);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom: 0;
+}
+section.table > .issue > .number {
+	position: absolute;
+	top: 0;
+	left: 10px;
+	line-height: 2rem;
+	font-size: 0.7em;
+	font-weight: 400;
+	color: rgba(15, 30, 30, 0.5);
+}
+section.table > .issue > .status {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	line-height: 2rem;
+	font-size: 0.7em;
+	font-weight: 400;
+	color: rgba(15, 30, 30, 0.5);
+}
+section.table ul.options {
+	font-size: 0;
+	margin: 0;
+	padding: 10px;
+	border: 1px solid rgba(15, 30, 30, 0.1);
+	background: rgba(252, 252, 252, 0.35);
+	box-shadow: 3px 3px 0 rgba(15, 30, 30, 0.05);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	text-align: center;
+}
+section.table ul.options li {
+	position: relative;
+	display: inline-block;
+	margin: 0 0 0 0.5rem;
+}
+section.table ul.options li a.button {
+	display: inline-block;
+	font-size: 0.85rem;
+	line-height: 2em;
+}
+
+/* Animation States */
+section .roundtable > section,
+section .roundtable > section > li > span {
+	animation-play-state: paused;
+}
+section .roundtable > section > li > span + img {
+	animation-play-state: paused;
+}
+section:hover .roundtable > section,
+section:hover .roundtable > section > li > span {
+	animation-play-state: running;
+}
+section:hover .roundtable > section > li > span + img {
+	animation-play-state: running;
+}
+section:hover .roundtable:hover > section,
+section:hover .roundtable:hover > section > li > span {
+	animation-play-state: paused;
+}
+section:hover .roundtable:hover > section > li > span + img {
+	animation-play-state: paused;
+}
