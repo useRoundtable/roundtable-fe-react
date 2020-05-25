@@ -11,7 +11,7 @@ function App() {
 	// Define the function here
 	return (
 		<Router>
-			<NavBar />
+			{/* <NavBar /> */}
 			<Route exact path="/" component={Home} />
 			<Route path="/rtanimation" component={Roundtables} />
 			<Route path="/testpage" component={TestPage} />
