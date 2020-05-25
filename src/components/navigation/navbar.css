@@ -1,0 +1,80 @@
+div#root {
+	max-width: 100%;
+	margin: 0 auto;
+}
+div#root {
+	position: relative;
+	display: inline-block;
+	z-index: 10;
+}
+div#root > ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 0;
+}
+div#root > ul:after {
+	content: "";
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 0;
+	clear: both;
+}
+div#root > ul > li {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	z-index: 2;
+	margin: 0 auto;
+	font-size: 1rem;
+}
+div#root > ul > li a {
+	display: block;
+	text-decoration: none;
+	padding: 20px 20px;
+}
+div#root > ul > li h6 {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0 0 15px;
+	color: rgba(15, 30, 30, 0.3);
+	transition: color 0.2s ease-in-out;
+	font-weight: 700;
+	white-space: nowrap;
+}
+div#root > ul:hover > li.selected h6 {
+	color: rgba(15, 30, 30, 0.3);
+}
+div#root > ul > li.selected h6,
+div#root > ul:hover > li:hover h6 {
+	color: rgba(15, 30, 30, 1);
+}
+div#root > ul > li h6:after {
+	content: "";
+	position: absolute;
+	top: calc(100% - 5px);
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: rgba(255, 220, 0, 1);
+	opacity: 0;
+	border-radius: 10px;
+	z-index: -1;
+	transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	z-index: 0;
+}
+div#root > ul:hover > li.selected h6:after {
+	top: calc(100% - 8px);
+	opacity: 0;
+}
+div#root > ul > li.selected h6:after,
+div#root > ul:hover > li:hover h6:after {
+	top: calc(100% - 8px);
+	opacity: 1;
+}
+body.dashboard > nav > ul > li.left {
+	float: left;
+}
