@@ -5,6 +5,7 @@ import { NavBar } from "./navigation/NavBar";
 import { Dashboard } from "./dashboard/Dashboard";
 import { Roundtables } from "./animation/roundtableAni.jsx";
 import { Roundtable } from "./roundtable/Roundtable.jsx";
+import { Login } from "./login/Login";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ function App() {
 			<Route path="/rtanimation" component={Roundtables} />
 			<Route path="/dashboard" component={Dashboard} />
 			<Route path="/roundtable" component={Roundtable} />
+			<Route path="/login" component={Login} />
 		</Router>
 	);
 }
