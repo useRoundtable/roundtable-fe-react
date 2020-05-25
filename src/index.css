@@ -320,6 +320,7 @@ body {
 	overflow-x: hidden;
 	font-size: 1rem;
 	background-attachment: fixed;
+	text-align: center;
 }
 
 /* Typography */
@@ -561,9 +562,11 @@ main {
 	max-width: 100%;
 	min-height: calc(100vh - 120px);
 	margin: 0 auto;
+	text-align:left;
 }
 
 article {
+	text-align:left;
 }
 
 section {
@@ -1373,9 +1376,6 @@ body.home header figure img.inside {
 }
 
 /* Dashboard */
-body.dashboard {
-	text-align: center;
-}
 article.myRoundtables {
 	position: relative;
 	display: inline-block;

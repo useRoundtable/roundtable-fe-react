@@ -8,32 +8,22 @@ export const NavBar = () => {
 		<>
 			<ul>
 				<li>
-					<h6>
-						<Link to="/home">Home</Link>
-					</h6>
+					<Link to="/home"><h6>Home</h6></Link>
 				</li>
 				<li>
-					<h6>
-						<Link to="/onboarding">Onboarding</Link>
-					</h6>
+					<Link to="/onboarding"><h6>Onboarding</h6></Link>
 				</li>
 
 				<li>
-					<h6>
-						<Link to="/????">My Roundtables</Link>
-					</h6>
+					<Link to="/????"><h6> My Roundtables</h6></Link>
 				</li>
 
 				<li>
-					<h6>
-						<Link to="/explore">Explore</Link>
-					</h6>
+					<Link to="/explore"><h6>Explore</h6></Link>
 				</li>
 
 				<li>
-					<h6>
-						<Link to="/about">About</Link>
-					</h6>
+					<Link to="/about"><h6>About</h6></Link>
 				</li>
 			</ul>
 		</>
