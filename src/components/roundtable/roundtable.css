@@ -1,0 +1,237 @@
+/* Edit */
+.editing {
+	max-height: 100vh;
+	overflow-y: hidden;
+}
+.editing > nav {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.editing article.myRoundtables {
+	opacity: 0;
+}
+.editing main {
+	min-height: calc(100% - 40px);
+}
+.editing .brand {
+	bottom: 15px;
+}
+article.edit {
+	position: fixed;
+	display: block;
+	bottom: 100%;
+	left: 50%;
+	width: 1000px;
+	max-width: calc(100% - 20px);
+	height: 0;
+	text-align: left;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 15px 20px 30px 10px rgba(15, 30, 30, 0.05),
+		0 0 15px 0 rgba(150, 30, 30, 0.03);
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
+	overflow: hidden;
+	z-index: -1;
+	opacity: 0;
+	transform: translate(-50%, 20px) scale(0.98);
+	transform-origin: bottom center;
+	transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out,
+		bottom 0s 0.25s, height 0s 0.25s, z-index 0s 0.25s;
+}
+article.edit.show {
+	bottom: 0;
+	height: calc(100% - 70px);
+	opacity: 1;
+	z-index: 10;
+	transform: translate(-50%, 0) scale(1);
+	transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out, bottom 0s,
+		height 0s, z-index 0s;
+}
+article.edit + .close {
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+article.edit.show + .close {
+	display: block;
+	z-index: 9;
+}
+article.edit + .close a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	outline: 0;
+}
+
+article.edit > * {
+	-webkit-animation: pageload 0.5s 2s ease-in forwards;
+	-moz-animation: pageload 0.5s 2s ease-in forwards;
+	-ms-animation: pageload 0.5s 2s ease-in forwards;
+	-o-animation: pageload 0.5s 2s ease-in forwards;
+	animation: pageload 0.5s 2s ease-in forwards;
+}
+article.edit > *:nth-child(1) {
+	-webkit-animation: pageload 0.5s 0.25s ease-in forwards;
+	-moz-animation: pageload 0.5s 0.25s ease-in forwards;
+	-ms-animation: pageload 0.5s 0.25s ease-in forwards;
+	-o-animation: pageload 0.5s 0.25s ease-in forwards;
+	animation: pageload 0.5s 0.25s ease-in forwards;
+}
+article.edit > *:nth-child(2) {
+	-webkit-animation: pageload 0.5s 0.5s ease-in forwards;
+	-moz-animation: pageload 0.5s 0.5s ease-in forwards;
+	-ms-animation: pageload 0.5s 0.5s ease-in forwards;
+	-o-animation: pageload 0.5s 0.5s ease-in forwards;
+	animation: pageload 0.5s 0.5s ease-in forwards;
+}
+article.edit > *:nth-child(3) {
+	-webkit-animation: pageload 0.5s 1s ease-in forwards;
+	-moz-animation: pageload 0.5s 1s ease-in forwards;
+	-ms-animation: pageload 0.5s 1s ease-in forwards;
+	-o-animation: pageload 0.5s 1s ease-in forwards;
+	animation: pageload 0.5s 1s ease-in forwards;
+}
+article.edit > *:nth-child(4) {
+	-webkit-animation: pageload 0.5s 1.5s ease-in forwards;
+	-moz-animation: pageload 0.5s 1.5s ease-in forwards;
+	-ms-animation: pageload 0.5s 1.5s ease-in forwards;
+	-o-animation: pageload 0.5s 1.5s ease-in forwards;
+	animation: pageload 0.5s 1.5s ease-in forwards;
+}
+article.edit > * {
+	opacity: 0;
+}
+article.edit header {
+	padding: 30px 40px 0;
+	background: rgba(15, 30, 30, 0.005);
+}
+article.edit header:after {
+	content: "";
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 0;
+	clear: both;
+	opacity: 0;
+}
+article.edit header h2 {
+	max-width: calc(100% - 2em);
+	float: left;
+}
+article.edit header h2 ul.roundtable {
+	font-size: 0.25em;
+	margin: 0 2em 0 0;
+	vertical-align: middle;
+}
+article.edit header .close {
+	position: relative;
+	float: right;
+	width: 2em;
+	height: 2em;
+	color: rgba(15, 30, 30, 1);
+}
+article.edit header .close span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1em;
+	height: 1em;
+	transform: translate(-50%, -50%) rotate(0deg) scale(1);
+	font-size: 4em;
+	line-height: 1.25em;
+	font-family: "Biryani", Helvetica, Arial, sans-serif;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 50%;
+	overflow: hidden;
+	transition: transform 0.25s ease-in-out;
+}
+article.edit header .close:hover span {
+	transform: translate(-50%, -50%) rotate(-90deg) scale(0.9);
+}
+article.edit nav {
+	padding: 0 40px 10px;
+	background: rgba(15, 30, 30, 0.005);
+	border-bottom: 1px solid rgba(15, 30, 30, 0.05);
+	font-size: 1.2em;
+}
+article.edit nav ul.stats {
+}
+article.edit nav ul.stats > li {
+	position: relative;
+	display: inline-block;
+	margin: 0 10px 0 0;
+	padding: 0 10px;
+	font-size: 0.85em;
+	line-height: 3em;
+	color: rgba(15, 30, 30, 1);
+	font-weight: 700;
+	border-top-left-radius: 100px;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+	border-bottom-left-radius: 100px;
+	cursor: pointer;
+}
+article.edit nav ul.stats > li:hover {
+	background: rgba(15, 30, 30, 0.03);
+}
+article.edit nav ul.stats > li:first-child {
+	border: 0;
+	margin: 0 10px 0 -10px;
+}
+article.edit nav ul.stats > li:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -0.75em;
+	display: inline-block;
+	width: 0.5em;
+	height: 0.5em;
+	vertical-align: middle;
+	border-radius: 50%;
+	background: rgba(15, 30, 30, 1);
+	transform: translate(0, -50%);
+}
+article.edit nav ul.stats > li:last-child:after {
+	display: none;
+}
+article.edit nav ul.stats ul.members {
+	display: inline-block;
+	float: left;
+	margin: 0 0.5em 0 0;
+	padding: 0.5em 0;
+}
+article.edit nav ul.stats ul.members li {
+	position: relative;
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	margin: 0 0 0 -0.75em;
+	float: left;
+	border-radius: 50%;
+	background: rgba(254, 254, 254, 1);
+	border: 3px solid rgba(254, 254, 254, 1);
+	overflow: hidden;
+}
+article.edit nav ul.stats li.members:hover ul.members li {
+	border: 3px solid rgba(247, 248, 248, 1);
+}
+article.edit nav ul.stats ul.members li:first-child {
+	margin: 0;
+}
+article.edit nav ul.stats ul.members li img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+article.edit section {
+	padding: 50px 40px;
+}
