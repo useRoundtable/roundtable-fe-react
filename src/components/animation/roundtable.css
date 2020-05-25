@@ -1,0 +1,323 @@
+/* 12 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(12) {
+	transform: rotate(calc(360deg / 12)) translate(3.15em)
+		rotate(calc(-360deg / 12));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(11) {
+	transform: rotate(calc(360deg / 12 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(10) {
+	transform: rotate(calc(360deg / 12 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(9) {
+	transform: rotate(calc(360deg / 12 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 4));
+}
+.roundtable > section > li:nth-of-type(5):nth-last-of-type(8) {
+	transform: rotate(calc(360deg / 12 * 5)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 5));
+}
+.roundtable > section > li:nth-of-type(6):nth-last-of-type(7) {
+	transform: rotate(calc(360deg / 12 * 6)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 6));
+}
+.roundtable > section > li:nth-of-type(7):nth-last-of-type(6) {
+	transform: rotate(calc(360deg / 12 * 7)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 7));
+}
+.roundtable > section > li:nth-of-type(8):nth-last-of-type(5) {
+	transform: rotate(calc(360deg / 12 * 8)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 8));
+}
+.roundtable > section > li:nth-of-type(9):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 12 * 9)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 9));
+}
+.roundtable > section > li:nth-of-type(10):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 12 * 10)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 10));
+}
+.roundtable > section > li:nth-of-type(11):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 12 * 11)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 11));
+}
+.roundtable > section > li:nth-of-type(12):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 12 * 12)) translate(3.15em)
+		rotate(calc(-360deg / 12 * 12));
+}
+/* 11 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(11) {
+	transform: rotate(calc(360deg / 11)) translate(3.15em)
+		rotate(calc(-360deg / 11));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(10) {
+	transform: rotate(calc(360deg / 11 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(9) {
+	transform: rotate(calc(360deg / 11 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(8) {
+	transform: rotate(calc(360deg / 11 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 4));
+}
+.roundtable > section > li:nth-of-type(5):nth-last-of-type(7) {
+	transform: rotate(calc(360deg / 11 * 5)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 5));
+}
+.roundtable > section > li:nth-of-type(6):nth-last-of-type(6) {
+	transform: rotate(calc(360deg / 11 * 6)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 6));
+}
+.roundtable > section > li:nth-of-type(7):nth-last-of-type(5) {
+	transform: rotate(calc(360deg / 11 * 7)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 7));
+}
+.roundtable > section > li:nth-of-type(8):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 11 * 8)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 8));
+}
+.roundtable > section > li:nth-of-type(9):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 11 * 9)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 9));
+}
+.roundtable > section > li:nth-of-type(10):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 11 * 10)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 10));
+}
+.roundtable > section > li:nth-of-type(11):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 11 * 11)) translate(3.15em)
+		rotate(calc(-360deg / 11 * 11));
+}
+/* 10 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(10) {
+	transform: rotate(calc(360deg / 10)) translate(3.15em)
+		rotate(calc(-360deg / 10));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(9) {
+	transform: rotate(calc(360deg / 10 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(8) {
+	transform: rotate(calc(360deg / 10 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(7) {
+	transform: rotate(calc(360deg / 10 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 4));
+}
+.roundtable > section > li:nth-of-type(5):nth-last-of-type(6) {
+	transform: rotate(calc(360deg / 10 * 5)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 5));
+}
+.roundtable > section > li:nth-of-type(6):nth-last-of-type(5) {
+	transform: rotate(calc(360deg / 10 * 6)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 6));
+}
+.roundtable > section > li:nth-of-type(7):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 10 * 7)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 7));
+}
+.roundtable > section > li:nth-of-type(8):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 10 * 8)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 8));
+}
+.roundtable > section > li:nth-of-type(9):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 10 * 9)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 9));
+}
+.roundtable > section > li:nth-of-type(10):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 10 * 10)) translate(3.15em)
+		rotate(calc(-360deg / 10 * 10));
+}
+/* 09 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(9) {
+	transform: rotate(calc(360deg / 9)) translate(3.15em)
+		rotate(calc(-360deg / 9));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(8) {
+	transform: rotate(calc(360deg / 9 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 9 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(7) {
+	transform: rotate(calc(360deg / 9 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 9 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(6) {
+	transform: rotate(calc(360deg / 9 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 9 * 4));
+}
+.roundtable > section > li:nth-of-type(5):nth-last-of-type(5) {
+	transform: rotate(calc(360deg / 9 * 5)) translate(3.15em)
+		rotate(calc(-360deg / 9 * 5));
+}
+.roundtable > section > li:nth-of-type(6):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 9 * 6)) translate(3.15em)
+		rotate(calc(-360deg / 9 * 6));
+}
+.roundtable > section > li:nth-of-type(7):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 9 * 7)) translate(3.15em)
+		rotate(calc(-360deg / 9 * 7));
+}
+.roundtable > section > li:nth-of-type(8):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 9 * 8)) translate(3.15em)
+		rotate(calc(-360deg / 9 * 8));
+}
+.roundtable > section > li:nth-of-type(9):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 9 * 9)) translate(3.15em)
+		rotate(calc(-360deg / 9 * 9));
+}
+/* 08 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(8) {
+	transform: rotate(calc(360deg / 8)) translate(3.15em)
+		rotate(calc(-360deg / 8));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(7) {
+	transform: rotate(calc(360deg / 8 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 8 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(6) {
+	transform: rotate(calc(360deg / 8 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 8 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(5) {
+	transform: rotate(calc(360deg / 8 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 8 * 4));
+}
+.roundtable > section > li:nth-of-type(5):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 8 * 5)) translate(3.15em)
+		rotate(calc(-360deg / 8 * 5));
+}
+.roundtable > section > li:nth-of-type(6):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 8 * 6)) translate(3.15em)
+		rotate(calc(-360deg / 8 * 6));
+}
+.roundtable > section > li:nth-of-type(7):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 8 * 7)) translate(3.15em)
+		rotate(calc(-360deg / 8 * 7));
+}
+.roundtable > section > li:nth-of-type(8):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 8 * 8)) translate(3.15em)
+		rotate(calc(-360deg / 8 * 8));
+}
+/* 07 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(7) {
+	transform: rotate(calc(360deg / 7)) translate(3.15em)
+		rotate(calc(-360deg / 7));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(6) {
+	transform: rotate(calc(360deg / 7 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 7 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(5) {
+	transform: rotate(calc(360deg / 7 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 7 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 7 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 7 * 4));
+}
+.roundtable > section > li:nth-of-type(5):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 7 * 5)) translate(3.15em)
+		rotate(calc(-360deg / 7 * 5));
+}
+.roundtable > section > li:nth-of-type(6):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 7 * 6)) translate(3.15em)
+		rotate(calc(-360deg / 7 * 6));
+}
+.roundtable > section > li:nth-of-type(7):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 7 * 7)) translate(3.15em)
+		rotate(calc(-360deg / 7 * 7));
+}
+/* 06 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(6) {
+	transform: rotate(calc(360deg / 6)) translate(3.15em)
+		rotate(calc(-360deg / 6));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(5) {
+	transform: rotate(calc(360deg / 6 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 6 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 6 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 6 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 6 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 6 * 4));
+}
+.roundtable > section > li:nth-of-type(5):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 6 * 5)) translate(3.15em)
+		rotate(calc(-360deg / 6 * 5));
+}
+.roundtable > section > li:nth-of-type(6):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 6 * 6)) translate(3.15em)
+		rotate(calc(-360deg / 6 * 6));
+}
+/* 05 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(5) {
+	transform: rotate(calc(360deg / 5)) translate(3.15em)
+		rotate(calc(-360deg / 5));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 5 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 5 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 5 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 5 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 5 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 5 * 4));
+}
+.roundtable > section > li:nth-of-type(5):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 5 * 5)) translate(3.15em)
+		rotate(calc(-360deg / 5 * 5));
+}
+/* 04 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(4) {
+	transform: rotate(calc(360deg / 4)) translate(3.15em)
+		rotate(calc(-360deg / 4));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 4 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 4 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 4 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 4 * 3));
+}
+.roundtable > section > li:nth-of-type(4):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 4 * 4)) translate(3.15em)
+		rotate(calc(-360deg / 4 * 4));
+}
+/* 03 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(3) {
+	transform: rotate(calc(360deg / 3)) translate(3.15em)
+		rotate(calc(-360deg / 3));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 3 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 3 * 2));
+}
+.roundtable > section > li:nth-of-type(3):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 3 * 3)) translate(3.15em)
+		rotate(calc(-360deg / 3 * 3));
+}
+/* 02 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(2) {
+	transform: rotate(calc(360deg / 2)) translate(3.15em)
+		rotate(calc(-360deg / 2));
+}
+.roundtable > section > li:nth-of-type(2):nth-last-of-type(1) {
+	transform: rotate(calc(360deg / 2 * 2)) translate(3.15em)
+		rotate(calc(-360deg / 2 * 2));
+}
+/* 01 */
+.roundtable > section > li:nth-of-type(1):nth-last-of-type(1) {
+	transform: rotate(360deg) translate(3.15em) rotate(-360deg);
+}

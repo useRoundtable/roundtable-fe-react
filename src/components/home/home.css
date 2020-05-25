@@ -1,0 +1,19 @@
+.roundtable {
+	font-size: 1rem;
+	margin-bottom: 4rem;
+}
+
+/* .extra_left_bottom {
+	opacity: 0.75;
+	transform: rotate(35deg);
+}
+.extra_right_top {
+	opacity: 0.5;
+	transform: rotate(-15deg);
+	z-index: 2;
+}
+.main_bottom {
+	opacity: 0.15;
+	z-index: 2;
+	object-fit: none;
+} */
