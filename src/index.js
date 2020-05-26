@@ -4,9 +4,19 @@ import "./index.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
+import ApolloClient from "apollo-boost";
+
+import { ApolloProvider } from "@apollo/react-hooks";
+
+const client = new ApolloClient({
+	uri: "http://localhost:4000/",
+});
+
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<ApolloProvider client={client}>
+			<App />
+		</ApolloProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );
