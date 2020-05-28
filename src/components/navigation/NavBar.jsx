@@ -5,7 +5,7 @@ import { Home } from "../home/Home";
 
 export const NavBar = () => {
 	return (
-		<nav>
+		<nav class="navigation">
 			<ul>
 				<li>
 					<Link to="/">
@@ -17,22 +17,19 @@ export const NavBar = () => {
 						<h6>Onboarding</h6>
 					</Link>
 				</li>
-
 				<li>
-					<Link to="/????">
+					<Link to="/dashboard">
 						<h6> My Roundtables</h6>
 					</Link>
 				</li>
-
 				<li>
 					<Link to="/explore">
 						<h6>Explore</h6>
 					</Link>
 				</li>
-
 				<li>
-					<Link to="/about">
-						<h6>About</h6>
+					<Link to="/account">
+						<h6>Account</h6>
 					</Link>
 				</li>
 			</ul>

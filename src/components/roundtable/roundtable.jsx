@@ -9,7 +9,7 @@ export const Roundtable = () => {
 			<article class="edit show">
 				<header>
 					<h2>Advisors</h2>
-					<a class="close" href="dash.html">
+					<a class="close" href="/dashboard">
 						<span>&times;</span>
 					</a>
 				</header>

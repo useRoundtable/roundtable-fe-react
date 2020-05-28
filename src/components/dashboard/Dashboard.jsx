@@ -16,10 +16,10 @@ const USERS = gql`
 `;
 
 export const Dashboard = () => {
-	const { loading, error, data } = useQuery(USERS);
+	// const { loading, error, data } = useQuery(USERS);
 
-	if (loading) return <h1>LOADING....</h1>;
-	if (error) return { error };
+	// if (loading) return <h1>LOADING....</h1>;
+	// if (error) return { error };
 	return (
 		<>
 			<NavBar />

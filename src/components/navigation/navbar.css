@@ -1,20 +1,20 @@
-nav {
+nav.navigation {
 	max-width: 100%;
 	margin: 0 auto;
 }
-nav {
+nav.navigation {
 	position: relative;
 	display: inline-block;
 	z-index: 10;
 }
-nav > ul {
+nav.navigation > ul {
 	display: block;
 	margin: 0;
 	padding: 0;
 	text-align: center;
 	font-size: 0;
 }
-nav > ul:after {
+nav.navigation > ul:after {
 	content: "";
 	position: relative;
 	display: block;
@@ -22,7 +22,7 @@ nav > ul:after {
 	height: 0;
 	clear: both;
 }
-nav > ul > li {
+nav.navigation > ul > li {
 	position: relative;
 	display: inline-block;
 	text-align: center;
@@ -30,12 +30,12 @@ nav > ul > li {
 	margin: 0 auto;
 	font-size: 1rem;
 }
-nav > ul > li a {
+nav.navigation > ul > li a {
 	display: block;
 	text-decoration: none;
 	padding: 20px 20px;
 }
-nav > ul > li h6 {
+nav.navigation > ul > li h6 {
 	position: relative;
 	display: inline-block;
 	margin: 0;
@@ -45,14 +45,14 @@ nav > ul > li h6 {
 	font-weight: 700;
 	white-space: nowrap;
 }
-nav > ul:hover > li.selected h6 {
+nav.navigation > ul:hover > li.selected h6 {
 	color: rgba(15, 30, 30, 0.3);
 }
-nav > ul > li.selected h6,
-nav > ul:hover > li:hover h6 {
+nav.navigation > ul > li.selected h6,
+nav.navigation > ul:hover > li:hover h6 {
 	color: rgba(15, 30, 30, 1);
 }
-nav > ul > li h6:after {
+nav.navigation > ul > li h6:after {
 	content: "";
 	position: absolute;
 	top: calc(100% - 5px);
@@ -66,15 +66,15 @@ nav > ul > li h6:after {
 	transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	z-index: 0;
 }
-nav > ul:hover > li.selected h6:after {
+nav.navigation > ul:hover > li.selected h6:after {
 	top: calc(100% - 8px);
 	opacity: 0;
 }
-nav > ul > li.selected h6:after,
-nav > ul:hover > li:hover h6:after {
+nav.navigation > ul > li.selected h6:after,
+nav.navigation > ul:hover > li:hover h6:after {
 	top: calc(100% - 8px);
 	opacity: 1;
 }
-body.dashboard > nav > ul > li.left {
+body.dashboard > nav.navigation > ul > li.left {
 	float: left;
 }

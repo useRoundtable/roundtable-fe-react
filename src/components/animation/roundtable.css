@@ -1,4 +1,4 @@
-/* 12 */
+/* Animation For 12 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(12) {
 	transform: rotate(calc(360deg / 12)) translate(3.15em)
 		rotate(calc(-360deg / 12));
@@ -47,7 +47,7 @@
 	transform: rotate(calc(360deg / 12 * 12)) translate(3.15em)
 		rotate(calc(-360deg / 12 * 12));
 }
-/* 11 */
+/* Animation For 11 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(11) {
 	transform: rotate(calc(360deg / 11)) translate(3.15em)
 		rotate(calc(-360deg / 11));
@@ -92,7 +92,7 @@
 	transform: rotate(calc(360deg / 11 * 11)) translate(3.15em)
 		rotate(calc(-360deg / 11 * 11));
 }
-/* 10 */
+/* Animation For 10 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(10) {
 	transform: rotate(calc(360deg / 10)) translate(3.15em)
 		rotate(calc(-360deg / 10));
@@ -133,7 +133,7 @@
 	transform: rotate(calc(360deg / 10 * 10)) translate(3.15em)
 		rotate(calc(-360deg / 10 * 10));
 }
-/* 09 */
+/* Animation For 09 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(9) {
 	transform: rotate(calc(360deg / 9)) translate(3.15em)
 		rotate(calc(-360deg / 9));
@@ -170,7 +170,7 @@
 	transform: rotate(calc(360deg / 9 * 9)) translate(3.15em)
 		rotate(calc(-360deg / 9 * 9));
 }
-/* 08 */
+/* Animation For 08 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(8) {
 	transform: rotate(calc(360deg / 8)) translate(3.15em)
 		rotate(calc(-360deg / 8));
@@ -203,7 +203,7 @@
 	transform: rotate(calc(360deg / 8 * 8)) translate(3.15em)
 		rotate(calc(-360deg / 8 * 8));
 }
-/* 07 */
+/* Animation For 07 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(7) {
 	transform: rotate(calc(360deg / 7)) translate(3.15em)
 		rotate(calc(-360deg / 7));
@@ -232,7 +232,7 @@
 	transform: rotate(calc(360deg / 7 * 7)) translate(3.15em)
 		rotate(calc(-360deg / 7 * 7));
 }
-/* 06 */
+/* Animation For 06 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(6) {
 	transform: rotate(calc(360deg / 6)) translate(3.15em)
 		rotate(calc(-360deg / 6));
@@ -257,7 +257,7 @@
 	transform: rotate(calc(360deg / 6 * 6)) translate(3.15em)
 		rotate(calc(-360deg / 6 * 6));
 }
-/* 05 */
+/* Animation For 05 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(5) {
 	transform: rotate(calc(360deg / 5)) translate(3.15em)
 		rotate(calc(-360deg / 5));
@@ -278,7 +278,7 @@
 	transform: rotate(calc(360deg / 5 * 5)) translate(3.15em)
 		rotate(calc(-360deg / 5 * 5));
 }
-/* 04 */
+/* Animation For 04 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(4) {
 	transform: rotate(calc(360deg / 4)) translate(3.15em)
 		rotate(calc(-360deg / 4));
@@ -295,7 +295,7 @@
 	transform: rotate(calc(360deg / 4 * 4)) translate(3.15em)
 		rotate(calc(-360deg / 4 * 4));
 }
-/* 03 */
+/* Animation For 03 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(3) {
 	transform: rotate(calc(360deg / 3)) translate(3.15em)
 		rotate(calc(-360deg / 3));
@@ -308,7 +308,7 @@
 	transform: rotate(calc(360deg / 3 * 3)) translate(3.15em)
 		rotate(calc(-360deg / 3 * 3));
 }
-/* 02 */
+/* Animation For 02 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(2) {
 	transform: rotate(calc(360deg / 2)) translate(3.15em)
 		rotate(calc(-360deg / 2));
@@ -317,7 +317,7 @@
 	transform: rotate(calc(360deg / 2 * 2)) translate(3.15em)
 		rotate(calc(-360deg / 2 * 2));
 }
-/* 01 */
+/* Animation For 01 */
 .roundtable > section > li:nth-of-type(1):nth-last-of-type(1) {
 	transform: rotate(360deg) translate(3.15em) rotate(-360deg);
 }

@@ -168,7 +168,7 @@ article.edit nav ul.stats {
 article.edit nav ul.stats > li {
 	position: relative;
 	display: inline-block;
-	margin: 0 10px 0 0;
+	margin: 0 1em 0 0;
 	padding: 0 10px;
 	font-size: 0.85em;
 	line-height: 3em;
@@ -185,7 +185,7 @@ article.edit nav ul.stats > li:hover {
 }
 article.edit nav ul.stats > li:first-child {
 	border: 0;
-	margin: 0 10px 0 -10px;
+	margin: 0 1em 0 -10px;
 }
 article.edit nav ul.stats > li:after {
 	content: "";

@@ -35,7 +35,7 @@ export const MyRoundtableList = () => {
 							</a>
 						</li>
 						<li>
-							<a className="button notPriority" href="edit.html">
+							<a className="button notPriority" href="/roundtable/edit">
 								Publish
 							</a>
 						</li>
