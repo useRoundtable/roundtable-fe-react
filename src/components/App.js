@@ -4,7 +4,7 @@ import { Home } from "./home/Home.jsx";
 import { NavBar } from "./navigation/NavBar";
 import { Dashboard } from "./dashboard/Dashboard";
 import { Roundtables } from "./animation/roundtableAni.jsx";
-import { Roundtable } from "./roundtable/Roundtable.jsx";
+import { Roundtable } from "./roundtable/roundtable.jsx";
 import { Login } from "./login/Login";
 
 import "./App.css";
