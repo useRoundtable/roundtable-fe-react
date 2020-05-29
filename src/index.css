@@ -371,93 +371,6 @@ label {
 	margin: 0;
 }
 
-body > nav {
-	max-width: 100%;
-	margin: 0 auto;
-}
-body > nav {
-	position: relative;
-	display: inline-block;
-	z-index: 10;
-}
-body > nav > ul {
-	display: block;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	font-size: 0;
-}
-body > nav > ul:after {
-	content: "";
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 0;
-	clear: both;
-}
-body > nav > ul > li {
-	position: relative;
-	display: inline-block;
-	text-align: center;
-	z-index: 2;
-	margin: 0 auto;
-	font-size: 1rem;
-}
-body > nav > ul > li a {
-	display: block;
-	text-decoration: none;
-	padding: 20px 20px;
-}
-body > nav > ul > li h6 {
-	position: relative;
-	display: inline-block;
-	margin: 0;
-	padding: 0 0 15px;
-	color: rgba(15, 30, 30, 0.3);
-	transition: color 0.2s ease-in-out;
-	font-weight: 700;
-	white-space: nowrap;
-}
-body > nav > ul:hover > li.selected h6 {
-	color: rgba(15, 30, 30, 0.3);
-}
-body > nav > ul > li.selected h6,
-body > nav > ul:hover > li:hover h6 {
-	color: rgba(15, 30, 30, 1);
-}
-body > nav > ul > li h6:after {
-	content: "";
-	position: absolute;
-	top: calc(100% - 5px);
-	left: 0;
-	width: 100%;
-	height: 5px;
-	background: rgba(255, 220, 0, 1);
-	opacity: 0;
-	border-radius: 10px;
-	z-index: -1;
-	transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
-	z-index: 0;
-}
-body > nav > ul:hover > li.selected h6:after {
-	top: calc(100% - 8px);
-	opacity: 0;
-}
-body > nav > ul > li.selected h6:after,
-body > nav > ul:hover > li:hover h6:after {
-	top: calc(100% - 8px);
-	opacity: 1;
-}
-body.dashboard > nav > ul > li.left {
-	float: left;
-}
-
-body > header {
-	width: 1600px;
-	max-width: 100%;
-	margin: 0 auto;
-}
-
 main {
 	position: relative;
 	display: block;
@@ -1255,29 +1168,6 @@ main > .get-started > article .field.selected input + label {
 	header nav.light > ul {
 		padding: 0;
 		text-align: right;
-	}
-	body.editing > nav {
-		width: 100%;
-	}
-	article.edit {
-		border-top-left-radius: 30px;
-		border-top-right-radius: 30px;
-		font-size: 0.5rem;
-	}
-	article.edit header {
-		padding: 20px 20px 0;
-	}
-	article.edit nav {
-		padding: 0 20px 10px;
-	}
-	article.edit nav ul.stats > li {
-		padding: 0 6px;
-	}
-	article.edit nav ul.stats ul.members li:nth-child(n + 5) {
-		display: none;
-	}
-	article.edit section {
-		padding: 30px 30px;
 	}
 	main > .get-started > article {
 		padding: ;

@@ -47,8 +47,7 @@ export const Home = () => {
 			<h3>Grow<br> with your<br> mastermind group.</h3>
 			<h3>Share<br> with your<br> followers.</h3> --> */}
 						<p>
-							Roundtable helps small groups stay on top of things with
-							simple two-way newsletters.
+							Stay on top of things with simple two-way newsletters.
 						</p>
 					</form>
 				</div>

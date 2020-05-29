@@ -1,15 +1,17 @@
 import React from "react";
 import { NavBar } from "../navigation/NavBar";
 import "./roundtable.css";
+import { enterRoundtable, exitRoundtable } from "../../utils";
 
 export const Roundtable = () => {
+	document.body.classList.add('editing');
 	return (
-		<div class="editing">
+		<>
 			<NavBar />
 			<article class="edit show">
 				<header>
 					<h2>Advisors</h2>
-					<a class="close" href="/dashboard">
+					<a class="close" onClick={(e) => exitRoundtable(e, "/dashboard")}>
 						<span>&times;</span>
 					</a>
 				</header>
@@ -44,8 +46,17 @@ export const Roundtable = () => {
 						<li class="issues">6 issues</li>
 					</ul>
 				</nav>
-				<section>
-					<h4>Issue 7</h4>
+				<section class="members">
+					<h4>10 Members</h4>
+					<ul>
+						<h3>Questions</h3>
+						<li>
+							<h4>Question 1</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="issues">
+					<h4>10 Members</h4>
 					<h2>Title</h2>
 					<ul>
 						<h3>Questions</h3>
@@ -56,8 +67,8 @@ export const Roundtable = () => {
 				</section>
 			</article>
 			<div class="close">
-				<a href="/dashboard"></a>
+				<a onClick={(e) => exitRoundtable(e, "/dashboard")}></a>
 			</div>
-		</div>
+		</>
 	);
 };

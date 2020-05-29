@@ -3,7 +3,7 @@
 	max-height: 100vh;
 	overflow-y: hidden;
 }
-.editing > nav {
+.editing > #root > nav {
 	position: fixed;
 	top: 0;
 	left: 50%;
@@ -40,7 +40,7 @@ article.edit {
 	transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out,
 		bottom 0s 0.25s, height 0s 0.25s, z-index 0s 0.25s;
 }
-article.edit.show {
+body.editing article.edit {
 	bottom: 0;
 	height: calc(100% - 70px);
 	opacity: 1;
@@ -57,7 +57,7 @@ article.edit + .close {
 	width: 100%;
 	height: 100%;
 }
-article.edit.show + .close {
+body.editing article.edit + .close {
 	display: block;
 	z-index: 9;
 }
@@ -234,4 +234,30 @@ article.edit nav ul.stats ul.members li img {
 }
 article.edit section {
 	padding: 50px 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+	body.editing > nav {
+		width: 100%;
+	}
+	article.edit {
+		border-top-left-radius: 30px;
+		border-top-right-radius: 30px;
+		font-size: 0.5rem;
+	}
+	article.edit header {
+		padding: 20px 20px 0;
+	}
+	article.edit nav {
+		padding: 0 20px 10px;
+	}
+	article.edit nav ul.stats > li {
+		padding: 0 6px;
+	}
+	article.edit nav ul.stats ul.members li:nth-child(n + 5) {
+		display: none;
+	}
+	article.edit section {
+		padding: 30px 30px;
+	}
 }
