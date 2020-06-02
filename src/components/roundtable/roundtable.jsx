@@ -4,7 +4,7 @@ import "./roundtable.css";
 import { enterRoundtable, exitRoundtable } from "../../utils";
 
 export const Roundtable = () => {
-	document.body.classNameList.add("editing");
+	document.body.classList.add("editing");
 	return (
 		<>
 			<NavBar />
@@ -67,23 +67,23 @@ export const Roundtable = () => {
 							</ul>
 							10 Members
 						</li>
-						<li class="issues">6 issues</li>
-						<li class="responses">32 New Responses</li>
+						<li className="issues">6 issues</li>
+						<li className="responses">32 New Responses</li>
 					</ul>
 				</nav>
-				<div class="content">
-					<section class="issueList">
+				<div className="content">
+					<section className="issueList">
 						<h4>
 							6 Issues <em>.issueList</em>
 						</h4>
-						<ul class="issueList">
+						<ul className="issueList">
 							<h3>Questions</h3>
 							<li>
 								<h4>Question 1</h4>
 							</li>
 						</ul>
 					</section>
-					<section class="issueCreate">
+					<section className="issueCreate">
 						<h4>
 							<em>.issueCreate</em>
 						</h4>
@@ -95,7 +95,7 @@ export const Roundtable = () => {
 							</li>
 						</ul>
 					</section>
-					<section class="issueRespond">
+					<section className="issueRespond">
 						<h4>
 							<em>.issueRespond</em>
 						</h4>
@@ -107,7 +107,7 @@ export const Roundtable = () => {
 							</li>
 						</ul>
 					</section>
-					<section class="issueView">
+					<section className="issueView">
 						<h4>
 							<em>.issueView</em>
 						</h4>
@@ -120,11 +120,11 @@ export const Roundtable = () => {
 						</ul>
 					</section>
 					<h2>Ready</h2>
-					<section class="members">
+					<section className="members">
 						<h4>
 							10 Members <em>.memberList</em>
 						</h4>
-						<ul class="memberList">
+						<ul className="memberList">
 							<li>
 								<span className="avatar">
 									<img
@@ -133,10 +133,10 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Steven K.</h4>
-								<a class="button">View Profile</a>
-								<div class="stats">
+								<a href="javascript:void(0)" className="button">View Profile</a>
+								<div className="stats">
 									<span>2,572</span>
-									<span class="active">Active</span>
+									<span className="active">Active</span>
 								</div>
 							</li>
 							<li>
@@ -147,10 +147,10 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Tony K.</h4>
-								<a class="button">View Profile</a>
-								<div class="stats">
+								<a href="javascript:void(0)" className="button">View Profile</a>
+								<div className="stats">
 									<span>2,572</span>
-									<span class="active">Active</span>
+									<span className="active">Active</span>
 								</div>
 							</li>
 							<li>
@@ -161,10 +161,10 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Jimena F.</h4>
-								<a class="button new">New Responses</a>
-								<div class="stats">
+								<a href="javascript:void(0)" className="button new">New Responses</a>
+								<div className="stats">
 									<span>2,572</span>
-									<span class="inactive">Inactive</span>
+									<span className="inactive">Inactive</span>
 								</div>
 							</li>
 							<li>
@@ -175,10 +175,10 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Brennan L.</h4>
-								<a class="button">View Profile</a>
-								<div class="stats">
+								<a href="javascript:void(0)" className="button">View Profile</a>
+								<div className="stats">
 									<span>2,572</span>
-									<span class="active">Active</span>
+									<span className="active">Active</span>
 								</div>
 							</li>
 							<li>
@@ -189,10 +189,10 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Brandon C.</h4>
-								<a class="button new">Just Joined</a>
-								<div class="stats">
+								<a href="javascript:void(0)" className="button new">Just Joined</a>
+								<div className="stats">
 									<span>2,572</span>
-									<span class="inactive">Inactive</span>
+									<span className="inactive">Inactive</span>
 								</div>
 							</li>
 							<li>
@@ -203,10 +203,10 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Taylor B.</h4>
-								<a class="button">View Profile</a>
-								<div class="stats">
+								<a href="javascript:void(0)" className="button">View Profile</a>
+								<div className="stats">
 									<span>2,572</span>
-									<span class="inactive">Inactive</span>
+									<span className="inactive">Inactive</span>
 								</div>
 							</li>
 							<li>
@@ -217,25 +217,25 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Trey T.</h4>
-								<a class="button">View Profile</a>
-								<div class="stats">
+								<a href="javascript:void(0)" className="button">View Profile</a>
+								<div className="stats">
 									<span>2,572</span>
-									<span class="active">Active</span>
+									<span className="active">Active</span>
 								</div>
 							</li>
-							<li class="invited">
-								<span class="avatar">
+							<li className="invited">
+								<span className="avatar">
 									<em>PM</em>
 								</span>
 								<h4>Philip M.</h4>
-								<a class="button">Invited</a>
+								<a href="javascript:void(0)" className="button">Invited</a>
 							</li>
-							<li class="invited">
-								<span class="avatar">
+							<li className="invited">
+								<span className="avatar">
 									<em>SK</em>
 								</span>
 								<h4>Steven Michael Kovar Steven Michael Kovar</h4>
-								<a class="button">Invited</a>
+								<a href="javascript:void(0)" className="button">Invited</a>
 							</li>
 						</ul>
 					</section>
@@ -290,7 +290,7 @@ export const Roundtable = () => {
 				</div>
 			</article>
 			<div className="close">
-				<a></a>
+				<a href="javascript:void(0)"></a>
 			</div>
 		</>
 	);
