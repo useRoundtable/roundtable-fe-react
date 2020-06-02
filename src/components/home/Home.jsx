@@ -15,7 +15,7 @@ export const Home = () => {
 								</a>
 							</li>
 							<li>
-								<a href="login.html">
+								<a href="/login">
 									<h6>Login</h6>
 								</a>
 							</li>
@@ -46,15 +46,13 @@ export const Home = () => {
 			<h3>Coordinate<br> with your<br> friends.</h3>
 			<h3>Grow<br> with your<br> mastermind group.</h3>
 			<h3>Share<br> with your<br> followers.</h3> --> */}
-						<p>
-							Stay on top of things with simple two-way newsletters.
-						</p>
+						<p>Stay on top of things with simple two-way newsletters.</p>
 					</form>
 				</div>
 				<figure>
 					<nav>
 						<ul>
-							<li class="selected">
+							<li className="selected">
 								<a href="onboard.html">
 									<h6>Join</h6>
 								</a>
@@ -70,7 +68,7 @@ export const Home = () => {
 								</a>
 							</li>
 						</ul>
-						<img src={pattern4}></img>
+						<img src={pattern4} alt="Background pattern"></img>
 					</nav>
 				</figure>
 			</header>
