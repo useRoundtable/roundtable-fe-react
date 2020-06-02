@@ -84,6 +84,11 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Steven K.</h4>
+								<a class="button">View Profile</a>
+								<div class="stats">
+									<span>2,572</span>
+									<span class="active">Active</span>
+								</div>
 							</li>
 							<li>
 								<span className="avatar">
@@ -93,6 +98,11 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Tony K.</h4>
+								<a class="button">View Profile</a>
+								<div class="stats">
+									<span>2,572</span>
+									<span class="active">Active</span>
+								</div>
 							</li>
 							<li>
 								<span className="avatar">
@@ -102,6 +112,11 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Jimena F.</h4>
+								<a class="button new">New Responses</a>
+								<div class="stats">
+									<span>2,572</span>
+									<span class="inactive">Inactive</span>
+								</div>
 							</li>
 							<li>
 								<span className="avatar">
@@ -111,6 +126,11 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Brennan L.</h4>
+								<a class="button">View Profile</a>
+								<div class="stats">
+									<span>2,572</span>
+									<span class="active">Active</span>
+								</div>
 							</li>
 							<li>
 								<span className="avatar">
@@ -120,6 +140,11 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Brandon C.</h4>
+								<a class="button new">Just Joined</a>
+								<div class="stats">
+									<span>2,572</span>
+									<span class="inactive">Inactive</span>
+								</div>
 							</li>
 							<li>
 								<span className="avatar">
@@ -129,6 +154,11 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Taylor B.</h4>
+								<a class="button">View Profile</a>
+								<div class="stats">
+									<span>2,572</span>
+									<span class="inactive">Inactive</span>
+								</div>
 							</li>
 							<li>
 								<span className="avatar">
@@ -138,6 +168,21 @@ export const Roundtable = () => {
 									/>
 								</span>
 								<h4>Trey T.</h4>
+								<a class="button">View Profile</a>
+								<div class="stats">
+									<span>2,572</span>
+									<span class="active">Active</span>
+								</div>
+							</li>
+							<li class="invited">
+								<span class="avatar"></span>
+								<h4>Philip M.</h4>
+								<a class="button">Invited</a>
+							</li>
+							<li class="invited">
+								<span class="avatar"></span>
+								<h4>Steven Michael Kovar</h4>
+								<a class="button">Invited</a>
 							</li>
 						</ul>
 					</section>
