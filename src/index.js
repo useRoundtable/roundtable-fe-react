@@ -5,10 +5,17 @@ import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
 import ApolloClient from "apollo-boost";
-
 import { ApolloProvider } from "@apollo/react-hooks";
 
 const client = new ApolloClient({
+	request: (operation) => {
+		const token = localStorage.getItem("token");
+		operation.setContext({
+			headers: {
+				authorization: token ? `Bearer ${token}` : "",
+			},
+		});
+	},
 	uri: "http://localhost:4000/",
 });
 
