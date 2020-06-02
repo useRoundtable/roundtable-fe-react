@@ -44,9 +44,50 @@ export const Roundtable = () => {
 							10 Members
 						</li>
 						<li class="issues">6 issues</li>
+						<li class="responses">32 New Responses</li>
 					</ul>
 				</nav>
 				<div class="content">
+					<section class="issueList">
+						<h4>6 Issues <em>.issueList</em></h4>
+						<ul class="issueList">
+							<h3>Questions</h3>
+							<li>
+								<h4>Question 1</h4>
+							</li>
+						</ul>
+					</section>
+					<section class="issueCreate">
+						<h4><em>.issueCreate</em></h4>
+						<h2>Title</h2>
+						<ul>
+							<h3>Questions</h3>
+							<li>
+								<h4>Question 1</h4>
+							</li>
+						</ul>
+					</section>
+					<section class="issueRespond">
+						<h4><em>.issueRespond</em></h4>
+						<h2>Title</h2>
+						<ul>
+							<h3>Questions</h3>
+							<li>
+								<h4>Question 1</h4>
+							</li>
+						</ul>
+					</section>
+					<section class="issueView">
+						<h4><em>.issueView</em></h4>
+						<h2>Title</h2>
+						<ul>
+							<h3>Questions</h3>
+							<li>
+								<h4>Question 1</h4>
+							</li>
+						</ul>
+					</section>
+					<h2>Ready</h2>
 					<section class="members">
 						<h4>10 Members <em>.memberList</em></h4>
 						<ul class="memberList">
@@ -114,61 +155,21 @@ export const Roundtable = () => {
 								</div>
 							</li>	
 							<li class="invited">
-								<span class="avatar"></span>
+								<span class="avatar"><em>PM</em></span>
 								<h4>Philip M.</h4>
 								<a class="button">Invited</a>
 							</li>
 							<li class="invited">
-								<span class="avatar"></span>
-								<h4>Steven Michael Kovar</h4>
+								<span class="avatar"><em>SK</em></span>
+								<h4>Steven Michael Kovar Steven Michael Kovar</h4>
 								<a class="button">Invited</a>
-							</li>
-						</ul>
-					</section>
-					<section class="issueList">
-						<h4>6 Issues <em>.issueList</em></h4>
-						<h2>Title</h2>
-						<ul>
-							<h3>Questions</h3>
-							<li>
-								<h4>Question 1</h4>
-							</li>
-						</ul>
-					</section>
-					<section class="issueCreate">
-						<h4><em>.issueCreate</em></h4>
-						<h2>Title</h2>
-						<ul>
-							<h3>Questions</h3>
-							<li>
-								<h4>Question 1</h4>
-							</li>
-						</ul>
-					</section>
-					<section class="issueRespond">
-						<h4><em>.issueRespond</em></h4>
-						<h2>Title</h2>
-						<ul>
-							<h3>Questions</h3>
-							<li>
-								<h4>Question 1</h4>
-							</li>
-						</ul>
-					</section>
-					<section class="issueView">
-						<h4><em>.issueView</em></h4>
-						<h2>Title</h2>
-						<ul>
-							<h3>Questions</h3>
-							<li>
-								<h4>Question 1</h4>
 							</li>
 						</ul>
 					</section>
 				</div>
 			</article>
 			<div class="close">
-				<a onClick={(e) => exitRoundtable(e, "/dashboard")}></a>
+				<a></a>
 			</div>
 		</>
 	);

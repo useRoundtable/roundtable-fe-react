@@ -229,17 +229,17 @@ article.edit div.content {position:absolute;bottom:0;left:0;width:100%;height:ca
 article.edit section {
 	padding: 50px 40px;
 }
-article.edit section em {color:rgba(15,30,30,0.25);font-size:0.85em;font-weight:600;}
+article.edit section > * > em {color:rgba(15,30,30,0.25);font-size:0.85em;font-weight:600;}
 
 /* Section > Members */
 article.edit section.members {}
 article.edit section.members ul.memberList {display:flex;flex:auto;flex-wrap:wrap;justify-content:left;text-align:center;margin:20px 0 0;padding:0;}
-article.edit section.members ul.memberList li {min-width:calc(100% / 3 - 2em);max-width:calc(100% / 2 - 1em);margin:0 1em 1em;padding:20px 20px 0;background:rgba(255,255,255,1);border:1px solid rgba(15,30,30,0.10);border-radius:1.5em;box-shadow:3px 3px 0 rgba(15,30,30,0.03);}
+article.edit section.members ul.memberList li {min-width:calc(100% / 3 - 2em);max-width:calc(100% / 2 - 1em);margin:0 1em 2em;padding:20px 20px 0;background:rgba(255,255,255,1);border:1px solid rgba(15,30,30,0.10);border-radius:1.5em;box-shadow:3px 3px 0 rgba(15,30,30,0.03);}
 article.edit section.members ul.memberList li:hover {}
 article.edit section.members ul.memberList li:after {content:'';position:relative;display:block;width:100%;height:0;clear:both;}
-article.edit section.members ul.memberList li span.avatar {position:relative;display:block;width:5em;height:5em;margin:0 auto;border-radius:50%;overflow:hidden;}
+article.edit section.members ul.memberList li span.avatar {position:relative;display:block;width:5em;height:5em;margin:0 auto;background:rgba(15,30,30,1);border-radius:50%;overflow:hidden;color:rgba(255,255,255,1);line-height:5em;font-weight:600;}
 article.edit section.members ul.memberList li span.avatar img {display:block;width:100%;height:100%;object-fit:cover;}
-article.edit section.members ul.memberList li span.avatar:empty {background:rgba(15,30,30,1);}
+article.edit section.members ul.memberList li span.avatar em {font-size:1.5em;}
 article.edit section.members ul.memberList li > h4 {display:block;padding:1em 30px;line-height:1em;text-align:center;}
 article.edit section.members ul.memberList li > a.button:last-child {margin-bottom:1em;}
 article.edit section.members ul.memberList li > div.stats {display:block;}
@@ -251,7 +251,8 @@ article.edit section.members ul.memberList li > div.stats > span.active:before {
 article.edit section.members ul.memberList li > div.stats > span.inactive:before {border:1px solid rgba(15,30,30,0.1);}
 article.edit section.members ul.memberList li > div.stats > span.inactive {color:rgba(15,30,30,0.2);}
 article.edit section.members ul.memberList li.invited {border:1px solid rgba(15,30,30,0.05);}
-article.edit section.members ul.memberList li.invited a.button {border:1px solid rgba(15,30,30,0.05);}
+article.edit section.members ul.memberList li.invited a.button {border:1px solid rgba(15,30,30,0.05);color:rgba(15,30,30,0.35);cursor:default;}
+article.edit section.members ul.memberList li.invited a.button:hover {border:1px solid rgba(15,30,30,0.05);background:transparent;color:rgba(15,30,30,0.35);}
 
 @media only screen and (max-width: 1024px) {
 	body.editing > nav {
