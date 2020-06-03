@@ -70,6 +70,9 @@ article.edit + .close a {
 	opacity: 0;
 	outline: 0;
 }
+article.edit + .close a:empty {
+	cursor: default;
+}
 
 article.edit > * {
 	-webkit-animation: pageload 0.5s 2s ease-in forwards;
@@ -156,9 +159,9 @@ article.edit nav {
 	border-bottom: 1px solid rgba(15, 30, 30, 0.05);
 	font-size: 1.2em;
 }
-article.edit nav ul.stats {
+article.edit ul.stats {
 }
-article.edit nav ul.stats > li {
+article.edit ul.stats > li {
 	position: relative;
 	display: inline-block;
 	margin: 0 1em 0 0;
@@ -173,18 +176,18 @@ article.edit nav ul.stats > li {
 	border-bottom-left-radius: 100px;
 	cursor: pointer;
 }
-article.edit nav ul.stats > li:hover {
+article.edit ul.stats > li:hover {
 	background: rgba(15, 30, 30, 0.03);
 }
-article.edit nav ul.stats > li:first-child {
+article.edit ul.stats > li:first-child {
 	border: 0;
 	margin: 0 1em 0 -10px;
 }
-article.edit nav ul.stats > li:after {
+article.edit ul.stats > li:before {
 	content: "";
 	position: absolute;
 	top: 50%;
-	right: -0.75em;
+	left: -0.75em;
 	display: inline-block;
 	width: 0.5em;
 	height: 0.5em;
@@ -193,42 +196,72 @@ article.edit nav ul.stats > li:after {
 	background: rgba(15, 30, 30, 1);
 	transform: translate(0, -50%);
 }
-article.edit nav ul.stats > li:last-child:after {
+article.edit ul.stats > li.new:before {
+	
+}
+article.edit ul.stats > li:first-child:before {
 	display: none;
 }
-article.edit nav ul.stats ul.members {
+article.edit ul.stats ul.members {
 	display: inline-block;
 	float: left;
 	margin: 0 0.5em 0 0;
 	padding: 0.5em 0;
 }
-article.edit nav ul.stats ul.members li {
+article.edit ul.stats ul.members li {
 	position: relative;
 	display: inline-block;
 	width: 2em;
 	height: 2em;
 	margin: 0 0 0 -0.75em;
 	float: left;
+	text-align:center;
 	border-radius: 50%;
-	background: rgba(254, 254, 254, 1);
 	border: 3px solid rgba(254, 254, 254, 1);
 	overflow: hidden;
 }
-article.edit nav ul.stats li.members:hover ul.members li {
+article.edit ul.stats ul.members li > em {position:relative;display:block;width:100%;height:100%;background:rgba(15,30,30,1);color:rgba(255,255,255,1);font-size:.7em;line-height:calc((2em / .7) - 6px);font-weight:600;}
+article.edit ul.stats ul.members li.more > em {font-size:1.5em;line-height:calc((2em / 1.5) - 4px);}
+article.edit ul.stats li.members:hover ul.members li {
 	border: 3px solid rgba(247, 248, 248, 1);
 }
-article.edit nav ul.stats ul.members li:first-child {
-	margin: 0;
+article.edit ul.stats li.members:hover ul.members li {
+	border: 3px solid rgba(247, 248, 248, 1);
 }
-article.edit nav ul.stats ul.members li img {
+article.edit ul.stats li.members ul.members li:empty {
+	background:rgba(247,248,248,1);
+}
+article.edit ul.stats ul.members li img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+article.edit ul.stats ul.members.waiting li:after {content:'';position:absolute;top:50%;left:50%;width:0;height:0;transform:scale(1) translate(-50%,-50%);background:rgba(15,30,30,0.15);border-radius:50%;
+	-webkit-animation: waiting 1.8s 0s linear infinite;
+	-moz-animation: waiting 1.8s 0s linear infinite;
+	-ms-animation: waiting 1.8s 0s linear infinite;
+	-o-animation: waiting 1.8s 0s linear infinite;
+	animation: waiting 1.8s 0s linear infinite;
+}
+article.edit ul.stats ul.members.waiting li:nth-of-type(2):after {
+	-webkit-animation: waiting 1.8s .2s linear infinite;
+	-moz-animation: waiting 1.8s .2s linear infinite;
+	-ms-animation: waiting 1.8s .2s linear infinite;
+	-o-animation: waiting 1.8s .2s linear infinite;
+	animation: waiting 1.8s .2s linear infinite;
+}
+article.edit ul.stats ul.members.waiting li:nth-of-type(3):after {
+	-webkit-animation: waiting 1.8s .4s linear infinite;
+	-moz-animation: waiting 1.8s .4s linear infinite;
+	-ms-animation: waiting 1.8s .4s linear infinite;
+	-o-animation: waiting 1.8s .4s linear infinite;
+	animation: waiting 1.8s .4s linear infinite;
 }
 article.edit div.content {position:absolute;bottom:0;left:0;width:100%;height:calc(100% - ((2.5em * 1.15 + 30px) + ((1.2em * .85 * 3) + 11px)));background:rgba(15, 30, 30, 0.005);text-align:left;overflow:hidden;overflow-y:auto;}
 article.edit section {
 	padding: 50px 40px;
 }
+article.edit section > h1, article.edit section > h2, article.edit section > h3, article.edit section > h4, article.edit section > h5, article.edit section > h6 {padding:0 1rem;} 
 article.edit section > * > em {color:rgba(15,30,30,0.25);font-size:0.85em;font-weight:600;}
 
 /* Section > Members */
@@ -254,6 +287,60 @@ article.edit section.members ul.memberList li.invited {border:1px solid rgba(15,
 article.edit section.members ul.memberList li.invited a.button {border:1px solid rgba(15,30,30,0.05);color:rgba(15,30,30,0.35);cursor:default;}
 article.edit section.members ul.memberList li.invited a.button:hover {border:1px solid rgba(15,30,30,0.05);background:transparent;color:rgba(15,30,30,0.35);}
 
+/* Section > Issue List */
+article.edit section.issueList {}
+article.edit section.issueList ul.issueList {display:block;margin:20px 0 0;padding:0;}
+article.edit section.issueList ul.issueList > li {position:relative;display:block;margin:0 0 2em;padding:0;background:rgba(255,255,255,1);border-radius:1.5em;}
+article.edit section.issueList ul.issueList > li > h3.issue {position:relative;display:block;padding:1.5em 20px .25em;box-shadow:3px 3px 0 rgba(15,30,30,0.03);border:1px solid rgba(15,30,30,0.10);border-bottom:0;border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;font-weight:800;}
+article.edit section.issueList ul.issueList > li.new > h3.issue {color:rgba(15,30,30,0.15);border:1px solid rgba(15,30,30,0.1);border-radius:1.5rem;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > a.button {position:absolute;display:inline-block;top:15px;right:15px;}
+article.edit section.issueList ul.issueList > li > h3 .number {
+	position: absolute;
+	top: 0;
+	left: 20px;
+	line-height: 3em;
+	font-size: 0.5em;
+	font-weight: 300;
+	color: rgba(15, 30, 30, 0.5);
+}
+article.edit section.issueList ul.issueList > li > h3 .status {
+	position: absolute;
+	top: 0;
+	right: 20px;
+	line-height: 3em;
+	font-size: 0.5em;
+	font-weight: 300;
+	color: rgba(15, 30, 30, 0.5);
+}
+article.edit section.issueList ul.issueList > li > ul.options {
+	font-size: 0;
+	margin: 0;
+	padding: 20px;
+	border: 1px solid rgba(15, 30, 30, 0.1);
+	background: rgba(252, 252, 252, 0.35);
+	box-shadow: 3px 3px 0 rgba(15, 30, 30, 0.05);
+	border-bottom-left-radius:1.5rem;
+	border-bottom-right-radius:1.5rem;
+	text-align: right;
+}
+article.edit section.issueList ul.issueList > li > ul.options li {
+	position: relative;
+	display: inline-block;
+	margin: 0 0 0 0.5rem;
+}
+article.edit section.issueList ul.issueList > li > ul.options li.priority {float:left;}
+article.edit section.issueList ul.issueList > li > ul.options li a.button {
+	display: inline-block;
+	font-size: 0.85rem;
+	line-height: 2em;
+}
+article.edit section.issueList ul.issueList > li ul.stats {padding:.3rem .5rem;font-size:0.8em;}
+article.edit section.issueList ul.issueList > li ul.stats > li {margin:0;font-weight:500;}
+article.edit section.issueList ul.issueList > li ul.stats > li:before {display:none;}
+article.edit section.issueList ul.issueList > li ul.stats > li.privacy {float:right;color:rgba(15,30,30,0.25);}
+article.edit section.issueList ul.issueList > li ul.stats > li.privacy.public {color:rgba(15,30,30,1);}
+article.edit section.issueList ul.issueList > li ul.stats > li.visits {float:right;}
+
 @media only screen and (max-width: 1024px) {
 	body.editing > nav {
 		width: 100%;
@@ -269,10 +356,10 @@ article.edit section.members ul.memberList li.invited a.button:hover {border:1px
 	article.edit nav {
 		padding: 0 20px 10px;
 	}
-	article.edit nav ul.stats > li {
+	article.edit ul.stats > li {
 		padding: 0 6px;
 	}
-	article.edit nav ul.stats ul.members li:nth-child(n + 5) {
+	article.edit ul.stats ul.members li:nth-child(n + 5) {
 		display: none;
 	}
 	article.edit section {
