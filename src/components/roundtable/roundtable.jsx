@@ -80,7 +80,7 @@ export const Roundtable = () => {
 						<ul className="issueList">
 							<li className="new">
 								<h3 className="issue">
-									<span className="number">Issue #5</span>
+									<span className="number">Start Issue #5</span>
 									<span className="title">New Issue&hellip;</span>
 									<a className="button">+ Create</a>
 								</h3>
@@ -90,11 +90,12 @@ export const Roundtable = () => {
 									<span className="number">Issue #4</span>
 									<span className="title">Hey everyone!</span>
 									<span className="status">Rounding up&hellip;</span>
+									<span className="message">Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.</span>
 								</h3>
 								<ul className="options">
 									<li class="priority">
 										<a className="button new" onClick={(e) => enterRoundtable(e, "/roundtable")}>
-											New Responses
+											12 New Responses
 										</a>
 									</li>
 									<li>
@@ -112,6 +113,7 @@ export const Roundtable = () => {
 											<li></li>
 										</ul>
 									</li>
+									<li className="more">Edit Issue</li>
 								</ul>
 							</li>
 							<li>
@@ -119,16 +121,17 @@ export const Roundtable = () => {
 									<span className="number">Issue #3</span>
 									<span className="title">COVID-19 Edition</span>
 									<span className="status">Round up complete</span>
+									<span className="message">Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.</span>
 								</h3>
 								<ul className="options">
 									<li class="priority">
 										<a className="button new" onClick={(e) => enterRoundtable(e, "/roundtable")}>
-											New Responses
+											2 New Responses
 										</a>
 									</li>
 									<li>
 										<a className="button notPriority" onClick={(e) => enterRoundtable(e, "/roundtable/edit")} >
-											Publishing June 3, 2020
+											Publishing June 3, 2020 at 10:30 A.M.
 										</a>
 									</li>
 								</ul>
@@ -193,6 +196,7 @@ export const Roundtable = () => {
 										</ul>
 									</li>
 									<li className="kudos">&hearts; 482</li>
+									<li className="more">Edit Issue</li>
 								</ul>
 							</li>
 							<li>
@@ -200,6 +204,7 @@ export const Roundtable = () => {
 									<span className="number">Issue #2</span>
 									<span className="title">Checking In</span>
 									<span className="status">Sent June 2, 2020</span>
+									<span className="message">Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.</span>
 								</h3>
 								<ul className="options">
 									<li class="priority">
@@ -265,7 +270,6 @@ export const Roundtable = () => {
 									<li className="kudos">&hearts; 482</li>
 									<li className="privacy public">Public</li>
 									<li className="visits">25,302 Visits</li>
-
 								</ul>
 							</li>
 							<li>
@@ -273,6 +277,7 @@ export const Roundtable = () => {
 									<span className="number">Issue #1</span>
 									<span className="title">Welcome to the Advisors Roundtable!</span>
 									<span className="status">Sent June 1, 2020</span>
+									<span className="message">Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.</span>
 								</h3>
 								<ul className="options">
 									<li className="priority">
