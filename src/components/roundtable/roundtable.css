@@ -179,6 +179,8 @@ article.edit ul.stats > li {
 article.edit ul.stats > li:hover {
 	background: rgba(15, 30, 30, 0.03);
 }
+article.edit ul.stats > li.noHover {cursor:default;}
+article.edit ul.stats > li.noHover:hover {background:transparent;}
 article.edit ul.stats > li:first-child {
 	border: 0;
 	margin: 0 1em 0 -13px;
@@ -202,6 +204,7 @@ article.edit ul.stats > li.new:before {
 article.edit ul.stats > li:first-child:before {
 	display: none;
 }
+article.edit ul.stats > li.floatRight {float:right;margin:0 0 0 1em;}
 article.edit ul.stats ul.members {
 	display: inline-block;
 	float: left;
@@ -229,8 +232,9 @@ article.edit ul.stats li.members:hover ul.members li {
 article.edit ul.stats li.members:hover ul.members li {
 	border: 3px solid rgba(247, 248, 248, 1);
 }
-article.edit ul.stats > li.date {float:right;margin:0 0 0 1em;}
+article.edit ul.stats > li.date {float:right;margin:0 0 0 1em;color:rgba(15,30,30,0.25);}
 article.edit ul.stats > li.date:before {display:none;}
+article.edit ul.stats > li.hideBullet:before {display:none;}
 article.edit ul.stats li.members ul.members li:empty {
 	background:rgba(247,248,248,1);
 }
@@ -375,7 +379,16 @@ article.edit section.issue article > h3 .author:hover {background:rgba(15, 30, 3
 article.edit section.issue article > h3 .date {position:relative;display:inline-block;margin:0 1em 0 -10px;padding:0 10px;clear:both;font-size:1rem;line-height:calc(2em + 20px);color:rgba(15, 30, 30, 0.5);font-weight:300;border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-right-radius:100px;border-bottom-left-radius:100px;cursor:pointer;}
 article.edit section.issue.view article.message {display:block;margin:0 auto;max-width:800px;font-size:1.15em;}
 article.edit section.issue.view article.message p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
-article.edit section.issue.view article.message {}
+article.edit section.issue.view article.message + article.question {padding-top:3em;}
+article.edit section.issue.view article.question {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
+article.edit section.issue.view article.question p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
+article.edit section.issue.view article.question h4 + p {line-height:1.5em;}
+article.edit section.issue.view article.question h6.questionNumber {padding:.5em 0;font-size:0.85rem;font-weight:500;color:rgba(15,30,30,0.5);}
+article.edit section.issue.view article.question h4.question {padding:0 0 .25em;}
+article.edit section.issue.view article.question ul.stats {font-size:0.8em;}
+article.edit section.issue.view article.question ul.stats > li {float:left;font-weight:500;}
+article.edit section.issue.view article.question ul.stats:after {content:'';position:relative;display:block;width:100%;height:0;clear:both;}
+article.edit section.issue.view article.question ul.stats > li:before {display:none;}
 
 @media only screen and (max-width: 1024px) {
 	body.editing > nav {

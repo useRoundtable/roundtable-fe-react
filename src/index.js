@@ -16,7 +16,7 @@ const client = new ApolloClient({
 			},
 		});
 	},
-	uri: "http://localhost:4000/",
+	uri: "https://tryroundtable.herokuapp.com/",
 });
 
 ReactDOM.render(

@@ -78,14 +78,118 @@ export const Roundtable = () => {
 						<article className="issueHeader">
 							<h3 className="issue">
 								<span className="number">Issue #4</span>
+								<span className="status">June 6, 2020</span>
 								<span className="title">Hey everyone!</span>
 							</h3>
 						</article>
 						<article className="message">
+							<ul className="stats"><li className="members noHover"><ul className="members"><li><img src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg" alt="Steven K." /></li></ul>Steven K. says</li></ul>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl nisl, blandit eget arcu sit amet, euismod molestie mi. Vivamus molestie, sem nec lobortis malesuada, risus enim gravida nisi, non volutpat dui est nec ante. Fusce a felis at libero mattis scelerisque ac at neque. Aenean metus augue, tristique iaculis diam eu, commodo facilisis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vehicula massa a massa tempus, sit amet vestibulum nisl vestibulum.</p>
-							<p>Phasellus quis suscipit augue, et efficitur sem. Vestibulum pharetra justo condimentum tincidunt condimentum. Donec quis libero nec erat sollicitudin elementum. Etiam non volutpat ligula, ut faucibus quam. Suspendisse consequat urna eu iaculis euismod. In eu viverra diam. Nunc ac ligula eget nibh volutpat hendrerit. Sed eget mollis felis. Duis ullamcorper sodales viverra. Suspendisse erat lorem, consectetur sit amet risus a, eleifend gravida sapien. Sed hendrerit mollis erat, ac bibendum massa commodo eleifend. Nulla purus lectus, varius id mauris nec, scelerisque bibendum ipsum. Maecenas ac mattis massa, quis eleifend ipsum.</p>
-							<p>Donec suscipit turpis interdum, lobortis magna a, suscipit odio. Duis sit amet dignissim sapien. Cras tincidunt, odio id venenatis ultricies, mauris nunc pulvinar velit, eu condimentum mi purus nec felis. Suspendisse eu purus vitae tortor pellentesque hendrerit. Sed egestas finibus mattis. Donec ultrices sapien nec augue volutpat tincidunt. Curabitur eu nulla quam. Duis fringilla venenatis viverra. Proin mollis erat tellus, maximus condimentum purus consectetur eget. Donec dictum risus ut sapien semper egestas. Morbi ac nunc euismod, blandit turpis vitae, dignissim enim. Aliquam ut libero maximus, luctus justo et, ultricies ex. Donec vel nisl nisi.</p>
-							<ul className="stats"><li className="members"><ul className="members"><li><img src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg" alt="Steven K." /></li></ul>Steven K.</li><li className="date">June 6, 2020</li><li className="responses new">32 New Responses</li></ul>
+						</article>
+						<article className="question">
+							<h6 className="questionNumber">Question 1</h6>	
+							<h4 className="question">What was your major accomplishment this week?</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<ul className="stats">
+								<li className="members">
+									Awaiting Responses
+									<ul className="members waiting">
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</li>
+								<li classname="kudos">&hearts; 275</li>
+							</ul>
+						</article>
+						<article className="question">
+							<h6 className="questionNumber">Question 2</h6>	
+							<h4 className="question">What do you need help with for next week?</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<p>Fusce a felis at libero mattis scelerisque ac at neque. Aenean metus augue, tristique iaculis diam eu, commodo facilisis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vehicula massa a massa tempus, sit amet vestibulum nisl vestibulum.</p>
+							<ul className="stats">
+								<li className="members">
+									<ul className="members">
+										<li>
+											<em>SK</em>
+										</li>
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
+											/>
+										</li>
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/524398486536474624/T_aUvkHo_400x400.jpeg"
+											/>
+										</li>
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/761998841117683712/janWwuyI_400x400.jpg"
+											/>
+										</li>
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/898262358476414977/Xletgru4_400x400.jpg"
+											/>
+										</li>
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/1925156946/tbrooks_400x400.jpg"
+											/>
+										</li>
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/556233917359853569/vvsGGZxc_400x400.jpeg"
+											/>
+										</li>
+										<li>
+											<em>10</em>
+										</li>
+									</ul>
+									10 Responses
+								</li>
+								<li classname="kudos">&hearts; 275</li>
+							</ul>
+						</article>
+						<article className="question">
+							<h6 className="questionNumber">Question 3</h6>	
+							<h4 className="question">What does it look like with no paragraphs?</h4>
+							<ul className="stats">
+								<li className="members">
+									<ul className="members">
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
+											/>
+										</li>
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/761998841117683712/janWwuyI_400x400.jpg"
+											/>
+										</li>
+										<li>
+											<em>SK</em>
+										</li>
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/524398486536474624/T_aUvkHo_400x400.jpeg"
+											/>
+										</li>
+									</ul>
+									4 Responses
+								</li>
+								<li classname="kudos">&hearts; 275</li>
+							</ul>
 						</article>
 					</section>
 
