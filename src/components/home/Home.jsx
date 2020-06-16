@@ -68,7 +68,7 @@ export const Home = () => {
 								</a>
 							</li>
 						</ul>
-						<img src={pattern4} alt="Background pattern"></img>
+						{/* <img src={pattern4} alt="Background pattern"></img> */}
 					</nav>
 				</figure>
 			</header>
