@@ -205,6 +205,8 @@ article.edit ul.stats > li:first-child:before {
 	display: none;
 }
 article.edit ul.stats > li.floatRight {float:right;margin:0 0 0 1em;}
+article.edit ul.stats > li.textCount {float:right;color:rgba(15,30,30,0.25);}
+article.edit ul.stats > li.textCount.noRemaining em {color:rgba(200,40,40,1);}
 article.edit ul.stats ul.members {
 	display: inline-block;
 	float: left;
@@ -393,7 +395,7 @@ article.edit section.issue article.question h6.questionNumber {padding:.5em 0;fo
 article.edit section.issue article.question h4.question {padding:0 0 .25em;}
 article.edit section.issue article.question h4.question:last-child {padding-bottom:calc(1em / 3 * 2);}
 /*article.edit section.issue article.question ul.stats {font-size:0.8em;}*/
-article.edit section.issue article.question ul.stats > li {float:left;font-weight:500;}
+article.edit section.issue article.question ul.stats > li {}
 article.edit section.issue article.question ul.stats:after {content:'';position:relative;display:block;width:100%;height:0;clear:both;}
 article.edit section.issue article.question ul.stats > li:before {display:none;}
 article.edit section.issue article.questionList {display:block;margin:0 auto;padding:0 0 2em;max-width:800px;}
@@ -416,7 +418,7 @@ article.edit section.issue ul.options li a.button {font-size:1em;line-height:2re
 article.edit section.issue ul.stats {font-size:0.85em;}
 article.edit section.issue ul.stats > li:before {display:none;}
 
-article.edit section.issue.answer textarea {display:block;width:100%;min-height:100px;margin:0 0 1em;padding:1em;background:rgba(255,255,255,1);color:rgba(15,30,30,0.85);font-size:1em;font-family:"Montserrat", Helvetica, Arial, sans-serif;border:1px solid rgba(15,30,30,0.1);border-radius:1em;outline:0;transition:border .35s ease-in-out, min-height .35s ease-in-out;}
+article.edit section.issue.answer textarea {display:block;width:100%;min-height:100px;margin:.25em 0 1em;padding:1em;background:rgba(255,255,255,1);color:rgba(15,30,30,0.85);font-size:1em;font-family:"Montserrat", Helvetica, Arial, sans-serif;border:1px solid rgba(15,30,30,0.1);border-radius:1em;outline:0;transition:border .35s ease-in-out, min-height .35s ease-in-out;}
 article.edit section.issue.answer textarea:focus {min-height:250px;border:1px solid rgba(15,30,30,0.15);}
 
 @media only screen and (max-width: 1024px) {
