@@ -9,10 +9,10 @@ import { ApolloProvider } from "@apollo/react-hooks";
 
 const client = new ApolloClient({
 	request: (operation) => {
-		const token = localStorage.getItem("token");
+		const token = localStorage.getItem("authorization");
 		operation.setContext({
 			headers: {
-				authorization: token ? `Bearer ${token}` : "",
+				authorization: token ? `${token}` : "",
 			},
 		});
 	},
