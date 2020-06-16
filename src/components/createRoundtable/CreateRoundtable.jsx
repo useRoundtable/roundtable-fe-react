@@ -1,10 +1,7 @@
 import React from "react";
-import "./myRoundtableList.css";
 import { enterRoundtable, exitRoundtable } from "../../utils";
 
-export const MyRoundtableList = ({
-	props: { roundtableName, description },
-}) => {
+export const CreateRoundtable = () => {
 	document.body.classList.remove("editing");
 	return (
 		<>
@@ -19,33 +16,25 @@ export const MyRoundtableList = ({
 						</li>
 					</section>
 				</ul>
-				<h2>{roundtableName}</h2>
+				<h2>Start your new Roundtable</h2>
 				<ul className="stats">
 					<li>Only You</li>
 					<li>
-						<strong>No</strong> Issues Published
+						<strong>3</strong> Issues Published
 					</li>
 				</ul>
-				<h5 className="issue">
+				{/* <h5 className="issue">
 					<span className="number">Issue #1</span>
 					<span className="title">Hey everyone!</span>
 					<span className="status">Gathering Responses</span>
-				</h5>
+				</h5> */}
 				<ul className="options">
 					<li>
 						<a
 							className="button new"
 							onClick={(e) => enterRoundtable(e, "/roundtable")}
 						>
-							View Responses
-						</a>
-					</li>
-					<li>
-						<a
-							className="button notPriority"
-							onClick={(e) => enterRoundtable(e, "/roundtable/edit")}
-						>
-							Publish
+							Create
 						</a>
 					</li>
 				</ul>

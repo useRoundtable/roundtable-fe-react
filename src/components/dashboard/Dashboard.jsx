@@ -1,19 +1,26 @@
 import React from "react";
 import { NavBar } from "../navigation/NavBar";
 import { MyRoundtableList } from "../myRoundtableList/MyRoundtableList";
+import { CreateRoundtable } from "../createRoundtable/CreateRoundtable";
 import { useQuery } from "@apollo/react-hooks";
 
-import { USERS as userData } from "../../resolvers/queries";
+import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 
 export const Dashboard = () => {
-	// const { loading, error, data } = useQuery(userData);
-	
-	// if (loading) return <h1>LOADING....</h1>;
-	// if (error) return console.log(error), null;
+	const { loading, error, data } = useQuery(RTbyUID);
+	if (loading) return <h1>LOADING....</h1>;
+	if (error) return console.log(error), null;
 	return (
 		<>
 			<NavBar />
-			<MyRoundtableList />
+			<main>
+				<article className="myRoundtables">
+					{data.roundtablesByUserId.map((table) => {
+						return <MyRoundtableList props={table} />;
+					})}
+					<CreateRoundtable />
+				</article>
+			</main>
 		</>
 	);
 };

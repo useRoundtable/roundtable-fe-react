@@ -10,3 +10,14 @@ export const USERS = gql`
 		}
 	}
 `;
+
+export const ROUNDTABLES = gql`
+	{
+		roundtablesByUserId {
+			id
+			createdAt
+			roundtableName
+			description
+		}
+	}
+`;
