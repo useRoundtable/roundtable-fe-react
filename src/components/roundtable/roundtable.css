@@ -377,18 +377,47 @@ article.edit section.issue article > h3 .author {position:relative;display:inlin
 article.edit section.issue article > h3 .author img {position:relative;display:inline-block;width:2em;height:2em;object-fit:cover;border-radius:50%;vertical-align:middle;margin:0 .5em 0 0;}
 article.edit section.issue article > h3 .author:hover {background:rgba(15, 30, 30, 0.03);}
 article.edit section.issue article > h3 .date {position:relative;display:inline-block;margin:0 1em 0 -10px;padding:0 10px;clear:both;font-size:1rem;line-height:calc(2em + 20px);color:rgba(15, 30, 30, 0.5);font-weight:300;border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-right-radius:100px;border-bottom-left-radius:100px;cursor:pointer;}
-article.edit section.issue.view article.message {display:block;margin:0 auto;max-width:800px;font-size:1.15em;}
-article.edit section.issue.view article.message p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
-article.edit section.issue.view article.message + article.question {padding-top:3em;}
-article.edit section.issue.view article.question {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
-article.edit section.issue.view article.question p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
-article.edit section.issue.view article.question h4 + p {line-height:1.5em;}
-article.edit section.issue.view article.question h6.questionNumber {padding:.5em 0;font-size:0.85rem;font-weight:500;color:rgba(15,30,30,0.5);}
-article.edit section.issue.view article.question h4.question {padding:0 0 .25em;}
-article.edit section.issue.view article.question ul.stats {font-size:0.8em;}
-article.edit section.issue.view article.question ul.stats > li {float:left;font-weight:500;}
-article.edit section.issue.view article.question ul.stats:after {content:'';position:relative;display:block;width:100%;height:0;clear:both;}
-article.edit section.issue.view article.question ul.stats > li:before {display:none;}
+article.edit section.issue article.message {display:block;margin:0 auto;max-width:800px;font-size:1.15em;}
+article.edit section.issue article.message p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
+article.edit section.issue article.message + article.question {padding-top:3em;}
+article.edit section.issue article.question {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
+article.edit section.issue.view article.question > .questionContent {position:relative;display:block;z-index:2;transform:translate(0,0);transition:transform .2s ease-in-out;cursor:pointer;}
+article.edit section.issue.view article.question > .questionContent:hover {transform:translate(0,-5px);}
+article.edit section.issue.view article.question > .questionContent:before {content:'';position:absolute;top:-.75em;left:-1.5em;width:calc(100% + 3em);height:calc(100% + .75em);transition:height .2s ease-in-out;z-index:-1;}
+article.edit section.issue.view article.question > .questionContent:hover:before {height:calc(100% + .75em + 5px);}
+article.edit section.issue.view article.question > .questionContent:after {content:'';position:absolute;top:-.75em;left:-1.5em;width:calc(100% + 3em);height:calc(100% + .75em);background:transparent;box-shadow:none;border-radius:1.5em;z-index:-1;transition:background .2s ease-in-out, box-shadow .2s ease-in-out;}
+article.edit section.issue.view article.question > .questionContent:hover:after {background:rgba(255,255,255,1);box-shadow:15px 20px 30px 10px rgba(15, 30, 30, 0.05), 0 0 15px 0 rgba(150, 30, 30, 0.03);}
+article.edit section.issue article.question p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
+article.edit section.issue article.question h4 + p {line-height:1.5em;}
+article.edit section.issue article.question h6.questionNumber {padding:.5em 0;font-size:0.85rem;font-weight:500;color:rgba(15,30,30,0.5);}
+article.edit section.issue article.question h4.question {padding:0 0 .25em;}
+article.edit section.issue article.question h4.question:last-child {padding-bottom:calc(1em / 3 * 2);}
+/*article.edit section.issue article.question ul.stats {font-size:0.8em;}*/
+article.edit section.issue article.question ul.stats > li {float:left;font-weight:500;}
+article.edit section.issue article.question ul.stats:after {content:'';position:relative;display:block;width:100%;height:0;clear:both;}
+article.edit section.issue article.question ul.stats > li:before {display:none;}
+article.edit section.issue article.questionList {display:block;margin:0 auto;padding:0 0 2em;max-width:800px;}
+article.edit section.issue article.questionList ul.questionList {padding:2em 0 2em 0;}
+article.edit section.issue article.questionList h6.questionListHeader {padding:.5em 0;font-size:0.85rem;font-weight:500;color:rgba(15,30,30,0.5);}
+article.edit section.issue article.questionList ul.questionList > li {position:relative;display:inline-block;clear:both;padding:10px 20px 10px 3em;line-height:2em;border-radius:2em;margin:0 0 5px -10px;font-size:1em;font-weight:700;color:rgba(15,30,30,1);cursor:pointer;}
+article.edit section.issue article.questionList ul.questionList > li:before {content:'';position:absolute;top:50%;left:1.5em;width:1em;height:1em;border-radius:25%;border:1px solid rgba(15,30,30,0.1);transform:translate(-50%,-50%);}
+article.edit section.issue article.questionList ul.questionList > li:after {content:'';position:absolute;top:50%;left:1.5em;width:0.85em;height:.5em;border-left:.25em solid rgba(255,220,0,1);border-bottom:.25em solid rgba(255,220,0,1);box-shadow:-2px 2px 1px 0 rgba(15,30,30,0.08);transform:translate(calc(-50% + .1em),calc(-50% - .35em)) rotate(-50deg) scale(0.85);opacity:0;transition:transform .2s ease-in-out, opacity .2s ease-in-out;}
+article.edit section.issue article.questionList ul.questionList > li.done:after {transform:translate(calc(-50% + .1em),calc(-50% - .35em)) rotate(-50deg) scale(1);opacity:1;}
+article.edit section.issue article.questionList ul.questionList > li h4 {line-height:1.5em;}
+article.edit section.issue article.questionList ul.questionList > li:hover {background:rgba(15,30,30,0.03);}
+article.edit section.issue ul.options li {
+	position: relative;
+	display: inline-block;
+	margin: 0 0 0 0.5rem;
+}
+article.edit section.issue ul.options li:first-child {margin:0;}
+article.edit section.issue ul.options li.priority {float:left;}
+article.edit section.issue ul.options li a.button {font-size:1em;line-height:2rem;display: inline-block;}
+article.edit section.issue ul.stats {font-size:0.85em;}
+article.edit section.issue ul.stats > li:before {display:none;}
+
+article.edit section.issue.answer textarea {display:block;width:100%;min-height:100px;margin:0 0 1em;padding:1em;background:rgba(255,255,255,1);color:rgba(15,30,30,0.85);font-size:1em;font-family:"Montserrat", Helvetica, Arial, sans-serif;border:1px solid rgba(15,30,30,0.1);border-radius:1em;outline:0;transition:border .35s ease-in-out, min-height .35s ease-in-out;}
+article.edit section.issue.answer textarea:focus {min-height:250px;border:1px solid rgba(15,30,30,0.15);}
 
 @media only screen and (max-width: 1024px) {
 	body.editing > nav {
