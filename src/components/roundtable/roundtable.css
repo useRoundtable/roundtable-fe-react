@@ -266,7 +266,7 @@ article.edit ul.stats ul.members.waiting li:nth-of-type(3):after {
 	-o-animation: waiting 1.8s .4s linear infinite;
 	animation: waiting 1.8s .4s linear infinite;
 }
-article.edit div.content {position:absolute;bottom:0;left:0;width:100%;height:calc(100% - (((2.5em * 1.15) + 30px) + ((1.2em * .85 * 3) + 11px)));background:rgba(15, 30, 30, 0.005);text-align:left;overflow:hidden;overflow-y:auto;color:transparent;transition:color .2s ease-in-out;}
+article.edit div.content {position:absolute;bottom:0;left:0;width:100%;height:calc(100% - (calc(calc(2.5em * 1.15) + 30px) + (calc(1.2em * .85 * 3) + 11px)));background:rgba(15, 30, 30, 0.005);text-align:left;overflow:hidden;overflow-y:auto;color:transparent;transition:color .2s ease-in-out;}
 article.edit div.content::-webkit-scrollbar {width:12px;}
 article.edit div.content::-webkit-scrollbar-thumb {border-radius:10px;background-color:currentColor;border:3px solid rgba(0, 0, 0, 0);background-clip:padding-box;transition:background-color .15s ease-in-out;}
 article.edit div.content:hover {color:rgba(15,30,30,0.15);}
