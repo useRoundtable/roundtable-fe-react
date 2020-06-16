@@ -83,13 +83,27 @@ export const Roundtable = () => {
 							</h3>
 						</article>
 						<article className="message">
-							<ul className="stats"><li className="members noHover"><ul className="members"><li><img src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg" alt="Steven K." /></li></ul>Steven K. says</li></ul>
+							<ul className="stats"><li className="members"><ul className="members"><li><img src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg" alt="Steven K." /></li></ul>Steven K. says </li></ul>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl nisl, blandit eget arcu sit amet, euismod molestie mi. Vivamus molestie, sem nec lobortis malesuada, risus enim gravida nisi, non volutpat dui est nec ante. Fusce a felis at libero mattis scelerisque ac at neque. Aenean metus augue, tristique iaculis diam eu, commodo facilisis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vehicula massa a massa tempus, sit amet vestibulum nisl vestibulum.</p>
 						</article>
+						<article className="questionList">
+							<ul className="questionList">
+								<h6 className="questionListHeader">Questions</h6>
+								<li>What was your major accomplishment this week?</li>
+								<li className="done">What do you need help with for next week?</li>
+								<li>What does it look like with no paragraphs?</li>
+							</ul>
+							<ul className="options">
+								<li><a className="button" href="javascript:void(0)">Answer Questions</a></li>
+								<li><a className="button notPriority" href="javascript:void(0)">View Responses</a></li>
+							</ul>
+						</article>
 						<article className="question">
-							<h6 className="questionNumber">Question 1</h6>	
-							<h4 className="question">What was your major accomplishment this week?</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<div className="questionContent">
+								<h6 className="questionNumber">Question 1</h6>	
+								<h4 className="question">What was your major accomplishment this week?</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
 							<ul className="stats">
 								<li className="members">
 									Awaiting Responses
@@ -103,10 +117,12 @@ export const Roundtable = () => {
 							</ul>
 						</article>
 						<article className="question">
-							<h6 className="questionNumber">Question 2</h6>	
-							<h4 className="question">What do you need help with for next week?</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							<p>Fusce a felis at libero mattis scelerisque ac at neque. Aenean metus augue, tristique iaculis diam eu, commodo facilisis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vehicula massa a massa tempus, sit amet vestibulum nisl vestibulum.</p>
+							<div className="questionContent">
+								<h6 className="questionNumber">Question 2</h6>	
+								<h4 className="question">What do you need help with for next week?</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<p>Fusce a felis at libero mattis scelerisque ac at neque. Aenean metus augue, tristique iaculis diam eu, commodo facilisis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vehicula massa a massa tempus, sit amet vestibulum nisl vestibulum.</p>
+							</div>
 							<ul className="stats">
 								<li className="members">
 									<ul className="members">
@@ -159,8 +175,10 @@ export const Roundtable = () => {
 							</ul>
 						</article>
 						<article className="question">
-							<h6 className="questionNumber">Question 3</h6>	
-							<h4 className="question">What does it look like with no paragraphs?</h4>
+							<div className="questionContent">
+								<h6 className="questionNumber">Question 3</h6>	
+								<h4 className="question">What does it look like with no paragraphs?</h4>
+							</div>
 							<ul className="stats">
 								<li className="members">
 									<ul className="members">
@@ -193,22 +211,81 @@ export const Roundtable = () => {
 						</article>
 					</section>
 
+					<section className="issue answer">
+						<article className="question">
+							<div className="questionContent">
+								<h6 className="questionNumber">Question 1</h6>	
+								<h4 className="question">What was your major accomplishment this week?</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+							<ul className="stats">
+								<li className="members">
+									<ul className="members">
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
+											/>
+										</li>
+									</ul>
+									Tony K.
+								</li>
+								<li className="textCount noHover noRemaining"><em>255</em> / 255</li>
+							</ul>
+							<textarea type="text" placeholder="What was your major accomplishment this week?"></textarea>
+						</article>
+						<article className="question">
+							<div className="questionContent">
+								<h6 className="questionNumber">Question 2</h6>	
+								<h4 className="question">What do you need help with for next week?</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempor dolor nec lorem pharetra, quis cursus purus iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<p>Fusce a felis at libero mattis scelerisque ac at neque. Aenean metus augue, tristique iaculis diam eu, commodo facilisis lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vehicula massa a massa tempus, sit amet vestibulum nisl vestibulum.</p>
+							</div>
+							<ul className="stats">
+								<li className="members">
+									<ul className="members">
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
+											/>
+										</li>
+									</ul>
+									Tony K.
+								</li>
+								<li className="textCount noHover"><em>25</em> / 255</li>
+							</ul>
+							<textarea type="text" placeholder="What do you need help with for next week?"></textarea>
+						</article>
+						<article className="question">
+							<div className="questionContent">
+								<h6 className="questionNumber">Question 3</h6>	
+								<h4 className="question">What does it look like with no paragraphs?</h4>
+							</div>
+							<ul className="stats">
+								<li className="members">
+									<ul className="members">
+										<li>
+											<img
+												alt="avatar"
+												src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
+											/>
+										</li>
+									</ul>
+									Tony K.
+								</li>
+								<li className="textCount noHover"><em>0</em> / 255</li>
+							</ul>
+							<textarea type="text" placeholder="What does it look like with no paragraphs?"></textarea>
+						</article>
+						<article className="question submit">
+							<ul class="options"><li><a class="button" href="javascript:void(0)">Submit my answers</a></li></ul>
+						</article>
+					</section>
+
 					<section className="issueCreate">
 						<h4>
 							<em>.issueCreate</em>
-						</h4>
-						<h2>Title</h2>
-						<ul>
-							<h3>Questions</h3>
-							<li>
-								<h4>Question 1</h4>
-							</li>
-						</ul>
-					</section>
-
-					<section className="issueRespond">
-						<h4>
-							<em>.issueRespond</em>
 						</h4>
 						<h2>Title</h2>
 						<ul>
@@ -236,7 +313,7 @@ export const Roundtable = () => {
 								<h3 className="issue">
 									<span className="number">Issue #4</span>
 									<span className="title">Hey everyone!</span>
-									<span className="status">Rounding up&hellip;</span>
+									<span className="status">Collecting responses</span>
 									<span className="message">Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.</span>
 								</h3>
 								<ul className="options">
@@ -270,7 +347,7 @@ export const Roundtable = () => {
 								<h3 className="issue">
 									<span className="number">Issue #3</span>
 									<span className="title">COVID-19 Edition</span>
-									<span className="status">Round up complete</span>
+									<span className="status">Wrapping up</span>
 									<span className="message">Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.</span>
 								</h3>
 								<ul className="options">
@@ -353,7 +430,7 @@ export const Roundtable = () => {
 								<h3 className="issue">
 									<span className="number">Issue #2</span>
 									<span className="title">Checking In</span>
-									<span className="status">Sent June 2, 2020</span>
+									<span className="status">Complete</span>
 									<span className="message">Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.</span>
 								</h3>
 								<ul className="options">
@@ -426,7 +503,7 @@ export const Roundtable = () => {
 								<h3 className="issue">
 									<span className="number">Issue #1</span>
 									<span className="title">Welcome to the Advisors Roundtable!</span>
-									<span className="status">Sent June 1, 2020</span>
+									<span className="status">Complete</span>
 									<span className="message">Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed. Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.Zefhir’s is a parachute rescue system for turbine helicopters. Installed above the main rotor, the parachute is designed as a backup for conditions where autorotation cannot be performed.</span>
 								</h3>
 								<ul className="options">
