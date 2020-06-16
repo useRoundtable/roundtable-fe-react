@@ -178,39 +178,139 @@ code {
 }
 
 @keyframes waiting {
-	0% {width:6px;height:6px;opacity:0;}
-	12% {width:6px;height:6px;opacity:1;}
-	24% {width:6px;height:6px;opacity:1;}
-	70% {width:6px;height:6px;opacity:0;}
-	100% {width:6px;height:6px;opacity:0;}
+	0% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	12% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	24% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	70% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	100% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
 }
 @-moz-keyframes waiting {
-	0% {width:6px;height:6px;opacity:0;}
-	12% {width:6px;height:6px;opacity:1;}
-	24% {width:6px;height:6px;opacity:1;}
-	70% {width:6px;height:6px;opacity:0;}
-	100% {width:6px;height:6px;opacity:0;}
+	0% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	12% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	24% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	70% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	100% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
 }
 @-webkit-keyframes waiting {
-	0% {width:6px;height:6px;opacity:0;}
-	12% {width:6px;height:6px;opacity:1;}
-	24% {width:6px;height:6px;opacity:1;}
-	70% {width:6px;height:6px;opacity:0;}
-	100% {width:6px;height:6px;opacity:0;}
+	0% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	12% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	24% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	70% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	100% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
 }
 @-ms-keyframes waiting {
-	0% {width:6px;height:6px;opacity:0;}
-	12% {width:6px;height:6px;opacity:1;}
-	24% {width:6px;height:6px;opacity:1;}
-	70% {width:6px;height:6px;opacity:0;}
-	100% {width:6px;height:6px;opacity:0;}
+	0% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	12% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	24% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	70% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	100% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
 }
 @-o-keyframes waiting {
-	0% {width:6px;height:6px;opacity:0;}
-	12% {width:6px;height:6px;opacity:1;}
-	24% {width:6px;height:6px;opacity:1;}
-	70% {width:6px;height:6px;opacity:0;}
-	100% {width:6px;height:6px;opacity:0;}
+	0% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	12% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	24% {
+		width: 6px;
+		height: 6px;
+		opacity: 1;
+	}
+	70% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
+	100% {
+		width: 6px;
+		height: 6px;
+		opacity: 0;
+	}
 }
 
 /* Resets */
@@ -542,7 +642,8 @@ a.button {
 	border-radius: 10px;
 }
 a.button.notPriority {
-	border: 1px solid transparent;color:rgba(15,30,30,0.5);
+	border: 1px solid transparent;
+	color: rgba(15, 30, 30, 0.5);
 }
 a.button.new {
 	padding: 5px 20px 5px calc(20px - 0.5em);
@@ -729,8 +830,8 @@ ul.grid > li {
 	position: relative;
 	display: inline-block;
 	white-space: nowrap;
-	line-height: calc(2.1em / .8 - 2px);
-	font-size: .8em;
+	line-height: calc(2.1em / 0.8 - 2px);
+	font-size: 0.8em;
 }
 .roundtable > section > li > span + img {
 	position: absolute;
