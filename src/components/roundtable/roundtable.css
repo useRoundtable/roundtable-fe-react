@@ -425,7 +425,7 @@ article.edit section.issue article.answers p:last-of-type {padding-bottom:0;}
 article.edit section.issue article.answers h4 + p {line-height:1.5em;}
 article.edit section.issue article.answers section.answer {padding:0;}
 article.edit section.issue article.answers section.answer + section.answer {padding:2.5em 0 0 0;}
-article.edit section.issue article.answers section.answer > ul.stats {padding:1em 1.5em 0;}
+article.edit section.issue article.answers section.answer > ul.stats {position:relative;padding:1em 1.5em 0;z-index:3;}
 article.edit section.issue article.answers section.answer > ul.stats li {line-height:4em;}
 article.edit section.issue article.answers section.answer > ul.stats li.members ul.members li {width:3em;height:3em;line-height:3em;}
 article.edit section.issue article.answers section.answer > ul.stats li.members ul.members li > em {line-height:calc((3em / .7) - 6px);}
