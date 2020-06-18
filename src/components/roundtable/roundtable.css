@@ -237,11 +237,22 @@ article.edit ul.stats li.members:hover ul.members li {
 article.edit ul.stats > li.date {float:right;margin:0 0 0 1em;color:rgba(15,30,30,0.25);}
 article.edit ul.stats > li.date:before {display:none;}
 article.edit ul.stats > li.hideBullet:before {display:none;}
+article.edit ul.stats > li.sort {float:right;margin:0 0 0 1em;}
+article.edit ul.stats > li.sort ul.sort {position:relative;display:inline-block;}
+article.edit ul.stats > li.sort ul.sort li {position:relative;display:inline-block;margin:0;padding:0 10px;font-size:1em;line-height:3em;color:rgba(15,30,30,0.3);font-weight:700;border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-right-radius:100px;border-bottom-left-radius:100px;cursor:pointer;transition:color 0.2s ease-in-out;}
+article.edit ul.stats > li.sort ul.sort li:last-child {margin-right:-10px;}
+article.edit ul.stats > li.sort ul.sort li:hover {}
+article.edit ul.stats > li.sort ul.sort:hover > li.selected {color:rgba(15, 30, 30, 0.3);}
+article.edit ul.stats > li.sort ul.sort > li.selected,
+article.edit ul.stats > li.sort ul.sort:hover > li:hover {color:rgba(15, 30, 30, 1);}
+article.edit ul.stats > li.sort ul.sort > li:after {content:"";position:absolute;top:calc(100% - 5px);left:50%;width:calc(100% - 20px);height:5px;background:rgba(255,220,0,1);opacity:0;border-radius:10px;transform:translate(-50%,0);z-index:-1;transition:top 0.2s ease-in-out, opacity 0.2s ease-in-out;z-index:0;}
+article.edit ul.stats > li.sort ul.sort:hover > li.selected:after {top:calc(100% - 5px);opacity:0;}
+article.edit ul.stats > li.sort ul.sort > li.selected:after, article.edit ul.stats > li.sort ul.sort:hover > li:hover:after {top:calc(100% - 8px);opacity:1;}
 article.edit ul.stats li.members ul.members li:empty {
 	background:rgba(247,248,248,1);
 }
 article.edit ul.stats ul.members li img {
-	width: 100%;
+	width:100%;
 	height: 100%;
 	object-fit: cover;
 }
@@ -266,7 +277,7 @@ article.edit ul.stats ul.members.waiting li:nth-of-type(3):after {
 	-o-animation: waiting 1.8s .4s linear infinite;
 	animation: waiting 1.8s .4s linear infinite;
 }
-article.edit div.content {position:absolute;bottom:0;left:0;width:100%;height:calc(100% - (((2.5em * 1.15) + 30px) + ((1.2em * .85 * 3) + 11px)));height:calc(100% - 5.935em - 41px);background:rgba(15, 30, 30, 0.005);text-align:left;overflow:hidden;overflow-y:auto;color:transparent;transition:color .2s ease-in-out;}
+article.edit div.content {position:absolute;bottom:0;left:0;width:100%;/*height:calc(100% - (((2.5em * 1.15) + 30px) + ((1.2em * .85 * 3) + 11px)));*/height:calc(100% - 5.935em - 41px);background:rgba(15, 30, 30, 0.005);text-align:left;overflow:hidden;overflow-y:auto;color:transparent;transition:color .2s ease-in-out;}
 article.edit div.content::-webkit-scrollbar {width:12px;}
 article.edit div.content::-webkit-scrollbar-thumb {border-radius:10px;background-color:currentColor;border:3px solid rgba(0, 0, 0, 0);background-clip:padding-box;transition:background-color .15s ease-in-out;}
 article.edit div.content:hover {color:rgba(15,30,30,0.15);}
@@ -407,6 +418,30 @@ article.edit section.issue article.questionList ul.questionList > li:after {cont
 article.edit section.issue article.questionList ul.questionList > li.done:after {transform:translate(calc(-50% + .1em),calc(-50% - .35em)) rotate(-50deg) scale(1);opacity:1;}
 article.edit section.issue article.questionList ul.questionList > li h4 {line-height:1.5em;}
 article.edit section.issue article.questionList ul.questionList > li:hover {background:rgba(15,30,30,0.03);}
+article.edit section.issue article.answers {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
+article.edit section.issue article.answers.header {padding:1.5em 0 0;}
+article.edit section.issue article.answers p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
+article.edit section.issue article.answers p:last-of-type {padding-bottom:0;}
+article.edit section.issue article.answers h4 + p {line-height:1.5em;}
+article.edit section.issue article.answers section.answer {padding:0;}
+article.edit section.issue article.answers section.answer + section.answer {padding:2.5em 0 0 0;}
+article.edit section.issue article.answers section.answer > ul.stats {padding:1em 1.5em 0;}
+article.edit section.issue article.answers section.answer > ul.stats li {line-height:4em;}
+article.edit section.issue article.answers section.answer > ul.stats li.members ul.members li {width:3em;height:3em;line-height:3em;}
+article.edit section.issue article.answers section.answer > ul.stats li.members ul.members li > em {line-height:calc((3em / .7) - 6px);}
+article.edit section.issue article.answers section.answer .answerContent {position:relative;display:block;padding:1.5em 1em 1em 4.5em;background:rgba(255,255,255,1);border-radius:1.5em;box-shadow:10px 15px 15px 5px rgba(15, 30, 30, 0.05), 0 0 8px 0 rgba(150, 30, 30, 0.03);z-index:2;}
+article.edit section.issue article.answers section.answer .answerContent:before {content:'';position:absolute;top:100%;left:4em;width:0;height:0;border-top: 1em solid rgba(255,255,255,1);border-right: 1em solid transparent;border-bottom: 1em solid transparent;border-left: 1em solid transparent;z-index:2;}
+article.edit section.issue article.answers section.answer .answerContent + .carat {content:'';position:relative;left:4.25em;width:0;height:0;margin:0 -1.5em -1.5em 0;border-top: 0.75em solid transparent;border-right: 0.75em solid transparent;border-bottom: 0.75em solid transparent;border-left: 0.75em solid transparent;transform:rotate(45deg) translate(-35%,-35%);transform-origin:50% 50%;box-shadow:5px 5px 15px 5px rgba(15, 30, 30, 0.05), 0 0 8px 0 rgba(150, 30, 30, 0.03);z-index:-1;}
+article.edit section.issue article.answers section.answer .answerContent > ul.kudos {position:absolute;top:-.5em;left:-.5em;}
+article.edit section.issue article.answers section.answer .answerContent > ul.kudos li {width:1.5em;height:1.5em;margin:0;padding:0;color:rgba(255,125,125,0.25);background:rgba(255,255,255,1);border-radius:50%;font-size:2em;line-height:1.5em;text-align:center;cursor:pointer;box-shadow:7px 10px 10px 3px rgba(15, 30, 30, 0.05), 0 0 5px 0 rgba(150, 30, 30, 0.03);transform:translate(0,0) scale(1);transform-origin:25% 25%;transition:all .2s ease-in-out;}
+article.edit section.issue article.answers section.answer .answerContent > ul.kudos li:hover {transform:translate(-1px,-3px) scale(1);background:rgba(255,255,255,1);color:rgba(255,125,125,1);box-shadow:10px 15px 15px 5px rgba(15, 30, 30, 0.05), 0 0 8px 0 rgba(150, 30, 30, 0.03);}
+article.edit section.issue article.answers section.answer .answerContent > ul.kudos.selected li {background:rgba(255,125,125,1);color:rgba(255,255,255,1);}
+article.edit section.issue article.answers section.answer .answerContent > ul.kudos.selected li:hover {background:rgba(15,30,30,1);color:rgba(255,255,255,0.25);transform:translate(3px,5px) scale(0.9);}
+article.edit section.issue article.answers section.answer .answerContent ul.stats > li:first-child {margin:0 1em 0 -10px;}
+article.edit section.issue article.answers h6.answerNumber {padding:.5em 0;font-size:0.85rem;font-weight:500;color:rgba(15,30,30,0.5);}
+article.edit section.issue article.answers h4.answer {padding:0 0 .25em;}
+article.edit section.issue article.answers h4.answer:last-child {padding-bottom:calc(1em / 3 * 2);}
+
 article.edit section.issue ul.options li {
 	position: relative;
 	display: inline-block;
@@ -420,6 +455,7 @@ article.edit section.issue ul.stats > li:before {display:none;}
 
 article.edit section.issue.answer textarea {display:block;width:100%;min-height:100px;margin:.25em 0 1em;padding:1em;background:rgba(255,255,255,1);color:rgba(15,30,30,0.85);font-size:1em;font-family:"Montserrat", Helvetica, Arial, sans-serif;border:1px solid rgba(15,30,30,0.1);border-radius:1em;outline:0;transition:border .35s ease-in-out, min-height .35s ease-in-out;}
 article.edit section.issue.answer textarea:focus {min-height:250px;border:1px solid rgba(15,30,30,0.15);}
+article.edit section.issue.answer textarea:valid {min-height:250px;}
 
 @media only screen and (max-width: 1024px) {
 	body.editing > nav {

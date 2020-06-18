@@ -507,6 +507,9 @@ label {
 	color: rgba(15, 30, 30, 0.5);
 	margin: 0;
 }
+.textLeft {text-align:left;}
+.textCenter {text-align:center;}
+.textRight {text-align:right;}
 
 main {
 	position: relative;
@@ -641,6 +644,7 @@ a.button {
 	transition: all 0.15s ease-in-out;
 	border-radius: 10px;
 }
+a.button.big {padding:20px 30px;}
 a.button.notPriority {
 	border: 1px solid transparent;
 	color: rgba(15, 30, 30, 0.5);
