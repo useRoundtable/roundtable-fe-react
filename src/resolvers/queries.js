@@ -18,6 +18,11 @@ export const ROUNDTABLES = gql`
 			createdAt
 			roundtableName
 			description
+			members {
+				user {
+					userName
+				}
+			}
 		}
 	}
 `;

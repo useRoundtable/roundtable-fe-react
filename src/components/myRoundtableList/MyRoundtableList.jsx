@@ -1,24 +1,16 @@
 import React from "react";
 import "./myRoundtableList.css";
-import { enterRoundtable, exitRoundtable } from "../../utils";
+import { enterRoundtable } from "../../utils";
+import { RTAnimation } from "../animation/roundtableAni";
 
 export const MyRoundtableList = ({
-	props: { roundtableName, description },
+	props: { roundtableName, description, members },
 }) => {
 	document.body.classList.remove("editing");
 	return (
 		<>
 			<section className="table">
-				<ul className="roundtable">
-					<h5></h5>
-					<section>
-						<li className="empty">
-							<span>
-								<span>+ Invite A Friend</span>
-							</span>
-						</li>
-					</section>
-				</ul>
+				<RTAnimation props={members} />
 				<h2>{roundtableName}</h2>
 				<ul className="stats">
 					<li>Only You</li>

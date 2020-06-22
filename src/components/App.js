@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Home } from "./home/Home.jsx";
 import { NavBar } from "./navigation/NavBar";
 import { Dashboard } from "./dashboard/Dashboard";
-import { Roundtables } from "./animation/roundtableAni.jsx";
+import { RTAnimation } from "./animation/roundtableAni.jsx";
 import { Roundtable } from "./roundtable/roundtable.jsx";
 import { Login } from "./login/Login";
 
@@ -11,16 +11,24 @@ import "./App.css";
 
 function App() {
 	// Define the function here
-	return (
-		<Router>
-			{/* <NavBar /> */}
-			<Route exact path="/" component={Home} />
-			<Route path="/rtanimation" component={Roundtables} />
-			<Route path="/dashboard" component={Dashboard} />
-			<Route path="/roundtable" component={Roundtable} />
-			<Route path="/login" component={Login} />
-		</Router>
-	);
+	// This if else chain is taking the URL after the initial / and rendering the desired components.
+	if (window.location.pathname === "/") {
+		return (
+			<Router>
+				<Route exact path="/" component={Home} />
+			</Router>
+		);
+	} else {
+		return (
+			<Router>
+				<NavBar />
+				<Route path="/rtanimation" component={RTAnimation} />
+				<Route path="/dashboard" component={Dashboard} />
+				<Route path="/roundtable" component={Roundtable} />
+				<Route path="/login" component={Login} />
+			</Router>
+		);
+	}
 }
 
 export default App;

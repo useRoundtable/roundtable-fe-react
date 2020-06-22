@@ -1,5 +1,5 @@
 import React from "react";
-import { enterRoundtable, exitRoundtable } from "../../utils";
+import { enterRoundtable } from "../../utils";
 
 export const CreateRoundtable = () => {
 	document.body.classList.remove("editing");
@@ -7,7 +7,6 @@ export const CreateRoundtable = () => {
 		<>
 			<section className="table">
 				<ul className="roundtable">
-					<h5></h5>
 					<section>
 						<li className="empty">
 							<span>
