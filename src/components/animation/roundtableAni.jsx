@@ -30,11 +30,20 @@ export const RTAnimation = ({ members }) => {
 										</span>
 									</li>
 								);
+							} else if (user.avatar) {
+								return (
+									<li>
+										<span>
+											<span>{user.userName}</span>
+										</span>
+										<img src={user.avatar} />
+									</li>
+								);
 							} else {
 								return (
 									<li>
 										<span>
-											<span>User {user.id}</span>
+											<span>User # {user.id}</span>
 										</span>
 									</li>
 								);
