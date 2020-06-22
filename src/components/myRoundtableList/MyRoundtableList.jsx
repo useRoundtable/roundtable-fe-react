@@ -10,7 +10,7 @@ export const MyRoundtableList = ({
 	return (
 		<>
 			<section className="table">
-				<RTAnimation props={members} />
+				<RTAnimation members={members} />
 				<h2>{roundtableName}</h2>
 				<ul className="stats">
 					<li>Only You</li>
