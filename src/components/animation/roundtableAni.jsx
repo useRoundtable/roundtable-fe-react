@@ -1,7 +1,7 @@
 import React from "react";
 import "./roundtableAni.css";
 
-export const Roundtables = () => {
+export const RTAnimation = (props) => {
 	return (
 		<>
 			<ul className="roundtable">
