@@ -20,6 +20,7 @@ export const ROUNDTABLES = gql`
 			description
 			members {
 				user {
+					id
 					userName
 				}
 			}
