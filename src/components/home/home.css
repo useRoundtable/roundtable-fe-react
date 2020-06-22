@@ -215,12 +215,12 @@ header nav.light > ul:hover li:hover h6 {
 	color: rgba(15, 30, 30, 1);
 }
 
-.home header figure {
+.home header div.homeContent {
 	background: rgba(15, 30, 30, 1) url() center center;
 	border-radius: calc(2vw + 50px);
 }
-.home header figure img.main {
-	position: absolute;
+.home header div.homeContent img.main {
+	position: relative;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -228,25 +228,25 @@ header nav.light > ul:hover li:hover h6 {
 	object-fit: cover;
 	border-radius: calc(2vw + 50px);
 }
-.home header figure img.extra {
+.home header div.homeContent img.extra {
 	position: absolute;
 	z-index: -1;
 	max-width: 500px;
 	max-height: 500px;
 }
-.home header figure img.top {
+.home header div.homeContent img.top {
 	top: -50px;
 }
-.home header figure img.right {
+.home header div.homeContent img.right {
 	right: -100px;
 }
-.home header figure img.bottom {
+.home header div.homeContent img.bottom {
 	bottom: -50px;
 }
-.home header figure img.left {
+.home header div.homeContent img.left {
 	left: -100px;
 }
-.home header figure img.inside {
+.home header div.homeContent img.inside {
 }
 
 /* .extra_left_bottom {
