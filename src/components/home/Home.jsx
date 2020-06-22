@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import { pattern4 } from "../../images/pattern-4.png";
+import { HomeContent } from "./homeContent/HomeContent";
 
 export const Home = () => {
+	const [display, setDisplay] = useState("");
+	// console.log(display);
+
 	return (
 		<div className="home">
 			<header>
@@ -49,28 +53,29 @@ export const Home = () => {
 						<p>Stay on top of things with simple two-way newsletters.</p>
 					</form>
 				</div>
-				<figure>
+				<div className="homeContent">
 					<nav>
 						<ul>
 							<li className="selected">
-								<a href="onboard.html">
+								<a onClick={() => setDisplay("onboard")}>
 									<h6>Join</h6>
 								</a>
 							</li>
 							<li>
-								<a href="explore.html">
+								<a onClick={() => setDisplay("explore")}>
 									<h6>Explore</h6>
 								</a>
 							</li>
 							<li>
-								<a href="price.html">
+								<a onClick={() => setDisplay("pricing")}>
 									<h6>Price</h6>
 								</a>
 							</li>
 						</ul>
 						{/* <img src={pattern4} alt="Background pattern"></img> */}
 					</nav>
-				</figure>
+					<HomeContent display={display} />
+				</div>
 			</header>
 		</div>
 	);
