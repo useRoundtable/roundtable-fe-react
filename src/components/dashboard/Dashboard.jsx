@@ -1,5 +1,4 @@
 import React from "react";
-import { NavBar } from "../navigation/NavBar";
 import { MyRoundtableList } from "../myRoundtableList/MyRoundtableList";
 import { CreateRoundtable } from "../createRoundtable/CreateRoundtable";
 import { useQuery } from "@apollo/react-hooks";
@@ -9,10 +8,9 @@ import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 export const Dashboard = () => {
 	const { loading, error, data } = useQuery(RTbyUID);
 	if (loading) return <h1>LOADING....</h1>;
-	if (error) return console.log(error), null;
+	if (error) return console.log(error);
 	return (
 		<>
-			<NavBar />
 			<main>
 				<article className="myRoundtables">
 					{data.roundtablesByUserId.map((table) => {
