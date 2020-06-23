@@ -2,12 +2,23 @@ import React from "react";
 import { MyRoundtableList } from "../myRoundtableList/MyRoundtableList";
 import { CreateRoundtable } from "../createRoundtable/CreateRoundtable";
 import { useQuery } from "@apollo/react-hooks";
+import { RTAnimation } from "../animation/roundtableAni";
 
 import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 
 export const Dashboard = () => {
 	const { loading, error, data } = useQuery(RTbyUID);
-	if (loading) return <h1>LOADING....</h1>;
+	if (loading) {
+		return (
+			<>
+				<main>
+					<article className="myRoundtables">
+						<RTAnimation members={[]} />
+					</article>
+				</main>
+			</>
+		);
+	}
 	if (error) return console.log(error);
 	return (
 		<>
