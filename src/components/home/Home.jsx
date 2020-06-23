@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import "./home.css";
-import { pattern4 } from "../../images/pattern-4.png";
 import { HomeContent } from "./homeContent/HomeContent";
 
 export const Home = () => {
-	const [display, setDisplay] = useState("");
-
-
-	// console.log(display);
+	const [display, setDisplay] = useState("onboard");
 
 	return (
 		<div className="home">
@@ -58,23 +54,31 @@ export const Home = () => {
 				<div className="homeContent">
 					<nav>
 						<ul>
-							<li className="onboard selected">
-								<a onClick={() => setDisplay("onboard")}>
+							<li
+								className={display === "onboard" ? "selected" : ""}
+								onClick={() => setDisplay("onboard")}
+							>
+								<a href="javascript:void(0)">
 									<h6>Join</h6>
 								</a>
 							</li>
-							<li className="explore">
-								<a onClick={() => setDisplay("explore")}>
+							<li
+								className={display === "explore" ? "selected" : ""}
+								onClick={() => setDisplay("explore")}
+							>
+								<a href="javascript:void(0)">
 									<h6>Explore</h6>
 								</a>
 							</li>
-							<li classname="pricing">
-								<a onClick={() => setDisplay("pricing")}>
+							<li
+								classname={display === "pricing" ? "selected" : ""}
+								onClick={() => setDisplay("pricing")}
+							>
+								<a href="javascript:void(0)">
 									<h6>Price</h6>
 								</a>
 							</li>
 						</ul>
-						{/* <img src={pattern4} alt="Background pattern"></img> */}
 					</nav>
 					<HomeContent display={display} />
 				</div>
