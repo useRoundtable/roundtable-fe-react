@@ -1,5 +1,4 @@
 import React from "react";
-import { NavBar } from "../navigation/NavBar";
 import "./roundtable.css";
 import { enterRoundtable, exitRoundtable } from "../../utils";
 
@@ -7,7 +6,6 @@ export const Roundtable = () => {
 	document.body.classList.add("editing");
 	return (
 		<>
-			<NavBar />
 			<article className="edit show">
 				<header>
 					<h2>Advisors</h2>

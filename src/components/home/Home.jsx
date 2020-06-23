@@ -5,12 +5,14 @@ import { HomeContent } from "./homeContent/HomeContent";
 
 export const Home = () => {
 	const [display, setDisplay] = useState("");
+
+
 	// console.log(display);
 
 	return (
 		<div className="home">
 			<header>
-				<div>
+				<div className="hero">
 					<nav className="light">
 						<ul>
 							<li>
@@ -56,17 +58,17 @@ export const Home = () => {
 				<div className="homeContent">
 					<nav>
 						<ul>
-							<li className="selected">
+							<li className="onboard selected">
 								<a onClick={() => setDisplay("onboard")}>
 									<h6>Join</h6>
 								</a>
 							</li>
-							<li>
+							<li className="explore">
 								<a onClick={() => setDisplay("explore")}>
 									<h6>Explore</h6>
 								</a>
 							</li>
-							<li>
+							<li classname="pricing">
 								<a onClick={() => setDisplay("pricing")}>
 									<h6>Price</h6>
 								</a>

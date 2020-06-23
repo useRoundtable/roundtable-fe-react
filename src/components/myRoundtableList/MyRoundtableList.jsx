@@ -42,8 +42,6 @@ export const MyRoundtableList = ({
 					</li>
 				</ul>
 			</section>
-			<article class="edit"></article>
-			<div class="close"></div>
 		</>
 	);
 };

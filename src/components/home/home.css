@@ -45,7 +45,7 @@ header {
 	padding: calc(100vh - 100px) 0 0 0;
 	float: left;
 }
-.home header form {
+.home header .hero form {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -53,7 +53,7 @@ header {
 	transform: translate(-50%, -50%);
 }
 
-.home form .field {
+.home .hero form .field {
 	position: relative;
 	display: flex;
 	border: 1px solid rgba(15, 30, 30, 0.25);
@@ -62,7 +62,7 @@ header {
 	font-size: 0;
 	overflow: hidden;
 }
-.home input {
+.home .hero input {
 	position: relative;
 	flex: auto;
 	float: left;
@@ -73,24 +73,24 @@ header {
 	background: transparent;
 	font-size: 1.25rem;
 }
-.home input + label {
+.home .hero input + label {
 	position: absolute;
 	left: 20px;
 	transition: all 0.1s ease-in-out;
 }
-.home input[value=""] + label {
+.home .hero input[value=""] + label {
 	top: 5px;
 	line-height: 3rem;
 	font-size: 1.25rem;
 }
-.home input:focus + label,
-.home .field.selected input + label {
+.home .hero input:focus + label,
+.home .hero .field.selected input + label {
 	top: 10px;
 	font-size: 0.6rem;
 	line-height: 0.6em;
 	opacity: 0.5;
 }
-.home a.button {
+.home .hero a.button {
 	position: relative;
 	flex: auto;
 	float: left;
@@ -111,8 +111,8 @@ header {
 	outline: 0;
 	transition: all 0.15s ease-in-out;
 }
-.home a.button:hover,
-.home a.button:focus {
+.home .hero a.button:hover,
+.home .hero a.button:focus {
 	background: rgba(15, 30, 30, 1);
 	color: rgba(255, 220, 0, 1);
 }
@@ -148,6 +148,7 @@ header nav > ul li {
 	float: none;
 	text-align: center;
 	z-index: 2;
+	cursor:pointer;
 }
 header nav > ul li a {
 	display: block;
@@ -216,8 +217,19 @@ header nav.light > ul:hover li:hover h6 {
 }
 
 .home header div.homeContent {
-	background: rgba(15, 30, 30, 1) url() center center;
+	background: rgba(15, 30, 30, 1);
+	background-size:;
 	border-radius: calc(2vw + 50px);
+}
+.home header div.homeContent:before {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:transparent url(../../images/pattern-4.png) center center;
+	opacity:0.2;
 }
 .home header div.homeContent img.main {
 	position: relative;
@@ -248,6 +260,88 @@ header nav.light > ul:hover li:hover h6 {
 }
 .home header div.homeContent img.inside {
 }
+
+.home header div.homeContent > article {
+	position:absolute;
+	top:30%;
+	left:50%;
+	width:100%;
+	max-width:calc(100% - 100px);
+	max-height:calc(100% - 170px);
+	padding:50px;
+	border-radius:1em;
+	transform:translate(-50%,-20%);
+	overflow:hidden;
+}
+
+.home header div.homeContent > article * {color:rgba(255,255,255,1);}
+.home header div.homeContent form .field {
+	position: relative;
+	display: flex;
+	border-bottom: 1px solid rgba(255,255,255, 0.25);
+	background: transparent;
+	border-radius: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+.home header div.homeContent form .field.selected {
+	border-bottom:1px solid rgba(255,220,0,1);
+}
+.home header div.homeContent input {
+	position: relative;
+	flex: auto;
+	float: left;
+	outline: 0;
+	line-height: 3rem;
+	padding: 10px 0 0 0;
+	border: 0;
+	background: transparent;
+	font-size: 1.25rem;
+}
+.home header div.homeContent input + label {
+	position: absolute;
+	left: 0px;
+	transition: all 0.1s ease-in-out;
+}
+.home header div.homeContent input[value=""] + label {
+	top: 5px;
+	line-height: 3rem;
+	font-size: 1.25rem;
+}
+.home header div.homeContent input:focus + label,
+.home header div.homeContent .field.selected input + label {
+	top: 10px;
+	font-size: 0.6rem;
+	line-height: 0.6em;
+	opacity: 0.5;
+}
+.home header div.homeContent form div:last-of-type {margin-bottom:2rem;}
+
+.home header div.homeContent a.button {
+	position: relative;
+	flex: auto;
+	float: left;
+	line-height: 50px;
+	padding: 5px 20px;
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.25rem;
+	line-height: 3rem;
+	text-decoration: none;
+	color: rgba(255,220,0, 1);
+	border: 0;
+	border: 1px solid rgba(255,220,0, 0.25);
+	font-weight: 600;
+	white-space: nowrap;
+	outline: 0;
+	transition: all 0.15s ease-in-out;
+}
+.home header div.homeContent a.button:hover,
+.home header div.homeContent a.button:focus {
+	background: rgba(255,220,0, 1);
+	color: rgba(15,30,30, 1);
+}
+
 
 /* .extra_left_bottom {
 	opacity: 0.75;

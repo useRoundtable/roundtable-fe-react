@@ -19,6 +19,8 @@ export const Dashboard = () => {
 					<CreateRoundtable />
 				</article>
 			</main>
+			<article class="edit"></article>
+			<div class="close"></div>
 		</>
 	);
 };
