@@ -6,6 +6,7 @@ import { Dashboard } from "./dashboard/Dashboard";
 import { RTAnimation } from "./animation/roundtableAni.jsx";
 import { Roundtable } from "./roundtable/roundtable.jsx";
 import { Login } from "./login/Login";
+import { NewRoundtable } from "./createRoundtable/newRoundtable/NewRoundtable";
 
 import "./App.css";
 
@@ -26,6 +27,7 @@ function App() {
 				<Route path="/dashboard" component={Dashboard} />
 				<Route path="/roundtable" component={Roundtable} />
 				<Route path="/login" component={Login} />
+				<Route path="/new" component={NewRoundtable} />
 			</Router>
 		);
 	}
