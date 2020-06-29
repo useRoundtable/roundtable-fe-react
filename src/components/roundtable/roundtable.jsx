@@ -2,7 +2,7 @@ import React from "react";
 import "./roundtable.css";
 import { RoundtableHeader } from "./header/RoundtableHeader";
 import { IssueView } from "./issueView/IssueView";
-import { IssueResponses } from "./issueResponses/IssueResponses";
+import { QuestionResponses } from "./questionResponses/QuestionResponses";
 import { IssueList } from "./issueList/IssueList";
 import { MemberView } from "./members/MemberView";
 
@@ -15,7 +15,7 @@ export const Roundtable = () => {
 				<div className="content">
 					<IssueView />
 
-					<IssueResponses />
+					<QuestionResponses />
 
 					<section className="issueCreate">
 						<h4>
