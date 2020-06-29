@@ -31,7 +31,7 @@ export const CreateRoundtable = () => {
 					<li>
 						<a
 							className="button new"
-							onClick={(e) => enterRoundtable(e, "/new")}
+							onClick={(e) => enterRoundtable(e, "/roundtable")}
 						>
 							Create
 						</a>
