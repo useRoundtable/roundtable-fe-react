@@ -21,7 +21,6 @@ export const RTAnimation = ({ members }) => {
 				<ul className="roundtable">
 					<section>
 						{members.map(({ user }) => {
-							console.log(user, "person");
 							if (user.userName) {
 								return (
 									<li>

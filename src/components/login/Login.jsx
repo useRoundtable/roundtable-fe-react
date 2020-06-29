@@ -9,7 +9,6 @@ export const Login = () => {
 	const [password, setPassword] = useState("");
 	const [userLogin, { loading }] = useMutation(login, {
 		onCompleted({ login }) {
-			console.log(login);
 			localStorage.setItem("authorization", `Bearer ${login.token}`);
 			window.location.assign("/dashboard");
 		},
