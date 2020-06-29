@@ -14,7 +14,6 @@ export const Join = () => {
 
 	const [registerUser, { loading }] = useMutation(register, {
 		onCompleted({ createUser }) {
-			console.log(createUser.token);
 			localStorage.setItem("authorization", `Bearer ${createUser.token}`);
 			window.location.assign("/dashboard");
 		},
