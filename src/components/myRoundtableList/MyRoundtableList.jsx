@@ -4,7 +4,7 @@ import { enterRoundtable } from "../../utils";
 import { RTAnimation } from "../animation/roundtableAni";
 
 export const MyRoundtableList = ({
-	props: { roundtableName, description, members },
+	props: { roundtableName, description, members, id },
 }) => {
 	document.body.classList.remove("editing");
 	return (
