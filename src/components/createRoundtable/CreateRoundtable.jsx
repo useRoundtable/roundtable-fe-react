@@ -38,8 +38,8 @@ export const CreateRoundtable = () => {
 					</li>
 				</ul>
 			</section>
-			<article class="edit"></article>
-			<div class="close"></div>
+			<article className="edit"></article>
+			<div className="close"></div>
 		</>
 	);
 };
