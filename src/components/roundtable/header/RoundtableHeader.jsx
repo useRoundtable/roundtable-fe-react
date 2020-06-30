@@ -1,5 +1,6 @@
 import React from "react";
 import { exitRoundtable } from "../../../utils";
+import { Link } from "react-router-dom";
 
 export const RoundtableHeader = () => {
 	return (
@@ -15,7 +16,12 @@ export const RoundtableHeader = () => {
 			</header>
 			<nav>
 				<ul className="stats">
-					<li className="members">
+					<li
+						className="members"
+						onClick={() => {
+							window.location.assign("/roundtable/members");
+						}}
+					>
 						<ul className="members">
 							<li>
 								<em>SK</em>
@@ -63,8 +69,22 @@ export const RoundtableHeader = () => {
 						</ul>
 						10 Members
 					</li>
-					<li className="issues">6 issues</li>
-					<li className="responses new">32 New Responses</li>
+					<li
+						className="issues"
+						onClick={() => {
+							window.location.assign("/roundtable/");
+						}}
+					>
+						6 issues
+					</li>
+					<li
+						className="responses new"
+						onClick={() => {
+							window.location.assign("/roundtable/responses");
+						}}
+					>
+						32 New Responses
+					</li>
 				</ul>
 			</nav>
 		</>
