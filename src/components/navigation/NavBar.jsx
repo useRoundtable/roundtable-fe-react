@@ -32,8 +32,10 @@ export const NavBar = () => {
 					</Link>
 				</li>
 				<li>
-					<Link to="/account">
-						<h6>Account</h6>
+					<Link to="/login">
+						<h6 onClick={() => localStorage.removeItem("authorization")}>
+							Account
+						</h6>
 					</Link>
 				</li>
 			</ul>

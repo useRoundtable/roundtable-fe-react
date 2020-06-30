@@ -3,11 +3,15 @@ import { MyRoundtableList } from "../myRoundtableList/MyRoundtableList";
 import { CreateRoundtable } from "../createRoundtable/CreateRoundtable";
 import { useQuery } from "@apollo/react-hooks";
 import { RTAnimation } from "../animation/roundtableAni";
+import { Login } from "../login/Login";
 
 import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 
 export const Dashboard = () => {
 	const { loading, error, data } = useQuery(RTbyUID);
+
+	const token = localStorage.getItem("authorization");
+	console.log(data);
 	if (loading) {
 		return (
 			<>
@@ -19,7 +23,28 @@ export const Dashboard = () => {
 			</>
 		);
 	}
-	if (error) return console.log(error);
+	if (token === null) {
+		console.log("not logged in");
+		return (
+			<>
+				<h4>Please login to continue</h4>
+				<Login />
+			</>
+		);
+	} else if (error) {
+		console.log(error);
+		return (
+			<>
+				<main>
+					<article className="myRoundtables">
+						<h1>THERE WAS AN ERROR</h1>
+					</article>
+				</main>
+				<article className="edit"></article>
+				<div className="close"></div>
+			</>
+		);
+	}
 	return (
 		<>
 			<main>
@@ -30,8 +55,8 @@ export const Dashboard = () => {
 					<CreateRoundtable />
 				</article>
 			</main>
-			<article class="edit"></article>
-			<div class="close"></div>
+			<article className="edit"></article>
+			<div className="close"></div>
 		</>
 	);
 };
