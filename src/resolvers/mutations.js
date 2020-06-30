@@ -29,3 +29,14 @@ export const REGISTER = gql`
 		}
 	}
 `;
+
+export const CREATE_RT = gql`
+	mutation CreateRoundTable($roundtableName: String!, $description: String) {
+		createRoundtable(
+			roundtableName: $roundtableName
+			description: $description
+		) {
+			roundtableName
+		}
+	}
+`;
