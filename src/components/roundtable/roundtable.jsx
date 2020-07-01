@@ -1,5 +1,7 @@
 import React from "react";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Switch, Route, useRouteMatch, useParams } from "react-router-dom";
+
+import { useQuery } from "@apollo/react-hooks";
 
 import "./roundtable.css";
 import { RoundtableHeader } from "./header/RoundtableHeader";
@@ -8,21 +10,41 @@ import { QuestionResponses } from "./questionResponses/QuestionResponses";
 import { IssueList } from "./issueList/IssueList";
 import { MemberView } from "./members/MemberView";
 
+import { ROUNDTABLE as RTbyID } from "../../resolvers/queries";
+
 export const Roundtable = () => {
 	document.body.classList.add("editing");
 	const { path } = useRouteMatch();
+	const { id } = useParams();
+
+	const { loading, error, data } = useQuery(RTbyID, {
+		variables: { id },
+	});
+	if (loading) {
+		return <h2>loading</h2>;
+	} else if (error) {
+		console.log(error);
+		return <h2>error</h2>;
+	}
+	console.log(data);
 	return (
 		<>
 			<article className="edit show">
 				<RoundtableHeader />
 				<div className="content">
 					<Switch>
+						<Route
+							exact
+							path={`${path}/`}
+							render={(props) => (
+								<IssueList data={data.roundtableById.issues} />
+							)}
+						/>
 						<Route path={`${path}/issue/`} component={IssueView} />
 						<Route
 							path={`${path}/responses`}
 							component={QuestionResponses}
 						/>
-						<Route exact path={`${path}/`} component={IssueList} />
 						<Route path={`${path}/members`} component={MemberView} />
 						{/* <section className="issueCreate">
 							<h4>
