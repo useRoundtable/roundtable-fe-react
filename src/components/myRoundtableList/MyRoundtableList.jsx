@@ -27,7 +27,7 @@ export const MyRoundtableList = ({
 					<li>
 						<a
 							className="button new"
-							onClick={(e) => enterRoundtable(e, "/roundtable")}
+							onClick={(e) => enterRoundtable(e, `/roundtable/${id}`)}
 						>
 							View Responses
 						</a>

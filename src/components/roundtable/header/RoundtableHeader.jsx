@@ -83,7 +83,7 @@ export const RoundtableHeader = () => {
 							window.location.assign("/roundtable/responses");
 						}}
 					>
-						32 New Responses
+						33 New Responses
 					</li>
 				</ul>
 			</nav>

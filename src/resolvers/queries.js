@@ -27,3 +27,20 @@ export const ROUNDTABLES = gql`
 		}
 	}
 `;
+
+export const ROUNDTABLE = gql`
+	query roundtableById($id: ID!) {
+		roundtableById(id: $id) {
+			roundtableName
+			issues {
+				title
+			}
+			members {
+				user {
+					userName
+					id
+				}
+			}
+		}
+	}
+`;
