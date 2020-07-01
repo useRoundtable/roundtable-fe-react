@@ -25,7 +25,7 @@ function App() {
 				<NavBar />
 				<Route path="/rtanimation" component={RTAnimation} />
 				<Route path="/dashboard" component={Dashboard} />
-				<Route path="/roundtable" component={Roundtable} />
+				<Route path="/roundtable/:id" component={Roundtable} />
 				<Route path="/login" component={Login} />
 				<Route path="/new" component={NewRoundtable} />
 			</Router>
