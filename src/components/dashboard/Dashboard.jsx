@@ -11,7 +11,7 @@ export const Dashboard = () => {
 	const { loading, error, data } = useQuery(RTbyUID);
 
 	const token = localStorage.getItem("authorization");
-	console.log(data);
+	console.log("Data in Dash", data);
 	if (loading) {
 		return (
 			<>
@@ -50,7 +50,7 @@ export const Dashboard = () => {
 			<main>
 				<article className="myRoundtables">
 					{data.roundtablesByUserId.map((table) => {
-						return <MyRoundtableList props={table} />;
+						return <MyRoundtableList props={table} key={table.id} />;
 					})}
 					<CreateRoundtable />
 				</article>
