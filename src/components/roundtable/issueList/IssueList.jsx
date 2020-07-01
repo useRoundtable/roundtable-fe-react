@@ -1,7 +1,8 @@
 import React from "react";
 import { enterRoundtable, exitRoundtable } from "../../../utils";
 
-export const IssueList = () => {
+export const IssueList = ({ data }) => {
+	console.log("PROPS AND DATA IN ISSUE LIST", data);
 	return (
 		<section className="issueList">
 			<ul className="issueList">
