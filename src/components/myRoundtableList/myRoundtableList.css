@@ -38,6 +38,7 @@ section.table h2 {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+section.table span.message {display:block;margin:0 0 .5em 0;padding:.5em 0 0;color:rgba(15,30,30,0.25);font-size:0.45em;line-height:1.5em;font-weight:300;overflow:hidden;max-height:4em;word-wrap:break-word;-webkit-mask-image:linear-gradient(to bottom, black calc(1.5em), transparent calc(3.75em));mask-image:linear-gradient(to bottom, black calc(1.5em), transparent calc(3.75em));}
 section.table ul.stats {
 	font-size: 0;
 	padding: 5px 0 0 0;
