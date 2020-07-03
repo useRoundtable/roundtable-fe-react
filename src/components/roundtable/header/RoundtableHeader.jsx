@@ -1,8 +1,12 @@
 import React from "react";
 import { exitRoundtable } from "../../../utils";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+import { MemberList } from "../../memberList/MemberList";
 
 export const RoundtableHeader = () => {
+	const { id } = useParams();
+	console.log(id);
 	return (
 		<>
 			<header>
@@ -19,60 +23,16 @@ export const RoundtableHeader = () => {
 					<li
 						className="members"
 						onClick={() => {
-							window.location.assign("/roundtable/members");
+							window.location.assign(`/roundtable/${id}/members`);
 						}}
 					>
-						<ul className="members">
-							<li>
-								<em>SK</em>
-								{/*<img
-                            alt="avatar"
-                            src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg"
-                        />*/}
-							</li>
-							<li>
-								<img
-									alt="avatar"
-									src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
-								/>
-							</li>
-							<li>
-								<img
-									alt="avatar"
-									src="https://pbs.twimg.com/profile_images/524398486536474624/T_aUvkHo_400x400.jpeg"
-								/>
-							</li>
-							<li>
-								<img
-									alt="avatar"
-									src="https://pbs.twimg.com/profile_images/761998841117683712/janWwuyI_400x400.jpg"
-								/>
-							</li>
-							<li>
-								<img
-									alt="avatar"
-									src="https://pbs.twimg.com/profile_images/898262358476414977/Xletgru4_400x400.jpg"
-								/>
-							</li>
-							<li>
-								<img
-									alt="avatar"
-									src="https://pbs.twimg.com/profile_images/1925156946/tbrooks_400x400.jpg"
-								/>
-							</li>
-							<li>
-								<img
-									alt="avatar"
-									src="https://pbs.twimg.com/profile_images/556233917359853569/vvsGGZxc_400x400.jpeg"
-								/>
-							</li>
-						</ul>
+						<MemberList />
 						10 Members
 					</li>
 					<li
 						className="issues"
 						onClick={() => {
-							window.location.assign("/roundtable/");
+							window.location.assign(`/roundtable/${id}`);
 						}}
 					>
 						6 issues
@@ -80,7 +40,7 @@ export const RoundtableHeader = () => {
 					<li
 						className="responses new"
 						onClick={() => {
-							window.location.assign("/roundtable/responses");
+							window.location.assign(`/roundtable/${id}/responses`);
 						}}
 					>
 						33 New Responses
