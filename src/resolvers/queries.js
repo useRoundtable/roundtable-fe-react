@@ -44,3 +44,23 @@ export const ROUNDTABLE = gql`
 		}
 	}
 `;
+
+export const ISSUEBYID = gql`
+	query issueById($id: ID!) {
+		issueById(id: $id) {
+			title
+			issueAuthor {
+				userName
+			}
+			questions {
+				question
+				responses {
+					content
+					responseAuthor {
+						userName
+					}
+				}
+			}
+		}
+	}
+`;
