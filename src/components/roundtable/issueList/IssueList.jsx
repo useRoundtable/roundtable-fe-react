@@ -6,6 +6,24 @@ export const IssueList = ({ data }) => {
 	console.log("PROPS AND DATA IN ISSUE LIST", data);
 	const issueNumber = data.length;
 	let number = 0;
+	if (issueNumber === 0) {
+		return (
+			<>
+				<section className="issueList">
+					<h5>Create your first issue!</h5>
+					<ul className="issueList">
+						<li className="new">
+							<h3 className="issue">
+								<span className="number">Issue #{issueNumber + 1}</span>
+								<span className="title">New Issue&hellip;</span>
+								<a className="button">+ Create</a>
+							</h3>
+						</li>
+					</ul>
+				</section>
+			</>
+		);
+	}
 	return (
 		<section className="issueList">
 			<ul className="issueList">
