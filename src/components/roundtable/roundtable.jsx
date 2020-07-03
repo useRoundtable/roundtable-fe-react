@@ -26,7 +26,6 @@ export const Roundtable = () => {
 		console.log(error);
 		return <h2>error</h2>;
 	}
-	console.log(data);
 	return (
 		<>
 			<article className="edit show">
@@ -35,12 +34,15 @@ export const Roundtable = () => {
 					<Switch>
 						<Route
 							exact
-							path={`${path}/`}
+							path={`${path}`}
 							render={(props) => (
 								<IssueList data={data.roundtableById.issues} />
 							)}
 						/>
-						<Route path={`${path}/issue/`} component={IssueView} />
+						<Route
+							path={`${path}/issue/:issueid`}
+							component={IssueView}
+						/>
 						<Route
 							path={`${path}/responses`}
 							component={QuestionResponses}

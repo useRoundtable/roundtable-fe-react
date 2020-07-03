@@ -1,7 +1,8 @@
 import React from "react";
 
+import { ResponseList } from "../../../memberList/ResponseList";
+
 export const IssueCard = ({ card, number }) => {
-	console.log("card", card, number);
 	return (
 		<>
 			<ul className="issueList allIssues">
@@ -48,62 +49,7 @@ export const IssueCard = ({ card, number }) => {
 					<ul className="stats">
 						<li className="members">
 							11 Responses
-							<ul className="members">
-								<li>
-									<em>SK</em>
-								</li>
-								<li>
-									<em>TK</em>
-								</li>
-								<li>
-									<img
-										alt="avatar"
-										src="https://pbs.twimg.com/profile_images/524398486536474624/T_aUvkHo_400x400.jpeg"
-									/>
-								</li>
-								<li>
-									<img
-										alt="avatar"
-										src="https://pbs.twimg.com/profile_images/761998841117683712/janWwuyI_400x400.jpg"
-									/>
-								</li>
-								<li>
-									<img
-										alt="avatar"
-										src="https://pbs.twimg.com/profile_images/898262358476414977/Xletgru4_400x400.jpg"
-									/>
-								</li>
-								<li>
-									<img
-										alt="avatar"
-										src="https://pbs.twimg.com/profile_images/1925156946/tbrooks_400x400.jpg"
-									/>
-								</li>
-								<li>
-									<img
-										alt="avatar"
-										src="https://pbs.twimg.com/profile_images/556233917359853569/vvsGGZxc_400x400.jpeg"
-									/>
-								</li>
-								<li>
-									<img
-										alt="avatar"
-										src="https://pbs.twimg.com/profile_images/469397708986269696/iUrYEOpJ_400x400.png"
-									/>
-								</li>
-								<li>
-									<img
-										alt="avatar"
-										src="https://pbs.twimg.com/profile_images/1268256132532862977/GDvByy9-_400x400.jpg"
-									/>
-								</li>
-								<li>
-									<img
-										alt="avatar"
-										src="https://pbs.twimg.com/profile_images/1165749987185053696/zVMH2HkP_400x400.jpg"
-									/>
-								</li>
-							</ul>
+							<ResponseList />
 						</li>
 						<li className="kudos">&hearts; 482</li>
 						<li className="more">Edit Issue</li>
