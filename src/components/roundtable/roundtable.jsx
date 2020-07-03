@@ -21,7 +21,7 @@ export const Roundtable = () => {
 		variables: { id },
 	});
 	if (loading) {
-		return <h2>loading</h2>;
+		return <article className="edit show"></article>;
 	} else if (error) {
 		console.log(error);
 		return <h2>error</h2>;

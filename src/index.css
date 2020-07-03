@@ -583,7 +583,7 @@ section .button {
 .field {
 	position: relative;
 	display: block;
-	border: 1px solid rgba(15, 30, 30, 0.25);
+	border: 1px solid rgba(15, 30, 30, 0.05);
 	background: transparent;
 	border-radius: 10px;
 	font-size: 0;
@@ -599,6 +599,7 @@ section .button {
 .field input {
 	position: relative;
 	display: block;
+	width:100%;
 	outline: 0;
 	line-height: 3rem;
 	padding: 10px 0 0 20px;
@@ -643,6 +644,7 @@ section .button {
 	outline: 0;
 	transition: all 0.15s ease-in-out;
 	border-radius: 10px;
+	cursor:pointer;
 }
 .button.big {padding:20px 30px;}
 .button.notPriority {

@@ -1,10 +1,17 @@
+.login {position:absolute;top:calc(50vh - 100px);left:50%;transform:translate(-50%,-50%);width:100%;max-width:600px;}
+
+.login ul > li.logo {display:inline-block;}
+.login h3.logo {display:inline-block;}
+
 .logo {
 	line-height: 2em;
-	margin: 0 0.25em;
+	margin:0 0 0 0.25em;
 }
 
-.roundtableLogo {
+.roundtable.logo {
 	font-size: 7px;
 	vertical-align: middle;
 	margin: 0 2em 2em;
 }
+
+.get-started {width:100%;margin:1em auto 0;padding:30px;background:rgba(255,255,255,1);border-radius:2em;box-shadow:15px 20px 30px 10px rgba(15, 30, 30, 0.05), 0 0 15px 0 rgba(150, 30, 30, 0.03);}

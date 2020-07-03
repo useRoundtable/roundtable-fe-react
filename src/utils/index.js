@@ -6,9 +6,17 @@ export const enterRoundtable = (e, target) => {
     }, 250);
 };
 
+export const roundtableOpened = (e, target) => {
+    e.preventDefault();
+    document.body.classList.add("roundtableOpen");
+    setTimeout(() => {
+    	window.location.assign(target);
+    }, 0);
+};
+
 export const exitRoundtable = (e, target) => {
     e.preventDefault();
-    document.body.classList.remove("editing");
+    document.body.classList.remove("editing","roundtableOpen");
     setTimeout(() => {
     	window.location.assign(target);
     }, 250);
