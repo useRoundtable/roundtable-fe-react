@@ -18,21 +18,6 @@ export const NewRoundtable = () => {
 				<ul className="stats">
 					<li>Get Started</li>
 				</ul>
-				{/*<h5 className="issue">
-					<span className="number">Issue #1</span>
-					<span className="title">Hey everyone!</span>
-					<span className="status">Gathering Responses</span>
-				</h5>
-				<ul className="options">
-					<li>
-						<a
-							className="button new"
-							
-						>
-							Start a new roundtable
-						</a>
-					</li>
-				</ul>*/}
 			</section>
 		</>
 	);
