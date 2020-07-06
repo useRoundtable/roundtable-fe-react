@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
+import "../../index.css";
 import { useMutation } from "@apollo/react-hooks";
 
 import { LOGIN as login } from "../../resolvers/mutations";
@@ -19,10 +20,10 @@ export const Login = () => {
 	}
 	return (
 		<>
-			<nav>
+			<nav className="login">
 				<ul>
 					<li>
-						<ul className="roundtableLogo">
+						<ul className="roundtable logo">
 							<section>
 								<li></li>
 								<li></li>
@@ -32,8 +33,7 @@ export const Login = () => {
 						<h3 className="logo">Roundtable</h3>
 					</li>
 				</ul>
-			</nav>
-			<div class="get-started">
+				<div class="get-started">
 				<form>
 					<div className="field">
 						<input
@@ -72,6 +72,7 @@ export const Login = () => {
 					</a>
 				</form>
 			</div>
+			</nav>
 		</>
 	);
 };

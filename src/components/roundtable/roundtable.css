@@ -12,6 +12,7 @@
 .editing article.myRoundtables {
 	opacity: 0;
 }
+
 .editing main {
 	min-height: calc(100% - 40px);
 }
@@ -414,7 +415,7 @@ article.edit section.issue article.question ul.stats > li:before {display:none;}
 article.edit section.issue article.questionList {display:block;margin:0 auto;padding:0 0 2em;max-width:800px;}
 article.edit section.issue article.questionList ul.questionList {padding:2em 0 2em 0;}
 article.edit section.issue article.questionList h6.questionListHeader {padding:.5em 0;font-size:0.85rem;font-weight:500;color:rgba(15,30,30,0.5);}
-article.edit section.issue article.questionList ul.questionList > li {position:relative;display:inline-block;clear:both;padding:10px 20px 10px 3em;line-height:2em;border-radius:2em;margin:0 0 5px -10px;font-size:1em;font-weight:700;color:rgba(15,30,30,1);cursor:pointer;}
+article.edit section.issue article.questionList ul.questionList > li {position:relative;display:table/*avoid hover state spanning 100% width*/;clear:both;padding:10px 20px 10px 3em;line-height:2em;border-radius:2em;margin:0 0 5px -10px;font-size:1em;font-weight:700;color:rgba(15,30,30,1);cursor:pointer;}
 article.edit section.issue article.questionList ul.questionList > li:before {content:'';position:absolute;top:50%;left:1.5em;width:1em;height:1em;border-radius:25%;border:1px solid rgba(15,30,30,0.1);transform:translate(-50%,-50%);}
 article.edit section.issue article.questionList ul.questionList > li:after {content:'';position:absolute;top:50%;left:1.5em;width:0.85em;height:.5em;border-left:.25em solid rgba(255,220,0,1);border-bottom:.25em solid rgba(255,220,0,1);box-shadow:-2px 2px 1px 0 rgba(15,30,30,0.08);transform:translate(calc(-50% + .1em),calc(-50% - .35em)) rotate(-50deg) scale(0.85);opacity:0;transition:transform .2s ease-in-out, opacity .2s ease-in-out;}
 article.edit section.issue article.questionList ul.questionList > li.done:after {transform:translate(calc(-50% + .1em),calc(-50% - .35em)) rotate(-50deg) scale(1);opacity:1;}

@@ -12,6 +12,9 @@ export const MyRoundtableList = ({
 			<section className="table">
 				<RTAnimation members={members} />
 				<h2>{roundtableName}</h2>
+				<h3>
+					<span className="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id efficitur nunc. Vivamus ac mauris rhoncus, iaculis nisl ut, gravida diam. Nunc molestie tortor nulla, non feugiat diam dictum nec. Phasellus a nisl lobortis, mattis ante ac, porttitor velit. Fusce ultricies pellentesque erat, ac porttitor quam tristique eu. Cras a lectus fermentum, vulputate mi nec, faucibus odio. Donec laoreet turpis sit amet magna venenatis varius. </span>
+				</h3>
 				<ul className="stats">
 					<li>Only You</li>
 					<li>
