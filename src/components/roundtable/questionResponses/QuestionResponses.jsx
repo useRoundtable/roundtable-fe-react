@@ -1,6 +1,13 @@
 import React from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { useParams } from "react-router-dom";
 
 export const QuestionResponses = () => {
+	const { id } = useParams();
+
+	// const { loading, error, data } = useQuery(RTbyID, {
+	// 	variables: { id },
+	// });
 	return (
 		<section className="issue answer">
 			<article className="question">
