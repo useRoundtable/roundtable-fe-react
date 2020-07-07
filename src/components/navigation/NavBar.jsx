@@ -16,11 +16,6 @@ export const NavBar = () => {
 						<h6>Onboarding</h6>
 					</Link>
 				</li>*/}
-				<li>
-					<Link to="/dashboard">
-						<h6> New</h6>
-					</Link>
-				</li>
 				<li className="selected">
 					<Link to="/dashboard">
 						<h6> My Roundtables</h6>
@@ -31,12 +26,19 @@ export const NavBar = () => {
 						<h6>Explore</h6>
 					</Link>
 				</li>
-				<li>
+				<li className="account toggleDropdown">
 					<Link to="/login">
 						<h6 onClick={() => localStorage.removeItem("authorization")}>
-							Account
+							Steven
 						</h6>
+						<img src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg" />
 					</Link>
+					<ul className="dropdown">
+						<li>Account</li>
+						<li>Preferences</li>
+						<li>Updates</li>
+						<li className="logout">Log Out</li>
+					</ul>
 				</li>
 			</ul>
 		</nav>
