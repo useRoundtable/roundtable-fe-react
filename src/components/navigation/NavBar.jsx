@@ -16,7 +16,7 @@ export const NavBar = () => {
 						<h6>Onboarding</h6>
 					</Link>
 				</li>*/}
-				<li className="logo">
+				{/*<li className="logo">
 					<ul className="roundtable logo">
 							<section>
 								<li></li>
@@ -24,7 +24,7 @@ export const NavBar = () => {
 								<li></li>
 							</section>
 						</ul>
-				</li>
+				</li>*/}
 				<li className="selected">
 					<Link to="/dashboard">
 						<h6> My Roundtables</h6>

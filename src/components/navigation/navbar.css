@@ -90,10 +90,10 @@ nav.navigation > ul > li.logo .roundtable.logo {margin:20px 2em 2em;font-size:5p
 .toggleDropdown:hover ul.dropdown {left:50%;transform:translate(-50%, 0) perspective(30vh) rotateX(0) rotateZ(0);opacity:1;box-shadow:8px 10px 15px 5px rgba(15, 30, 30, 0.05), 0 0 8px 0 rgba(150, 30, 30, 0.03);transition:top .2s 0s ease-in-out, left 0s 0s, transform .2s 0s ease-in-out, opacity .2s 0s ease-in-out, box-shadow .45s 0s ease-in-out;}
 .toggleDropdown ul.dropdown:before {content:'';position:absolute;top:0;left:0;width:100%;height:0;opacity:0;}
 .toggleDropdown ul.dropdown:before {top:-5px;left:0;width:100%;height:5px;opacity:0;background:red;}
-.toggleDropdown ul.dropdown li {position:relative;display:block;min-width:120px;padding:10px 10px;color:rgba(15,30,30,1);font-size:0.85em;font-weight:600;opacity:1;cursor:pointer;}
+.toggleDropdown ul.dropdown li {position:relative;display:block;min-width:120px;padding:15px 30px;color:rgba(15,30,30,1);font-size:0.85em;font-weight:600;opacity:1;cursor:pointer;}
 .toggleDropdown ul.dropdown li:first-child {border-top-left-radius:5px;border-top-right-radius:5px;}
 .toggleDropdown ul.dropdown li:last-child {border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
 .toggleDropdown ul.dropdown li.logout {border-top:1px solid rgba(15,30,30,0.03);background:rgba(15,30,30,0.01);}
-.toggleDropdown ul.dropdown li:hover {background:rgba(15,30,30,0.03);}
+.toggleDropdown ul.dropdown li:hover {background:rgba(15,30,30,0.02);}
 
 nav.navigation > ul > li.toggleDropdown h6:after {display:none!important;}
