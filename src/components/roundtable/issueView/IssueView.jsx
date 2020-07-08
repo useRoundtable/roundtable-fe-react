@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useRouteMatch } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 
 import { QuestionCard } from "./questions/QuestionCard";
@@ -7,8 +7,8 @@ import { QuestionCard } from "./questions/QuestionCard";
 import { ISSUEBYID as IBD } from "../../../resolvers/queries";
 
 export const IssueView = () => {
-	const { issueid } = useParams();
-	// const { path } = useRouteMatch();
+	const { issueid, id } = useParams();
+	const { path } = useRouteMatch();
 	let questionNumber = 0;
 
 	const { loading, error, data } = useQuery(IBD, {
@@ -17,7 +17,7 @@ export const IssueView = () => {
 	if (loading) {
 		return <h3>Loading</h3>;
 	} else if (error) {
-		return <h3>Steven's a potatoe</h3>;
+		return <h3>This Issue is either private or does not exist</h3>;
 	}
 
 	return (
@@ -62,7 +62,14 @@ export const IssueView = () => {
 				</ul>
 				<ul className="options">
 					<li>
-						<a className="button" href="javascript:void(0)">
+						<a
+							className="button"
+							onClick={() =>
+								window.location.assign(
+									`/roundtable/${id}/issue/${issueid}/respond`
+								)
+							}
+						>
 							Answer Questions
 						</a>
 					</li>
