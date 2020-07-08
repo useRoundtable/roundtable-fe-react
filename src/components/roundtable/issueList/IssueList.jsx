@@ -1,9 +1,7 @@
 import React from "react";
-import { enterRoundtable, exitRoundtable } from "../../../utils";
 import { IssueCard } from "./issueCard/IssueCard";
 
 export const IssueList = ({ data }) => {
-	console.log("PROPS AND DATA IN ISSUE LIST", data);
 	const issueNumber = data.length;
 	let number = 0;
 	if (issueNumber === 0) {

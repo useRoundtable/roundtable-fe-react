@@ -64,3 +64,11 @@ export const ISSUEBYID = gql`
 		}
 	}
 `;
+
+export const RESPONSESBYQANDID = gql`
+	query responseByQandId($questionId: ID!) {
+		responseByQandId(questionId: $questionId) {
+			content
+		}
+	}
+`;

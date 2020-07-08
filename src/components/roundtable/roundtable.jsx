@@ -7,6 +7,7 @@ import "./roundtable.css";
 import { RoundtableHeader } from "./header/RoundtableHeader";
 import { IssueView } from "./issueView/IssueView";
 import { QuestionResponses } from "./questionResponses/QuestionResponses";
+import { Respond } from "./questionResponses/respond/Respond";
 import { IssueList } from "./issueList/IssueList";
 import { MemberView } from "./members/MemberView";
 
@@ -40,32 +41,21 @@ export const Roundtable = () => {
 							)}
 						/>
 						<Route
+							exact
 							path={`${path}/issue/:issueid`}
 							component={IssueView}
 						/>
 						<Route
-							path={`${path}/responses`}
+							exact
+							path={`${path}/issue/:issueid/respond`}
+							component={Respond}
+						/>
+						<Route
+							exact
+							path={`${path}/issue/:issueid/question/:questionid`}
 							component={QuestionResponses}
 						/>
 						<Route path={`${path}/members`} component={MemberView} />
-						{/* <section className="issueCreate">
-							<h4>
-								<em>.issueCreate</em>
-							</h4>
-							<h2>Title</h2>
-							<ul>
-								<h3>Questions</h3>
-								<li>
-									<h4>Question 1</h4>
-								</li>
-							</ul>
-						</section> */}
-						{/* <IssueView /> */}
-						{/* <QuestionResponses /> */}
-
-						{/* <IssueList /> */}
-
-						{/* <MemberView /> */}
 					</Switch>
 				</div>
 			</article>
