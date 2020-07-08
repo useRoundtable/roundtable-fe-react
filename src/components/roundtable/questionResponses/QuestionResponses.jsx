@@ -2,12 +2,19 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { useParams } from "react-router-dom";
 
+import { RESPONSESBYQANDID as userResponses } from "../../../resolvers/queries";
+
 export const QuestionResponses = () => {
 	const { id } = useParams();
 
-	// const { loading, error, data } = useQuery(RTbyID, {
-	// 	variables: { id },
-	// });
+	const { loading, error, data } = useQuery(userResponses, {
+		variables: { questionId: id },
+	});
+
+	if (loading) {
+		return <h1>AYYY</h1>;
+	}
+	console.log("responses", data);
 	return (
 		<section className="issue answer">
 			<article className="question">
