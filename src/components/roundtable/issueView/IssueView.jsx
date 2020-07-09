@@ -7,7 +7,7 @@ import { QuestionCard } from "./questions/QuestionCard";
 import { ISSUEBYID as IBD } from "../../../resolvers/queries";
 
 export const IssueView = () => {
-	const { issueid, id } = useParams();
+	const { issueid, roundtableId } = useParams();
 	const { path } = useRouteMatch();
 	let questionNumber = 0;
 
@@ -66,7 +66,7 @@ export const IssueView = () => {
 							className="button"
 							onClick={() =>
 								window.location.assign(
-									`/roundtable/${id}/issue/${issueid}/respond`
+									`/roundtable/${roundtableId}/issue/${issueid}/respond`
 								)
 							}
 						>
