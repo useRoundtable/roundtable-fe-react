@@ -5,10 +5,10 @@ import { useParams } from "react-router-dom";
 import { RESPONSESBYQANDID as userResponses } from "../../../../resolvers/queries";
 
 export const Respond = () => {
-	const { id } = useParams();
+	const { roundtableId } = useParams();
 
 	const { loading, error, data } = useQuery(userResponses, {
-		variables: { questionId: id },
+		variables: { questionId: roundtableId },
 	});
 
 	if (loading) {
