@@ -1,8 +1,12 @@
 import React from "react";
 
 import { ResponseList } from "../../../memberList/ResponseList";
+import { useParams, useRouteMatch } from "react-router-dom";
 
-export const IssueCard = ({ card, number }) => {
+export const IssueCard = ({ card, number, id }) => {
+	const { path } = useRouteMatch();
+	const { roundtableId } = useParams();
+	console.log(card, "card console");
 	return (
 		<>
 			<ul className="issueList allIssues">
@@ -32,7 +36,11 @@ export const IssueCard = ({ card, number }) => {
 						<li className="priority">
 							<a
 								className="button new"
-								// onClick={(e) => enterRoundtable(e, "/roundtable")}
+								onClick={(e) =>
+									window.location.assign(
+										`/roundtable/${roundtableId}/issue/${card.id}`
+									)
+								}
 							>
 								2 New Responses
 							</a>
@@ -47,7 +55,14 @@ export const IssueCard = ({ card, number }) => {
 						</li>
 					</ul>
 					<ul className="stats">
-						<li className="members">
+						<li
+							className="members"
+							onClick={(e) =>
+								window.location.assign(
+									`/roundtable/${roundtableId}/issue/${card.id}`
+								)
+							}
+						>
 							11 Responses
 							<ResponseList />
 						</li>
