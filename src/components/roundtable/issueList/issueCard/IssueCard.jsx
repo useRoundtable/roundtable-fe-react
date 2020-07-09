@@ -6,7 +6,6 @@ import { useParams, useRouteMatch } from "react-router-dom";
 export const IssueCard = ({ card, number, id }) => {
 	const { path } = useRouteMatch();
 	const { roundtableId } = useParams();
-	console.log(card, "card console");
 	return (
 		<>
 			<ul className="issueList allIssues">
