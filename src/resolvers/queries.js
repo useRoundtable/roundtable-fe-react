@@ -33,11 +33,14 @@ export const ROUNDTABLE = gql`
 		roundtableById(id: $id) {
 			roundtableName
 			issues {
+				id
 				title
 			}
 			members {
 				user {
 					userName
+					firstName
+					lastName
 					id
 				}
 			}
@@ -53,6 +56,7 @@ export const ISSUEBYID = gql`
 				userName
 			}
 			questions {
+				id
 				question
 				responses {
 					content
