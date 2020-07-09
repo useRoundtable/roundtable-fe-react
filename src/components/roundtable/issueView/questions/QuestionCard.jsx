@@ -1,9 +1,19 @@
 import React from "react";
 
+import { useParams, useRouteMatch } from "react-router-dom";
+
+// I will HAVE to update the onClick to remove it from the whole element.
 export const QuestionCard = ({ data, qNumber }) => {
-	console.log("QUESTION IN CARD", data, qNumber);
+	const { roundtableId, issueid } = useParams();
 	return (
-		<article className="question">
+		<article
+			className="question"
+			onClick={() => {
+				window.location.assign(
+					`/roundtable/${roundtableId}/issue/${issueid}/question/${data.id}`
+				);
+			}}
+		>
 			<div className="questionContent">
 				<h6 className="questionNumber">Question {qNumber}</h6>
 				<h4 className="question">{data.question}</h4>

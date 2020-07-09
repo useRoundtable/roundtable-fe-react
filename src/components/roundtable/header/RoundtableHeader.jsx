@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 
 import { MemberList } from "../../memberList/MemberList";
 
-export const RoundtableHeader = () => {
-	const { id } = useParams();
-	console.log(id);
+/*
+I need to add the logic for what dictates a new response and add tracking to the section below
+*/
+export const RoundtableHeader = ({ members, issueCount }) => {
+	const { roundtableId } = useParams();
 	return (
 		<>
 			<header>
@@ -23,28 +25,32 @@ export const RoundtableHeader = () => {
 					<li
 						className="members"
 						onClick={() => {
-							window.location.assign(`/roundtable/${id}/members`);
+							window.location.assign(
+								`/roundtable/${roundtableId}/members`
+							);
 						}}
 					>
-						<MemberList />
-						10 Members
+						<MemberList members={members} />
+						{members.length} Members
 					</li>
 					<li
 						className="issues"
 						onClick={() => {
-							window.location.assign(`/roundtable/${id}`);
+							window.location.assign(`/roundtable/${roundtableId}`);
 						}}
 					>
-						6 issues
+						{issueCount} issues
 					</li>
-					<li
+					{/* <li
 						className="responses new"
 						onClick={() => {
-							window.location.assign(`/roundtable/${id}/responses`);
+							window.location.assign(
+								`/roundtable/${roundtableId}/responses`
+							);
 						}}
 					>
 						33 New Responses
-					</li>
+					</li> */}
 				</ul>
 			</nav>
 		</>

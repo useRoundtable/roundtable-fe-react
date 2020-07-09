@@ -16,21 +16,23 @@ import { ROUNDTABLE as RTbyID } from "../../resolvers/queries";
 export const Roundtable = () => {
 	document.body.classList.add("editing");
 	const { path } = useRouteMatch();
-	const { id } = useParams();
+	const { roundtableId } = useParams();
 
 	const { loading, error, data } = useQuery(RTbyID, {
-		variables: { id },
+		variables: { id: roundtableId },
 	});
 	if (loading) {
 		return <article className="edit show"></article>;
 	} else if (error) {
-		console.log(error);
 		return <h2>error</h2>;
 	}
 	return (
 		<>
 			<article className="edit show">
-				<RoundtableHeader />
+				<RoundtableHeader
+					members={data.roundtableById.members}
+					issueCount={data.roundtableById.issues.length}
+				/>
 				<div className="content">
 					<Switch>
 						<Route
@@ -55,7 +57,12 @@ export const Roundtable = () => {
 							path={`${path}/issue/:issueid/question/:questionid`}
 							component={QuestionResponses}
 						/>
-						<Route path={`${path}/members`} component={MemberView} />
+						<Route
+							path={`${path}/members`}
+							render={() => (
+								<MemberView members={data.roundtableById.members} />
+							)}
+						/>
 					</Switch>
 				</div>
 			</article>
