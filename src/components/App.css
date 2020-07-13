@@ -689,6 +689,14 @@ article.edit section.issue article > h3 .author:hover {background:rgba(15, 30, 3
 article.edit section.issue article > h3 .date {position:relative;display:inline-block;margin:0 1em 0 -10px;padding:0 10px;clear:both;font-size:1rem;line-height:calc(2em + 20px);color:rgba(15, 30, 30, 0.5);font-weight:300;border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-right-radius:100px;border-bottom-left-radius:100px;cursor:pointer;}
 article.edit section.issue article.message {display:block;margin:0 auto;max-width:800px;font-size:1.15em;}
 article.edit section.issue article.message p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
+article.edit section.issue article.message blockquote {position:relative;padding:0 0 0 1em;margin-bottom:1em;font-size:1em;line-height:1.5em;font-weight:400;color:rgba(15,30,30,0.8);}
+article.edit section.issue article.message blockquote:before {content:'';position:absolute;top:0;left:0;width:.25em;height:100%;background:rgba(15,30,30,0.25);border-radius:1em;}
+article.edit section.issue article.message blockquote > *:last-child {margin-bottom:0;padding-bottom:0;}
+article.edit section.issue article.message a {text-decoration:none;color:rgba(15,30,30,1);font-weight:500;box-shadow: inset 0 -2px 0px rgba(15,30,30,.1);transition: 0.2s;}
+article.edit section.issue article.message a:hover, article.edit section.issue article.message a:focus, article.edit section.issue article.message a:active {text-decoration: none;box-shadow: inset 0 -5px 0 rgba(255,220,0,.5);transition: 0.2s;}
+article.edit section.issue article.message ol, article.edit section.issue article.message ul {color:rgba(15,30,30,0.8);font-size:1em;line-height:1.5em;font-weight:400;}
+article.edit section.issue article.message ol {list-style:decimal;padding:0 0 1em 1.25em;list-style-position:outside;}
+article.edit section.issue article.message ul {list-style:disc;padding:0 0 1em .25em;list-style-position:inside;}
 article.edit section.issue article.message + article.question {padding-top:3em;}
 article.edit section.issue article.question {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
 
@@ -754,9 +762,9 @@ article.edit section.issue ul.options li a.button {font-size:1em;line-height:2re
 article.edit section.issue ul.stats {font-size:0.85em;}
 article.edit section.issue ul.stats > li:before {display:none;}
 
-article.edit section.issue.answer textarea {display:block;width:100%;min-height:100px;margin:.25em 0 1em;padding:1em;background:rgba(255,255,255,1);color:rgba(15,30,30,0.85);font-size:1em;font-family:"Montserrat", Helvetica, Arial, sans-serif;border:1px solid rgba(15,30,30,0.1);border-radius:1em;outline:0;transition:border .35s ease-in-out, min-height .35s ease-in-out;}
-article.edit section.issue.answer textarea:focus {min-height:250px;border:1px solid rgba(15,30,30,0.15);}
-article.edit section.issue.answer textarea:valid {min-height:250px;}
+article.edit section.issue textarea {display:block;width:100%;min-height:100px;margin:.25em 0 1em;padding:1em;background:rgba(255,255,255,1);color:rgba(15,30,30,0.85);font-size:1em;font-family:"Montserrat", Helvetica, Arial, sans-serif;border:1px solid rgba(15,30,30,0.1);border-radius:1em;outline:0;transition:border .35s ease-in-out, min-height .35s ease-in-out;}
+article.edit section.issue textarea:focus {min-height:250px;border:1px solid rgba(15,30,30,0.15);}
+article.edit section.issue textarea:valid {min-height:250px;}
 
 @media only screen and (max-width: 1024px) {
 	body.editing > nav {
