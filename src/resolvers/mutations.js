@@ -40,3 +40,11 @@ export const CREATE_RT = gql`
 		}
 	}
 `;
+
+export const CREATE_ISSUE = gql`
+	mutation CreateIssue($roundtable: ID!, $title: String!, $prompt: String) {
+		createIssue(roundtable: $roundtable, title: $title, prompt: $prompt) {
+			title
+		}
+	}
+`;

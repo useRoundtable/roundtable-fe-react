@@ -2,7 +2,7 @@ import React from "react";
 
 export const QuestionResponses = () => {
 	return (
-		<>
+		<section className="issue">
 			<article className="question">
 				<div className="questionContent">
 					<h6 className="questionNumber">Question 1</h6>
@@ -122,6 +122,6 @@ export const QuestionResponses = () => {
 					</ul>
 				</section>
 			</article>
-		</>
+		</section>
 	);
 };
