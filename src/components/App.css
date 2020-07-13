@@ -691,12 +691,14 @@ article.edit section.issue article.message {display:block;margin:0 auto;max-widt
 article.edit section.issue article.message p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
 article.edit section.issue article.message + article.question {padding-top:3em;}
 article.edit section.issue article.question {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
+
 article.edit section.issue.view article.question > .questionContent {position:relative;display:block;z-index:2;transform:translate(0,0);transition:transform .2s ease-in-out;cursor:pointer;}
 article.edit section.issue.view article.question > .questionContent:hover {transform:translate(0,-5px);}
 article.edit section.issue.view article.question > .questionContent:before {content:'';position:absolute;top:-.75em;left:-1.5em;width:calc(100% + 3em);height:calc(100% + .75em);transition:height .2s ease-in-out;z-index:-1;}
 article.edit section.issue.view article.question > .questionContent:hover:before {height:calc(100% + .75em + 5px);}
 article.edit section.issue.view article.question > .questionContent:after {content:'';position:absolute;top:-.75em;left:-1.5em;width:calc(100% + 3em);height:calc(100% + .75em);background:transparent;box-shadow:none;border-radius:1.5em;z-index:-1;transition:background .2s ease-in-out, box-shadow .2s ease-in-out;}
 article.edit section.issue.view article.question > .questionContent:hover:after {background:rgba(255,255,255,1);box-shadow:15px 20px 30px 10px rgba(15, 30, 30, 0.05), 0 0 15px 0 rgba(150, 30, 30, 0.03);}
+
 article.edit section.issue article.question p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
 article.edit section.issue article.question h4 + p {line-height:1.5em;}
 article.edit section.issue article.question h6.questionNumber {padding:.5em 0;font-size:0.85rem;font-weight:500;color:rgba(15,30,30,0.5);}
@@ -706,6 +708,7 @@ article.edit section.issue article.question h4.question:last-child {padding-bott
 article.edit section.issue article.question ul.stats > li {}
 article.edit section.issue article.question ul.stats:after {content:'';position:relative;display:block;width:100%;height:0;clear:both;}
 article.edit section.issue article.question ul.stats > li:before {display:none;}
+
 article.edit section.issue article.questionList {display:block;margin:0 auto;padding:0 0 2em;max-width:800px;}
 article.edit section.issue article.questionList ul.questionList {padding:2em 0 2em 0;}
 article.edit section.issue article.questionList h6.questionListHeader {padding:.5em 0;font-size:0.85rem;font-weight:500;color:rgba(15,30,30,0.5);}
@@ -715,6 +718,7 @@ article.edit section.issue article.questionList ul.questionList > li:after {cont
 article.edit section.issue article.questionList ul.questionList > li.done:after {transform:translate(calc(-50% + .1em),calc(-50% - .35em)) rotate(-50deg) scale(1);opacity:1;}
 article.edit section.issue article.questionList ul.questionList > li h4 {line-height:1.5em;}
 article.edit section.issue article.questionList ul.questionList > li:hover {background:rgba(15,30,30,0.03);}
+
 article.edit section.issue article.answers {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
 article.edit section.issue article.answers.header {padding:1.5em 0 0;}
 article.edit section.issue article.answers p {color:rgba(15,30,30,0.8);padding:0 0 1em;font-size:1em;line-height:1.5em;font-weight:400;}
