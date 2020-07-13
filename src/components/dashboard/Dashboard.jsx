@@ -11,7 +11,6 @@ export const Dashboard = () => {
 	const { loading, error, data } = useQuery(RTbyUID);
 
 	const token = localStorage.getItem("authorization");
-	console.log("Data in Dash", data);
 	if (loading) {
 		return (
 			<>

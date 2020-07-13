@@ -16,7 +16,11 @@ export const MyRoundtableList = ({
 					<span className="message">{description}</span>
 				</h3>
 				<ul className="stats">
-					<li>Only You</li>
+					{members.length === 0 ? (
+						<li>Only You</li>
+					) : (
+						<li>{members.length} Members</li>
+					)}
 					<li>
 						<strong>No</strong> Issues Published
 					</li>
