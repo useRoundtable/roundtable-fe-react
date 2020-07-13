@@ -10,6 +10,7 @@ import { QuestionResponses } from "./questionResponses/QuestionResponses";
 import { Respond } from "./questionResponses/respond/Respond";
 import { IssueList } from "./issueList/IssueList";
 import { MemberView } from "./members/MemberView";
+import { CreateIssue } from "./createIssue/CreateIssue";
 
 import { ROUNDTABLE as RTbyID } from "../../resolvers/queries";
 
@@ -62,6 +63,11 @@ export const Roundtable = () => {
 							render={() => (
 								<MemberView members={data.roundtableById.members} />
 							)}
+						/>
+						<Route
+							exact
+							path={`${path}/new`}
+							component={CreateIssue}
 						/>
 					</Switch>
 				</div>
