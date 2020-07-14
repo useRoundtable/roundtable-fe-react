@@ -2,23 +2,30 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { enterRoundtable } from "../../utils";
 
+import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
+
 import { CREATE_RT as newRoundtable } from "../../resolvers/mutations";
 
 export const CreateRoundtable = () => {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 
-	const [createRT, { loading }] = useMutation(newRoundtable, {
-		onCompleted({ table }) {
-			window.location.assign("/dashboard");
-		},
-	});
+	const [createRT, { loading }] = useMutation(newRoundtable);
 
 	document.body.classList.remove("editing");
 	return (
 		<>
 			<section className="table createNew">
-				<form>
+				<form
+					onKeyPress={(event) => {
+						if (event.key === "Enter") {
+							createRT({
+								variables: { description, roundtableName: title },
+								refetchQueries: [{ query: RTbyUID }],
+							});
+						}
+					}}
+				>
 					<label for=""></label>
 					<input
 						id="newRoundtableName"
@@ -44,6 +51,7 @@ export const CreateRoundtable = () => {
 							onClick={() => {
 								createRT({
 									variables: { description, roundtableName: title },
+									refetchQueries: [{ query: RTbyUID }],
 								});
 							}}
 						></h5>

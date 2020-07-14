@@ -31,7 +31,15 @@ export const Login = () => {
 					</li>
 				</ul>
 				<div class="get-started">
-					<form>
+					<form
+						onKeyPress={(event) => {
+							if (event.key === "Enter") {
+								userLogin({
+									variables: { email: email, password: password },
+								});
+							}
+						}}
+					>
 						<div className="field">
 							<input
 								name="login-email"
@@ -58,6 +66,7 @@ export const Login = () => {
 						</div>
 						<a
 							className="button"
+							type="submit"
 							onClick={() => {
 								userLogin({
 									variables: { email: email, password: password },
