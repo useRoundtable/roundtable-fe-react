@@ -12,7 +12,7 @@ export const CreateIssue = () => {
 					<span class="title">The music minute?!</span>
 				</h3>
 			</article>
-			{/* <article className="message">
+			<article className="message">
 				<ul className="stats">
 					<li className="members">
 						<ul className="members">
@@ -179,7 +179,7 @@ export const CreateIssue = () => {
 					gain some perspective and apply these concepts. Remember, it's
 					not just kids who need to learn how to communicate.
 				</p>
-			</article> */}
+			</article>
 			<article className="questionList">
 				<ul className="questionList">
 					<h6 className="questionListHeader">
