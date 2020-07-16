@@ -41,7 +41,8 @@ export const IssueCard = ({ card, number, id }) => {
 									)
 								}
 							>
-								2 New Responses
+								{/* 2 New Responses */}
+								Respond
 							</a>
 						</li>
 						<li>
