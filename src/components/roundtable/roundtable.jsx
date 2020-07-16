@@ -40,7 +40,10 @@ export const Roundtable = () => {
 							exact
 							path={`${path}`}
 							render={(props) => (
-								<IssueList data={data.roundtableById.issues} />
+								<IssueList
+									data={data.roundtableById.issues}
+									owner={data.roundtableById.owner.id}
+								/>
 							)}
 						/>
 						<Route
@@ -64,11 +67,7 @@ export const Roundtable = () => {
 								<MemberView members={data.roundtableById.members} />
 							)}
 						/>
-						<Route
-							exact
-							path={`${path}/new`}
-							component={CreateIssue}
-						/>
+						<Route exact path={`${path}/new`} component={CreateIssue} />
 					</Switch>
 				</div>
 			</article>
