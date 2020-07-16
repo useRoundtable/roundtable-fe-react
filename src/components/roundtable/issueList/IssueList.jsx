@@ -2,7 +2,6 @@ import React from "react";
 import { IssueCard } from "./issueCard/IssueCard";
 
 export const IssueList = ({ data }) => {
-	const userId = localStorage.getItem("authorization");
 	const issueNumber = data.length;
 	let number = 0;
 	if (issueNumber === 0) {
