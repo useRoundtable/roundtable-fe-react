@@ -4,7 +4,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 export const TextField = ({ modules, formats, inputValue, setInputValue }) => {
-	console.log(inputValue);
+	// console.log(inputValue);
 	return (
 		<ReactQuill
 			theme="snow"

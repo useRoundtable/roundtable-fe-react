@@ -34,13 +34,14 @@ const formats = [
 
 export const CreateIssueQuestion = ({ issueId }) => {
 	const [inputValue, setInputValue] = useState("");
+	const [prompt, setPrompt] = useState("");
 	return (
 		<>
 			<article className="question">
-				<div className="questionContent">
+				{/* <div className="questionContent">
 					<h6 className="questionNumber">Question 1</h6>
-					<h4 className="question">
-						What was your major accomplishment this week?
+					<h4 className="question"> */}
+				{/* What was your major accomplishment this week?
 					</h4>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -48,7 +49,10 @@ export const CreateIssueQuestion = ({ issueId }) => {
 						iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing
 						elit.
 					</p>
-				</div>
+				</div> */}
+				{/*
+						STEVEN: Add an input area for this spot. The title will be a generic input field and the body will be the WYSIWYG
+						*/}
 				<ul className="stats">
 					<li className="members">
 						<ul className="members">
@@ -64,17 +68,20 @@ export const CreateIssueQuestion = ({ issueId }) => {
 					<li className="textCount noHover">
 						<em>{inputValue.length}</em> / 10000
 					</li>
+					<TextField
+						modules={modules}
+						formats={formats}
+						inputValue={inputValue}
+						setInputValue={setInputValue}
+					/>
 				</ul>
-				<TextField
-					modules={modules}
-					formats={formats}
-					inputValue={inputValue}
-					setInputValue={setInputValue}
-				/>
 				<ul className="options">
 					<li>
 						<a className="button big">Wrap up this issue</a>
 					</li>
+					<l1>
+						<a className="button big">Add Question</a>
+					</l1>
 				</ul>
 			</article>
 		</>

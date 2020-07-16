@@ -18,6 +18,9 @@ export const ROUNDTABLES = gql`
 			createdAt
 			roundtableName
 			description
+			owner {
+				id
+			}
 			members {
 				user {
 					id
@@ -35,6 +38,9 @@ export const ROUNDTABLE = gql`
 			issues {
 				id
 				title
+			}
+			owner {
+				id
 			}
 			members {
 				user {
@@ -73,6 +79,23 @@ export const RESPONSESBYQANDID = gql`
 	query responseByQandId($questionId: ID!) {
 		responseByQandId(questionId: $questionId) {
 			content
+		}
+	}
+`;
+
+export const loggedInUser = gql`
+	query loggedInUser {
+		loggedInUser {
+			userName
+			id
+			roundtables {
+				roundtableName
+			}
+			memberOf {
+				roundtable {
+					roundtableName
+				}
+			}
 		}
 	}
 `;

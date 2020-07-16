@@ -36,7 +36,7 @@ export const MyRoundtableList = ({
 							className="button new"
 							onClick={(e) => enterRoundtable(e, `/roundtable/${id}`)}
 						>
-							View Responses
+							View Issues
 						</a>
 					</li>
 					<li>

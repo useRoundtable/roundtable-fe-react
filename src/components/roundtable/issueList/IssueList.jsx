@@ -26,6 +26,7 @@ export const IssueList = ({ data }) => {
 		<section className="issueList">
 			<ul className="issueList">
 				<li className="new">
+					-
 					<h3 className="issue">
 						<span className="number">Issue #{issueNumber + 1}</span>
 						<span className="title">New Issue&hellip;</span>
