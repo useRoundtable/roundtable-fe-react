@@ -65,7 +65,7 @@ export const Login = () => {
 							<label for="login-password">Password</label>
 						</div>
 						<a
-							className="button"
+							className="button full"
 							type="submit"
 							onClick={() => {
 								userLogin({

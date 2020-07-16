@@ -454,9 +454,11 @@ article.edit nav {
 	border-bottom: 1px solid rgba(15, 30, 30, 0.05);
 	font-size: 1.2em;
 }
-article.edit ul.stats {
+ul.stats {
 }
-article.edit ul.stats > li {
+ul.stats.center {text-align:center;}
+ul.stats.menu > li:before {display:none;}
+ul.stats > li {
 	position: relative;
 	display: inline-block;
 	margin: 0 1em 0 0;
@@ -471,16 +473,27 @@ article.edit ul.stats > li {
 	border-bottom-left-radius: 100px;
 	cursor: pointer;
 }
-article.edit ul.stats > li:hover {
+ul.stats > li:hover {
 	background: rgba(15, 30, 30, 0.03);
 }
-article.edit ul.stats > li.noHover {cursor:default;}
-article.edit ul.stats > li.noHover:hover {background:transparent;}
-article.edit ul.stats > li:first-child {
+ul.stats > li.selected {
+	background: rgba(15, 30, 30, 0.03);
+}
+ul.stats.menu:hover > li {
+	background: transparent;
+}
+ul.stats.menu:hover > li:hover {
+	background: rgba(15, 30, 30, 0.03);
+}
+ul.stats.noHover > li {cursor:default;}
+ul.stats.noHover > li:hover {background:transparent;}
+ul.stats > li.noHover {cursor:default;}
+ul.stats > li.noHover:hover {background:transparent;}
+ul.stats > li:first-child {
 	border: 0;
 	margin: 0 1em 0 -13px;
 }
-article.edit ul.stats > li:before {
+ul.stats > li:before {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -493,22 +506,24 @@ article.edit ul.stats > li:before {
 	background: rgba(15, 30, 30, 1);
 	transform: translate(0, -50%);
 }
-article.edit ul.stats > li.new:before {
-	
-}
-article.edit ul.stats > li:first-child:before {
+
+ul.stats > li:first-child:before {
 	display: none;
 }
-article.edit ul.stats > li.floatRight {float:right;margin:0 0 0 1em;}
-article.edit ul.stats > li.textCount {float:right;color:rgba(15,30,30,0.25);}
-article.edit ul.stats > li.textCount.noRemaining em {color:rgba(200,40,40,1);}
-article.edit ul.stats ul.members {
+ul.stats > li.new:before {}
+ul.stats > li.active:before {display:inline-block;background:rgba(255, 220, 0, 1);}
+ul.stats > li.inactive {color:rgba(15,30,30,0.2);}
+ul.stats > li.inactive:before {display:inline-block;background:transparent;border:1px solid rgba(15,30,30,0.1);}
+ul.stats > li.floatRight {float:right;margin:0 0 0 1em;}
+ul.stats > li.textCount {float:right;color:rgba(15,30,30,0.25);}
+ul.stats > li.textCount.noRemaining em {color:rgba(200,40,40,1);}
+ul.stats ul.members {
 	display: inline-block;
 	float: left;
 	margin: 0 0.5em 0 0;
 	padding: 0.5em 0;
 }
-article.edit ul.stats ul.members li {
+ul.stats ul.members li {
 	position: relative;
 	display: inline-block;
 	width: 2em;
@@ -520,52 +535,52 @@ article.edit ul.stats ul.members li {
 	border: 3px solid rgba(253, 253, 253, 1);
 	overflow: hidden;
 }
-article.edit ul.stats ul.members li:first-child {margin:0;}
-article.edit ul.stats ul.members li > em {position:relative;display:block;width:100%;height:100%;background:rgba(15,30,30,1);color:rgba(255,255,255,1);font-size:.7em;line-height:calc((2em / .7) - 6px);font-weight:600;}
-article.edit ul.stats ul.members li.more > em {font-size:1.5em;line-height:calc((2em / 1.5) - 4px);}
-article.edit ul.stats li.members:hover ul.members li {
+ul.stats ul.members li:first-child {margin:0;}
+ul.stats ul.members li > em {position:relative;display:block;width:100%;height:100%;background:rgba(15,30,30,1);color:rgba(255,255,255,1);font-size:.7em;line-height:calc((2em / .7) - 6px);font-weight:600;}
+ul.stats ul.members li.more > em {font-size:1.5em;line-height:calc((2em / 1.5) - 4px);}
+ul.stats li.members:hover ul.members li {
 	border: 3px solid rgba(247, 248, 248, 1);
 }
-article.edit ul.stats li.members:hover ul.members li {
+ul.stats li.members:hover ul.members li {
 	border: 3px solid rgba(247, 248, 248, 1);
 }
-article.edit ul.stats > li.date {float:right;margin:0 0 0 1em;color:rgba(15,30,30,0.25);}
-article.edit ul.stats > li.date:before {display:none;}
-article.edit ul.stats > li.hideBullet:before {display:none;}
-article.edit ul.stats > li.sort {float:right;margin:0 0 0 1em;}
-article.edit ul.stats > li.sort ul.sort {position:relative;display:inline-block;}
-article.edit ul.stats > li.sort ul.sort li {position:relative;display:inline-block;margin:0;padding:0 10px;font-size:1em;line-height:3em;color:rgba(15,30,30,0.3);font-weight:700;border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-right-radius:100px;border-bottom-left-radius:100px;cursor:pointer;transition:color 0.2s ease-in-out;}
-article.edit ul.stats > li.sort ul.sort li:last-child {margin-right:-10px;}
-article.edit ul.stats > li.sort ul.sort li:hover {}
-article.edit ul.stats > li.sort ul.sort:hover > li.selected {color:rgba(15, 30, 30, 0.3);}
-article.edit ul.stats > li.sort ul.sort > li.selected,
-article.edit ul.stats > li.sort ul.sort:hover > li:hover {color:rgba(15, 30, 30, 1);}
-article.edit ul.stats > li.sort ul.sort > li:after {content:"";position:absolute;top:calc(100% - 5px);left:50%;width:calc(100% - 20px);height:5px;background:rgba(255,220,0,1);opacity:0;border-radius:10px;transform:translate(-50%,0);z-index:-1;transition:top 0.2s ease-in-out, opacity 0.2s ease-in-out;z-index:0;}
-article.edit ul.stats > li.sort ul.sort:hover > li.selected:after {top:calc(100% - 5px);opacity:0;}
-article.edit ul.stats > li.sort ul.sort > li.selected:after, article.edit ul.stats > li.sort ul.sort:hover > li:hover:after {top:calc(100% - 8px);opacity:1;}
-article.edit ul.stats li.members ul.members li:empty {
+ul.stats > li.date {float:right;margin:0 0 0 1em;color:rgba(15,30,30,0.25);}
+ul.stats > li.date:before {display:none;}
+ul.stats > li.hideBullet:before {display:none;}
+ul.stats > li.sort {float:right;margin:0 0 0 1em;}
+ul.stats > li.sort ul.sort {position:relative;display:inline-block;}
+ul.stats > li.sort ul.sort li {position:relative;display:inline-block;margin:0;padding:0 10px;font-size:1em;line-height:3em;color:rgba(15,30,30,0.3);font-weight:700;border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-right-radius:100px;border-bottom-left-radius:100px;cursor:pointer;transition:color 0.2s ease-in-out;}
+ul.stats > li.sort ul.sort li:last-child {margin-right:-10px;}
+ul.stats > li.sort ul.sort li:hover {}
+ul.stats > li.sort ul.sort:hover > li.selected {color:rgba(15, 30, 30, 0.3);}
+ul.stats > li.sort ul.sort > li.selected,
+ul.stats > li.sort ul.sort:hover > li:hover {color:rgba(15, 30, 30, 1);}
+ul.stats > li.sort ul.sort > li:after {content:"";position:absolute;top:calc(100% - 5px);left:50%;width:calc(100% - 20px);height:5px;background:rgba(255,220,0,1);opacity:0;border-radius:10px;transform:translate(-50%,0);z-index:-1;transition:top 0.2s ease-in-out, opacity 0.2s ease-in-out;z-index:0;}
+ul.stats > li.sort ul.sort:hover > li.selected:after {top:calc(100% - 5px);opacity:0;}
+ul.stats > li.sort ul.sort > li.selected:after, ul.stats > li.sort ul.sort:hover > li:hover:after {top:calc(100% - 8px);opacity:1;}
+ul.stats li.members ul.members li:empty {
 	background:rgba(247,248,248,1);
 }
-article.edit ul.stats ul.members li img {
+ul.stats ul.members li img {
 	width:100%;
 	height: 100%;
 	object-fit: cover;
 }
-article.edit ul.stats ul.members.waiting li:after {content:'';position:absolute;top:50%;left:50%;width:0;height:0;transform:scale(1) translate(-50%,-50%);background:rgba(15,30,30,0.15);border-radius:50%;
+ul.stats ul.members.waiting li:after {content:'';position:absolute;top:50%;left:50%;width:0;height:0;transform:scale(1) translate(-50%,-50%);background:rgba(15,30,30,0.15);border-radius:50%;
 	-webkit-animation: waiting 1.8s 0s linear infinite;
 	-moz-animation: waiting 1.8s 0s linear infinite;
 	-ms-animation: waiting 1.8s 0s linear infinite;
 	-o-animation: waiting 1.8s 0s linear infinite;
 	animation: waiting 1.8s 0s linear infinite;
 }
-article.edit ul.stats ul.members.waiting li:nth-of-type(2):after {
+ul.stats ul.members.waiting li:nth-of-type(2):after {
 	-webkit-animation: waiting 1.8s .2s linear infinite;
 	-moz-animation: waiting 1.8s .2s linear infinite;
 	-ms-animation: waiting 1.8s .2s linear infinite;
 	-o-animation: waiting 1.8s .2s linear infinite;
 	animation: waiting 1.8s .2s linear infinite;
 }
-article.edit ul.stats ul.members.waiting li:nth-of-type(3):after {
+ul.stats ul.members.waiting li:nth-of-type(3):after {
 	-webkit-animation: waiting 1.8s .4s linear infinite;
 	-moz-animation: waiting 1.8s .4s linear infinite;
 	-ms-animation: waiting 1.8s .4s linear infinite;
@@ -694,9 +709,9 @@ article.edit section.issue article.message blockquote:before {content:'';positio
 article.edit section.issue article.message blockquote > *:last-child {margin-bottom:0;padding-bottom:0;}
 article.edit section.issue article.message a {text-decoration:none;color:rgba(15,30,30,1);font-weight:500;box-shadow: inset 0 -2px 0px rgba(15,30,30,.1);transition: 0.2s;}
 article.edit section.issue article.message a:hover, article.edit section.issue article.message a:focus, article.edit section.issue article.message a:active {text-decoration: none;box-shadow: inset 0 -5px 0 rgba(255,220,0,.5);transition: 0.2s;}
-article.edit section.issue article.message ol, article.edit section.issue article.message ul {color:rgba(15,30,30,0.8);font-size:1em;line-height:1.5em;font-weight:400;}
-article.edit section.issue article.message ol {list-style:decimal;padding:0 0 1em 1.25em;list-style-position:outside;}
-article.edit section.issue article.message ul {list-style:disc;padding:0 0 1em .25em;list-style-position:inside;}
+article.edit section.issue article.message ol, article.edit section.issue article.message > ul {color:rgba(15,30,30,0.8);font-size:1em;line-height:1.5em;font-weight:400;}
+article.edit section.issue article.message > ol {list-style:decimal;padding:0 0 1em 1.25em;list-style-position:outside;}
+article.edit section.issue article.message > ul {list-style:disc;padding:0 0 1em .25em;list-style-position:inside;}
 article.edit section.issue article.message + article.question {padding-top:3em;}
 article.edit section.issue article.question {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
 
@@ -766,6 +781,55 @@ article.edit section.issue textarea {display:block;width:100%;min-height:100px;m
 article.edit section.issue textarea:focus {min-height:250px;border:1px solid rgba(15,30,30,0.15);}
 article.edit section.issue textarea:valid {min-height:250px;}
 
+/* Modal */
+.overlay {position:fixed;display:block;top:0;left:0;width:100%;height:100%;background:rgba(251,251,251,0.95) url(../images/pattern-7.png);cursor:pointer;z-index:20;}
+.modal {position:absolute;top:50vh;left:50%;transform:translate(-50%,-50%);width:600px;max-width:calc(100% - 30px);max-height:calc(100vh - 100px);z-index:21;margin:0;padding:0;background:rgba(255,255,255,1);border-radius:2em;box-shadow:15px 20px 30px 10px rgba(15, 30, 30, 0.05), 0 0 15px 0 rgba(150, 30, 30, 0.03);cursor:default;outline:none;text-align:left;overflow:hidden;opacity:0;transform-origin:bottom center;}
+.modal header {padding: 20px 30px 0;background: rgba(15, 30, 30, 0.005);}
+.modal header:after {content: "";position: relative;display: block;width: 100%;height: 0;clear: both;opacity: 0;}
+.modal header h4 {max-width: calc(100% - 2em);}
+.modal header h4 ul.roundtable {font-size: 0.25em;margin: 0 2em 0 0;vertical-align: middle;}
+.modal header h4 .avatar {position:relative;display:inline-block;width:2em;height:2em;margin:0 10px 0 0;border-radius:50%;background:red;overflow:hidden;vertical-align:middle;}
+.modal header h4 .avatar img {width:100%;height: 100%;object-fit: cover;}
+.modal header h4 .avatar em {position:relative;display:block;width:100%;height:100%;background:rgba(15,30,30,1);color:rgba(255,255,255,1);font-size:.7em;line-height:calc((2em / .7) + .25em);font-weight:600;}
+.modal header .close {position: absolute; top:20px;right:30px;width: 2em;height: 2em;color: rgba(15, 30, 30, 1);}
+.modal header .close span {position: absolute;top: 50%;left: 50%;width: 1em;height: 1em;transform: translate(-50%, -50%) rotate(0deg) scale(1);font-size: 4em;line-height: 1.25em;font-family: "Biryani", Helvetica, Arial, sans-serif;text-align: center;cursor: pointer;border-radius: 50%;overflow: hidden;transition: transform 0.25s ease-in-out;}
+.modal header .close:hover span {transform: translate(-50%, -50%) rotate(-90deg) scale(0.9);}
+.modal nav {padding: 0 30px 10px;background: rgba(15, 30, 30, 0.005);border-bottom: 1px solid rgba(15, 30, 30, 0.05);font-size: 1.2em;}
+.modal .content {position:relative;display:block;min-height:300px;max-height:calc(100vh - 100px - 200px);padding:20px 30px;background:rgba(253,253,253,1);overflow-y:auto;}
+.modal .content::-webkit-scrollbar {width:12px;}
+.modal .content::-webkit-scrollbar-thumb {border-radius:10px;background-color:currentColor;border:3px solid rgba(0, 0, 0, 0);background-clip:padding-box;transition:background-color .15s ease-in-out;}
+.modal .content:hover {color:rgba(15,30,30,0.15);}
+.modal .content > ul.stats {margin-bottom:2em;}
+.modal form {padding:20px 0;}
+.overlay[class*="--after-open"] {
+	-webkit-animation: pageload .20s 0s ease-in forwards;
+	-moz-animation: pageload .20s 0s ease-in forwards;
+	-ms-animation: pageload .20s 0s ease-in forwards;
+	-o-animation: pageload .20s 0s ease-in forwards;
+	animation: pageload .20s 0s ease-in forwards;}
+.overlay[class*="--after-open"] .modal {
+	-webkit-animation: modalin .20s 0s ease-in forwards;
+	-moz-animation: modalin .20s 0s ease-in forwards;
+	-ms-animation: modalin .20s 0s ease-in forwards;
+	-o-animation: modalin .20s 0s ease-in forwards;
+	animation: modalin .20s 0s ease-in forwards;}
+.overlay[class*="--before-close"] {
+	-webkit-animation: pageleave .20s 0s ease-in forwards;
+	-moz-animation: pageleave .20s 0s ease-in forwards;
+	-ms-animation: pageleave .20s 0s ease-in forwards;
+	-o-animation: pageleave .20s 0s ease-in forwards;
+	animation: pageleave .20s 0s ease-in forwards;}
+.overlay[class*="--before-close"] .modal {
+	-webkit-animation: modalout .20s 0s ease-in forwards;
+	-moz-animation: modalout .20s 0s ease-in forwards;
+	-ms-animation: modalout .20s 0s ease-in forwards;
+	-o-animation: modalout .20s 0s ease-in forwards;
+	animation: modalout .20s 0s ease-in forwards;}
+@media only screen and (max-width: 768px) {
+	.modal {max-height:calc(100vh - 30px);}
+	.modal .content {max-height:calc(100vh - 220px);}
+}
+
 @media only screen and (max-width: 1024px) {
 	body.editing > nav {
 		width: 100%;
@@ -781,10 +845,10 @@ article.edit section.issue textarea:valid {min-height:250px;}
 	article.edit nav {
 		padding: 0 20px 10px;
 	}
-	article.edit ul.stats > li {
+	ul.stats > li {
 		padding: 0 6px;
 	}
-	article.edit ul.stats ul.members li:nth-child(n + 5) {
+	ul.stats ul.members li:nth-child(n + 5) {
 		display: none;
 	}
 	article.edit section {
