@@ -15,7 +15,27 @@ export const CreateIssue = () => {
 					<span class="title">The music minute?!</span>
 				</h3>
 			</article>
-			<ReactQuill theme="snow" />
+			<article className="question prompt">
+				<div className="questionContent">
+					<ul className="stats">
+						<li className="members">
+							<ul className="members">
+								<li>
+									<img
+										alt="avatar"
+										src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
+									/>
+								</li>
+							</ul>
+							Tony K.
+						</li>
+						<li className="textCount noHover">
+							<em>0</em> / 10000
+						</li>
+					</ul>
+					<ReactQuill theme="snow" placeholder="Describe what this issue is about..." />
+				</div>
+				</article>
 			<article className="questionList">
 				<ul className="questionList">
 					<h6 className="questionListHeader">

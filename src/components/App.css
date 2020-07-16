@@ -238,7 +238,7 @@ section.table ul.options li a.button {
 	line-height: 2em;
 }
 
-/* Create New */
+/* New Roundtable */
 section.table.createNew {border:5px dashed rgba(15,30,30,0.03);}
 section.table.createNew h2 {position:relative;padding:2.5rem 0 0 0;color:rgba(15,30,30,0.25);line-height:2.5rem;transition:color .15s ease-in-out;}
 section.table.createNew ul.stats {padding:0 0 2.5rem 0;opacity:1;transition:opacity .15s ease-in-out;}
@@ -267,6 +267,16 @@ section.table.createNew form input {}
 /*section.table.createNew textarea {display:block;width:100%;min-height:100px;margin:.25em 0 1em;padding:1em;background:rgba(255,255,255,1);color:rgba(15,30,30,0.85);font-size:1em;font-family:"Montserrat", Helvetica, Arial, sans-serif;border:1px solid rgba(15,30,30,0.1);border-radius:1em;outline:0;transition:border .35s ease-in-out, min-height .35s ease-in-out;}
 section.table.createNew textarea:focus {min-height:250px;border:1px solid rgba(15,30,30,0.15);}
 section.table.createNew textarea:valid {min-height:250px;}*/
+
+/* New Issue */
+.ql-container {font-size:inherit;}
+.ql-editor {padding:1em 0;}
+.ql-toolbar.ql-snow {padding:10px 0;border:0;border-bottom:1px dotted rgba(15,30,30,0.05);}
+.ql-container.ql-snow {border:0;}
+.ql-snow .ql-picker-label {margin-left:-8px;}
+.ql-snow .ql-editor h1, .ql-snow .ql-editor h2, .ql-snow .ql-editor h3, .ql-snow .ql-editor h4, .ql-snow .ql-editor h5, .ql-snow .ql-editor h6 {font-size:1.5em;}
+.ql-snow.ql-toolbar button:hover, .ql-snow .ql-toolbar button:hover, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.ql-active, .ql-snow .ql-toolbar button.ql-active, .ql-snow.ql-toolbar .ql-picker-label:hover, .ql-snow .ql-toolbar .ql-picker-label:hover, .ql-snow.ql-toolbar .ql-picker-label.ql-active, .ql-snow .ql-toolbar .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker-item:hover, .ql-snow .ql-toolbar .ql-picker-item:hover, .ql-snow.ql-toolbar .ql-picker-item.ql-selected, .ql-snow .ql-toolbar .ql-picker-item.ql-selected {background:rgba(15,30,30,0.03);border-radius:3px;}
+.ql-editor.ql-blank::before {left:0;color:rgba(15,30,30,0.25);}
 
 /* Animation States */
 section .roundtable > section,
@@ -714,6 +724,7 @@ article.edit section.issue article.message > ol {list-style:decimal;padding:0 0 
 article.edit section.issue article.message > ul {list-style:disc;padding:0 0 1em .25em;list-style-position:inside;}
 article.edit section.issue article.message + article.question {padding-top:3em;}
 article.edit section.issue article.question {display:block;margin:0 auto;padding:1.5em 0;max-width:800px;font-size:1.15em;}
+article.edit section.issue article.question.prompt {padding:0;}
 
 article.edit section.issue.view article.question > .questionContent {position:relative;display:block;z-index:2;transform:translate(0,0);transition:transform .2s ease-in-out;cursor:pointer;}
 article.edit section.issue.view article.question > .questionContent:hover {transform:translate(0,-5px);}

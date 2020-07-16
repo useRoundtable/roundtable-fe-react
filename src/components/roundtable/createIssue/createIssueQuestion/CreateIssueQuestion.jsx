@@ -38,10 +38,10 @@ export const CreateIssueQuestion = ({ issueId }) => {
 	return (
 		<>
 			<article className="question">
-				{/* <div className="questionContent">
+				<div className="questionContent">
 					<h6 className="questionNumber">Question 1</h6>
-					<h4 className="question"> */}
-				{/* What was your major accomplishment this week?
+					<h4 className="question">
+						What was your major accomplishment this week?
 					</h4>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -49,32 +49,37 @@ export const CreateIssueQuestion = ({ issueId }) => {
 						iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing
 						elit.
 					</p>
-				</div> */}
-				{/*
-						STEVEN: Add an input area for this spot. The title will be a generic input field and the body will be the WYSIWYG
-						*/}
-				<ul className="stats">
-					<li className="members">
-						<ul className="members">
-							<li>
-								<img
-									alt="avatar"
-									src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
-								/>
-							</li>
-						</ul>
-						Tony K.
-					</li>
-					<li className="textCount noHover">
-						<em>{inputValue.length}</em> / 10000
-					</li>
+				</div>
+			</article>
+
+			<article className="question">
+				<div className="questionContent">
+					<h6 className="questionNumber">Question 2</h6>
+					<ul className="stats">
+						<li className="members">
+							<ul className="members">
+								<li>
+									<img
+										alt="avatar"
+										src="https://pbs.twimg.com/profile_images/1175859436398751745/_wHdYjZo_400x400.png"
+									/>
+								</li>
+							</ul>
+							Tony K.
+						</li>
+						<li className="textCount noHover">
+							<em>{inputValue.length}</em> / 10000
+						</li>
+					</ul>
 					<TextField
 						modules={modules}
 						formats={formats}
 						inputValue={inputValue}
 						setInputValue={setInputValue}
 					/>
-				</ul>
+				</div>
+			</article>
+			<article>
 				<ul className="options">
 					<li>
 						<a className="button big">Wrap up this issue</a>
