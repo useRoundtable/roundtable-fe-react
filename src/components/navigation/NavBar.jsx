@@ -6,9 +6,13 @@ import { UserProfile } from "../profiles/UserProfile";
 
 export const NavBar = () => {
 	const [modalIsOpen, setIsOpen] = useState(false);
-	console.log("isOpen", modalIsOpen);
 	Modal.setAppElement("#root");
-
+	const closeModal = () => {
+		setIsOpen(false)
+	}
+	const openModal = () => {
+		setIsOpen(true)
+	}
 	return (
 		<>
 			<nav className="navigation">
@@ -45,9 +49,16 @@ export const NavBar = () => {
 					</li>
 				</ul>
 			</nav>
-			<Modal isOpen={modalIsOpen}>
-				<UserProfile />
-				<p onClick={() => setIsOpen(false)}>Close</p>
+			<Modal 
+				isOpen={modalIsOpen}
+				portalClassName="overlay-container"
+				className="modal"
+	       		overlayClassName="overlay"
+	       		shouldCloseOnEsc={true}
+	       		closeTimeoutMS={200}
+	       		onRequestClose={() => closeModal()}
+	       		>
+					<UserProfile closeModal={closeModal}/>
 			</Modal>
 		</>
 	);
