@@ -2,6 +2,7 @@ import React from "react";
 import { IssueCard } from "./issueCard/IssueCard";
 
 export const IssueList = ({ data }) => {
+	const userId = localStorage.getItem("authorization");
 	const issueNumber = data.length;
 	let number = 0;
 	if (issueNumber === 0) {
@@ -26,6 +27,7 @@ export const IssueList = ({ data }) => {
 		<section className="issueList">
 			<ul className="issueList">
 				<li className="new">
+					-
 					<h3 className="issue">
 						<span className="number">Issue #{issueNumber + 1}</span>
 						<span className="title">New Issue&hellip;</span>
