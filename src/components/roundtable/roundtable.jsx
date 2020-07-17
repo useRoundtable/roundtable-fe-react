@@ -67,7 +67,11 @@ export const Roundtable = () => {
 								<MemberView members={data.roundtableById.members} />
 							)}
 						/>
-						<Route exact path={`${path}/new`} component={CreateIssue} />
+						<Route
+							exact
+							path={`${path}/issue/:issueid/new`}
+							component={CreateIssue}
+						/>
 					</Switch>
 				</div>
 			</article>
