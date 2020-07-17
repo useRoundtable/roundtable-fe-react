@@ -71,6 +71,7 @@ export const CreateIssueQuestion = ({ issueId }) => {
 							<em>{inputValue.length}</em> / 10000
 						</li>
 					</ul>
+					<input onChange={(e) => setPrompt(e.target.value)} />
 					<TextField
 						modules={modules}
 						formats={formats}

@@ -4,7 +4,7 @@ import { enterRoundtable } from "../../utils";
 import { RTAnimation } from "../animation/roundtableAni";
 
 export const MyRoundtableList = ({
-	props: { roundtableName, description, members, id },
+	props: { roundtableName, description, members, id, issues },
 }) => {
 	document.body.classList.remove("editing");
 	return (
@@ -21,15 +21,29 @@ export const MyRoundtableList = ({
 					) : (
 						<li>{members.length} Members</li>
 					)}
-					<li>
-						<strong>No</strong> Issues Published
-					</li>
+					{issues.length ? (
+						<li>
+							<strong>{issues.length}</strong> Issues Published
+						</li>
+					) : (
+						<li>
+							<strong>No</strong> Issues Published
+						</li>
+					)}
 				</ul>
-				<h5 className="issue">
-					<span className="number">Issue #1</span>
-					<span className="title">Hey everyone!</span>
-					<span className="status">Gathering Responses</span>
-				</h5>
+				{issues.length ? (
+					<h5 className="issue">
+						<span className="number">Issue #{issues.length}</span>
+						<span className="title">{issues[0].title}</span>
+						<span className="status">Gathering Responses</span>
+					</h5>
+				) : (
+					<h5 className="issue">
+						<span className="number">Issue #1</span>
+						<span className="title">Get Started!</span>
+						<span className="status">Just Starting!</span>
+					</h5>
+				)}
 				<ul className="options">
 					<li>
 						<a
