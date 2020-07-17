@@ -640,15 +640,23 @@ article.edit section.issueList ul.issueList > li > h3.issue {position:relative;d
 article.edit section.issueList ul.issueList > li.new {transform:translate(0,0);transition:transform .2s ease-in-out;}
 article.edit section.issueList ul.issueList > li.new > h3.issue {color:rgba(15,30,30,0.15);border:1px solid rgba(15,30,30,0.1);border-radius:1.5rem;transition:box-shadow .2s ease-in-out, border .2s ease-in-out;}
 article.edit section.issueList ul.issueList > li.new > h3.issue > a.button {position:absolute;display:inline-block;top:15px;right:15px;}
-article.edit section.issueList ul.issueList > li.new:after {content:'';position:absolute;display:block;top:0;left:0;width:100%;height:100%;background:transparent;border-radius:1.5rem;cursor:pointer;transition:height .2s ease-in-out;}
 article.edit section.issueList ul.issueList > li.new:hover {transform:translate(0,-5px);}
 article.edit section.issueList ul.issueList > li.new:hover:after {height:calc(100% + 5px);}
 article.edit section.issueList ul.issueList > li.new:hover > h3.issue {border:1px solid rgba(15,30,30,0.05);box-shadow:15px 20px 30px 10px rgba(15,30,30,0.05),0 0 15px 0 rgba(150,30,30,0.03);}
 article.edit section.issueList ul.issueList > li.new:hover > h3.issue > a.button {background: rgba(15,30,30,1);color: rgba(255,220,0,1);text-shadow: none;}
-article.edit section.issueList ul.issueList > li.new > h3.issue > span.title {color:rgba(15,30,30,0.15);transition:color .2s .2s ease-in-out;}
-article.edit section.issueList ul.issueList > li.new > h3.issue > span.title:before {content:'Start the next issue.';position:absolute;transform:translate(0,4px);color:rgba(15,30,30,0);transition:color .1s ease-in-out, transform 0s .1s ease-in-out;}
-article.edit section.issueList ul.issueList > li.new:hover > h3.issue > span.title {color:rgba(15,30,30,0);transition:color .2s 0s ease-in-out;}
-article.edit section.issueList ul.issueList > li.new:hover > h3.issue > span.title:before {color:rgba(15,30,30,1);transform:translate(0,0);transition:color .2s 0s ease-in-out, transform .2s 0s ease-in-out;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > .title {color:rgba(15,30,30,0.15);transition:color .2s .2s ease-in-out, color .2s .2s ease-in-out;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > .title:before {content:'Start the next issue.';position:absolute;transform:translate(0,4px);color:rgba(15,30,30,0);transition:color .1s ease-in-out, transform 0s .1s ease-in-out;}
+article.edit section.issueList ul.issueList > li.new:hover > h3.issue > .title {color:rgba(15,30,30,0);transition:color .2s 0s ease-in-out, opacity .2s 0s ease-in-out;}
+article.edit section.issueList ul.issueList > li.new:hover > h3.issue > .title:before {color:rgba(15,30,30,1);transform:translate(0,0);transition:color .2s 0s ease-in-out, transform .2s 0s ease-in-out;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > input {position:absolute;left:0;top:0;width:100%;padding:1.3em 100px 0 20px;font-size:1em;color:rgba(15,30,30,1);border:0;background:transparent;outline:0;opacity:0;z-index:2;transition:opacity .2s 0s ease-in-out;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > input:focus, article.edit section.issueList ul.issueList > li.new > h3.issue > input:valid {opacity:1;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > input + label {position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:3;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > input:focus ~ label,
+article.edit section.issueList ul.issueList > li.new > h3.issue > input:valid ~ label {opacity:0;z-index:-1;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > input:focus ~ .title,
+article.edit section.issueList ul.issueList > li.new > h3.issue > input:valid ~ .title {color:rgba(15,30,30,0)!important;transition:color .2s 0s ease-in-out, opacity .2s 0s ease-in-out;}
+article.edit section.issueList ul.issueList > li.new > h3.issue > input:focus ~ .title:before,
+article.edit section.issueList ul.issueList > li.new > h3.issue > input:valid ~ .title:before {color:rgba(15,30,30,0);}
 article.edit section.issueList ul.issueList > li > h3 .number {
 	position: absolute;
 	top: 0;

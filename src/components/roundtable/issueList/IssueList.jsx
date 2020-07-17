@@ -6,7 +6,7 @@ export const IssueList = ({ data }) => {
 	let number = 0;
 	if (issueNumber === 0) {
 		return (
-			<>
+			<div>
 				<section className="issueList">
 					<h5>Create your first issue!</h5>
 					<ul className="issueList">
@@ -19,7 +19,7 @@ export const IssueList = ({ data }) => {
 						</li>
 					</ul>
 				</section>
-			</>
+			</div>
 		);
 	}
 	return (
@@ -28,6 +28,8 @@ export const IssueList = ({ data }) => {
 				<li className="new">
 					<h3 className="issue">
 						<span className="number">Issue #{issueNumber + 1}</span>
+						<input id="newIssue" name="newIssue" type="text" value="" placeholder="What is the subject of this issue?" value="" required />
+						<label for="newIssue" className="newIssueLabel"></label>
 						<span className="title">New Issue&hellip;</span>
 						<a className="button">+ Create</a>
 					</h3>
