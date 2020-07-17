@@ -27,6 +27,9 @@ export const ROUNDTABLES = gql`
 					userName
 				}
 			}
+			issues {
+				title
+			}
 		}
 	}
 `;
