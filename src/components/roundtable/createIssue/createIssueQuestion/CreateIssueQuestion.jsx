@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 import { TextField } from "../../../textFields/TextField";
+import { useMutation } from "@apollo/react-hooks";
+import { useParams } from "react-router-dom";
+import { ADD_QUESTIOM as newQ } from "../../../../resolvers/mutations";
+import { ISSUEBYID as issueById } from "../../../../resolvers/queries";
 
 const modules = {
 	toolbar: [
@@ -32,29 +36,18 @@ const formats = [
 	"image",
 ];
 
-export const CreateIssueQuestion = ({ issueId }) => {
+export const CreateIssueQuestion = ({ questionNum }) => {
+	const { issueid } = useParams();
 	const [inputValue, setInputValue] = useState("");
-	const [prompt, setPrompt] = useState("");
+	const [question, setQuestion] = useState("");
+
+	const [addQuestion] = useMutation(newQ);
+
 	return (
 		<>
 			<article className="question">
 				<div className="questionContent">
-					<h6 className="questionNumber">Question 1</h6>
-					<h4 className="question">
-						What was your major accomplishment this week?
-					</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Integer tempor dolor nec lorem pharetra, quis cursus purus
-						iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing
-						elit.
-					</p>
-				</div>
-			</article>
-
-			<article className="question">
-				<div className="questionContent">
-					<h6 className="questionNumber">Question 2</h6>
+					<h6 className="questionNumber">Question {questionNum}</h6>
 					<ul className="stats">
 						<li className="members">
 							<ul className="members">
@@ -71,7 +64,7 @@ export const CreateIssueQuestion = ({ issueId }) => {
 							<em>{inputValue.length}</em> / 10000
 						</li>
 					</ul>
-					<input onChange={(e) => setPrompt(e.target.value)} />
+					<input onChange={(e) => setQuestion(e.target.value)} />
 					<TextField
 						modules={modules}
 						formats={formats}
@@ -86,7 +79,27 @@ export const CreateIssueQuestion = ({ issueId }) => {
 						<a className="button big">Wrap up this issue</a>
 					</li>
 					<l1>
-						<a className="button big">Add Question</a>
+						<a
+							className="button big"
+							onClick={() => {
+								addQuestion({
+									variables: {
+										issue: issueid,
+										question,
+									},
+									refetchQueries: [
+										{
+											query: issueById,
+											variables: {
+												id: issueid,
+											},
+										},
+									],
+								});
+							}}
+						>
+							Add Question
+						</a>
 					</l1>
 				</ul>
 			</article>

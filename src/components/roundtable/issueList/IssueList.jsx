@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { IssueCard } from "./issueCard/IssueCard";
 
-export const IssueList = ({ data }) => {
-	const issueNumber = data.length;
+import { useLocation, useParams } from "react-router-dom";
+
+import { useMutation } from "@apollo/react-hooks";
+import { CREATE_ISSUE as newIssue } from "../../../resolvers/mutations";
+
+export const IssueList = (props) => {
+	const location = useLocation();
+	const { roundtableId } = useParams();
+	const issueNumber = props.data.length;
 	let number = 0;
+	const [issueTitle, setIssueTitle] = useState("");
+	const [createIssue, { loading, data, error }] = useMutation(newIssue, {
+		onCompleted({ createIssue }) {
+			console.log(data, " data in onCompleted");
+			console.log(createIssue, "Create Issue console.log");
+			window.location.assign(
+				`${location.pathname}/issue/${createIssue.id}/new`
+			);
+		},
+	});
 	if (issueNumber === 0) {
 		return (
 			<div>
@@ -22,22 +39,48 @@ export const IssueList = ({ data }) => {
 			</div>
 		);
 	}
+
+	if (error) {
+		console.log(error.message);
+		return <p>error!</p>;
+	}
+
 	return (
 		<section className="issueList">
 			<ul className="issueList">
 				<li className="new">
 					<h3 className="issue">
 						<span className="number">Issue #{issueNumber + 1}</span>
-						<input id="newIssue" name="newIssue" type="text" value="" placeholder="What is the subject of this issue?" value="" required />
+						<input
+							id="newIssue"
+							name="newIssue"
+							type="text"
+							value={issueTitle}
+							placeholder="What is the subject of this issue?"
+							required
+							onChange={(e) => setIssueTitle(e.target.value)}
+						/>
 						<label for="newIssue" className="newIssueLabel"></label>
 						<span className="title">New Issue&hellip;</span>
-						<a className="button">+ Create</a>
+						<a
+							className="button"
+							onClick={(e) => {
+								createIssue({
+									variables: {
+										title: issueTitle,
+										roundtable: roundtableId,
+									},
+								});
+							}}
+						>
+							+ Create
+						</a>
 					</h3>
 				</li>
 			</ul>
 			<h4>Current Issue</h4>
 			<ul className="issueList currentIssue">
-				{data.slice(0, 1).map((issue) => {
+				{props.data.slice(0, 1).map((issue) => {
 					return <IssueCard card={issue} number={issueNumber} />;
 				})}
 			</ul>
@@ -47,7 +90,8 @@ export const IssueList = ({ data }) => {
 					: `${issueNumber - 1} Previous Issues`}{" "}
 			</h4>
 			<ul className="issueList allIssues">
-				{data.splice(1).map((issue) => {
+				{props.data.slice(1, props.data.length).map((issue) => {
+					console.log(issue);
 					number++;
 					return <IssueCard card={issue} number={number} />;
 				})}
