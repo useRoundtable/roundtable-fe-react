@@ -1376,57 +1376,5 @@ main > .get-started > article .field.selected input + label {
 }
 
 @media only screen and (max-width: 1024px) {
-	body.home header {
-		padding: 0 20px 20px;
-	}
-	body.home header > * {
-		position: relative;
-		display: block;
-		width: 100%;
-		height: inherit;
-		min-height: calc(50vh);
-		padding: 0;
-	}
-	body.home header form {
-		position: relative;
-		top: initial;
-		left: initial;
-		transform: none;
-		padding: 30px 30px;
-	}
-	body.home header nav {
-		position: relative;
-		display: block;
-		top: initial;
-		padding: 20px 0 0;
-		font-size: 0.75em;
-	}
-	body.home header figure {
-		border-radius: 30px;
-	}
-	header nav > ul {
-		position: relative;
-		display: block;
-	}
-	header nav.light > ul {
-		padding: 0;
-		text-align: right;
-	}
-	article.myRoundtables {
-		max-width: calc(100% - 20px);
-		padding: 0;
-	}
-	section.table {
-		padding: 19rem 2em 3em;
-		border-radius: 30px;
-		border-top-left-radius: 250px;
-		border-top-right-radius: 250px;
-		text-align: center;
-	}
-	section.table ul.roundtable {
-		top: 2.5em;
-		left: 50%;
-		transform: translate(-4em, -50%);
-		font-size: 2rem;
-	}
+	
 }
