@@ -86,7 +86,7 @@ export const RESPONSESBYQANDID = gql`
 	}
 `;
 
-export const loggedInUser = gql`
+export const LOGGEDINUSER = gql`
 	query loggedInUser {
 		loggedInUser {
 			userName
@@ -99,6 +99,14 @@ export const loggedInUser = gql`
 					roundtableName
 				}
 			}
+		}
+	}
+`;
+// questionDetail <--------- ADD THIS TO THE RESPONSE LATER
+export const QUESTIONSBYISSUEID = gql`
+	query questionsByIssueId($issueId: ID!) {
+		questionsByIssueId(issueId: $issueId) {
+			question
 		}
 	}
 `;

@@ -58,3 +58,19 @@ export const ADD_QUESTIOM = gql`
 		}
 	}
 `;
+
+export const DELETE_ROUNDTABLE = gql`
+	mutation deleteRoundtable($id: ID!) {
+		deleteRoundtable(id: $id) {
+			id
+		}
+	}
+`;
+
+export const CREATE_RESPONSE = gql`
+	mutation createResponse($content: String!, $question: ID!) {
+		createResponse(content: $content, question: $question) {
+			content
+		}
+	}
+`;
