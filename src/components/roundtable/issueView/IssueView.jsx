@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useRouteMatch } from "react-router-dom";
+import { useParams, useRouteMatch, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 
 import { QuestionCard } from "./questions/QuestionCard";
@@ -8,9 +8,8 @@ import { ISSUEBYID as IBD } from "../../../resolvers/queries";
 
 export const IssueView = () => {
 	const { issueid, roundtableId } = useParams();
-	const { path } = useRouteMatch();
+	const location = useLocation();
 	let questionNumber = 0;
-
 	const { loading, error, data } = useQuery(IBD, {
 		variables: { id: issueid },
 	});
@@ -49,7 +48,7 @@ export const IssueView = () => {
 				</p>
 			</article>
 			<article className="questionList">
-				<ul className="questionList">
+				{/* <ul className="questionList">
 					<h6 className="questionListHeader">Questions</h6>
 					<li>What was your major accomplishment this week?</li>
 					<li className="done">
@@ -59,16 +58,14 @@ export const IssueView = () => {
 					{data.issueById.questions.map((question) => {
 						return <li>{question.question}</li>;
 					})}
-				</ul>
+				</ul> */}
 				<ul className="options">
 					<li>
 						<a
 							className="button"
-							onClick={() =>
-								window.location.assign(
-									`/roundtable/${roundtableId}/issue/${issueid}/respond`
-								)
-							}
+							onClick={() => {
+								window.location.assign(`${location.pathname}/respond`);
+							}}
 						>
 							Answer Questions
 						</a>
