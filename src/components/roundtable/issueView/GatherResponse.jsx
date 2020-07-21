@@ -20,16 +20,14 @@ export const GatherResponse = ({ question }) => {
 					<p>
 						QUESTION CONTEXT WILL GO HERE WHEN IT IS LIVE ON THE DATA BASE
 					</p>
-				</div>
-				<TextField
-					inputValue={inputValue}
-					setInputValue={setInputValue}
-					inputLength={inputValue.length}
-				/>
-				<article className="question submit">
-					<ul class="options textCenter">
+					<TextField
+						inputValue={inputValue}
+						setInputValue={setInputValue}
+						inputLength={inputValue.length}
+						placeholder="What is your response?"
+					/>
+					<ul class="options">
 						<li>
-							{console.log(question.id, question.question)}
 							<a
 								class="button big"
 								onClick={() =>
@@ -45,7 +43,7 @@ export const GatherResponse = ({ question }) => {
 							</a>
 						</li>
 					</ul>
-				</article>
+				</div>
 			</article>
 		</>
 	);
