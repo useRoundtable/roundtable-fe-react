@@ -10,12 +10,10 @@ export const IssueList = (props) => {
 	const location = useLocation();
 	const { roundtableId } = useParams();
 	const issueNumber = props.data.length;
-	let number = 0;
+	let number = issueNumber;
 	const [issueTitle, setIssueTitle] = useState("");
 	const [createIssue, { loading, data, error }] = useMutation(newIssue, {
 		onCompleted({ createIssue }) {
-			console.log(data, " data in onCompleted");
-			console.log(createIssue, "Create Issue console.log");
 			window.location.assign(
 				`${location.pathname}/issue/${createIssue.id}/new`
 			);
@@ -25,13 +23,35 @@ export const IssueList = (props) => {
 		return (
 			<div>
 				<section className="issueList">
-					<h5>Create your first issue!</h5>
+					<h5> Create your first Issue!</h5>
 					<ul className="issueList">
 						<li className="new">
 							<h3 className="issue">
 								<span className="number">Issue #{issueNumber + 1}</span>
+								<input
+									id="newIssue"
+									name="newIssue"
+									type="text"
+									value={issueTitle}
+									placeholder="What is the subject of this issue?"
+									required
+									onChange={(e) => setIssueTitle(e.target.value)}
+								/>
+								<label for="newIssue" className="newIssueLabel"></label>
 								<span className="title">New Issue&hellip;</span>
-								<a className="button">+ Create</a>
+								<a
+									className="button"
+									onClick={(e) => {
+										createIssue({
+											variables: {
+												title: issueTitle,
+												roundtable: roundtableId,
+											},
+										});
+									}}
+								>
+									+ Create
+								</a>
 							</h3>
 						</li>
 					</ul>
@@ -42,7 +62,11 @@ export const IssueList = (props) => {
 
 	if (error) {
 		console.log(error.message);
-		return <p>error!</p>;
+		return (
+			<section className="issueList">
+				<p>error!</p>
+			</section>
+		);
 	}
 
 	return (
@@ -92,7 +116,7 @@ export const IssueList = (props) => {
 			<ul className="issueList allIssues">
 				{props.data.slice(1, props.data.length).map((issue) => {
 					console.log(issue);
-					number++;
+					number--;
 					return <IssueCard card={issue} number={number} />;
 				})}
 			</ul>
