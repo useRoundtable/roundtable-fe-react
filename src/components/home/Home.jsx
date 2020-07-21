@@ -44,10 +44,10 @@ export const Home = () => {
 							</section>
 						</ul>
 						<h3>Assemble your roundtable.</h3>
-						{/* <!-- <h3>Keep up<br> with your<br> coworkers.</h3>
-			<h3>Coordinate<br> with your<br> friends.</h3>
-			<h3>Grow<br> with your<br> mastermind group.</h3>
-			<h3>Share<br> with your<br> followers.</h3> --> */}
+						{/* <!-- <h3>Keep up<br /> with your<br /> coworkers.</h3>
+						<h3>Coordinate<br /> with your<br /> friends.</h3>
+						<h3>Grow<br /> with your<br /> mastermind group.</h3>
+						<h3>Share<br /> with your<br /> followers.</h3> --> */}
 						<p>Stay on top of things with simple two-way newsletters.</p>
 					</form>
 				</div>

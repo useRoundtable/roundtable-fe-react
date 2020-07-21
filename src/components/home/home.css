@@ -205,6 +205,7 @@ header nav.light > ul {
 	text-align: left;
 	transform: translate(0, 0);
 }
+header nav.light > ul:after {content:'';position:relative;display:block;width:100%;height:0;clear:both;}
 header nav.light > ul li h6 {
 	color: rgba(15, 30, 30, 0.3);
 }
@@ -357,3 +358,65 @@ header nav.light > ul:hover li:hover h6 {
 	z-index: 2;
 	object-fit: none;
 } */
+
+@media only screen and (max-width: 1024px) {
+	.home header {
+		padding: 0 20px 20px;
+	}
+	.home header > * {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: inherit;
+		min-height: calc(75vh);
+		max-height:none;
+		padding: 0;
+	}
+	.home header form {
+		position: relative;
+		top: initial;
+		left: initial;
+		transform: none;
+		padding: 30px 30px;
+	}
+	.home header nav {
+		position: relative;
+		display: block;
+		top: initial;
+		right: initial;
+		padding: 20px 0 0;
+		font-size: 0.75em;
+	}
+	.home header figure {
+		border-radius: 30px;
+	}
+	.home header nav > ul {
+		position: relative;
+		display: block;
+	}
+	.home header nav.light > ul {
+		padding: 0;
+		text-align: right;
+	}
+	.home .hero {
+		text-align:center;
+	}
+	.home .hero h3 {padding-bottom:1em;}
+	.home article.myRoundtables {
+		max-width: calc(100% - 20px);
+		padding: 0;
+	}
+	.home section.table {
+		padding: 19rem 2em 3em;
+		border-radius: 30px;
+		border-top-left-radius: 250px;
+		border-top-right-radius: 250px;
+		text-align: center;
+	}
+	.home section.table ul.roundtable {
+		top: 2.5em;
+		left: 50%;
+		transform: translate(-4em, -50%);
+		font-size: 2rem;
+	}
+}
