@@ -67,7 +67,16 @@ export const IssueCard = ({ card, number, id }) => {
 							<ResponseList />
 						</li>
 						<li className="kudos">&hearts; 482</li>
-						<li className="more">Edit Issue</li>
+						<li
+							className="more"
+							onClick={() => {
+								window.location.assign(
+									`${roundtableId}/issue/${card.id}/new`
+								);
+							}}
+						>
+							Edit Issue
+						</li>
 					</ul>
 				</li>
 			</ul>
