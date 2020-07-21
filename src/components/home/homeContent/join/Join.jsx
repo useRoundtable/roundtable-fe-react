@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { RTAnimation } from "../../../animation/roundtableAni";
 
-import { REGISTER as register } from "../../../../resolvers/mutations";
+import { REGISTER as register } from "@resolvers/mutations";
 
 export const Join = () => {
 	const [email, setEmail] = useState("");

@@ -5,8 +5,8 @@ import { useMutation } from "@apollo/react-hooks";
 import "./myRoundtableList.css";
 import { enterRoundtable } from "../../utils";
 import { RTAnimation } from "../animation/roundtableAni";
-import { DELETE_ROUNDTABLE as deleteRoundtable } from "../../resolvers/mutations";
-import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
+import { DELETE_ROUNDTABLE as deleteRoundtable } from "@resolvers/mutations";
+import { ROUNDTABLES as RTbyUID } from "@resolvers/queries";
 
 export const MyRoundtableList = ({
 	props: { roundtableName, description, members, id, issues },

@@ -3,7 +3,7 @@ import "./login.css";
 import "../../index.css";
 import { useMutation } from "@apollo/react-hooks";
 
-import { LOGIN as login } from "../../resolvers/mutations";
+import { LOGIN as login } from "@resolvers/mutations";
 
 export const Login = () => {
 	const [email, setEmail] = useState("");

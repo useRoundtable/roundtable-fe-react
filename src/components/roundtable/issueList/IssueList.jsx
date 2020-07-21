@@ -4,7 +4,7 @@ import { IssueCard } from "./issueCard/IssueCard";
 import { useLocation, useParams } from "react-router-dom";
 
 import { useMutation } from "@apollo/react-hooks";
-import { CREATE_ISSUE as newIssue } from "../../../resolvers/mutations";
+import { CREATE_ISSUE as newIssue } from "@resolvers/mutations";
 
 export const IssueList = (props) => {
 	const location = useLocation();
