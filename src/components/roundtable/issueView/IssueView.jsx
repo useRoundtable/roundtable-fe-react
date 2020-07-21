@@ -4,15 +4,22 @@ import { useQuery } from "@apollo/react-hooks";
 
 import { QuestionCard } from "./questions/QuestionCard";
 
-import { ISSUEBYID as IBD } from "../../../resolvers/queries";
+import { GatherResponse } from "./GatherResponse";
+
+import { ISSUEBYID as IBD } from "@resolvers/queries";
 
 export const IssueView = () => {
 	const { issueid, roundtableId } = useParams();
+
 	const location = useLocation();
 	let questionNumber = 0;
 	const { loading, error, data } = useQuery(IBD, {
 		variables: { id: issueid },
 	});
+
+	// Change this value to switch which component is rendered down under
+	const issueStatus = "Gathering";
+
 	if (loading) {
 		return <h3>Loading</h3>;
 	} else if (error) {
@@ -48,18 +55,13 @@ export const IssueView = () => {
 				</p>
 			</article>
 			<article className="questionList">
-				{/* <ul className="questionList">
+				<ul className="questionList">
 					<h6 className="questionListHeader">Questions</h6>
-					<li>What was your major accomplishment this week?</li>
-					<li className="done">
-						What do you need help with for next week?
-					</li>
-					<li>What does it look like with no paragraphs?</li>
 					{data.issueById.questions.map((question) => {
 						return <li>{question.question}</li>;
 					})}
-				</ul> */}
-				<ul className="options">
+				</ul>
+				{/* <ul className="options">
 					<li>
 						<a
 							className="button"
@@ -75,12 +77,18 @@ export const IssueView = () => {
 							View Responses
 						</a>
 					</li>
-				</ul>
+				</ul> */}
 			</article>
-			{data.issueById.questions.map((question) => {
-				questionNumber++;
-				return <QuestionCard data={question} qNumber={questionNumber} />;
-			})}
+			{issueStatus === "Gathering"
+				? data.issueById.questions.map((question) => {
+						return <GatherResponse question={question} />;
+				  })
+				: data.issueById.questions.map((question) => {
+						questionNumber++;
+						return (
+							<QuestionCard data={question} qNumber={questionNumber} />
+						);
+				  })}
 		</section>
 	);
 };
