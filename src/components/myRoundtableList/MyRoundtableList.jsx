@@ -1,16 +1,22 @@
 import React from "react";
+
+import { useMutation } from "@apollo/react-hooks";
+
 import "./myRoundtableList.css";
 import { enterRoundtable } from "../../utils";
 import { RTAnimation } from "../animation/roundtableAni";
+import { DELETE_ROUNDTABLE as deleteRoundtable } from "../../resolvers/mutations";
+import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 
 export const MyRoundtableList = ({
 	props: { roundtableName, description, members, id, issues },
 }) => {
+	const [deleteRT] = useMutation(deleteRoundtable);
 	document.body.classList.remove("editing");
 	return (
 		<>
 			<section className="table">
-				<RTAnimation members={members} />
+				<RTAnimation members={members} name={roundtableName} />
 				<h2>{roundtableName}</h2>
 				<h3>
 					<span className="message">{description}</span>
@@ -56,9 +62,22 @@ export const MyRoundtableList = ({
 					<li>
 						<a
 							className="button notPriority"
-							onClick={(e) => enterRoundtable(e, "/roundtable/edit")}
+							onClick={(e) => enterRoundtable(e, `/roundtable/${id}`)}
 						>
 							Publish
+						</a>
+					</li>
+					<li>
+						<a
+							className="button notPriority"
+							onClick={(e) => {
+								deleteRT({
+									variables: { id },
+									refetchQueries: [{ query: RTbyUID }],
+								});
+							}}
+						>
+							Delete
 						</a>
 					</li>
 				</ul>
