@@ -2,7 +2,7 @@ import React from "react";
 
 import { CreateIssueQuestion } from "./createIssueQuestion/CreateIssueQuestion";
 import { useQuery } from "@apollo/react-hooks";
-import { ISSUEBYID as issueById } from "../../../resolvers/queries";
+import { ISSUEBYID as issueById } from "@resolvers/queries";
 import { Question } from "../questionResponses/Question";
 
 import ReactQuill from "react-quill";

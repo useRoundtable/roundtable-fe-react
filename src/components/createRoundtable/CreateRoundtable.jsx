@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { enterRoundtable } from "../../utils";
 
-import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
+import { ROUNDTABLES as RTbyUID } from "@resolvers/queries";
 
-import { CREATE_RT as newRoundtable } from "../../resolvers/mutations";
+import { CREATE_RT as newRoundtable } from "@resolvers/mutations";
 
 export const CreateRoundtable = () => {
 	const [title, setTitle] = useState("");
