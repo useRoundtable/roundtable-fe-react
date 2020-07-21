@@ -1,11 +1,12 @@
 import React from "react";
 import "./roundtableAni.css";
 
-export const RTAnimation = ({ members }) => {
+export const RTAnimation = ({ members, name }) => {
+	console.log(name);
 	if (members.length === 0) {
 		return (
 			<ul className="roundtable">
-				<h5></h5>
+				<h5>{name ? name[0] : ""}</h5>
 				<section>
 					<li className="empty">
 						<span>
@@ -19,6 +20,7 @@ export const RTAnimation = ({ members }) => {
 		return (
 			<>
 				<ul className="roundtable">
+					<h5>{name[0]}</h5>
 					<section>
 						{members.map(({ user }) => {
 							if (user.userName) {
