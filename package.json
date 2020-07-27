@@ -11,6 +11,7 @@
 		"apollo-link": "^1.2.14",
 		"apollo-link-context": "^1.0.20",
 		"apollo-link-http": "^1.5.17",
+		"classnames": "^2.2.6",
 		"graphql": "^15.0.0",
 		"jsonwebtoken": "^8.5.1",
 		"link-module-alias": "^1.2.0",

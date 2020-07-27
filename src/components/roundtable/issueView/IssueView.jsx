@@ -1,24 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useRouteMatch, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 
-import { QuestionCard } from "./questions/QuestionCard";
+import { QuestionRender } from "./QuestionRender";
+import { QuestionList } from "./questions/QuestionList";
 
-import { GatherResponse } from "./GatherResponse";
-
-import { ISSUEBYID as IBD } from "@resolvers/queries";
+import { ISSUEBYID as IBID } from "@resolvers/queries";
 
 export const IssueView = () => {
-	const { issueid, roundtableId } = useParams();
+	const { issueid } = useParams();
+	const [isDone, setIsDone] = useState(false);
 
 	const location = useLocation();
 	let questionNumber = 0;
-	const { loading, error, data } = useQuery(IBD, {
+	const { loading, error, data } = useQuery(IBID, {
 		variables: { id: issueid },
 	});
 
 	// Change this value to switch which component is rendered down under
-	const issueStatus = "Gathering";
+	const issueStatus = "Gatherisng";
 
 	if (loading) {
 		return <h3>Loading</h3>;
@@ -54,14 +54,7 @@ export const IssueView = () => {
 					{/* {data.issueById.prompt} */}
 				</p>
 			</article>
-			<article className="questionList">
-				<ul className="questionList">
-					<h6 className="questionListHeader">Questions</h6>
-					{data.issueById.questions.map((question) => {
-						return <li>{question.question}</li>;
-					})}
-				</ul>
-				{/* <ul className="options">
+			{/* <ul className="options">
 					<li>
 						<a
 							className="button"
@@ -78,17 +71,10 @@ export const IssueView = () => {
 						</a>
 					</li>
 				</ul> */}
-			</article>
-			{issueStatus === "Gathering"
-				? data.issueById.questions.map((question) => {
-						return <GatherResponse question={question} />;
-				  })
-				: data.issueById.questions.map((question) => {
-						questionNumber++;
-						return (
-							<QuestionCard data={question} qNumber={questionNumber} />
-						);
-				  })}
+			<QuestionRender
+				issueStatus={issueStatus}
+				questions={data.issueById.questions}
+			/>
 		</section>
 	);
 };

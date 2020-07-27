@@ -5,6 +5,7 @@ import { useParams, useRouteMatch } from "react-router-dom";
 // I will HAVE to update the onClick to remove it from the whole element.
 export const QuestionCard = ({ data, qNumber }) => {
 	const { roundtableId, issueid } = useParams();
+	console.log(data);
 	return (
 		<article
 			className="question"
