@@ -78,6 +78,20 @@ export const ISSUEBYID = gql`
 	}
 `;
 
+export const QUESTIONS_BY_ISSUE = gql`
+	query questionByIssue($id: ID!) {
+		issueById(id: $id) {
+			questions {
+				id
+				question
+				responses {
+					content
+				}
+			}
+		}
+	}
+`;
+
 export const RESPONSESBYQANDID = gql`
 	query responseByQandId($questionId: ID!) {
 		responseByQandId(questionId: $questionId) {

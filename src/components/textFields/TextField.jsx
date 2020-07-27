@@ -41,6 +41,7 @@ export const TextField = ({
 	inputLength,
 	placeholder,
 }) => {
+	// console.log(inputValue)
 	return (
 		<>
 			<ReactQuill
