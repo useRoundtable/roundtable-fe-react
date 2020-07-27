@@ -18,7 +18,7 @@ export const IssueView = () => {
 	});
 
 	// Change this value to switch which component is rendered down under
-	const issueStatus = "Gatherisng";
+	const issueStatus = "Gathering";
 
 	if (loading) {
 		return <h3>Loading</h3>;
