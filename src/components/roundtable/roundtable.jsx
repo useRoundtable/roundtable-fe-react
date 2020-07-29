@@ -33,6 +33,7 @@ export const Roundtable = () => {
 				<RoundtableHeader
 					members={data.roundtableById.members}
 					issueCount={data.roundtableById.issues.length}
+					title={data.roundtableById.roundtableName}
 				/>
 				<div className="content">
 					<Switch>

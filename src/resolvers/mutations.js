@@ -42,8 +42,20 @@ export const CREATE_RT = gql`
 `;
 
 export const CREATE_ISSUE = gql`
-	mutation CreateIssue($roundtable: ID!, $title: String!, $prompt: String) {
-		createIssue(roundtable: $roundtable, title: $title, prompt: $prompt) {
+	mutation CreateIssue(
+		$roundtable: ID!
+		$title: String!
+		$prompt: String
+		$currentStatus: String!
+		$issueNumber: Int!
+	) {
+		createIssue(
+			roundtable: $roundtable
+			title: $title
+			prompt: $prompt
+			currentStatus: $currentStatus
+			issueNumber: $issueNumber
+		) {
 			title
 			id
 		}
@@ -52,8 +64,18 @@ export const CREATE_ISSUE = gql`
 //Add Detail to Questions when it is live on the DB
 // $detail: String!
 export const ADD_QUESTIOM = gql`
-	mutation createQuestion($question: String!, $issue: ID!) {
-		createQuestion(question: $question, issue: $issue) {
+	mutation createQuestion(
+		$question: String!
+		$issue: ID!
+		$questionDetail: String
+		$questionNumber: Int
+	) {
+		createQuestion(
+			question: $question
+			issue: $issue
+			questionDetail: $questionDetail
+			questionNumber: $questionNumber
+		) {
 			question
 		}
 	}

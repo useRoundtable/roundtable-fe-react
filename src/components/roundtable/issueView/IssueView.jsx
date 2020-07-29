@@ -9,10 +9,7 @@ import { ISSUEBYID as IBID } from "@resolvers/queries";
 
 export const IssueView = () => {
 	const { issueid } = useParams();
-	const [isDone, setIsDone] = useState(false);
 
-	const location = useLocation();
-	let questionNumber = 0;
 	const { loading, error, data } = useQuery(IBID, {
 		variables: { id: issueid },
 	});
@@ -35,25 +32,26 @@ export const IssueView = () => {
 					<span className="title">{data.issueById.title}!</span>
 				</h3>
 			</article>
-			<article className="message">
-				<ul className="stats">
-					<li className="members">
-						<ul className="members">
-							<li>
-								<img
-									src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg"
-									alt="Steven K."
-								/>
-							</li>
-						</ul>
-						{data.issueById.issueAuthor.userName} says{" "}
-					</li>
-				</ul>
-				<p>
-					PROMPT GOES HERE, TONY NEEDS TO MAKE IT NULLABLE
-					{/* {data.issueById.prompt} */}
-				</p>
-			</article>
+			{data.issueById.prompt ? (
+				<article className="message">
+					<ul className="stats">
+						<li className="members">
+							<ul className="members">
+								<li>
+									<img
+										src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg"
+										alt="Steven K."
+									/>
+								</li>
+							</ul>
+							{data.issueById.issueAuthor.userName} says{" "}
+						</li>
+					</ul>
+					<p>{data.issueById.prompt}</p>
+				</article>
+			) : (
+				"ADD A PROMPT INPUT FIELD HERE, TONY"
+			)}
 			{/* <ul className="options">
 					<li>
 						<a

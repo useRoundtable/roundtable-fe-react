@@ -11,25 +11,10 @@ export const IssueCard = ({ card, number, id }) => {
 			<ul className="issueList allIssues">
 				<li>
 					<h3 className="issue">
-						<span className="number">Issue #{number}</span>
+						<span className="number">Issue #{card.issueNumber}</span>
 						<span className="title">{card.title}</span>
-						<span className="status">Wrapping up</span>
-						<span className="message">
-							Zefhir’s is a parachute rescue system for turbine
-							helicopters. Installed above the main rotor, the parachute
-							is designed as a backup for conditions where autorotation
-							cannot be performed. Zefhir’s is a parachute rescue system
-							for turbine helicopters. Installed above the main rotor,
-							the parachute is designed as a backup for conditions where
-							autorotation cannot be performed. Zefhir’s is a parachute
-							rescue system for turbine helicopters. Installed above the
-							main rotor, the parachute is designed as a backup for
-							conditions where autorotation cannot be performed.Zefhir’s
-							is a parachute rescue system for turbine helicopters.
-							Installed above the main rotor, the parachute is designed
-							as a backup for conditions where autorotation cannot be
-							performed.
-						</span>
+						<span className="status">{card.currentStatus}</span>
+						<span className="message">{card.prompt}</span>
 					</h3>
 					<ul className="options">
 						<li className="priority">
@@ -41,7 +26,6 @@ export const IssueCard = ({ card, number, id }) => {
 									)
 								}
 							>
-								{/* 2 New Responses */}
 								Respond
 							</a>
 						</li>

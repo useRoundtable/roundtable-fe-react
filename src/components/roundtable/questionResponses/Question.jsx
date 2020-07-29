@@ -7,9 +7,7 @@ export const Question = ({ question, questionNum }) => {
 			<div className="questionContent">
 				<h6 className="questionNumber">Question {questionNum}</h6>
 				<h4 className="question">{question.question}</h4>
-				<p>
-					QUESTION CONTEXT WILL GO HERE WHEN IT IS LIVE ON THE DATA BASE
-				</p>
+				<p>{question.questionDetail}</p>
 			</div>
 		</article>
 	);

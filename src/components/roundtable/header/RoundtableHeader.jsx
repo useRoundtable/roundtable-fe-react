@@ -7,12 +7,12 @@ import { MemberList } from "../../memberList/MemberList";
 /*
 I need to add the logic for what dictates a new response and add tracking to the section below
 */
-export const RoundtableHeader = ({ members, issueCount }) => {
+export const RoundtableHeader = ({ members, issueCount, title }) => {
 	const { roundtableId } = useParams();
 	return (
 		<>
 			<header>
-				<h2>Advisors</h2>
+				<h2>{title}</h2>
 				<a
 					className="close"
 					onClick={(e) => exitRoundtable(e, "/dashboard")}

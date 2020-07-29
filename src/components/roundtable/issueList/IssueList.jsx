@@ -3,23 +3,37 @@ import { IssueCard } from "./issueCard/IssueCard";
 
 import { useLocation, useParams } from "react-router-dom";
 
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation, useQuery } from "@apollo/react-hooks";
 import { CREATE_ISSUE as newIssue } from "@resolvers/mutations";
+import { ISSUES_BY_ROUNDTABLE as issueQuery } from "@resolvers/queries";
 
-export const IssueList = (props) => {
+export const IssueList = () => {
 	const location = useLocation();
 	const { roundtableId } = useParams();
-	const issueNumber = props.data.length;
-	let number = issueNumber;
+
 	const [issueTitle, setIssueTitle] = useState("");
-	const [createIssue, { loading, data, error }] = useMutation(newIssue, {
+	const [createIssue, { error }] = useMutation(newIssue, {
 		onCompleted({ createIssue }) {
 			window.location.assign(
 				`${location.pathname}/issue/${createIssue.id}/new`
 			);
 		},
 	});
-	if (issueNumber === 0) {
+
+	const {
+		data: {
+			roundtableById: { issues },
+		},
+	} = useQuery(issueQuery, {
+		variables: {
+			id: roundtableId,
+		},
+	});
+	if (error) {
+		return <p>error</p>;
+	}
+	console.log(issues, "data in issue list");
+	if (issues.length === 0) {
 		return (
 			<div>
 				<section className="issueList">
@@ -27,7 +41,7 @@ export const IssueList = (props) => {
 					<ul className="issueList">
 						<li className="new">
 							<h3 className="issue">
-								<span className="number">Issue #{issueNumber + 1}</span>
+								<span className="number">Issue #1</span>
 								<input
 									id="newIssue"
 									name="newIssue"
@@ -46,6 +60,8 @@ export const IssueList = (props) => {
 											variables: {
 												title: issueTitle,
 												roundtable: roundtableId,
+												currentStatus: "Just Adding Questions!",
+												issueNumber: 1,
 											},
 										});
 									}}
@@ -74,7 +90,7 @@ export const IssueList = (props) => {
 			<ul className="issueList">
 				<li className="new">
 					<h3 className="issue">
-						<span className="number">Issue #{issueNumber + 1}</span>
+						<span className="number">Issue #{issues.length + 1}</span>
 						<input
 							id="newIssue"
 							name="newIssue"
@@ -93,6 +109,8 @@ export const IssueList = (props) => {
 									variables: {
 										title: issueTitle,
 										roundtable: roundtableId,
+										currentStatus: "Just Adding Questions!",
+										issueNumber: issues.length + 1,
 									},
 								});
 							}}
@@ -104,20 +122,19 @@ export const IssueList = (props) => {
 			</ul>
 			<h4>Current Issue</h4>
 			<ul className="issueList currentIssue">
-				{props.data.slice(0, 1).map((issue) => {
-					return <IssueCard card={issue} number={issueNumber} />;
+				{issues.slice(0, 1).map((issue) => {
+					return <IssueCard card={issue} />;
 				})}
 			</ul>
 			<h4>
-				{issueNumber - 1 === 1
+				{issues.length - 1 === 1
 					? "Previous Issue"
-					: `${issueNumber - 1} Previous Issues`}{" "}
+					: `${issues.length - 1} Previous Issues`}{" "}
 			</h4>
 			<ul className="issueList allIssues">
-				{props.data.slice(1, props.data.length).map((issue) => {
+				{issues.slice(1, issues.length).map((issue) => {
 					console.log(issue);
-					number--;
-					return <IssueCard card={issue} number={number} />;
+					return <IssueCard card={issue} />;
 				})}
 			</ul>
 		</section>
