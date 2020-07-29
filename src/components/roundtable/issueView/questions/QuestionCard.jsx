@@ -18,10 +18,7 @@ export const QuestionCard = ({ data, qNumber }) => {
 			<div className="questionContent">
 				<h6 className="questionNumber">Question {qNumber}</h6>
 				<h4 className="question">{data.question}</h4>
-				<p>
-					QUESTION PROMPT WILL GO HERE, TONY NEEDS TO ADD THIS ON THE
-					BACKEND AS WELL
-				</p>
+				<p>{data.question.questionDetail}</p>
 			</div>
 			<ul className="stats">
 				{data.responses.length === 0 ? (
