@@ -11,8 +11,6 @@ import { useParams } from "react-router-dom";
 
 export const CreateIssue = () => {
 	const { issueid } = useParams();
-	let questionNum = 0;
-
 	const { data, error, loading } = useQuery(issueById, {
 		variables: {
 			id: issueid,
@@ -21,7 +19,7 @@ export const CreateIssue = () => {
 	if (loading) {
 		return <h3> loading </h3>;
 	}
-	console.log("data in creatissue", data.issueById.questions);
+	const questions = data.issueById.questions;
 	return (
 		<section className="issue new">
 			<article class="issueHeader">
@@ -73,11 +71,15 @@ export const CreateIssue = () => {
 					<li>1 week</li>
 				</ul>
 			</article>
-			{data.issueById.questions.map((question) => {
-				questionNum++;
-				return <Question question={question} questionNum={questionNum} />;
+			{questions.map((question) => {
+				return (
+					<Question
+						question={question}
+						questionNum={question.questionNumber}
+					/>
+				);
 			})}
-			<CreateIssueQuestion questionNum={questionNum + 1} />
+			<CreateIssueQuestion questionNum={questions.length + 1} />
 		</section>
 	);
 };
