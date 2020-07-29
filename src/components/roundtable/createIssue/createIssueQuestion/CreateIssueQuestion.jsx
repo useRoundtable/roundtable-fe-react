@@ -41,8 +41,12 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 	const [inputValue, setInputValue] = useState("");
 	const [question, setQuestion] = useState("");
 
-	const [addQuestion] = useMutation(newQ);
-
+	const [addQuestion] = useMutation(newQ, {
+		onCompleted({ newQ }) {
+			setInputValue("");
+			setQuestion("");
+		},
+	});
 	return (
 		<>
 			<article className="question">
@@ -64,7 +68,10 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 							<em>{inputValue.length}</em> / 10000
 						</li>
 					</ul>
-					<input onChange={(e) => setQuestion(e.target.value)} />
+					<input
+						value={question}
+						onChange={(e) => setQuestion(e.target.value)}
+					/>
 					<TextField
 						modules={modules}
 						formats={formats}
@@ -86,6 +93,8 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 									variables: {
 										issue: issueid,
 										question,
+										questionDetail: inputValue,
+										questionNumber: questionNum,
 									},
 									refetchQueries: [
 										{
