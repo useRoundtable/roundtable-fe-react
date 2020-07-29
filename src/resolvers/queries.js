@@ -34,6 +34,20 @@ export const ROUNDTABLES = gql`
 	}
 `;
 
+export const ISSUES_BY_ROUNDTABLE = gql`
+	query roundtableById($id: ID!) {
+		roundtableById(id: $id) {
+			issues {
+				id
+				title
+				issueNumber
+				prompt
+				currentStatus
+			}
+		}
+	}
+`;
+
 export const ROUNDTABLE = gql`
 	query roundtableById($id: ID!) {
 		roundtableById(id: $id) {
@@ -41,6 +55,9 @@ export const ROUNDTABLE = gql`
 			issues {
 				id
 				title
+				issueNumber
+				prompt
+				currentStatus
 			}
 			owner {
 				id
@@ -61,12 +78,15 @@ export const ISSUEBYID = gql`
 	query issueById($id: ID!) {
 		issueById(id: $id) {
 			title
+			prompt
 			issueAuthor {
 				userName
 			}
 			questions {
 				id
 				question
+				questionDetail
+				questionNumber
 				responses {
 					content
 					responseAuthor {
@@ -84,6 +104,8 @@ export const QUESTIONS_BY_ISSUE = gql`
 			questions {
 				id
 				question
+				questionDetail
+				questionNumber
 				responses {
 					content
 				}
