@@ -12,15 +12,17 @@ import { QUESTIONS_BY_ISSUE as QBIID } from "@resolvers/queries";
 export const ResponseInput = ({ issueStatus }) => {
 	const [activeComponent, setActiveComponent] = useState(0);
 	let qNumber = 0;
-	const thisClass = classNames({
-		active: "active",
-	});
+
 	const { issueid } = useParams();
-	const { data } = useQuery(QBIID, {
+	const { data, error } = useQuery(QBIID, {
 		variables: {
 			id: issueid,
 		},
 	});
+	if (error) {
+		console.log(error);
+		return <p>Error</p>;
+	}
 	if (issueStatus === "Gathering") {
 		return data.issueById.questions.map((question) => {
 			qNumber++;
