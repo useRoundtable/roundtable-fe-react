@@ -34,16 +34,28 @@ export const ROUNDTABLES = gql`
 	}
 `;
 
+// export const ISSUES_BY_ROUNDTABLE = gql`
+// 	query roundtableById($id: ID!) {
+// 		roundtableById(id: $id) {
+// 			issues {
+// 				id
+// 				title
+// 				issueNumber
+// 				prompt
+// 				currentStatus
+// 			}
+// 		}
+// 	}
+// `;
+
 export const ISSUES_BY_ROUNDTABLE = gql`
-	query roundtableById($id: ID!) {
-		roundtableById(id: $id) {
-			issues {
-				id
-				title
-				issueNumber
-				prompt
-				currentStatus
-			}
+	query issuesByRTId($roundtableId: ID!) {
+		issuesByRTId(roundtableId: $roundtableId) {
+			id
+			title
+			issueNumber
+			prompt
+			currentStatus
 		}
 	}
 `;
