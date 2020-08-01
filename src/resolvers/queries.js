@@ -48,7 +48,7 @@ export const ROUNDTABLES = gql`
 // 	}
 // `;
 
-export const ISSUES_BY_ROUNDTABLE = gql`
+export const IBR = gql`
 	query issuesByRTId($roundtableId: ID!) {
 		issuesByRTId(roundtableId: $roundtableId) {
 			id

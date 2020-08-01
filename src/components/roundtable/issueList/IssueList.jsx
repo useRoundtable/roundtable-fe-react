@@ -5,7 +5,7 @@ import { useLocation, useParams } from "react-router-dom";
 
 import { useMutation, useQuery } from "@apollo/react-hooks";
 import { CREATE_ISSUE as newIssue } from "@resolvers/mutations";
-import { ISSUES_BY_ROUNDTABLE as issueQuery } from "@resolvers/queries";
+import { IBR as issueQuery } from "@resolvers/queries";
 
 export const IssueList = () => {
 	const location = useLocation();
