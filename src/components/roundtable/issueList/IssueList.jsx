@@ -12,7 +12,7 @@ export const IssueList = () => {
 	const { roundtableId } = useParams();
 
 	const [issueTitle, setIssueTitle] = useState("");
-	const [createIssue, { error }] = useMutation(newIssue, {
+	const [createIssue] = useMutation(newIssue, {
 		onCompleted({ createIssue }) {
 			window.location.assign(
 				`${location.pathname}/issue/${createIssue.id}/new`
@@ -20,20 +20,26 @@ export const IssueList = () => {
 		},
 	});
 
-	const {
-		data: {
-			roundtableById: { issues },
-		},
-	} = useQuery(issueQuery, {
-		variables: {
-			id: roundtableId,
-		},
+	// const {
+	// 	data: {
+	// 		roundtableById: { issues },
+	// 	},
+	// } = useQuery(issueQuery, {
+	// 	variables: {
+	// 		id: roundtableId,
+	// 	},
+	// });
+	const { data, error, loading } = useQuery(issueQuery, {
+		variables: { roundtableId: roundtableId },
 	});
 	if (error) {
 		return <p>error</p>;
 	}
-	console.log(issues, "data in issue list");
-	if (issues.length === 0) {
+	if (loading) {
+		return <p>loading</p>;
+	}
+
+	if (data.issuesByRTId.length === 0) {
 		return (
 			<div>
 				<section className="issueList">
@@ -90,7 +96,9 @@ export const IssueList = () => {
 			<ul className="issueList">
 				<li className="new">
 					<h3 className="issue">
-						<span className="number">Issue #{issues.length + 1}</span>
+						<span className="number">
+							Issue #{data.issuesByRTId.length + 1}
+						</span>
 						<input
 							id="newIssue"
 							name="newIssue"
@@ -110,7 +118,7 @@ export const IssueList = () => {
 										title: issueTitle,
 										roundtable: roundtableId,
 										currentStatus: "Just Adding Questions!",
-										issueNumber: issues.length + 1,
+										issueNumber: data.issuesByRTId.length + 1,
 									},
 								});
 							}}
@@ -122,20 +130,22 @@ export const IssueList = () => {
 			</ul>
 			<h4>Current Issue</h4>
 			<ul className="issueList currentIssue">
-				{issues.slice(0, 1).map((issue) => {
+				{data.issuesByRTId.slice(0, 1).map((issue) => {
 					return <IssueCard card={issue} />;
 				})}
 			</ul>
 			<h4>
-				{issues.length - 1 === 1
+				{data.issuesByRTId.length - 1 === 1
 					? "Previous Issue"
-					: `${issues.length - 1} Previous Issues`}{" "}
+					: `${data.issuesByRTId.length - 1} Previous Issues`}{" "}
 			</h4>
 			<ul className="issueList allIssues">
-				{issues.slice(1, issues.length).map((issue) => {
-					console.log(issue);
-					return <IssueCard card={issue} />;
-				})}
+				{data.issuesByRTId
+					.slice(1, data.issuesByRTId.length)
+					.map((issue) => {
+						console.log(issue);
+						return <IssueCard card={issue} />;
+					})}
 			</ul>
 		</section>
 	);
