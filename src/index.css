@@ -1360,21 +1360,3 @@ main > .get-started > article .field.selected input + label {
 	left: 0;
 	color: rgba(15, 30, 30, 0.5);
 }
-
-@media only screen and (max-width: 1600px) {
-	body main {
-		display: block;
-		width: 100%;
-		max-width: 100%;
-		font-size: 0.5em;
-	}
-	section.table {
-		background: rgba(255, 255, 255, 1);
-		border: 1px solid rgba(15, 30, 30, 0.07);
-		box-shadow: 3px 3px 0 rgba(15, 30, 30, 0.01);
-	}
-}
-
-@media only screen and (max-width: 1024px) {
-	
-}
