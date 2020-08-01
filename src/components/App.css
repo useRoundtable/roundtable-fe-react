@@ -583,12 +583,12 @@ section:hover .roundtable:hover > section > li > span + img {
 	max-height: 100vh;
 	overflow-y: hidden;
 }
-.editing > #root > nav {
+/* Not sure this is needed .editing > #root > nav {
 	position: fixed;
 	top: 0;
 	left: 50%;
 	transform: translate(-50%, 0);
-}
+}*/
 .editing article.myRoundtables {
 	opacity: 0;
 }
@@ -702,6 +702,9 @@ article.edit header:after {
 article.edit header h2 {
 	max-width: calc(100% - 2em);
 	float: left;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
 }
 article.edit header h2 ul.roundtable {
 	font-size: 0.25em;
@@ -2194,13 +2197,24 @@ article.edit section.issue textarea:valid {
 }
 
 @media only screen and (max-width: 1024px) {
+	body main {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		font-size: 0.75em;
+	}
 	body.editing > nav {
 		width: 100%;
+	}
+	section.table {
+		background: rgba(255, 255, 255, 1);
+		border: 1px solid rgba(15, 30, 30, 0.07);
+		box-shadow: 3px 3px 0 rgba(15, 30, 30, 0.01);
 	}
 	article.edit {
 		border-top-left-radius: 30px;
 		border-top-right-radius: 30px;
-		font-size: 0.5rem;
+		font-size: 0.75rem;
 	}
 	article.edit header {
 		padding: 20px 20px 0;
@@ -2216,5 +2230,31 @@ article.edit section.issue textarea:valid {
 	}
 	article.edit section {
 		padding: 30px 30px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	article.myRoundtables {
+		padding:10px;
+	}
+	section.table {
+		padding:25em 2em 2em;
+		border-radius:50vw 50vw 3em 3em;
+	}
+	section.table ul.roundtable {
+		top:4em;
+		left:50%;
+		transform:translate(-4em,-4em);
+		font-size:3em;
+	}
+	section.table.createNew ul.roundtable {
+		transform:translate(-4em,-4em);
+	}
+	article.edit section.issueList ul.issueList > li > ul.options {
+		text-align:center;
+	}
+	article.edit section.issueList ul.issueList > li > ul.options li {
+		float:none!important;
+		margin:0!important;
 	}
 }
