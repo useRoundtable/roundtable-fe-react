@@ -53,8 +53,8 @@ export const IssueList = () => {
 									name="newIssue"
 									type="text"
 									value={issueTitle}
-									placeholder="What is the subject of this issue?"
-									required
+									placeholder="What is the subject?"
+									required="required"
 									onChange={(e) => setIssueTitle(e.target.value)}
 								/>
 								<label for="newIssue" className="newIssueLabel"></label>
@@ -104,7 +104,7 @@ export const IssueList = () => {
 							name="newIssue"
 							type="text"
 							value={issueTitle}
-							placeholder="What is the subject of this issue?"
+							placeholder="What is the subject?"
 							required
 							onChange={(e) => setIssueTitle(e.target.value)}
 						/>

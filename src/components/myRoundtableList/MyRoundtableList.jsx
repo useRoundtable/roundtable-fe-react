@@ -29,7 +29,7 @@ export const MyRoundtableList = ({
 					)}
 					{issues.length ? (
 						<li>
-							<strong>{issues.length}</strong> Issues Published
+							<strong>{issues.length}</strong> Issues
 						</li>
 					) : (
 						<li>

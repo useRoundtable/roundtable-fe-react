@@ -288,7 +288,7 @@ section.table ul.stats li {
 	font-size: 1rem;
 	line-height: 1.5rem;
 }
-section.table ul.stats li:after {
+/*section.table ul.stats li:after {
 	content: "";
 	position: relative;
 	display: inline-block;
@@ -301,7 +301,7 @@ section.table ul.stats li:after {
 }
 section.table ul.stats li:last-child:after {
 	display: none;
-}
+}*/
 section.table > .issue {
 	position: relative;
 	margin: 20px 0 0 0;
@@ -798,10 +798,10 @@ ul.stats > li:before {
 	content: "";
 	position: absolute;
 	top: 50%;
-	left: -0.75em;
+	left: -0.5em;
 	display: inline-block;
-	width: 0.5em;
-	height: 0.5em;
+	width: 6px;
+	height: 6px;
 	vertical-align: middle;
 	border-radius: 50%;
 	background: rgba(15, 30, 30, 1);
@@ -2238,18 +2238,19 @@ article.edit section.issue textarea:valid {
 		padding:10px;
 	}
 	section.table {
-		padding:25em 2em 2em;
+		padding:15em 2em 2em;
 		border-radius:50vw 50vw 3em 3em;
 	}
 	section.table ul.roundtable {
 		top:4em;
 		left:50%;
 		transform:translate(-4em,-4em);
-		font-size:3em;
+		font-size:2em;
 	}
 	section.table.createNew ul.roundtable {
 		transform:translate(-4em,-4em);
 	}
+	article.edit section {padding:20px 20px;}
 	article.edit section.issueList ul.issueList > li > ul.options {
 		text-align:center;
 	}
@@ -2257,4 +2258,25 @@ article.edit section.issue textarea:valid {
 		float:none!important;
 		margin:0!important;
 	}
+
+	/* New Roundtable */
+	section.table.createNew {min-height:;}
+	section.table.createNew h2 {padding:0;}
+	section.table.createNew form input#newRoundtableName {max-width:calc(100% - 3rem);padding:0;font-size:2em;line-height:2.5rem;}
+	section.table.createNew form textarea#newRoundtableDescription {width:calc(100% - 3rem);height:calc(6rem - 2.5rem);transition:opacity 0.15s ease-in-out, bottom 0.15s ease-in-out, height 0.15s ease-in-out;}
+	section.table.createNew form input#newRoundtableName:valid ~ textarea#newRoundtableDescription {height:6rem;}
+	section.table.createNew ul.stats {padding:0;transition:opacity .15s ease-in-out, padding .15s ease-in-out;}
+	section.table.createNew ul.stats li {padding:.5rem 0 0 0;}
+	section.table.createNew form input#newRoundtableName:valid ~ ul.stats {padding:.5rem 0 2.5rem 0;}
+	section.table.createNew input#newRoundtableName:valid ~ ul.roundtable, section.table.createNew input#newRoundtableName:valid ~ ul.roundtable:hover {background: rgba(15, 30, 30, 1);transform: translate(-4em, -4em) scale(1.0);z-index: 3;cursor: pointer;}
+	section.table.createNew input#newRoundtableName:valid ~ ul.roundtable h5:after {color: rgba(255, 220, 0, 1);text-shadow: 0 0 0 rgba(15, 30, 30, 0);}
+
+	/* New Issue */
+	article.edit section.issueList ul.issueList > li.new > h3.issue {padding:0;}
+	article.edit section.issueList ul.issueList > li.new > h3.issue > .title {position:absolute;top:0;left:0;padding:1.5em 20px 0.25em;display:block;width:100%;}
+	article.edit section.issueList ul.issueList > li.new > h3.issue input {position:relative;transition:opacity .2s .2s ease-in-out, padding .2s .2s ease-in-out;}
+	article.edit section.issueList ul.issueList > li.new > h3.issue input:invalid {padding:1.5em 20px 1em;}
+	article.edit section.issueList ul.issueList > li.new > h3.issue input:valid {padding:1.5em 20px 5em;transition:opacity .2s 0s ease-in-out, padding .2s 0s ease-in-out;}
+	article.edit section.issueList ul.issueList > li.new > h3.issue input ~ a.button {top:initial;bottom:15px;left:-9999px;transform:translate(-50%,-5px);text-align:center;opacity:0;width:calc(100% - 30px);background:rgba(15, 30, 30, 1);color:rgba(255, 220, 0, 1);text-shadow:none;transition:opacity .2s .0s ease-in-out, transform .2s .0s ease-in-out, left 0s .2s;}
+	article.edit section.issueList ul.issueList > li.new > h3.issue input:valid ~ a.button {left:50%;opacity:1;transform:translate(-50%,0);transition:opacity .25s .15s ease-in-out, transform .25s .15s ease-in-out, left 0s 0s;}
 }
