@@ -3,9 +3,16 @@ import React from "react";
 import { ResponseList } from "../../../memberList/ResponseList";
 import { useParams, useRouteMatch } from "react-router-dom";
 
-export const IssueCard = ({ card, number, id }) => {
+import {useMutation} from '@apollo/react-hooks'
+import {DELETE_ISSUE as issueDelete} from "@resolvers/mutations"
+
+import {getUser} from '../../../../auth'
+
+export const IssueCard = ({ card }) => {
 	const { path } = useRouteMatch();
 	const { roundtableId } = useParams();
+	const {id} = getUser()
+	const [deleteIssue] = useMutation(issueDelete)
 	return (
 		<>
 			<ul className="issueList allIssues">
@@ -61,6 +68,18 @@ export const IssueCard = ({ card, number, id }) => {
 						>
 							Edit Issue
 						</li>
+						{card.issueAuthor.id == id ?
+						<li className="more">
+							<a onClick={
+								() => {
+									deleteIssue({
+										variables: {
+											id: card.id
+										}
+									})
+								}
+							}>Delete</a>
+						</li> : ""}
 					</ul>
 				</li>
 			</ul>
