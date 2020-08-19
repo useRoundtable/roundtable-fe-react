@@ -56,6 +56,9 @@ export const IBR = gql`
 			issueNumber
 			prompt
 			currentStatus
+			issueAuthor{
+				id
+			}
 		}
 	}
 `;

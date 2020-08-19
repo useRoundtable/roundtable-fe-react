@@ -89,6 +89,15 @@ export const DELETE_ROUNDTABLE = gql`
 	}
 `;
 
+export const DELETE_ISSUE = gql`
+	mutation($id: ID!){
+		deleteIssue(id: $id){
+			id
+		}
+	}
+`
+
+
 export const CREATE_RESPONSE = gql`
 	mutation createResponse($content: String!, $question: ID!) {
 		createResponse(content: $content, question: $question) {
