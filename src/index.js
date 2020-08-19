@@ -4,17 +4,23 @@ import "./index.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
+import {getUser} from './auth'
+
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 
 const client = new ApolloClient({
 	request: (operation) => {
-		const token = localStorage.getItem("authorization");
-		operation.setContext({
-			headers: {
-				authorization: token ? `${token}` : "",
-			},
-		});
+		if(operation.operationName === "Login"){
+			
+		}else{
+			const {token} = getUser()
+			operation.setContext({
+				headers: {
+					authorization: token ? `Bearer ${token}` : "",
+				},
+			});
+		}
 	},
 	uri: "https://tryroundtable.herokuapp.com/",
 });
