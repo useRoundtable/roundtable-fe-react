@@ -3,6 +3,8 @@ import "./login.css";
 import "../../index.css";
 import { useMutation } from "@apollo/react-hooks";
 
+import {setUser} from '../../auth';
+
 import { LOGIN as login } from "@resolvers/mutations";
 
 export const Login = () => {
@@ -10,8 +12,7 @@ export const Login = () => {
 	const [password, setPassword] = useState("");
 	const [userLogin] = useMutation(login, {
 		onCompleted({ login }) {
-			localStorage.setItem("authorization", `Bearer ${login.token}`);
-			window.location.assign("/dashboard");
+			setUser(`Bearer ${login.token}`)
 		},
 	});
 

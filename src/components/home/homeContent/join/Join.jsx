@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
-import { RTAnimation } from "../../../animation/roundtableAni";
+import {setUser} from '../../../../auth'
 
 import { REGISTER as register } from "@resolvers/mutations";
 
@@ -14,7 +14,7 @@ export const Join = () => {
 
 	const [registerUser, { loading }] = useMutation(register, {
 		onCompleted({ createUser }) {
-			localStorage.setItem("authorization", `Bearer ${createUser.token}`);
+			setUser(`Bearer ${createUser.token}`)
 			window.location.assign("/dashboard");
 		},
 	});
