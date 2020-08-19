@@ -31,7 +31,8 @@
 		"postinstall": "link-module-alias"
 	},
 	"_moduleAliases": {
-		"@resolvers": "src/resolvers"
+		"~Mutations": "src/resolvers/mutations",
+		"~Queries": "src/resolvers/queries"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
