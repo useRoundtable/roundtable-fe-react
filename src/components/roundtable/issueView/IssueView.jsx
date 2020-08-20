@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { QuestionRender } from "./QuestionRender";
 import { QuestionList } from "./questions/QuestionList";
 
-import { ISSUEBYID as IBID } from "@resolvers/queries";
+import { ISSUEBYID as IBID } from "../../../resolvers/queries";
 
 export const IssueView = () => {
 	const { issueid } = useParams();

@@ -1,18 +1,24 @@
 import React from "react";
 
-import { useMutation } from "@apollo/react-hooks";
+import { RTAnimation } from "../animation/roundtableAni";
 
 import "./myRoundtableList.css";
+
 import { enterRoundtable } from "../../utils";
-import { RTAnimation } from "../animation/roundtableAni";
-import { DELETE_ROUNDTABLE as deleteRoundtable } from "@resolvers/mutations";
-import { ROUNDTABLES as RTbyUID } from "@resolvers/queries";
+import {getUser} from '../../auth'
+
+import { useMutation } from "@apollo/react-hooks";
+import { DELETE_ROUNDTABLE as deleteRoundtable } from "../../resolvers/mutations";
+import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
+import { parse } from "graphql";
 
 export const MyRoundtableList = ({
-	props: { roundtableName, description, members, id, issues },
+	props: { roundtableName, description, members, id, issues, owner },
 }) => {
 	const [deleteRT] = useMutation(deleteRoundtable);
 	document.body.classList.remove("editing");
+	const loggedInUser = getUser()
+
 	return (
 		<>
 			<section className="table">
@@ -68,6 +74,7 @@ export const MyRoundtableList = ({
 						</a>
 					</li>
 					<li>
+						{loggedInUser.id == owner.id ? 
 						<a
 							className="button notPriority"
 							onClick={(e) => {
@@ -78,7 +85,7 @@ export const MyRoundtableList = ({
 							}}
 						>
 							Delete
-						</a>
+						</a> : ""}
 					</li>
 				</ul>
 			</section>

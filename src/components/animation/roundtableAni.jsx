@@ -2,7 +2,6 @@ import React from "react";
 import "./roundtableAni.css";
 
 export const RTAnimation = ({ members, name }) => {
-	console.log(name);
 	if (members.length === 0) {
 		return (
 			<ul className="roundtable">

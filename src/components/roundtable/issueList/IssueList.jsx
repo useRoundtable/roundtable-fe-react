@@ -4,7 +4,7 @@ import { IssueCard } from "./issueCard/IssueCard";
 import { useLocation, useParams } from "react-router-dom";
 
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import { CREATE_ISSUE as newIssue } from "@resolvers/mutations";
+import { CREATE_ISSUE as newIssue } from "../../../resolvers/mutations";
 import { IBR as issueQuery } from "../../../resolvers/queries";
 
 export const IssueList = () => {
@@ -20,25 +20,22 @@ export const IssueList = () => {
 		},
 	});
 
-	// const {
-	// 	data: {
-	// 		roundtableById: { issues },
-	// 	},
-	// } = useQuery(issueQuery, {
-	// 	variables: {
-	// 		id: roundtableId,
-	// 	},
-	// });
 	const { data, error, loading } = useQuery(issueQuery, {
 		variables: { roundtableId: roundtableId },
 	});
-	if (error) {
-		return <p>error</p>;
-	}
+
 	if (loading) {
 		return <p>loading</p>;
 	}
-
+	
+	if (error) {
+		console.log(error.message);
+		return (
+			<section className="issueList">
+				<p>error!</p>
+			</section>
+		);
+	}
 	if (data.issuesByRTId.length === 0) {
 		return (
 			<div>
@@ -82,14 +79,6 @@ export const IssueList = () => {
 		);
 	}
 
-	if (error) {
-		console.log(error.message);
-		return (
-			<section className="issueList">
-				<p>error!</p>
-			</section>
-		);
-	}
 
 	return (
 		<section className="issueList">
@@ -143,7 +132,6 @@ export const IssueList = () => {
 				{data.issuesByRTId
 					.slice(1, data.issuesByRTId.length)
 					.map((issue) => {
-						console.log(issue);
 						return <IssueCard card={issue} />;
 					})}
 			</ul>

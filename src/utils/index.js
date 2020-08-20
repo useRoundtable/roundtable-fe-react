@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 export const enterRoundtable = (e, target) => {
     e.preventDefault();
     document.body.classList.add("editing");
@@ -21,3 +23,13 @@ export const exitRoundtable = (e, target) => {
     	window.location.assign(target);
     }, 250);
 };
+
+export const parseDate = () => {
+    const date = moment().format('MMMM Do YYYY')
+    return date
+}
+
+export const parsePublishDate = ( publishDate )=> {
+    const publishDay = moment().add(publishDate, 'days').format('MMMM DD YYYY')
+    return publishDay
+}

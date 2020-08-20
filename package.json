@@ -15,6 +15,7 @@
 		"graphql": "^15.0.0",
 		"jsonwebtoken": "^8.5.1",
 		"link-module-alias": "^1.2.0",
+		"moment": "^2.27.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-markdown": "^4.3.1",
@@ -29,9 +30,6 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"postinstall": "link-module-alias"
-	},
-	"_moduleAliases": {
-		"@resolvers": "src/resolvers"
 	},
 	"eslintConfig": {
 		"extends": "react-app"

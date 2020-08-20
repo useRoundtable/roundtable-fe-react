@@ -56,6 +56,9 @@ export const IBR = gql`
 			issueNumber
 			prompt
 			currentStatus
+			issueAuthor{
+				id
+			}
 		}
 	}
 `;
@@ -92,7 +95,7 @@ export const ISSUEBYID = gql`
 			title
 			prompt
 			issueAuthor {
-				userName
+				id
 			}
 			questions {
 				id

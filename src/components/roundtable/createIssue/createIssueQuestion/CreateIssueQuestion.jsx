@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { TextField } from "../../../textFields/TextField";
 import { useMutation } from "@apollo/react-hooks";
 import { useParams } from "react-router-dom";
-import { ADD_QUESTIOM as newQ } from "@resolvers/mutations";
-import { ISSUEBYID as issueById } from "@resolvers/queries";
+import { ADD_QUESTIOM as newQ } from "../../../../resolvers/mutations";
+import { ISSUEBYID as issueById } from "../../../../resolvers/queries";
 
 const modules = {
 	toolbar: [

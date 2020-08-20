@@ -12,7 +12,7 @@ import { IssueList } from "./issueList/IssueList";
 import { MemberView } from "./members/MemberView";
 import { CreateIssue } from "./createIssue/CreateIssue";
 
-import { ROUNDTABLE as RTbyID } from "@resolvers/queries";
+import { ROUNDTABLE as RTbyID } from "../../resolvers/queries";
 
 export const Roundtable = () => {
 	document.body.classList.add("editing");
