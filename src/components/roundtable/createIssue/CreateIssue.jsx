@@ -1,15 +1,23 @@
-import React from "react";
-
-import { CreateIssueQuestion } from "./createIssueQuestion/CreateIssueQuestion";
-import { useQuery } from "@apollo/react-hooks";
-import { ISSUEBYID as issueById } from "@resolvers/queries";
-import { Question } from "../questionResponses/Question";
-
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import React, {useState} from "react";
 import { useParams } from "react-router-dom";
 
+import { CreateIssueQuestion } from "./createIssueQuestion/CreateIssueQuestion";
+import { Question } from "../questionResponses/Question";
+import { WeekMap } from "./WeekMap";
+
+import "react-quill/dist/quill.snow.css";
+import ReactQuill from "react-quill";
+
+import { useQuery } from "@apollo/react-hooks";
+import { ISSUEBYID as issueById } from "../../../resolvers/queries";
+
+import {parsePublishDate} from '../../../utils'
+import { getUser } from "../../../auth";
+
 export const CreateIssue = () => {
+	const week = [1,2,3,4,5,6,7]
+	const user = getUser()
+	const [publishDate, setPublishDate] = useState(0)
 	const { issueid } = useParams();
 	const { data, error, loading } = useQuery(issueById, {
 		variables: {
@@ -19,7 +27,15 @@ export const CreateIssue = () => {
 	if (loading) {
 		return <h3> loading </h3>;
 	}
+	const time = parsePublishDate(publishDate)
 	const questions = data.issueById.questions;
+	if(user.id !== parseInt(data.issueById.issueAuthor.id)){
+		return (
+			<>
+				<h2>This is not your issue to edit.</h2>
+			</>
+		)
+	}
 	return (
 		<section className="issue new">
 			<article class="issueHeader">
@@ -60,15 +76,14 @@ export const CreateIssue = () => {
 			<article className="questionList">
 				<ul className="questionList">
 					<h6 className="questionListHeader">
-						Collect responses for&hellip;until July 17, 2020.
+Collect responses for {data.issueById.title} until {time}.
 					</h6>
-					<li>1 day</li>
-					<li>2 days</li>
-					<li>3 days</li>
-					<li className="done">4 days</li>
-					<li>5 days</li>
-					<li>6 days</li>
-					<li>1 week</li>
+					{week.map((day) => {
+						return (
+							<WeekMap publishDate={publishDate} setPublishDate={setPublishDate} day={day}/>
+						)
+					})}
+					
 				</ul>
 			</article>
 			{questions.map((question) => {
