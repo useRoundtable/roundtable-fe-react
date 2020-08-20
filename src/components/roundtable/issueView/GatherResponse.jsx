@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 
 import { useMutation, useQuery } from "@apollo/react-hooks";
 
-import { CREATE_RESPONSE as sendResponse } from "@resolvers/mutations";
-import { ISSUEBYID as IBID } from "@resolvers/queries";
+import { CREATE_RESPONSE as sendResponse } from "../../../resolvers/mutations";
+import { ISSUEBYID as IBID } from "../../../resolvers/queries";
 
 export const GatherResponse = ({
 	question,

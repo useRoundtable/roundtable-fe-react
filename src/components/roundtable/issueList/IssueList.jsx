@@ -4,7 +4,7 @@ import { IssueCard } from "./issueCard/IssueCard";
 import { useLocation, useParams } from "react-router-dom";
 
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import { CREATE_ISSUE as newIssue } from "@resolvers/mutations";
+import { CREATE_ISSUE as newIssue } from "../../../resolvers/mutations";
 import { IBR as issueQuery } from "../../../resolvers/queries";
 
 export const IssueList = () => {

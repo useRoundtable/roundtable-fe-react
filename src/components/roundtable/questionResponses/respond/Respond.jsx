@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { useParams } from "react-router-dom";
 
-import { ISSUEBYID as issueById } from "@resolvers/queries";
-import { QUESTIONSBYISSUEID as questionsByIID } from "@resolvers/queries";
+import { ISSUEBYID as issueById } from "../../../../resolvers/queries";
+import { QUESTIONSBYISSUEID as questionsByIID } from "../../../../resolvers/queries";
 
 import { Question } from "../Question";
 import { TextField } from "../../../textFields/TextField";

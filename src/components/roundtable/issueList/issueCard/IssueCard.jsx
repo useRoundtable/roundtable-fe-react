@@ -4,7 +4,7 @@ import { ResponseList } from "../../../memberList/ResponseList";
 import { useParams, useRouteMatch } from "react-router-dom";
 
 import {useMutation} from '@apollo/react-hooks'
-import {DELETE_ISSUE as issueDelete} from "@resolvers/mutations"
+import {DELETE_ISSUE as issueDelete} from "../../../../resolvers/mutations"
 
 import {getUser} from '../../../../auth'
 

@@ -7,7 +7,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { QuestionCard } from "./questions/QuestionCard";
 import { GatherResponse } from "./GatherResponse";
 
-import { QUESTIONS_BY_ISSUE as QBIID } from "@resolvers/queries";
+import { QUESTIONS_BY_ISSUE as QBIID } from "../../../resolvers/queries";
 
 export const ResponseInput = ({ issueStatus }) => {
 	const [activeComponent, setActiveComponent] = useState(0);

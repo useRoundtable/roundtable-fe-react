@@ -95,7 +95,7 @@ export const ISSUEBYID = gql`
 			title
 			prompt
 			issueAuthor {
-				userName
+				id
 			}
 			questions {
 				id

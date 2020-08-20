@@ -8,8 +8,8 @@ import { enterRoundtable } from "../../utils";
 import {getUser} from '../../auth'
 
 import { useMutation } from "@apollo/react-hooks";
-import { DELETE_ROUNDTABLE as deleteRoundtable } from "@resolvers/mutations";
-import { ROUNDTABLES as RTbyUID } from "@resolvers/queries";
+import { DELETE_ROUNDTABLE as deleteRoundtable } from "../../resolvers/mutations";
+import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 import { parse } from "graphql";
 
 export const MyRoundtableList = ({

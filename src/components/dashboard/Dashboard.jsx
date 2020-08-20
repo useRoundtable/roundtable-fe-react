@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { RTAnimation } from "../animation/roundtableAni";
 import { Login } from "../login/Login";
 
-import { ROUNDTABLES as RTbyUID } from "@resolvers/queries";
+import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 
 /* 
 TONY
