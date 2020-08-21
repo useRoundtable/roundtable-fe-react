@@ -13,6 +13,7 @@ export const Login = () => {
 	const [userLogin] = useMutation(login, {
 		onCompleted({ login }) {
 			setUser(`Bearer ${login.token}`)
+			window.location.assign(`/dashboard`)
 		},
 	});
 
