@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { RTAnimation } from "../animation/roundtableAni";
 
@@ -10,14 +10,17 @@ import {getUser} from '../../auth'
 import { useMutation } from "@apollo/react-hooks";
 import { DELETE_ROUNDTABLE as deleteRoundtable } from "../../resolvers/mutations";
 import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
-import { parse } from "graphql";
+import Modal from 'react-modal'
+import { InviteModal } from "./InviteModal";
 
 export const MyRoundtableList = ({
 	props: { roundtableName, description, members, id, issues, owner },
 }) => {
 	const [deleteRT] = useMutation(deleteRoundtable);
+	Modal.setAppElement("#root");
 	document.body.classList.remove("editing");
 	const loggedInUser = getUser()
+	const [modalIsOpen, setIsOpen] = useState(false)
 
 	return (
 		<>
@@ -74,6 +77,14 @@ export const MyRoundtableList = ({
 						</a>
 					</li>
 					<li>
+						<a
+							className="button notPriority"
+							onClick={(e) => setIsOpen(true)}
+						>
+							Invite
+						</a>
+					</li>
+					<li>
 						{loggedInUser.id == owner.id ? 
 						<a
 							className="button notPriority"
@@ -89,6 +100,17 @@ export const MyRoundtableList = ({
 					</li>
 				</ul>
 			</section>
+			<Modal
+			isOpen={modalIsOpen}
+			portalClassName="overlay-container"
+			className="modal"
+			   overlayClassName="overlay"
+			   shouldCloseOnEsc={true}
+			   closeTimeoutMS={200}
+			   onRequestClose={() => setIsOpen(false)}
+			>
+				<InviteModal setIsOpen={setIsOpen} roundtableId={id}/>
+			</Modal>
 		</>
 	);
 };
