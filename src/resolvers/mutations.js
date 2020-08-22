@@ -61,6 +61,24 @@ export const CREATE_ISSUE = gql`
 		}
 	}
 `;
+
+
+// Come back and add currentStatus when you update your BE schema.
+export const UPDATE_ISSUE = gql`
+	mutation updateIssue(
+		$title: String!
+		$prompt: String
+		$id: ID!
+	){
+		updateIssue(
+			title: $title
+			prompt: $prompt
+			id: $id
+		){
+			id
+		}
+	}
+`
 //Add Detail to Questions when it is live on the DB
 // $detail: String!
 export const ADD_QUESTIOM = gql`
