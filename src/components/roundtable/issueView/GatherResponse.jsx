@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Question } from "../questionResponses/Question";
 import { TextField } from "../../textFields/TextField";
-import { useParams } from "react-router-dom";
 
-import { useMutation, useQuery } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/react-hooks";
 
 import { CREATE_RESPONSE as sendResponse } from "../../../resolvers/mutations";
-import { ISSUEBYID as IBID } from "../../../resolvers/queries";
+import { RenderMarkdown } from "../../universalComponents/RenderMarkdown";
 
 export const GatherResponse = ({
 	question,
@@ -14,17 +12,14 @@ export const GatherResponse = ({
 	setActiveComponent,
 	qNumber,
 }) => {
-	const { issueid } = useParams();
-	const { loading, error, data } = useQuery(IBID, {
-		variables: { id: issueid },
-	});
+
 	const [inputValue, setInputValue] = useState("");
-	// const [isDone, setIsDone] = useState(false);
 	const [createResponse] = useMutation(sendResponse, {
 		onCompleted({ sendResponse }) {
 			setInputValue("");
 		},
 	});
+	
 	return (
 		<>
 			<article
@@ -40,9 +35,7 @@ export const GatherResponse = ({
 				<div className={`questionContent ${isActive ? "active" : ""}`}>
 					<h6 className="questionNumber">Question 300</h6>
 					<h4 className="question">{question.question}</h4>
-					<p>
-						QUESTION CONTEXT WILL GO HERE WHEN IT IS LIVE ON THE DATA BASE
-					</p>
+					<RenderMarkdown source={question.questionDetail}/>
 					<TextField
 						inputValue={inputValue}
 						setInputValue={setInputValue}
