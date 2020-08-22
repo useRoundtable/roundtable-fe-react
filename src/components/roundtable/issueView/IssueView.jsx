@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { useParams, useRouteMatch, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 
@@ -10,6 +11,7 @@ import { ISSUEBYID as IBID } from "../../../resolvers/queries";
 
 export const IssueView = () => {
 	const { issueid } = useParams();
+
 
 	const { loading, error, data } = useQuery(IBID, {
 		variables: { id: issueid },
