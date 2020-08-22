@@ -55,7 +55,7 @@ export const IssueCard = ({ card }) => {
 							}
 						>
 							11 Responses
-							<ResponseList />
+							<ResponseList issue={card.id}/>
 						</li>
 						<li className="kudos">&hearts; 482</li>
 						<li
