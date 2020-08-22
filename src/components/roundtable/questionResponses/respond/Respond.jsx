@@ -8,38 +8,9 @@ import { QUESTIONSBYISSUEID as questionsByIID } from "../../../../resolvers/quer
 import { Question } from "../Question";
 import { TextField } from "../../../textFields/TextField";
 
-const modules = {
-	toolbar: [
-		[{ header: [1, 2, false] }],
-		["bold", "italic", "underline", "strike", "blockquote"],
-		[
-			{ list: "ordered" },
-			{ list: "bullet" },
-			{ indent: "-1" },
-			{ indent: "+1" },
-		],
-		["link"],
-		["clean"],
-		["image"],
-	],
-};
-
-const formats = [
-	"header",
-	"bold",
-	"italic",
-	"underline",
-	"strike",
-	"blockquote",
-	"list",
-	"bullet",
-	"indent",
-	"link",
-	"image",
-];
-
 export const Respond = () => {
 	const { issueid } = useParams();
+	const [inputValue, setInputValue] = useState("")
 
 	const { loading, error, data } = useQuery(issueById, {
 		variables: { id: issueid },
@@ -53,7 +24,6 @@ export const Respond = () => {
 	if (loading) {
 		return <h1>Loading Questions</h1>;
 	}
-	console.log(data.issueById.questions);
 
 	return (
 		<section className="issue answer">
@@ -62,8 +32,8 @@ export const Respond = () => {
 					<>
 						<Question question={question} questionNum={1} />
 						<TextField
-							modules={modules}
-							formats={formats}
+							inputValue={inputValue}
+							setInputValue={setInputValue}
 							questionId={question.id}
 						/>
 					</>

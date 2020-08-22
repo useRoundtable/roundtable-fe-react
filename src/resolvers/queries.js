@@ -34,19 +34,6 @@ export const ROUNDTABLES = gql`
 	}
 `;
 
-// export const ISSUES_BY_ROUNDTABLE = gql`
-// 	query roundtableById($id: ID!) {
-// 		roundtableById(id: $id) {
-// 			issues {
-// 				id
-// 				title
-// 				issueNumber
-// 				prompt
-// 				currentStatus
-// 			}
-// 		}
-// 	}
-// `;
 
 export const IBR = gql`
 	query issuesByRTId($roundtableId: ID!) {
@@ -153,6 +140,24 @@ export const LOGGEDINUSER = gql`
 		}
 	}
 `;
+
+export const CREATE_ISSUE = gql`
+	query issueById($id: ID!){
+		issueById(id: $id){
+			title
+			prompt
+			currentStatus
+			questions{
+				question
+				questionDetail
+			}
+			issueAuthor{
+				id
+			}
+		}
+	}
+`;
+
 // questionDetail <--------- ADD THIS TO THE RESPONSE LATER
 export const QUESTIONSBYISSUEID = gql`
 	query questionsByIssueId($issueId: ID!) {

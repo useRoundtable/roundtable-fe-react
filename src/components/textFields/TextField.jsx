@@ -41,7 +41,6 @@ export const TextField = ({
 	inputLength,
 	placeholder,
 }) => {
-	// console.log(inputValue)
 	return (
 		<>
 			<ReactQuill
@@ -54,7 +53,7 @@ export const TextField = ({
 			/>
 			<ul className="stats">
 				<li className="textCount noHover">
-					<em>{inputLength}</em> / 10000
+					<em>{inputValue.length}</em> / 10000
 				</li>
 			</ul>
 		</>
