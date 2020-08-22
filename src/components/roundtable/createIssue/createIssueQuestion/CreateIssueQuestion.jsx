@@ -6,36 +6,6 @@ import { useParams } from "react-router-dom";
 import { ADD_QUESTIOM as newQ } from "../../../../resolvers/mutations";
 import { ISSUEBYID as issueById } from "../../../../resolvers/queries";
 
-const modules = {
-	toolbar: [
-		[{ header: [1, 2, false] }],
-		["bold", "italic", "underline", "strike", "blockquote"],
-		[
-			{ list: "ordered" },
-			{ list: "bullet" },
-			{ indent: "-1" },
-			{ indent: "+1" },
-		],
-		["link"],
-		["clean"],
-		["image"],
-	],
-};
-
-const formats = [
-	"header",
-	"bold",
-	"italic",
-	"underline",
-	"strike",
-	"blockquote",
-	"list",
-	"bullet",
-	"indent",
-	"link",
-	"image",
-];
-
 export const CreateIssueQuestion = ({ questionNum }) => {
 	const { issueid } = useParams();
 	const [inputValue, setInputValue] = useState("");
@@ -73,8 +43,6 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 						onChange={(e) => setQuestion(e.target.value)}
 					/>
 					<TextField
-						modules={modules}
-						formats={formats}
 						inputValue={inputValue}
 						setInputValue={setInputValue}
 					/>
@@ -82,9 +50,6 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 			</article>
 			<article>
 				<ul className="options">
-					<li>
-						<a className="button big">Wrap up this issue</a>
-					</li>
 					<l1>
 						<a
 							className="button big"
