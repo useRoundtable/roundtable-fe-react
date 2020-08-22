@@ -3,7 +3,8 @@ import { useParams, useRouteMatch, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 
 import { QuestionRender } from "./QuestionRender";
-import { QuestionList } from "./questions/QuestionList";
+import {RenderMarkdown} from '../../universalComponents/RenderMarkdown'
+import {TextField} from '../../textFields/TextField'
 
 import { ISSUEBYID as IBID } from "../../../resolvers/queries";
 
@@ -47,7 +48,7 @@ export const IssueView = () => {
 							{data.issueById.issueAuthor.userName} says{" "}
 						</li>
 					</ul>
-					<p>{data.issueById.prompt}</p>
+					<RenderMarkdown source={data.issueById.prompt}/>
 				</article>
 			) : (
 				"ADD A PROMPT INPUT FIELD HERE, TONY"
