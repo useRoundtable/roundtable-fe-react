@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
-import { UserProfile } from "../profiles/UserProfile";
+import { UserProfile } from "../Profiles/UserProfile";
 
 export const NavBar = () => {
 	const [modalIsOpen, setIsOpen] = useState(false);
 	Modal.setAppElement("#root");
 	const closeModal = () => {
-		setIsOpen(false)
-	}
+		setIsOpen(false);
+	};
 	const openModal = () => {
-		setIsOpen(true)
-	}
+		setIsOpen(true);
+	};
 	return (
 		<>
 			<nav className="navigation">
@@ -49,16 +49,16 @@ export const NavBar = () => {
 					</li>
 				</ul>
 			</nav>
-			<Modal 
+			<Modal
 				isOpen={modalIsOpen}
 				portalClassName="overlay-container"
 				className="modal"
-	       		overlayClassName="overlay"
-	       		shouldCloseOnEsc={true}
-	       		closeTimeoutMS={200}
-	       		onRequestClose={() => closeModal()}
-	       		>
-					<UserProfile closeModal={closeModal}/>
+				overlayClassName="overlay"
+				shouldCloseOnEsc={true}
+				closeTimeoutMS={200}
+				onRequestClose={() => closeModal()}
+			>
+				<UserProfile closeModal={closeModal} />
 			</Modal>
 		</>
 	);
