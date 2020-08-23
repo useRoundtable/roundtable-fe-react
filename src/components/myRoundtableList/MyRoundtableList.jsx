@@ -1,26 +1,26 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import { RTAnimation } from "../animation/roundtableAni";
 
 import "./myRoundtableList.css";
 
 import { enterRoundtable } from "../../utils";
-import {getUser} from '../../auth'
+import { getUser } from "../../auth";
 
 import { useMutation } from "@apollo/react-hooks";
 import { DELETE_ROUNDTABLE as deleteRoundtable } from "../../resolvers/mutations";
-import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
-import Modal from 'react-modal'
+import Modal from "react-modal";
 import { InviteModal } from "./InviteModal";
+import { DeleteModal } from "./DeleteModal";
 
 export const MyRoundtableList = ({
 	props: { roundtableName, description, members, id, issues, owner },
 }) => {
-	const [deleteRT] = useMutation(deleteRoundtable);
 	Modal.setAppElement("#root");
 	document.body.classList.remove("editing");
-	const loggedInUser = getUser()
-	const [modalIsOpen, setIsOpen] = useState(false)
+	const loggedInUser = getUser();
+	const [modalIsOpen, setIsOpen] = useState(false);
+	const [openModal, setOpenModal] = useState("");
 
 	return (
 		<>
@@ -79,37 +79,50 @@ export const MyRoundtableList = ({
 					<li>
 						<a
 							className="button notPriority"
-							onClick={(e) => setIsOpen(true)}
+							onClick={(e) => {
+								setIsOpen(true);
+								setOpenModal("invite");
+							}}
 						>
 							Invite
 						</a>
 					</li>
 					<li>
-						{loggedInUser.id == owner.id ? 
-						<a
-							className="button notPriority"
-							onClick={(e) => {
-								deleteRT({
-									variables: { id },
-									refetchQueries: [{ query: RTbyUID }],
-								});
-							}}
-						>
-							Delete
-						</a> : ""}
+						{loggedInUser.id == owner.id ? (
+							<a
+								className="button notPriority"
+								onClick={(e) => {
+									setIsOpen(true);
+									setOpenModal("delete");
+								}}
+							>
+								Delete
+							</a>
+						) : (
+							""
+						)}
 					</li>
 				</ul>
 			</section>
 			<Modal
-			isOpen={modalIsOpen}
-			portalClassName="overlay-container"
-			className="modal"
-			   overlayClassName="overlay"
-			   shouldCloseOnEsc={true}
-			   closeTimeoutMS={200}
-			   onRequestClose={() => setIsOpen(false)}
+				isOpen={modalIsOpen}
+				portalClassName="overlay-container"
+				className="modal"
+				overlayClassName="overlay"
+				shouldCloseOnEsc={true}
+				closeTimeoutMS={200}
+				onRequestClose={() => setIsOpen(false)}
 			>
-				<InviteModal setIsOpen={setIsOpen} roundtableId={id}/>
+				{openModal === "invite" ? (
+					<InviteModal setIsOpen={setIsOpen} roundtableId={id} />
+				) : (
+					<DeleteModal
+						setIsOpen={setIsOpen}
+						roundtableId={id}
+						setOpenModal={setOpenModal}
+						rtName={roundtableName}
+					/>
+				)}
 			</Modal>
 		</>
 	);
