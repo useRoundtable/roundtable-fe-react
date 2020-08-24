@@ -34,7 +34,6 @@ export const ROUNDTABLES = gql`
 	}
 `;
 
-
 export const IBR = gql`
 	query issuesByRTId($roundtableId: ID!) {
 		issuesByRTId(roundtableId: $roundtableId) {
@@ -43,7 +42,7 @@ export const IBR = gql`
 			issueNumber
 			prompt
 			currentStatus
-			issueAuthor{
+			issueAuthor {
 				id
 			}
 		}
@@ -142,17 +141,19 @@ export const LOGGEDINUSER = gql`
 `;
 
 export const CREATE_ISSUE = gql`
-	query issueById($id: ID!){
-		issueById(id: $id){
+	query issueById($id: ID!) {
+		issueById(id: $id) {
 			title
 			prompt
 			currentStatus
-			questions{
+			questions {
 				question
 				questionDetail
 			}
-			issueAuthor{
+			issueAuthor {
 				id
+				firstName
+				lastName
 			}
 		}
 	}
