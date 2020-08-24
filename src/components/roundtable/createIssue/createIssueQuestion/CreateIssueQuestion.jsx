@@ -34,9 +34,6 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 							</ul>
 							Tony K.
 						</li>
-						<li className="textCount noHover">
-							<em>{inputValue.length}</em> / 10000
-						</li>
 					</ul>
 					<input
 						value={question}
@@ -45,6 +42,7 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 					<TextField
 						inputValue={inputValue}
 						setInputValue={setInputValue}
+						placeholder={"Explain why you're asking this..."}
 					/>
 				</div>
 			</article>
