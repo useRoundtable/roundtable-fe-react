@@ -1,18 +1,7 @@
-import { gql } from "apollo-boost";
-
-export const USERS = gql`
-	{
-		users {
-			id
-			email
-			firstName
-			lastName
-		}
-	}
-`;
+import { gql } from "@apollo/client";
 
 export const ROUNDTABLES = gql`
-	{
+	query roundtablesByUserId {
 		roundtablesByUserId {
 			id
 			createdAt
@@ -39,7 +28,6 @@ export const IBR = gql`
 		issuesByRTId(roundtableId: $roundtableId) {
 			id
 			title
-			issueNumber
 			prompt
 			currentStatus
 			issueAuthor {
@@ -56,7 +44,6 @@ export const ROUNDTABLE = gql`
 			issues {
 				id
 				title
-				issueNumber
 				prompt
 				currentStatus
 			}
@@ -87,7 +74,6 @@ export const ISSUEBYID = gql`
 				id
 				question
 				questionDetail
-				questionNumber
 				responses {
 					content
 					responseAuthor {
@@ -106,7 +92,6 @@ export const QUESTIONS_BY_ISSUE = gql`
 				id
 				question
 				questionDetail
-				questionNumber
 				responses {
 					content
 				}
@@ -158,6 +143,35 @@ export const CREATE_ISSUE = gql`
 		}
 	}
 `;
+
+export const ISSUE_RESPONSES = gql`
+	query issueById($id: ID!) {
+		issueById(id: $id) {
+			questions {
+				responses {
+					responseAuthor {
+						avatar
+						firstName
+						lastName
+						userName
+					}
+				}
+			}
+		}
+	}
+`;
+
+// Replace above query with Commented out Query once BE is updated-
+// export const ISSUE_RESPONSES = gql`
+// 	query responsesByIssue($issueId: ID!) {
+// 		responseAuthor(issueId: $issueId) {
+// 			firstName
+// 			lastName
+// 			userName
+// 			avatar
+// 		}
+// 	}
+// `;
 
 // questionDetail <--------- ADD THIS TO THE RESPONSE LATER
 export const QUESTIONSBYISSUEID = gql`
