@@ -1,31 +1,32 @@
-import { parseToken } from './jwt'
+import { parseToken } from "./jwt";
 
-import { set, get, remove, clear } from './storageWrapper'
+import { set, get, remove, clear } from "./storageWrapper";
 
-const USER_KEY = 'authorization'
+const USER_KEY = "authorization";
 
-export const setUser = token => {
-  set(USER_KEY, token)
-}
+export const setUser = (token) => {
+	set(USER_KEY, token);
+};
 
 export const removeUser = () => {
-  remove(USER_KEY)
-}
+	remove(USER_KEY);
+};
 
 export const getUser = () => {
-  const token = get(USER_KEY)
+	const token = get(USER_KEY);
 
-  if (!token) return {}
+	if (!token) return {};
 
-  try {
-    const { id } = parseToken(token)
-    return { id, token }
-  } catch (err) {
-    removeUser()
-    return {}
-  }
-}
+	try {
+		const { id, isAdmin } = parseToken(token);
+		console.log(id, token, isAdmin);
+		return { id, token };
+	} catch (err) {
+		removeUser();
+		return {};
+	}
+};
 
 export const logOut = () => {
-  clear()
-}
+	clear();
+};
