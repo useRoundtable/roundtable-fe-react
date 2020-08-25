@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/client";
 import { DELETE_ROUNDTABLE as deleteRoundtable } from "../../resolvers/mutations";
 import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 

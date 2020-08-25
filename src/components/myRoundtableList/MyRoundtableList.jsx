@@ -7,7 +7,7 @@ import "./myRoundtableList.css";
 import { enterRoundtable } from "../../utils";
 import { getUser } from "../../auth";
 
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/client";
 import { DELETE_ROUNDTABLE as deleteRoundtable } from "../../resolvers/mutations";
 import Modal from "react-modal";
 import { InviteModal } from "./InviteModal";

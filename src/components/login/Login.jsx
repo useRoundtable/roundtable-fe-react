@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./login.css";
 import "../../index.css";
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/client";
 
-import {setUser} from '../../auth';
+import { setUser } from "../../auth";
 
 import { LOGIN as login } from "../../resolvers/mutations";
 
@@ -12,8 +12,8 @@ export const Login = () => {
 	const [password, setPassword] = useState("");
 	const [userLogin] = useMutation(login, {
 		onCompleted({ login }) {
-			setUser(`Bearer ${login.token}`)
-			window.location.assign(`/dashboard`)
+			setUser(`Bearer ${login.token}`);
+			window.location.assign(`/dashboard`);
 		},
 	});
 

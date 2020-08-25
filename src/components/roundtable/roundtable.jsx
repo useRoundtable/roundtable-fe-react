@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch, useParams } from "react-router-dom";
 
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/client";
 
 import "./roundtable.css";
 import { RoundtableHeader } from "./header/RoundtableHeader";
@@ -25,7 +25,7 @@ export const Roundtable = () => {
 	if (loading) {
 		return <article className="edit show"></article>;
 	} else if (error) {
-		return <h2>error</h2>;
+		return <h2>{error.message}</h2>;
 	}
 	return (
 		<>

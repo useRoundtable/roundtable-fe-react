@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TextField } from "../../textFields/TextField";
 
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/client";
 
 import { CREATE_RESPONSE as sendResponse } from "../../../resolvers/mutations";
 import { RenderMarkdown } from "../../universalComponents/RenderMarkdown";
@@ -12,14 +12,13 @@ export const GatherResponse = ({
 	setActiveComponent,
 	qNumber,
 }) => {
-
 	const [inputValue, setInputValue] = useState("");
 	const [createResponse] = useMutation(sendResponse, {
 		onCompleted({ sendResponse }) {
 			setInputValue("");
 		},
 	});
-	
+
 	return (
 		<>
 			<article
@@ -35,7 +34,7 @@ export const GatherResponse = ({
 				<div className={`questionContent ${isActive ? "active" : ""}`}>
 					<h6 className="questionNumber">Question 300</h6>
 					<h4 className="question">{question.question}</h4>
-					<RenderMarkdown source={question.questionDetail}/>
+					<RenderMarkdown source={question.questionDetail} />
 					<TextField
 						inputValue={inputValue}
 						setInputValue={setInputValue}

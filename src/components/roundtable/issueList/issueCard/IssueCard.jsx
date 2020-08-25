@@ -3,25 +3,28 @@ import React from "react";
 import { ResponseList } from "../../../memberList/ResponseList";
 import { useParams, useRouteMatch } from "react-router-dom";
 
-import {useMutation} from '@apollo/react-hooks'
-import {DELETE_ISSUE as issueDelete} from "../../../../resolvers/mutations"
+import { useMutation } from "@apollo/client";
+import { DELETE_ISSUE as issueDelete } from "../../../../resolvers/mutations";
 
-import {getUser} from '../../../../auth'
+import { getUser } from "../../../../auth";
+import { RenderMarkdown } from "../../../universalComponents/RenderMarkdown";
 
 export const IssueCard = ({ card }) => {
 	const { path } = useRouteMatch();
 	const { roundtableId } = useParams();
-	const {id} = getUser()
-	const [deleteIssue] = useMutation(issueDelete)
+	const { id } = getUser();
+	const [deleteIssue] = useMutation(issueDelete);
 	return (
 		<>
 			<ul className="issueList allIssues">
 				<li>
 					<h3 className="issue">
-						<span className="number">Issue #{card.issueNumber}</span>
+						<span className="number">Issue #999999999999</span>
 						<span className="title">{card.title}</span>
 						<span className="status">{card.currentStatus}</span>
-						<span className="message">{card.prompt}</span>
+						<span className="message">
+							<RenderMarkdown source={card.prompt} />
+						</span>
 					</h3>
 					<ul className="options">
 						<li className="priority">
@@ -54,8 +57,7 @@ export const IssueCard = ({ card }) => {
 								)
 							}
 						>
-							11 Responses
-							<ResponseList issue={card.id}/>
+							<ResponseList issue={card.id} />
 						</li>
 						<li className="kudos">&hearts; 482</li>
 						<li
@@ -68,18 +70,23 @@ export const IssueCard = ({ card }) => {
 						>
 							Edit Issue
 						</li>
-						{card.issueAuthor.id == id ?
-						<li className="more">
-							<a onClick={
-								() => {
-									deleteIssue({
-										variables: {
-											id: card.id
-										}
-									})
-								}
-							}>Delete</a>
-						</li> : ""}
+						{card.issueAuthor.id == id ? (
+							<li className="more">
+								<a
+									onClick={() => {
+										deleteIssue({
+											variables: {
+												id: card.id,
+											},
+										});
+									}}
+								>
+									Delete
+								</a>
+							</li>
+						) : (
+							""
+						)}
 					</ul>
 				</li>
 			</ul>

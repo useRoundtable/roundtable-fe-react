@@ -4,25 +4,35 @@ import "./index.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
-import {getUser} from './auth'
+import { getUser } from "./auth";
 
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "@apollo/react-hooks";
+// import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import {
+	ApolloClient,
+	ApolloProvider,
+	InMemoryCache,
+	HttpLink,
+	ApolloLink,
+	concat,
+} from "@apollo/client";
+
+const httpLink = new HttpLink({ uri: "https://tryroundtable.herokuapp.com" });
+
+const authMiddleWare = new ApolloLink((operation, forward) => {
+	const { token } = getUser();
+	operation.setContext({
+		headers: {
+			authorization: token ? `Bearer ${token}` : "",
+		},
+	});
+	return forward(operation);
+});
 
 const client = new ApolloClient({
-	request: (operation) => {
-		if(operation.operationName === "Login"){
-			
-		}else{
-			const {token} = getUser()
-			operation.setContext({
-				headers: {
-					authorization: token ? `Bearer ${token}` : "",
-				},
-			});
-		}
-	},
-	uri: "https://tryroundtable.herokuapp.com/",
+	// uri: "localhost:4000",
+	cache: new InMemoryCache(),
+	link: concat(authMiddleWare, httpLink),
+	credentials: "include",
 });
 
 ReactDOM.render(

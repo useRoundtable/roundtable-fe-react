@@ -3,7 +3,7 @@ import { IssueCard } from "./issueCard/IssueCard";
 
 import { useLocation, useParams } from "react-router-dom";
 
-import { useMutation, useQuery } from "@apollo/react-hooks";
+import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_ISSUE as newIssue } from "../../../resolvers/mutations";
 import { IBR as issueQuery } from "../../../resolvers/queries";
 
@@ -27,7 +27,7 @@ export const IssueList = () => {
 	if (loading) {
 		return <p>loading</p>;
 	}
-	
+
 	if (error) {
 		console.log(error.message);
 		return (
@@ -64,7 +64,6 @@ export const IssueList = () => {
 												title: issueTitle,
 												roundtable: roundtableId,
 												currentStatus: "Just Adding Questions!",
-												issueNumber: 1,
 											},
 										});
 									}}
@@ -78,7 +77,6 @@ export const IssueList = () => {
 			</div>
 		);
 	}
-
 
 	return (
 		<section className="issueList">
@@ -107,7 +105,6 @@ export const IssueList = () => {
 										title: issueTitle,
 										roundtable: roundtableId,
 										currentStatus: "Just Adding Questions!",
-										issueNumber: data.issuesByRTId.length + 1,
 									},
 								});
 							}}

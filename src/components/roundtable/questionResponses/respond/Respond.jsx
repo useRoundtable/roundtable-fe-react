@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
 import { ISSUEBYID as issueById } from "../../../../resolvers/queries";
@@ -10,7 +10,7 @@ import { TextField } from "../../../textFields/TextField";
 
 export const Respond = () => {
 	const { issueid } = useParams();
-	const [inputValue, setInputValue] = useState("")
+	const [inputValue, setInputValue] = useState("");
 
 	const { loading, error, data } = useQuery(issueById, {
 		variables: { id: issueid },
