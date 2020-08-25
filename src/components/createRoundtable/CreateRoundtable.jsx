@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useMutation } from "@apollo/react-hooks";
-import { enterRoundtable } from "../../utils";
+import { useMutation } from "@apollo/client";
 
 import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 
@@ -10,7 +9,12 @@ export const CreateRoundtable = () => {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 
-	const [createRT, { loading }] = useMutation(newRoundtable);
+	const [createRT, { loading }] = useMutation(newRoundtable, {
+		onCompleted({ newRoundtable }) {
+			setDescription("");
+			setTitle("");
+		},
+	});
 
 	document.body.classList.remove("editing");
 	return (
