@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 
 import { useParams, useRouteMatch, useLocation } from "react-router-dom";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/client";
 
 import { QuestionRender } from "./QuestionRender";
-import {RenderMarkdown} from '../../universalComponents/RenderMarkdown'
-import {TextField} from '../../textFields/TextField'
+import { RenderMarkdown } from "../../universalComponents/RenderMarkdown";
+import { TextField } from "../../textFields/TextField";
 
 import { ISSUEBYID as IBID } from "../../../resolvers/queries";
 
 export const IssueView = () => {
 	const { issueid } = useParams();
-
 
 	const { loading, error, data } = useQuery(IBID, {
 		variables: { id: issueid },
@@ -50,7 +49,7 @@ export const IssueView = () => {
 							{data.issueById.issueAuthor.userName} says{" "}
 						</li>
 					</ul>
-					<RenderMarkdown source={data.issueById.prompt}/>
+					<RenderMarkdown source={data.issueById.prompt} />
 				</article>
 			) : (
 				"ADD A PROMPT INPUT FIELD HERE, TONY"

@@ -1,4 +1,4 @@
-import { gql } from "apollo-boost";
+import { gql } from "@apollo/client";
 
 export const LOGIN = gql`
 	mutation Login($email: String!, $password: String) {
@@ -47,14 +47,12 @@ export const CREATE_ISSUE = gql`
 		$title: String!
 		$prompt: String
 		$currentStatus: String!
-		$issueNumber: Int!
 	) {
 		createIssue(
 			roundtable: $roundtable
 			title: $title
 			prompt: $prompt
 			currentStatus: $currentStatus
-			issueNumber: $issueNumber
 		) {
 			title
 			id
@@ -62,23 +60,14 @@ export const CREATE_ISSUE = gql`
 	}
 `;
 
-
 // Come back and add currentStatus when you update your BE schema.
 export const UPDATE_ISSUE = gql`
-	mutation updateIssue(
-		$title: String!
-		$prompt: String
-		$id: ID!
-	){
-		updateIssue(
-			title: $title
-			prompt: $prompt
-			id: $id
-		){
+	mutation updateIssue($title: String!, $prompt: String, $id: ID!) {
+		updateIssue(title: $title, prompt: $prompt, id: $id) {
 			id
 		}
 	}
-`
+`;
 //Add Detail to Questions when it is live on the DB
 // $detail: String!
 export const ADD_QUESTIOM = gql`
@@ -86,13 +75,11 @@ export const ADD_QUESTIOM = gql`
 		$question: String!
 		$issue: ID!
 		$questionDetail: String
-		$questionNumber: Int
 	) {
 		createQuestion(
 			question: $question
 			issue: $issue
 			questionDetail: $questionDetail
-			questionNumber: $questionNumber
 		) {
 			question
 		}
@@ -108,13 +95,12 @@ export const DELETE_ROUNDTABLE = gql`
 `;
 
 export const DELETE_ISSUE = gql`
-	mutation($id: ID!){
-		deleteIssue(id: $id){
+	mutation($id: ID!) {
+		deleteIssue(id: $id) {
 			id
 		}
 	}
-`
-
+`;
 
 export const CREATE_RESPONSE = gql`
 	mutation createResponse($content: String!, $question: ID!) {

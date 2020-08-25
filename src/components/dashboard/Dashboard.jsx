@@ -1,7 +1,7 @@
 import React from "react";
 import { MyRoundtableList } from "../myRoundtableList/MyRoundtableList";
 import { CreateRoundtable } from "../createRoundtable/CreateRoundtable";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/client";
 import { RTAnimation } from "../animation/roundtableAni";
 import { Login } from "../login/Login";
 
@@ -14,7 +14,9 @@ SINCERELY,
 TONY
 */
 export const Dashboard = () => {
-	const { loading, error, data } = useQuery(RTbyUID);
+	const { error, data, loading } = useQuery(RTbyUID, {
+		errorPolicy: "all",
+	});
 	const token = localStorage.getItem("authorization");
 	if (loading) {
 		return (
@@ -34,8 +36,8 @@ export const Dashboard = () => {
 				<Login />
 			</>
 		);
-	} else if (error) {
-		console.log(error);
+	}
+	if (error) {
 		return (
 			<>
 				<main>

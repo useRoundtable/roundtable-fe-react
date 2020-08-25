@@ -7,7 +7,7 @@ import { WeekMap } from "./WeekMap";
 
 import { TextField } from "../../textFields/TextField";
 
-import { useQuery, useMutation } from "@apollo/react-hooks";
+import { useQuery, useMutation } from "@apollo/client";
 import { CREATE_ISSUE as issueById } from "../../../resolvers/queries";
 import { UPDATE_ISSUE as updateIssue } from "../../../resolvers/mutations";
 
