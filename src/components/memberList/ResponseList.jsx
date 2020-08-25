@@ -1,64 +1,34 @@
 import React from "react";
 
-export const ResponseList = () => {
+import { ListDisplay } from "./ListDisplay";
+
+import { ISSUE_RESPONSES as getResponses } from "../../resolvers/queries";
+import { useQuery } from "@apollo/client";
+
+export const ResponseList = ({ issue }) => {
+	const { data, loading } = useQuery(getResponses, {
+		variables: {
+			id: issue,
+		},
+	});
+	let responseToMap = [];
+	if (loading) {
+		return <p> loading </p>;
+	}
+	console.log(data, "data");
+
 	return (
 		<>
-			<ul className="members">
-				<li>
-					<em>SK</em>
-				</li>
-				<li>
-					<em>TK</em>
-				</li>
-				<li>
-					<img
-						alt="avatar"
-						src="https://pbs.twimg.com/profile_images/524398486536474624/T_aUvkHo_400x400.jpeg"
-					/>
-				</li>
-				<li>
-					<img
-						alt="avatar"
-						src="https://pbs.twimg.com/profile_images/761998841117683712/janWwuyI_400x400.jpg"
-					/>
-				</li>
-				<li>
-					<img
-						alt="avatar"
-						src="https://pbs.twimg.com/profile_images/898262358476414977/Xletgru4_400x400.jpg"
-					/>
-				</li>
-				<li>
-					<img
-						alt="avatar"
-						src="https://pbs.twimg.com/profile_images/1925156946/tbrooks_400x400.jpg"
-					/>
-				</li>
-				<li>
-					<img
-						alt="avatar"
-						src="https://pbs.twimg.com/profile_images/556233917359853569/vvsGGZxc_400x400.jpeg"
-					/>
-				</li>
-				<li>
-					<img
-						alt="avatar"
-						src="https://pbs.twimg.com/profile_images/469397708986269696/iUrYEOpJ_400x400.png"
-					/>
-				</li>
-				<li>
-					<img
-						alt="avatar"
-						src="https://pbs.twimg.com/profile_images/1268256132532862977/GDvByy9-_400x400.jpg"
-					/>
-				</li>
-				<li>
-					<img
-						alt="avatar"
-						src="https://pbs.twimg.com/profile_images/1165749987185053696/zVMH2HkP_400x400.jpg"
-					/>
-				</li>
-			</ul>
+			{data.issueById.questions.map(({ responses }) => {
+				console.log(responses, "Responses in Map");
+				if (responses) {
+					responseToMap = [...responseToMap, ...responses];
+					console.log(responseToMap, "Response");
+
+					return <>No Responses</>;
+				}
+				return <>No Responses</>;
+			})}
 		</>
 	);
 };
