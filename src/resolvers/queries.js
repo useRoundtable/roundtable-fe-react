@@ -145,17 +145,13 @@ export const CREATE_ISSUE = gql`
 `;
 
 export const ISSUE_RESPONSES = gql`
-	query issueById($id: ID!) {
-		issueById(id: $id) {
-			questions {
-				responses {
-					responseAuthor {
-						avatar
-						firstName
-						lastName
-						userName
-					}
-				}
+	query responsesByIssue($issueId: ID!) {
+		responsesByIssue(issueId: $issueId) {
+			responseAuthor {
+				firstName
+				lastName
+				userName
+				avatar
 			}
 		}
 	}

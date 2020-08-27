@@ -2,46 +2,43 @@ import React from "react";
 
 export const ListDisplay = ({ info }) => {
 	console.log(info, "INFO");
-	if (info.responses.responseAuthor.avatar !== null) {
+	if (info.responseAuthor.avatar !== null) {
 		return (
 			<li>
-				<img alt="avatar" src={info.responses.responseAuthor.avatar} />
+				<img alt="avatar" src={info.responseAuthor.avatar} />
 			</li>
 		);
 	}
-	if (
-		info.responses.responseAuthor.firstName &&
-		info.responses.responseAuthor.lastName
-	) {
+	if (info.responseAuthor.firstName && info.responseAuthor.lastName) {
 		return (
 			<li>
 				<em>
-					{info.responses.responseAuthor.firstName[0]}
-					{info.responses.responseAuthor.lastName[0]}
+					{info.responseAuthor.firstName[0]}
+					{info.responseAuthor.lastName[0]}
 				</em>
 			</li>
 		);
 	}
-	if (info.responses.responseAuthor.firstName) {
+	if (info.responseAuthor.firstName) {
 		return (
 			<li>
-				<em>{info.responses.responseAuthor.firstName[0]}</em>
+				<em>{info.responseAuthor.firstName[0]}</em>
 			</li>
 		);
 	}
-	if (info.responses.responseAuthor.userName) {
+	if (info.responseAuthor.userName) {
 		return (
 			<li>
 				<em>
-					{info.responses.responseAuthor.userName[0]}
-					{info.responses.responseAuthor.userName[1]}
+					{info.responseAuthor.userName[0]}
+					{info.responseAuthor.userName[1]}
 				</em>
 			</li>
 		);
 	}
 	return (
 		<>
-			{info.responses.responseAuthor.length} Responses
+			{info.responseAuthor.length} Responses
 			<li>
 				<em>TK</em>
 			</li>
