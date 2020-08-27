@@ -2134,7 +2134,7 @@ article.edit section.issue textarea:valid {
 .modal .content {
 	position: relative;
 	display: block;
-	min-height: 300px;
+	min-height: 200px;
 	max-height: calc(100vh - 100px - 200px);
 	padding: 20px 30px;
 	background: rgba(253, 253, 253, 1);
