@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { IssueCard } from "./issueCard/IssueCard";
 
+import { getUser } from "../../../auth/index";
+
 import { useLocation, useParams } from "react-router-dom";
 
 import { useMutation, useQuery } from "@apollo/client";
@@ -10,6 +12,8 @@ import { IBR as issueQuery } from "../../../resolvers/queries";
 export const IssueList = () => {
 	const location = useLocation();
 	const { roundtableId } = useParams();
+
+	let issueNumber = 0;
 
 	const [issueTitle, setIssueTitle] = useState("");
 	const [createIssue] = useMutation(newIssue, {
@@ -117,7 +121,12 @@ export const IssueList = () => {
 			<h4>Current Issue</h4>
 			<ul className="issueList currentIssue">
 				{data.issuesByRTId.slice(0, 1).map((issue) => {
-					return <IssueCard card={issue} />;
+					return (
+						<IssueCard
+							card={issue}
+							issueNumber={data.issuesByRTId.length}
+						/>
+					);
 				})}
 			</ul>
 			<h4>
@@ -129,7 +138,8 @@ export const IssueList = () => {
 				{data.issuesByRTId
 					.slice(1, data.issuesByRTId.length)
 					.map((issue) => {
-						return <IssueCard card={issue} />;
+						issueNumber++;
+						return <IssueCard card={issue} issueNumber={issueNumber} />;
 					})}
 			</ul>
 		</section>

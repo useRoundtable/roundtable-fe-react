@@ -37,6 +37,7 @@ export const ResponseInput = ({ issueStatus }) => {
 		});
 	} else {
 		return data.issueById.questions.map((question) => {
+			qNumber++;
 			return <QuestionCard data={question} qNumber={qNumber} />;
 		});
 	}

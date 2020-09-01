@@ -30,6 +30,9 @@ export const IBR = gql`
 			title
 			prompt
 			currentStatus
+			issueKudos
+			publishedAt
+			publishDate
 			issueAuthor {
 				id
 			}
@@ -67,6 +70,7 @@ export const ISSUEBYID = gql`
 		issueById(id: $id) {
 			title
 			prompt
+			currentStatus
 			issueAuthor {
 				id
 			}
@@ -152,6 +156,27 @@ export const ISSUE_RESPONSES = gql`
 				lastName
 				userName
 				avatar
+			}
+		}
+	}
+`;
+
+export const RESPONSES_BY_QUESTION = gql`
+	query questionById($id: ID!) {
+		questionById(id: $id) {
+			question
+			questionDetail
+			responses {
+				content
+				kudos
+				createdAt
+				responseAuthor {
+					userName
+					firstName
+					lastName
+					avatar
+					id
+				}
 			}
 		}
 	}
