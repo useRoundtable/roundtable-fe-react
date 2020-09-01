@@ -28,7 +28,6 @@ export const CreateIssue = () => {
 			id: issueid,
 		},
 	});
-	console.log(data);
 
 	const [update] = useMutation(updateIssue, {
 		onCompleted({ updateIssue }) {
@@ -42,13 +41,12 @@ export const CreateIssue = () => {
 
 	const time = parsePublishDate(publishDate);
 	const questions = data.issueById.questions;
+
+	// Checking if the user is the issue author or not.
 	if (user.id !== parseInt(data.issueById.issueAuthor.id)) {
-		return (
-			<>
-				<h2>This is not your issue to edit.</h2>
-			</>
-		);
+		window.location.assign(`/roundtable/${roundtableId}/issue/${issueid}`);
 	}
+
 	return (
 		<section className="issue new">
 			<article class="issueHeader">
@@ -84,6 +82,7 @@ export const CreateIssue = () => {
 						<TextField
 							inputValue={promptData}
 							setInputValue={setPromptData}
+							placeholder="Describe this issue..."
 						/>
 					)}
 				</div>
@@ -118,10 +117,7 @@ export const CreateIssue = () => {
 						onClick={() => {
 							update({
 								variables: {
-									prompt:
-										promptData === ""
-											? data.issueById.prompt
-											: promptData,
+									prompt: promptData,
 									title: data.issueById.title,
 									id: issueid,
 									currentStatus: "Collecting Responses!",

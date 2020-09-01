@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import { UserProfile } from "../Profiles/UserProfile";
 
+import { getUser } from "../../auth";
+
 export const NavBar = () => {
+	const user = getUser();
+
 	const [modalIsOpen, setIsOpen] = useState(false);
 	Modal.setAppElement("#root");
 	const closeModal = () => {
@@ -13,6 +17,7 @@ export const NavBar = () => {
 	const openModal = () => {
 		setIsOpen(true);
 	};
+
 	return (
 		<>
 			<nav className="navigation">
@@ -29,7 +34,7 @@ export const NavBar = () => {
 					</li>
 					<li className="account toggleDropdown">
 						<Link>
-							<h6>Steven</h6>
+							<h6>{user.id}</h6>
 							<img src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg" />
 						</Link>
 						<ul className="dropdown">
