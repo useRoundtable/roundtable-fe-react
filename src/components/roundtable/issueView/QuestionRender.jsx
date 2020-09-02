@@ -9,7 +9,7 @@ import { GatherResponse } from "./GatherResponse";
 export const QuestionRender = ({ issueStatus, questions }) => {
 	return (
 		<>
-			<QuestionList questions={questions} />
+			{/* <QuestionList questions={questions} /> */}
 			<ResponseInput issueStatus={issueStatus} />
 		</>
 	);
