@@ -25,6 +25,7 @@ export const MyRoundtableList = ({
 	return (
 		<>
 			<section className="table">
+				<span className="image"><img src="https://images.unsplash.com/photo-1598965897289-4768a8799acc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="This roundtable's name" /></span>
 				<RTAnimation members={members} name={roundtableName} />
 				<h2>{roundtableName}</h2>
 				<h3>
