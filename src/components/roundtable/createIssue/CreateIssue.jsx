@@ -56,7 +56,7 @@ export const CreateIssue = () => {
 					<span class="title">
 						{data.issueById.title
 							? `${data.issueById.title}`
-							: `No Title`}
+							: `Add a title`}
 					</span>
 				</h3>
 			</article>
@@ -90,7 +90,7 @@ export const CreateIssue = () => {
 			<article className="questionList">
 				<ul className="questionList">
 					<h6 className="questionListHeader">
-						Collect responses for {data.issueById.title} until {time}.
+						Collect responses until {time}.
 					</h6>
 					{week.map((day) => {
 						return (

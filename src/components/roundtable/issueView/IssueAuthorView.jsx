@@ -54,7 +54,7 @@ export const IssueAuthorView = ({ issue, IBID }) => {
 					<RenderMarkdown source={issue.prompt} />
 					<ul>
 						<li
-							className="more"
+							className="button new"
 							onClick={() => {
 								setIsEditing(true);
 							}}

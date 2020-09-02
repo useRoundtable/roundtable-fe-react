@@ -7,9 +7,9 @@ import { UserProfile } from "../Profiles/UserProfile";
 import { getUser } from "../../auth";
 
 export const NavBar = () => {
-	const user = getUser();
-
 	const [modalIsOpen, setIsOpen] = useState(false);
+	console.log(window.location);
+	const user = getUser();
 	Modal.setAppElement("#root");
 	const closeModal = () => {
 		setIsOpen(false);
