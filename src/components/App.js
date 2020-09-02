@@ -19,6 +19,12 @@ function App() {
 				<Route exact path="/" component={Home} />
 			</Router>
 		);
+	} else if (window.location.pathname === "/login") {
+		return (
+			<Router>
+				<Route path="/login" component={Login} />
+			</Router>
+		);
 	} else {
 		return (
 			<Router>
@@ -26,7 +32,6 @@ function App() {
 				<Route path="/rtanimation" component={RTAnimation} />
 				<Route path="/dashboard" component={Dashboard} />
 				<Route path="/roundtable/:roundtableId" component={Roundtable} />
-				<Route path="/login" component={Login} />
 				<Route path="/new" component={NewRoundtable} />
 			</Router>
 		);
