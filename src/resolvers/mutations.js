@@ -109,3 +109,43 @@ export const CREATE_RESPONSE = gql`
 		}
 	}
 `;
+
+export const UPDATE_USER = gql`
+	mutation updateUser($data: UserInput!, $id: ID!) {
+		updateUser(data: $data, id: $id) {
+			userName
+			firstName
+			lastName
+			id
+			email
+		}
+	}
+`;
+
+export const JOIN_ROUNDTABLE = gql`
+	mutation createMember($roundtable: ID!, $user: ID!) {
+		createMember(roundtable: $roundtable, user: $user) {
+			id
+		}
+	}
+`;
+
+export const INVITE_MEMBER = gql`
+	mutation inviteMember(
+		$roundtableId: ID!
+		$email: String!
+		$owner: String!
+		$invite: String!
+		$roundtableName: String!
+	) {
+		inviteMember(
+			roundtableName: $roundtableName
+			email: $email
+			roundtableId: $roundtableId
+			invite: $invite
+			owner: $owner
+		) {
+			response
+		}
+	}
+`;
