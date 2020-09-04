@@ -19,16 +19,19 @@ import {
 const httpLink = new HttpLink({ uri: "https://tryroundtable.herokuapp.com" });
 
 const authMiddleWare = new ApolloLink((operation, forward) => {
-	if (operation.operationName === "Login") {
-	} else {
-		const { token } = getUser();
-		operation.setContext({
-			headers: {
-				authorization: token ? `Bearer ${token}` : "",
-			},
-		});
+	if (getUser()) {
+		if (operation.operationName === "Login") {
+		} else {
+			const { token } = getUser();
+			operation.setContext({
+				headers: {
+					authorization: token ? `Bearer ${token}` : "",
+				},
+			});
+		}
+		return forward(operation);
 	}
-	return forward(operation);
+	forward();
 });
 
 const client = new ApolloClient({
