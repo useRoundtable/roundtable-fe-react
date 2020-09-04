@@ -7,16 +7,16 @@ import { setUser } from "../../auth";
 
 import { LOGIN as login } from "../../resolvers/mutations";
 
-export const Login = () => {
+export const Login = ({ redirectTo, setIsRegistering }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [userLogin] = useMutation(login, {
 		onCompleted({ login }) {
 			setUser(`Bearer ${login.token}`);
-			window.location.assign(`/dashboard`);
+			window.location.assign(redirectTo);
 		},
 	});
-
+	console.log(window.location.pathname.split("/"));
 	return (
 		<>
 			<nav className="login">
@@ -76,6 +76,15 @@ export const Login = () => {
 							}}
 						>
 							Log In
+						</a>
+						<a
+							className="button full"
+							type="submit"
+							onClick={() => {
+								setIsRegistering(true);
+							}}
+						>
+							Register
 						</a>
 					</form>
 				</div>

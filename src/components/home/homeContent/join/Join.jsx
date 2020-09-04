@@ -4,7 +4,7 @@ import { setUser } from "../../../../auth";
 
 import { REGISTER as register } from "../../../../resolvers/mutations";
 
-export const Join = () => {
+export const Join = ({ redirectTo, setIsRegistering }) => {
 	const [email, setEmail] = useState("");
 	const [username, setUsername] = useState("");
 	const [firstName, setFirstName] = useState("");
@@ -15,16 +15,9 @@ export const Join = () => {
 	const [registerUser, { loading }] = useMutation(register, {
 		onCompleted({ createUser }) {
 			setUser(`Bearer ${createUser.token}`);
-			window.location.assign("/dashboard");
+			window.location.assign(redirectTo);
 		},
 	});
-	// if (loading) {
-	// 	return (
-	// 		<article className="join">
-	// 			<RTAnimation members={[]} />
-	// 		</article>
-	// 	);
-	// }
 
 	return (
 		<article className="join">
@@ -119,6 +112,16 @@ export const Join = () => {
 				>
 					Get Started
 				</a>
+				{window.location.pathname.split("/")[1] === "roundtable" ? (
+					<a
+						className="button big"
+						onClick={() => setIsRegistering(false)}
+					>
+						Login
+					</a>
+				) : (
+					""
+				)}
 			</form>
 		</article>
 	);
