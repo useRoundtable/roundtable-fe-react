@@ -13,13 +13,11 @@ export const removeUser = () => {
 };
 
 export const getUser = () => {
-	const token = get(USER_KEY);
-
-	if (!token) return {};
-
 	try {
+		const token = get(USER_KEY);
+
+		if (!token) return {};
 		const { id, isAdmin } = parseToken(token);
-		console.log(id, token, isAdmin);
 		return { id, token };
 	} catch (err) {
 		removeUser();

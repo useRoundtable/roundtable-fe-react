@@ -33,7 +33,7 @@ export const Dashboard = () => {
 		return (
 			<>
 				<h4>Please login to continue</h4>
-				<Login />
+				<Login redirectTo={window.location} />
 			</>
 		);
 	}

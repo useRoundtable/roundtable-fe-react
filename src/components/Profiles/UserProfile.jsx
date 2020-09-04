@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 
-export const UserProfile = ({ closeModal }) => {
-	const [email, setEmail] = useState("");
-	const [userName, setUserName] = useState("");
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
+import { useMutation } from "@apollo/client";
+import { UPDATE_USER as updateUser } from "../../resolvers/mutations";
+
+export const UserProfile = ({ closeModal, user }) => {
+	const [email, setEmail] = useState(user.email);
+	const [userName, setUserName] = useState(user.userName);
+	const [firstName, setFirstName] = useState(user.firstName);
+	const [lastName, setLastName] = useState(user.lastName);
+
 	return (
 		<>
 			<header>
@@ -14,9 +18,9 @@ export const UserProfile = ({ closeModal }) => {
 							src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg"
 							alt="Steven K."
 						/>
-						{/*<em>SK</em>*/}
+						<em>SK</em>
 					</span>
-					Steven K.
+					{user.firstName} {user.lastName}
 				</h4>
 				<a className="close" onClick={() => closeModal()}>
 					<span>×</span>
@@ -132,9 +136,7 @@ export const UserProfile = ({ closeModal }) => {
 							</p>
 						</div>
 					</div>
-					<a className="button floatRight" href="javascript:void(0)">
-						Save
-					</a>
+					<a className="button floatRight">Save</a>
 				</form>
 			</div>
 		</>

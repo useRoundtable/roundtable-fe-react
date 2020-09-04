@@ -11,6 +11,7 @@ import { Respond } from "./questionResponses/respond/Respond";
 import { IssueList } from "./issueList/IssueList";
 import { MemberView } from "./members/MemberView";
 import { CreateIssue } from "./createIssue/CreateIssue";
+import { JoinRoundtable } from "../JoinRoundtable/JoinRoundtable";
 
 import { ROUNDTABLE as RTbyID } from "../../resolvers/queries";
 
@@ -73,6 +74,7 @@ export const Roundtable = () => {
 							path={`${path}/issue/:issueid/new`}
 							component={CreateIssue}
 						/>
+						<Route path={`${path}/join`} component={JoinRoundtable} />
 					</Switch>
 				</div>
 			</article>

@@ -10,6 +10,6 @@ export const HomeContent = ({ display }) => {
 	} else if (display === "explore") {
 		return <Explore />;
 	} else {
-		return <Join />;
+		return <Join redirectTo={"/dashboard"} />;
 	}
 };

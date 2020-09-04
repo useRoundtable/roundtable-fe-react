@@ -1,5 +1,22 @@
 import { gql } from "@apollo/client";
 
+export const ROUNDTABLE_INVITE = gql`
+	query roundtableById($id: ID!) {
+		roundtableById(id: $id) {
+			roundtableName
+			owner {
+				userName
+			}
+			members {
+				id
+			}
+			issues {
+				id
+			}
+		}
+	}
+`;
+
 export const ROUNDTABLES = gql`
 	query roundtablesByUserId {
 		roundtablesByUserId {
@@ -9,6 +26,7 @@ export const ROUNDTABLES = gql`
 			description
 			owner {
 				id
+				userName
 			}
 			members {
 				user {
@@ -125,6 +143,18 @@ export const LOGGEDINUSER = gql`
 					roundtableName
 				}
 			}
+		}
+	}
+`;
+
+export const NAVBAR_USER = gql`
+	query loggedInUser {
+		loggedInUser {
+			userName
+			firstName
+			lastName
+			id
+			email
 		}
 	}
 `;
