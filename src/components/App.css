@@ -1606,6 +1606,8 @@ article.edit section.issue article.message > ul {
 }
 article.edit section.issue article.message ol li, article.edit section.issue article.message > ul li {padding:0 0 .5em 0;}
 article.edit section.issue article.message ol li:last-child, article.edit section.issue article.message > ul li:last-child {padding:0;}
+article.edit section.issue article.message ul li.button.new {padding:5px 20px 5px calc(20px - 0.5em);}
+
 article.edit section.issue article.message + article.question {
 	padding-top: 3em;
 }
