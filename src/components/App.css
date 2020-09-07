@@ -1547,6 +1547,9 @@ article.edit section.issue article.message p {
 	line-height: 1.5em;
 	font-weight: 400;
 }
+article.edit section.issue article.message h1 {font-size:2.5em;font-weight:800;padding:.5em 0 .5em;}
+article.edit section.issue article.message h2 {font-size:2em;font-weight:800;padding:.5em 0 .5em;}
+article.edit section.issue article.message h3 {font-size:1.15em;font-weight:800;padding:.5em 0 .5em;}
 article.edit section.issue article.message blockquote {
 	position: relative;
 	padding: 0 0 0 1em;
@@ -1601,6 +1604,8 @@ article.edit section.issue article.message > ul {
 	padding: 0 0 1em 0.25em;
 	list-style-position: inside;
 }
+article.edit section.issue article.message ol li, article.edit section.issue article.message > ul li {padding:0 0 .5em 0;}
+article.edit section.issue article.message ol li:last-child, article.edit section.issue article.message > ul li:last-child {padding:0;}
 article.edit section.issue article.message + article.question {
 	padding-top: 3em;
 }
@@ -1679,6 +1684,7 @@ article.edit section.issue article.question p {
 	line-height: 1.5em;
 	font-weight: 400;
 }
+article.edit section.issue article.question p:empty {display:none;}
 article.edit section.issue article.question h4 + p {
 	line-height: 1.5em;
 }
