@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import { IssueAuthorView } from "./IssueAuthorView";
+import { IssueAuthorView } from "./AuthorView/IssueAuthorView";
 import { IssueMemberView } from "./IssueMemberView";
 
 import { ISSUEBYID as IBID } from "../../../resolvers/queries";
