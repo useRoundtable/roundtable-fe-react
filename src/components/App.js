@@ -22,7 +22,12 @@ function App() {
 	} else if (window.location.pathname === "/login") {
 		return (
 			<Router>
-				<Route path="/login" component={Login} />
+				<Route
+					path="/login"
+					render={() => {
+						return <Login redirectTo={"/dashboard"} />;
+					}}
+				/>
 			</Router>
 		);
 	} else {

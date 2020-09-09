@@ -36,6 +36,7 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 						</li>
 					</ul>
 					<input
+						className="headerFour"
 						value={question}
 						onChange={(e) => setQuestion(e.target.value)}
 					/>

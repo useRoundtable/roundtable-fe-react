@@ -3,6 +3,7 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import { UserProfile } from "../Profiles/UserProfile";
+import { ListDisplay } from "../memberList/ListDisplay";
 
 import { useQuery } from "@apollo/client";
 
@@ -43,7 +44,11 @@ export const NavBar = () => {
 							{data ? (
 								<>
 									<h6>{data.loggedInUser.firstName}</h6>
-									<img src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg" />
+									<ul className="stats">
+										<ul className="members">
+											<ListDisplay info={null} />
+										</ul>
+									</ul>
 								</>
 							) : (
 								""
