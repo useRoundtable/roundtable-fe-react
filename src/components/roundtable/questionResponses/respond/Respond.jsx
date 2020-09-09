@@ -29,26 +29,16 @@ export const Respond = () => {
 		<section className="issue answer">
 			{data.issueById.questions.map((question) => {
 				return (
-					<>
+					<div className="response">
 						<Question question={question} questionNum={1} />
 						<TextField
 							inputValue={inputValue}
 							setInputValue={setInputValue}
 							questionId={question.id}
 						/>
-					</>
+					</div>
 				);
 			})}
-
-			<article className="question">
-				<div className="questionContent">
-					<h6 className="questionNumber">Question 2</h6>
-					<h4 className="question">Why does this suck so much.</h4>
-					<p>
-						QUESTION CONTEXT WILL GO HERE WHEN IT IS LIVE ON THE DATA BASE
-					</p>
-				</div>
-			</article>
 		</section>
 	);
 };
