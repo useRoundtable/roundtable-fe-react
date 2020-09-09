@@ -48,6 +48,7 @@ export const JoinRoundtable = () => {
 				>
 					Join
 				</button>
+				<button>Login/Register</button>
 			</article>
 		);
 	}
