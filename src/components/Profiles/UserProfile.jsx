@@ -8,6 +8,14 @@ export const UserProfile = ({ closeModal, user }) => {
 	const [userName, setUserName] = useState(user.userName);
 	const [firstName, setFirstName] = useState(user.firstName);
 	const [lastName, setLastName] = useState(user.lastName);
+	const [password, setPassword] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
+
+	const [update] = useMutation(updateUser, {
+		onCompleted({ updateUser }) {
+			window.location.assign("/dashboard");
+		},
+	});
 
 	return (
 		<>
@@ -136,7 +144,21 @@ export const UserProfile = ({ closeModal, user }) => {
 							</p>
 						</div>
 					</div>
-					<a className="button floatRight">Save</a>
+					<a
+						className="button floatRight"
+						onClick={() => {
+							update({
+								variables: {
+									email,
+									userName,
+									firstName,
+									lastName,
+								},
+							});
+						}}
+					>
+						Save
+					</a>
 				</form>
 			</div>
 		</>
