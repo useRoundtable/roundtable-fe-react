@@ -1,37 +1,51 @@
 import React from "react";
 
+import { useQuery } from "@apollo/client";
+import { LOGGED_IN_USER as loggedInUser } from "../../resolvers/queries";
+
 export const ListDisplay = ({ info }) => {
-	console.log(info, "INFO");
-	if (info.responseAuthor.avatar !== null) {
+	const { loading, data, error } = useQuery(loggedInUser);
+	if (loading) {
 		return (
 			<li>
-				<img alt="avatar" src={info.responseAuthor.avatar} />
+				<em>T</em>
 			</li>
 		);
 	}
-	if (info.responseAuthor.firstName && info.responseAuthor.lastName) {
+	if (info === null) {
+		console.log("user", data, error);
+		info = data.loggedInUser;
+	}
+	if (info.avatar !== null) {
+		return (
+			<li>
+				<img alt="avatar" src={info.avatar} />
+			</li>
+		);
+	}
+	if (info.firstName && info.lastName) {
 		return (
 			<li>
 				<em>
-					{info.responseAuthor.firstName[0]}
-					{info.responseAuthor.lastName[0]}
+					{info.firstName[0]}
+					{info.lastName[0]}
 				</em>
 			</li>
 		);
 	}
-	if (info.responseAuthor.firstName) {
+	if (info.firstName) {
 		return (
 			<li>
-				<em>{info.responseAuthor.firstName[0]}</em>
+				<em>{info.firstName[0]}</em>
 			</li>
 		);
 	}
-	if (info.responseAuthor.userName) {
+	if (info.userName) {
 		return (
 			<li>
 				<em>
-					{info.responseAuthor.userName[0]}
-					{info.responseAuthor.userName[1]}
+					{info.userName[0]}
+					{info.userName[1]}
 				</em>
 			</li>
 		);
