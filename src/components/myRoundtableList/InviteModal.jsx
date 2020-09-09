@@ -12,9 +12,17 @@ export const InviteModal = ({
 	roundtableName,
 	issues,
 }) => {
-	const [inviteMember] = useMutation(invite);
+	const [inviteMember, { error }] = useMutation(invite, {
+		onCompleted({ invite }) {
+			window.location.assign("/dashboard");
+		},
+	});
 	const [email, setEmail] = useState("");
 
+	if (error) {
+		console.log(error);
+		return <p>{error.message}</p>;
+	}
 	return (
 		<>
 			<header>

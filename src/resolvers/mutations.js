@@ -133,19 +133,15 @@ export const JOIN_ROUNDTABLE = gql`
 export const INVITE_MEMBER = gql`
 	mutation inviteMember(
 		$roundtableId: ID!
-		$email: String!
 		$owner: String!
 		$invite: String!
 		$roundtableName: String!
 	) {
 		inviteMember(
 			roundtableName: $roundtableName
-			email: $email
 			roundtableId: $roundtableId
 			invite: $invite
 			owner: $owner
-		) {
-			response
-		}
+		)
 	}
 `;
