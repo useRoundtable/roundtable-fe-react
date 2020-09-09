@@ -1,5 +1,16 @@
 import { gql } from "@apollo/client";
 
+export const LOGGED_IN_USER = gql`
+	query loggedInUser {
+		loggedInUser {
+			avatar
+			firstName
+			lastName
+			userName
+		}
+	}
+`;
+
 export const ROUNDTABLE_INVITE = gql`
 	query roundtableById($id: ID!) {
 		roundtableById(id: $id) {
@@ -196,6 +207,9 @@ export const RESPONSES_BY_QUESTION = gql`
 		questionById(id: $id) {
 			question
 			questionDetail
+			author {
+				id
+			}
 			responses {
 				content
 				kudos
