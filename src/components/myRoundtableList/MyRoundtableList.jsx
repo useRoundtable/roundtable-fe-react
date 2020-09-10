@@ -74,40 +74,44 @@ export const MyRoundtableList = ({
 							View Issues
 						</a>
 					</li>
-					<li>
-						<a
-							className="button notPriority"
-							onClick={(e) => enterRoundtable(e, `/roundtable/${id}`)}
-						>
-							Publish
-						</a>
-					</li>
-					<li>
-						<a
-							className="button notPriority"
-							onClick={(e) => {
-								setIsOpen(true);
-								setOpenModal("invite");
-							}}
-						>
-							Invite
-						</a>
-					</li>
-					<li>
-						{loggedInUser.id == owner.id ? (
-							<a
-								className="button notPriority"
-								onClick={(e) => {
-									setIsOpen(true);
-									setOpenModal("delete");
-								}}
-							>
-								Delete
-							</a>
-						) : (
-							""
-						)}
-					</li>
+					{loggedInUser.id == owner.id ? (
+						<>
+							<li>
+								<a
+									className="button notPriority"
+									onClick={(e) =>
+										enterRoundtable(e, `/roundtable/${id}`)
+									}
+								>
+									Publish
+								</a>
+							</li>
+							<li>
+								<a
+									className="button notPriority"
+									onClick={(e) => {
+										setIsOpen(true);
+										setOpenModal("invite");
+									}}
+								>
+									Invite
+								</a>
+							</li>
+							<li>
+								<a
+									className="button notPriority"
+									onClick={(e) => {
+										setIsOpen(true);
+										setOpenModal("delete");
+									}}
+								>
+									Delete
+								</a>
+							</li>
+						</>
+					) : (
+						""
+					)}
 				</ul>
 			</section>
 			<Modal
