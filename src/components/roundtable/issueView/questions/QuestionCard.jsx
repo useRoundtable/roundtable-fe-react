@@ -89,7 +89,7 @@ export const QuestionCard = ({
 					</li>
 				)}
 
-				<li className="kudos">&hearts; 275</li>
+				<li className="kudos">&hearts; 0</li>
 				{id === parseInt(data.author.id) ? (
 					<>
 						<li
