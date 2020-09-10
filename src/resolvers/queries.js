@@ -122,11 +122,20 @@ export const QUESTIONS_BY_ISSUE = gql`
 	query questionByIssue($id: ID!) {
 		issueById(id: $id) {
 			questions {
+				author {
+					id
+				}
 				id
 				question
 				questionDetail
 				responses {
 					content
+					responseAuthor {
+						userName
+						firstName
+						lastName
+						avatar
+					}
 				}
 			}
 		}
