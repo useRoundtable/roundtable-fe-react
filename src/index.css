@@ -759,9 +759,10 @@ section .button {
 	opacity: 0.5;
 }
 
-input.headerOne {display:block;width:100%;font-size:1em;font-weight:800;color:rgba(15,30,30,1);border:0;border-bottom:1px solid rgba(15,30,30,0.05);background:transparent;outline:0;transition:border .2s ease-in-out;}
+input.headerOne {display:block;width:100%;font-size:1em;font-family:"Biryani", Helvetica, Arial, sans-serif;font-weight:800;color:rgba(15,30,30,1);border:0;border-bottom:1px solid rgba(15,30,30,0.05);background:transparent;outline:0;transition:border .2s ease-in-out;}
 input.headerOne:focus {border-bottom:1px solid rgba(15,30,30,0.25);}
-
+input.headerFour {display:block;width:100%;font-size:1.5em;font-family:"Biryani", Helvetica, Arial, sans-serif;font-weight:900;color:rgba(15,30,30,1);border:0;border-bottom:1px solid rgba(15,30,30,0.05);background:transparent;outline:0;transition:border .2s ease-in-out;}
+input.headerFour:focus {border-bottom:1px solid rgba(15,30,30,0.25);}
 .button {
 	position: relative;
 	display: inline-block;
@@ -809,6 +810,9 @@ input.headerOne:focus {border-bottom:1px solid rgba(15,30,30,0.25);}
 	color: rgba(255, 220, 0, 1);
 	text-shadow: none;
 }
+.button.light {border:1px solid rgba(15, 30, 30, 0.05);color:rgba(15,30,30,0.25);}
+.button.light:hover,
+.button.light:focus {background:transparent;border:1px solid rgba(15, 30, 30, 0.05);color:rgba(15,30,30,1);}
 .formBottom {margin-bottom:20px;}
 
 /* Roundtable Dmeonstration */

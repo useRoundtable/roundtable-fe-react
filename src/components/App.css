@@ -340,6 +340,7 @@ section.table > .issue > .status {
 	font-weight: 400;
 	color: rgba(15, 30, 30, 0.5);
 }
+ul.options:after {content:'';position:relative;display:block;width:100%;height:0;outline:0;opacity:0;clear:both;}
 section.table ul.options {
 	font-size: 0;
 	margin: 0;
@@ -517,14 +518,16 @@ section.table.createNew textarea:valid {min-height:250px;}*/
 	font-size: inherit;
 }
 .ql-editor {
-	padding: 1em 0;
+	padding: 1em 0 0;
 }
+.ql-editor > *:last-child {padding-bottom:0;}
 .ql-toolbar {position:-webkit-sticky;position:sticky;top:0;background:rgba(253,253,253,1);z-index:2;}
 .ql-toolbar.ql-snow {
 	padding: 10px 0;
 	border: 0;
 	border-bottom: 1px dotted rgba(15, 30, 30, 0.05);
 }
+article.question .ql-toolbar.ql-snow {background:transparent;}
 .ql-container.ql-snow {
 	border: 0;
 }
@@ -1550,23 +1553,23 @@ article.edit section.issue article.message {
 	margin: 0 auto;
 	max-width: 800px;
 }
-article.edit section.issue article.message p {
+article.edit section.issue article.message p, article.edit section.issue .questionContent p {
 	color: rgba(15, 30, 30, 0.8);
 	padding: 0 0 1em;
 	font-size: 1em;
 	line-height: 1.5em;
 	font-weight: 400;
 }
-article.edit section.issue article.message h1 {font-size:2.5em;font-weight:800;padding:.5em 0 .5em;}
-article.edit section.issue article.message h2 {font-size:2em;font-weight:800;padding:.5em 0 .5em;}
-article.edit section.issue article.message h3 {font-size:1.15em;font-weight:800;padding:.5em 0 .5em;}
-article.edit section.issue article.message strong {font-weight:600;}
-article.edit section.issue article.message em {font-style:italic;background:rgba(15,30,30,0.02);border-radius:.15em;}
-article.edit section.issue article.message u {text-decoration:none;background-image: linear-gradient(to right, rgba(15,30,30,0.15) 100%, transparent 100%);
+article.edit section.issue article.message h1, article.edit section.issue .questionContent h1 {font-size:2.5em;font-weight:800;padding:.5em 0 .5em;}
+article.edit section.issue article.message h2, article.edit section.issue .questionContent h2 {font-size:2em;font-weight:800;padding:.5em 0 .5em;}
+article.edit section.issue article.message h3, article.edit section.issue .questionContent h3 {font-size:1.15em;font-weight:800;padding:.5em 0 .5em;}
+article.edit section.issue article.message strong, article.edit section.issue .questionContent strong {font-weight:600;}
+article.edit section.issue article.message em, article.edit section.issue .questionContent em {font-style:italic;background:rgba(15,30,30,0.02);border-radius:.15em;}
+article.edit section.issue article.message u, article.edit section.issue .questionContent u {text-decoration:none;background-image: linear-gradient(to right, rgba(15,30,30,0.15) 100%, transparent 100%);
     background-position: center calc(100% - 1px);
     background-repeat: no-repeat;
     background-size: calc(100% - 6px) 1px;}
-article.edit section.issue article.message blockquote {
+article.edit section.issue article.message blockquote, article.edit section.issue .questionContent blockquote {
 	position: relative;
 	padding: 0 0 0 1em;
 	margin-bottom: 1em;
@@ -1575,7 +1578,7 @@ article.edit section.issue article.message blockquote {
 	font-weight: 400;
 	color: rgba(15, 30, 30, 0.8);
 }
-article.edit section.issue article.message blockquote:before {
+article.edit section.issue article.message blockquote:before, article.edit section.issue .questionContent blockquote:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -1585,46 +1588,51 @@ article.edit section.issue article.message blockquote:before {
 	background: rgba(15, 30, 30, 0.25);
 	border-radius: 1em;
 }
-article.edit section.issue article.message blockquote > *:last-child {
+article.edit section.issue article.message blockquote > *:last-child, article.edit section.issue .questionContent blockquote > *:last-child {
 	margin-bottom: 0;
 	padding-bottom: 0;
 }
-article.edit section.issue article.message a {
+article.edit section.issue article.message a:not(.button), article.edit section.issue .questionContent a:not(.button) {
 	text-decoration: none;
 	color: rgba(15, 30, 30, 1);
 	font-weight: 500;
 	box-shadow: inset 0 -2px 0px rgba(15, 30, 30, 0.1);
 	transition: 0.2s;
 }
-article.edit section.issue article.message a:hover,
-article.edit section.issue article.message a:focus,
-article.edit section.issue article.message a:active {
+article.edit section.issue article.message a:not(.button):hover,
+article.edit section.issue article.message a:not(.button):focus,
+article.edit section.issue article.message a:not(.button):active,
+article.edit section.issue .questionContent a:not(.button):hover,
+article.edit section.issue .questionContent a:not(.button):focus,
+article.edit section.issue .questionContent a:not(.button):active {
 	text-decoration: none;
 	box-shadow: inset 0 -5px 0 rgba(255, 220, 0, 0.5);
 	transition: 0.2s;
 }
 article.edit section.issue article.message ol,
-article.edit section.issue article.message > ul {
+article.edit section.issue article.message > ul,
+article.edit section.issue .questionContent ol,
+article.edit section.issue .questionContent > ul {
 	margin:0 1em;
 	color: rgba(15, 30, 30, 0.8);
 	font-size: 1em;
 	line-height: 1.5em;
 	font-weight: 400;
 }
-article.edit section.issue article.message > ol {
+article.edit section.issue article.message > ol, article.edit section.issue .questionContent > ol {
 	list-style: decimal;
 	padding: 0 0 1.5em 1.25em;
 	list-style-position: outside;
 }
-article.edit section.issue article.message > ul {
+article.edit section.issue article.message > ul, article.edit section.issue .questionContent > ul {
 	list-style: disc;
 	padding: 0 0 1.5em 0.25em;
 	list-style-position: inside;
 }
-article.edit section.issue article.message ol li, article.edit section.issue article.message > ul li {padding:0 0 .5em 0;}
-article.edit section.issue article.message ol li:last-child, article.edit section.issue article.message > ul li:last-child {padding:0;}
-article.edit section.issue article.message ul li.button.new {padding:5px 20px 5px calc(20px - 0.5em);}
-
+article.edit section.issue article.message ol li, article.edit section.issue article.message > ul li, article.edit section.issue .questionContent ol li, article.edit section.issue .questionContent > ul li {padding:0 0 .5em 0;}
+article.edit section.issue article.message ol li:last-child, article.edit section.issue article.message > ul li:last-child, article.edit section.issue .questionContent ol li:last-child, article.edit section.issue .questionContent > ul li:last-child {padding:0;}
+article.edit section.issue article.message ul li.button.new, article.edit section.issue .questionContent ul li.button.new {padding:5px 20px 5px calc(20px - 0.5em);}
+article.edit section.issue article.message > *:last-child/*, article.edit section.issue .questionContent > *:last-child*/ {padding-bottom:0;}
 article.edit section.issue article.message + article.question {
 	padding-top: 3em;
 }
@@ -1633,7 +1641,6 @@ article.edit section.issue article.question {
 	margin: 0 auto;
 	padding: 1.5em 0;
 	max-width: 800px;
-	font-size: 1.15em;
 }
 article.edit section.issue article.question.prompt {
 	padding: 0;
@@ -1662,6 +1669,13 @@ article.edit section.issue.view article.question > .questionContent:before {
 	transition: height 0.2s ease-in-out;
 	z-index: -1;
 }
+article.edit section.issue.view article.question > .questionContent:hover .quill:before, article.edit section.issue.view article.question > .questionContent.active .quill:before {display:none;}
+
+/* Correction */ article.edit section.issue article.message > ul.stats, article.edit section.issue .questionContent > ul.stats {margin:0;}
+/* Correction */ article.edit section.issue article.message > ul.stats > li, article.edit section.issue .questionContent > ul.stats > li {padding:0 10px;}
+/* Correction */ article.edit section.issue article.message > ul.stats > li em, article.edit section.issue .questionContent > ul.stats > li em  {background:rgba(15,30,30,1);font-style:normal;}
+/* Correction */ article.edit section.issue article.message > ul.stats > li.textCount em, article.edit section.issue .questionContent > ul.stats > li.textCount em  {background:transparent;}
+
 article.edit
 	section.issue.view
 	article.question
@@ -1714,7 +1728,7 @@ article.edit section.issue article.question h6.questionNumber {
 	color: rgba(15, 30, 30, 0.5);
 }
 article.edit section.issue article.question h4.question {
-	padding: 0 0 0.25em;
+	padding: 0 0 0.5em;
 }
 article.edit section.issue article.question h4.question:last-child {
 	padding-bottom: calc(1em / 3 * 2);

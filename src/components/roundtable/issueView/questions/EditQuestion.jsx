@@ -54,8 +54,22 @@ export const EditQuestion = ({
 					/>
 					<ul class="options">
 						<li>
+							{isEditing === true ? (
+								<a
+									className="button big light"
+									onClick={() => {
+										setIsEditing(0);
+									}}
+								>
+									Stop Editing
+								</a>
+							) : (
+								""
+							)}
+						</li>
+						<li className="floatRight">
 							<a
-								class="button big"
+								className="button big"
 								onClick={() =>
 									editQuestion({
 										variables: {
@@ -74,19 +88,8 @@ export const EditQuestion = ({
 									})
 								}
 							>
-								Edit Question
+								Done
 							</a>
-							{isEditing === true ? (
-								<a
-									onClick={() => {
-										setIsEditing(0);
-									}}
-								>
-									Stop Editing
-								</a>
-							) : (
-								""
-							)}
 						</li>
 					</ul>
 				</div>
