@@ -18,7 +18,14 @@ export const IssueCard = ({ card, issueNumber }) => {
 	const [deleteIssue] = useMutation(issueDelete);
 	return (
 		<>
-			<ul className="issueList allIssues">
+			<ul
+				className="issueList allIssues"
+				onClick={() => {
+					window.location.assign(
+						`/roundtable/${roundtableId}/issue/${card.id}`
+					);
+				}}
+			>
 				<li>
 					<h3 className="issue">
 						<span className="number">Issue #{issueNumber}</span>
