@@ -34,9 +34,11 @@ export const QuestionCard = ({
 			<div
 				className="questionContent"
 				onClick={() => {
-					window.location.assign(
-						`/roundtable/${roundtableId}/issue/${issueid}/question/${data.id}`
-					);
+					if (isResponding === true) {
+						setIsResponding(0);
+					} else {
+						setIsResponding(qNumber);
+					}
 				}}
 			>
 				<h6 className="questionNumber">Question {qNumber}</h6>
