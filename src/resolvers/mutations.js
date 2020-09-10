@@ -145,3 +145,20 @@ export const INVITE_MEMBER = gql`
 		)
 	}
 `;
+
+export const UPDATE_QUESTION = gql`
+	mutation updateQuestion(
+		$id: ID!
+		$question: String!
+		$questionDetail: String!
+	) {
+		updateQuestion(
+			id: $id
+			question: $question
+			questionDetail: $questionDetail
+		) {
+			question
+			questionDetail
+		}
+	}
+`;

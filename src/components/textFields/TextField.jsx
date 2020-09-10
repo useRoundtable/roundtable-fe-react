@@ -34,8 +34,6 @@ const formats = [
 ];
 
 export const TextField = ({
-	modules,
-	formats,
 	inputValue,
 	setInputValue,
 	inputLength,

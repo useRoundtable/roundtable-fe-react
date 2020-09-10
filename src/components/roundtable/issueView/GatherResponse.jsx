@@ -11,11 +11,14 @@ export const GatherResponse = ({
 	isActive,
 	setActiveComponent,
 	qNumber,
+	setIsEditing,
+	isEditing,
 }) => {
 	const [inputValue, setInputValue] = useState("");
 	const [createResponse] = useMutation(sendResponse, {
 		onCompleted({ sendResponse }) {
 			setInputValue("");
+			setIsEditing(0);
 		},
 	});
 
@@ -32,7 +35,7 @@ export const GatherResponse = ({
 				}}
 			>
 				<div className={`questionContent ${isActive ? "active" : ""}`}>
-					<h6 className="questionNumber">Question 300</h6>
+					<h6 className="questionNumber">Question {qNumber}</h6>
 					<h4 className="question">{question.question}</h4>
 					<RenderMarkdown source={question.questionDetail} />
 					<TextField
@@ -56,6 +59,17 @@ export const GatherResponse = ({
 							>
 								Submit response
 							</a>
+							{isEditing === true ? (
+								<a
+									onClick={() => {
+										setIsEditing(0);
+									}}
+								>
+									Stop Editing
+								</a>
+							) : (
+								""
+							)}
 						</li>
 					</ul>
 				</div>
