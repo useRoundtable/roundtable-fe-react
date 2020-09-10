@@ -220,136 +220,86 @@ code {
 
 @keyframes waiting {
 	0% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	12% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	24% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	70% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	100% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 }
 @-moz-keyframes waiting {
 	0% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	12% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	24% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	70% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	100% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 }
 @-webkit-keyframes waiting {
 	0% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	12% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	24% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	70% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	100% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 }
 @-ms-keyframes waiting {
 	0% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	12% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	24% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	70% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	100% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 }
 @-o-keyframes waiting {
 	0% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	12% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	24% {
-		width: 6px;
-		height: 6px;
 		opacity: 1;
 	}
 	70% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 	100% {
-		width: 6px;
-		height: 6px;
 		opacity: 0;
 	}
 }
@@ -810,9 +760,9 @@ input.headerFour:focus {border-bottom:1px solid rgba(15,30,30,0.25);}
 	color: rgba(255, 220, 0, 1);
 	text-shadow: none;
 }
-.button.light {border:1px solid rgba(15, 30, 30, 0.05);color:rgba(15,30,30,0.25);}
+.button.light {border:1px solid rgba(15, 30, 30, 0.02);color:rgba(15,30,30,0.5);}
 .button.light:hover,
-.button.light:focus {background:transparent;border:1px solid rgba(15, 30, 30, 0.05);color:rgba(15,30,30,1);}
+.button.light:focus {background:transparent;border:1px solid rgba(15, 30, 30, 0.08);color:rgba(15,30,30,1);}
 .button.stickyTop {position:sticky;top:20px;background:rgba(255,255,255,1);}
 .button.stickyBottom {position:sticky;bottom:20px;right:20px;background:rgba(255,255,255,1);}
 .button.stickyTop:hover, .button.stickyBottom:hover {background:rgba(15,30,30,1);}

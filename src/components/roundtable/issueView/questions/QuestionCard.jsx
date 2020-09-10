@@ -32,7 +32,7 @@ export const QuestionCard = ({
 	return (
 		<article className="question">
 			<div
-				className="questionContent"
+				className={`questionContent ${isResponding ? "active" : ""}`}
 				onClick={() => {
 					if (isResponding === true) {
 						setIsResponding(0);
@@ -44,12 +44,82 @@ export const QuestionCard = ({
 				<h6 className="questionNumber">Question {qNumber}</h6>
 				<h4 className="question">{data.question}</h4>
 				<RenderMarkdown source={data.questionDetail} />
+				{isResponding ? (
+					<TextField inputValue={inputValue} setInputValue={setInputValue} />
+				) : (
+					""
+				)}
+				{id === parseInt(data.author.id) ? (
+					<>
+						<li className="button"
+							onClick={() => {
+								setIsEditing(qNumber);
+							}}
+						>
+							Edit
+						</li>
+						{isResponding ? (
+							<li className="button"
+								onClick={() => {
+									response({
+										variables: {
+											content: inputValue,
+											question: data.id,
+										},
+										refetchQueries: [
+											{
+												query: QBIID,
+												variables: {
+													id: issueid,
+												},
+											},
+										],
+									});
+								}}
+							>
+								Save Response
+							</li>
+						) : (
+							<li className="button"
+								onClick={() => {
+									setIsResponding(qNumber);
+								}}
+							>
+								Respond
+							</li>
+						)}
+					</>
+				) : isResponding ? (
+					<li className="button"
+						onClick={() => {
+							response({
+								variables: {
+									content: inputValue,
+									question: data.id,
+								},
+								refetchQueries: [
+									{
+										query: QBIID,
+										variables: {
+											id: issueid,
+										},
+									},
+								],
+							});
+						}}
+					>
+						Save Response
+					</li>
+				) : (
+					<li className="button"
+						onClick={() => {
+							setIsResponding(qNumber);
+						}}
+					>
+						Respond
+					</li>
+				)}
 			</div>
-			{isResponding ? (
-				<TextField inputValue={inputValue} setInputValue={setInputValue} />
-			) : (
-				""
-			)}
 			<ul className="stats">
 				{data.responses.length === 0 ? (
 					<li
@@ -88,78 +158,7 @@ export const QuestionCard = ({
 						</ul>
 					</li>
 				)}
-
 				<li className="kudos">&hearts; 0</li>
-				{id === parseInt(data.author.id) ? (
-					<>
-						<li
-							onClick={() => {
-								setIsEditing(qNumber);
-							}}
-						>
-							Edit
-						</li>
-						{isResponding ? (
-							<li
-								onClick={() => {
-									response({
-										variables: {
-											content: inputValue,
-											question: data.id,
-										},
-										refetchQueries: [
-											{
-												query: QBIID,
-												variables: {
-													id: issueid,
-												},
-											},
-										],
-									});
-								}}
-							>
-								Save Response
-							</li>
-						) : (
-							<li
-								onClick={() => {
-									setIsResponding(qNumber);
-								}}
-							>
-								Respond
-							</li>
-						)}
-					</>
-				) : isResponding ? (
-					<li
-						onClick={() => {
-							response({
-								variables: {
-									content: inputValue,
-									question: data.id,
-								},
-								refetchQueries: [
-									{
-										query: QBIID,
-										variables: {
-											id: issueid,
-										},
-									},
-								],
-							});
-						}}
-					>
-						Save Response
-					</li>
-				) : (
-					<li
-						onClick={() => {
-							setIsResponding(qNumber);
-						}}
-					>
-						Respond
-					</li>
-				)}
 			</ul>
 		</article>
 	);

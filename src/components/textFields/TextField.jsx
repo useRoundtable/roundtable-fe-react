@@ -41,6 +41,11 @@ export const TextField = ({
 }) => {
 	return (
 		<>
+			<ul className="stats counter">
+				<li className="textCount noHover">
+					<em>{inputValue.length}</em> / 10000
+				</li>
+			</ul>
 			<ReactQuill
 				theme="snow"
 				value={inputValue}
@@ -49,11 +54,6 @@ export const TextField = ({
 				formats={formats}
 				placeholder={placeholder}
 			/>
-			<ul className="stats">
-				<li className="textCount noHover">
-					<em>{inputValue.length}</em> / 10000
-				</li>
-			</ul>
 		</>
 	);
 };

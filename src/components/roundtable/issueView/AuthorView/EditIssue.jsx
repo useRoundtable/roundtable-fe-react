@@ -50,7 +50,7 @@ export const EditIssue = ({ issue, IBID, setIsEditing }) => {
 					placeholder={issue.prompt}
 				/>
 				<a
-					className="button save"
+					className="button save stickyBottom"
 					onClick={() => {
 						update({
 							variables: {
