@@ -1,7 +1,6 @@
 import React from "react";
 
 export const MemberCard = ({ user }) => {
-	console.log(user);
 	return (
 		<li>
 			<span className="avatar">

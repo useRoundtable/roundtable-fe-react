@@ -13,7 +13,6 @@ export const ListDisplay = ({ info }) => {
 		);
 	}
 	if (info === null) {
-		console.log("user", data, error);
 		info = data.loggedInUser;
 	}
 	if (info.avatar !== null) {

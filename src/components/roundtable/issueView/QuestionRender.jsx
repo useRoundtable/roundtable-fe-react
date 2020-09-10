@@ -22,7 +22,6 @@ export const QuestionRender = ({ issueStatus }) => {
 		},
 	});
 	if (error) {
-		console.log(error);
 		return <p>Error</p>;
 	}
 	if (loading) {

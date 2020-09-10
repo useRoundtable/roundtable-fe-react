@@ -12,7 +12,6 @@ import { getUser } from "../../../../auth";
 import { RenderMarkdown } from "../../../universalComponents/RenderMarkdown";
 
 export const IssueCard = ({ card, issueNumber }) => {
-	console.log(card);
 	const { path } = useRouteMatch();
 	const { roundtableId } = useParams();
 	const { id } = getUser();

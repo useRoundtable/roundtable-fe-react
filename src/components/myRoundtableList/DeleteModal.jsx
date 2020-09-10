@@ -11,7 +11,6 @@ export const DeleteModal = ({
 	rtName,
 }) => {
 	const [deleteRT] = useMutation(deleteRoundtable);
-	console.log(roundtableId);
 	return (
 		<>
 			<h2>Are you sure you want to delete "{rtName}"?</h2>

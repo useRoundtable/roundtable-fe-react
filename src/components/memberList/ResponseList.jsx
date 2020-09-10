@@ -16,9 +16,8 @@ export const ResponseList = ({ issue }) => {
 		return <p> loading </p>;
 	}
 	if (error) {
-		console.log(error);
+		return <p>{error.message}</p>;
 	}
-	console.log(data, "data");
 	if (!data) {
 		return <li>0 Responses</li>;
 	}
