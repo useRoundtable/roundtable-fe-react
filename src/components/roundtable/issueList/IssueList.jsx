@@ -119,14 +119,18 @@ export const IssueList = () => {
 			</ul>
 			<h4>Current Issue</h4>
 			<ul className="issueList currentIssue">
-				{data.issuesByRTId.slice(0, 1).map((issue) => {
+				<IssueCard
+					card={data.issuesByRTId[data.issuesByRTId.length - 1]}
+					issueNumber={data.issuesByRTId.length}
+				/>
+				{/* {data.issuesByRTId.slice(0, 1).map((issue) => {
 					return (
 						<IssueCard
 							card={issue}
 							issueNumber={data.issuesByRTId.length}
 						/>
 					);
-				})}
+				})} */}
 			</ul>
 			<h4>
 				{data.issuesByRTId.length - 1 === 1
@@ -135,7 +139,7 @@ export const IssueList = () => {
 			</h4>
 			<ul className="issueList allIssues">
 				{data.issuesByRTId
-					.slice(1, data.issuesByRTId.length)
+					.slice(0, data.issuesByRTId.length - 1)
 					.map((issue) => {
 						issueNumber++;
 						return <IssueCard card={issue} issueNumber={issueNumber} />;
