@@ -64,10 +64,7 @@ export const IssueMemberView = ({ issue }) => {
 						</a>
 					</li>
 				</ul> */}
-			<QuestionRender
-				issueStatus={issue.currentStatus}
-				questions={issue.questions}
-			/>
+			<QuestionRender issueStatus={issue.currentStatus} />
 		</section>
 	);
 };
