@@ -35,7 +35,7 @@ export const EditIssue = ({ issue, IBID, setIsEditing }) => {
 					<span className="title">
 						<input
 							className="headerOne"
-							inputValue={title}
+							inputValue={issue.title}
 							setInputValue={setTitle}
 							placeholder={issue.title}
 						/>
