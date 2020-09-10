@@ -15,7 +15,7 @@ export const ViewIssue = ({ issue, IBID, setIsEditing }) => {
 	const user = getUser();
 
 	return (
-		<section className="issue view">
+		<section className="issue view" id="viewIssue" name="viewIssue">
 			<article className="issueHeader">
 				<h3 className="issue">
 					<span className="number">Issue #{issueid}</span>
@@ -27,18 +27,16 @@ export const ViewIssue = ({ issue, IBID, setIsEditing }) => {
 					<span className="title">{issue.title}!</span>
 				</h3>
 			</article>
-			<ul>
-				<li
-					className="button edit"
+			<article className="message">
+				<a
+					className="button edit stickyTop floatRight"
+					href="#viewIssue"
 					onClick={() => {
 						setIsEditing(true);
 					}}
 				>
-					Edit Issue
-				</li>
-			</ul>
-
-			<article className="message">
+					Edit
+				</a>
 				<ul className="stats">
 					<li className="members">
 						<ul className="members">

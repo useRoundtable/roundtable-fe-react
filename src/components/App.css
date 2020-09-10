@@ -136,6 +136,9 @@ nav.navigation > ul > li.logo .roundtable.logo {
 	font-size: 5px;
 }
 
+nav.navigation > ul > li ul.stats {display:inline-block;margin:-.3em 0 0 .25em;float:right;}
+nav.navigation > ul > li ul.stats ul.members {padding:0;margin:0;}
+
 .toggleDropdown {
 }
 .toggleDropdown ul.dropdown {

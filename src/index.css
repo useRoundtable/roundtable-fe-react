@@ -813,6 +813,10 @@ input.headerFour:focus {border-bottom:1px solid rgba(15,30,30,0.25);}
 .button.light {border:1px solid rgba(15, 30, 30, 0.05);color:rgba(15,30,30,0.25);}
 .button.light:hover,
 .button.light:focus {background:transparent;border:1px solid rgba(15, 30, 30, 0.05);color:rgba(15,30,30,1);}
+.button.stickyTop {position:sticky;top:20px;background:rgba(255,255,255,1);}
+.button.stickyBottom {position:sticky;bottom:20px;right:20px;background:rgba(255,255,255,1);}
+.button.stickyTop:hover, .button.stickyBottom:hover {background:rgba(15,30,30,1);}
+.button.big:last-child, .button.big:last-child {padding:20px 30px!important;}
 .formBottom {margin-bottom:20px;}
 
 /* Roundtable Dmeonstration */

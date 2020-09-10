@@ -69,7 +69,7 @@ export const EditIssue = ({ issue, IBID, setIsEditing }) => {
 						});
 					}}
 				>
-					Submit
+					Save Changes
 				</a>
 			</article>
 			<QuestionRender issueStatus={issue.issueStatus} />
