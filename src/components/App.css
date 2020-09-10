@@ -510,13 +510,16 @@ section.table.createNew form input {
 section.table.createNew textarea:focus {min-height:250px;border:1px solid rgba(15,30,30,0.15);}
 section.table.createNew textarea:valid {min-height:250px;}*/
 
-/* New Issue */
+/* Quill */
+.quill {position:relative;}
+.quill:before {content:'';position:absolute;top:-3px;left:-40px;width:5px;height:calc(100% + 6px);border-radius:10px;background:rgba(255,220,0,0.25);}
 .ql-container {
 	font-size: inherit;
 }
 .ql-editor {
 	padding: 1em 0;
 }
+.ql-toolbar {position:-webkit-sticky;position:sticky;top:0;background:rgba(253,253,253,1);z-index:2;}
 .ql-toolbar.ql-snow {
 	padding: 10px 0;
 	border: 0;
@@ -536,6 +539,14 @@ section.table.createNew textarea:valid {min-height:250px;}*/
 .ql-editor h6 {
 	font-size: 1.5em;
 }
+
+.ql-editor ul {margin:0 1em;padding:0 0 1.5em 0.25em;}
+.ql-editor ol {margin:0 1em;padding: 00 1.5em 1.25em;}
+.ql-editor ol li, .ql-editor ul li {padding:0 0 .5em 0;line-height:1.5em;}
+.ql-editor ol li:last-child, .ql-editor ul li:last-child {padding-bottom:0;}
+.ql-editor ul li:before {width:.7em;font-size:2em;line-height:.5em;float:left;}
+.ql-editor li:not(.ql-direction-rtl)::before {margin:0;text-align:left;}
+
 .ql-snow .ql-picker.ql-header {width:150px;}
 .ql-snow.ql-toolbar button:hover,
 .ql-snow .ql-toolbar button:hover,
@@ -1538,7 +1549,6 @@ article.edit section.issue article.message {
 	display: block;
 	margin: 0 auto;
 	max-width: 800px;
-	font-size: 1.15em;
 }
 article.edit section.issue article.message p {
 	color: rgba(15, 30, 30, 0.8);
@@ -1550,6 +1560,12 @@ article.edit section.issue article.message p {
 article.edit section.issue article.message h1 {font-size:2.5em;font-weight:800;padding:.5em 0 .5em;}
 article.edit section.issue article.message h2 {font-size:2em;font-weight:800;padding:.5em 0 .5em;}
 article.edit section.issue article.message h3 {font-size:1.15em;font-weight:800;padding:.5em 0 .5em;}
+article.edit section.issue article.message strong {font-weight:600;}
+article.edit section.issue article.message em {font-style:italic;background:rgba(15,30,30,0.02);border-radius:.15em;}
+article.edit section.issue article.message u {text-decoration:none;background-image: linear-gradient(to right, rgba(15,30,30,0.15) 100%, transparent 100%);
+    background-position: center calc(100% - 1px);
+    background-repeat: no-repeat;
+    background-size: calc(100% - 6px) 1px;}
 article.edit section.issue article.message blockquote {
 	position: relative;
 	padding: 0 0 0 1em;
@@ -2032,6 +2048,7 @@ article.edit section.issue textarea:focus {
 article.edit section.issue textarea:valid {
 	min-height: 250px;
 }
+
 
 /* Modal */
 .overlay {

@@ -580,7 +580,7 @@ blockquote {
 	font-family: "Montserrat", Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	line-height: 1.25em;
-	color: rgba(15, 30, 30, 0.5);
+	color: rgba(15, 30, 30, 0.8);
 }
 input,
 select,
@@ -758,6 +758,10 @@ section .button {
 	line-height: 0.6em;
 	opacity: 0.5;
 }
+
+input.headerOne {display:block;width:100%;font-size:1em;font-weight:800;color:rgba(15,30,30,1);border:0;border-bottom:1px solid rgba(15,30,30,0.05);background:transparent;outline:0;transition:border .2s ease-in-out;}
+input.headerOne:focus {border-bottom:1px solid rgba(15,30,30,0.25);}
+
 .button {
 	position: relative;
 	display: inline-block;
