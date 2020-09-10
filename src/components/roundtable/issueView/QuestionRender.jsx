@@ -1,16 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
 
-import { QuestionList } from "./questions/QuestionList";
-import { ResponseInput } from "./ResponseInput";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
 import { QuestionCard } from "./questions/QuestionCard";
-import { GatherResponse } from "./GatherResponse";
+import { EditQuestion } from "./questions/EditQuestion";
 
-export const QuestionRender = ({ issueStatus, questions }) => {
-	return (
-		<>
-			{/* <QuestionList questions={questions} /> */}
-			<ResponseInput issueStatus={issueStatus} />
-		</>
-	);
+import { QUESTIONS_BY_ISSUE as QBIID } from "../../../resolvers/queries";
+
+export const QuestionRender = ({ issueStatus }) => {
+	const [isEditing, setIsEditing] = useState(0);
+	const [activeComponent, setActiveComponent] = useState(0);
+	const [isResponding, setIsResponding] = useState(0);
+	let qNumber = 0;
+
+	const { issueid } = useParams();
+	const { data, error, loading } = useQuery(QBIID, {
+		variables: {
+			id: issueid,
+		},
+	});
+	if (error) {
+		console.log(error);
+		return <p>Error</p>;
+	}
+	if (loading) {
+		return <p>loading</p>;
+	}
+
+	return data.issueById.questions.map((question) => {
+		qNumber++;
+		if (isEditing === qNumber) {
+			return (
+				<EditQuestion
+					question={question}
+					qNumber={qNumber}
+					isActive={activeComponent === qNumber ? true : false}
+					setActiveComponent={setActiveComponent}
+					setIsEditing={setIsEditing}
+					isEditing={isEditing === qNumber ? true : false}
+					QBIID={QBIID}
+					issueid={issueid}
+				/>
+			);
+		}
+		return (
+			<QuestionCard
+				data={question}
+				qNumber={qNumber}
+				isResponding={isResponding === qNumber ? true : false}
+				setIsResponding={setIsResponding}
+				setIsEditing={setIsEditing}
+				QBIID={QBIID}
+				issueid={issueid}
+			/>
+		);
+	});
 };
