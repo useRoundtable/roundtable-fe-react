@@ -214,6 +214,7 @@ export const ISSUE_RESPONSES = gql`
 export const RESPONSES_BY_QUESTION = gql`
 	query questionById($id: ID!) {
 		questionById(id: $id) {
+			id
 			question
 			questionDetail
 			author {
