@@ -1589,6 +1589,7 @@ article.edit section.issue article.message a:active {
 }
 article.edit section.issue article.message ol,
 article.edit section.issue article.message > ul {
+	margin:0 1em;
 	color: rgba(15, 30, 30, 0.8);
 	font-size: 1em;
 	line-height: 1.5em;
@@ -1596,12 +1597,12 @@ article.edit section.issue article.message > ul {
 }
 article.edit section.issue article.message > ol {
 	list-style: decimal;
-	padding: 0 0 1em 1.25em;
+	padding: 0 0 1.5em 1.25em;
 	list-style-position: outside;
 }
 article.edit section.issue article.message > ul {
 	list-style: disc;
-	padding: 0 0 1em 0.25em;
+	padding: 0 0 1.5em 0.25em;
 	list-style-position: inside;
 }
 article.edit section.issue article.message ol li, article.edit section.issue article.message > ul li {padding:0 0 .5em 0;}
