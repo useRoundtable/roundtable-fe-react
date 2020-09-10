@@ -33,7 +33,6 @@ export const IssueList = () => {
 	}
 
 	if (error) {
-		console.log(error.message);
 		return (
 			<section className="issueList">
 				<p>error!</p>

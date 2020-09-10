@@ -29,7 +29,6 @@ export const QuestionCard = ({
 			setIsResponding(0);
 		},
 	});
-	console.log("DATA IN QUESTION CARD", data);
 	return (
 		<article className="question">
 			<div
@@ -44,7 +43,7 @@ export const QuestionCard = ({
 				<h4 className="question">{data.question}</h4>
 				<RenderMarkdown source={data.questionDetail} />
 			</div>
-			{isResponding === true ? (
+			{isResponding ? (
 				<TextField inputValue={inputValue} setInputValue={setInputValue} />
 			) : (
 				""
@@ -91,7 +90,7 @@ export const QuestionCard = ({
 						>
 							Edit
 						</li>
-						{isResponding === true ? (
+						{isResponding ? (
 							<li
 								onClick={() => {
 									response({
@@ -122,7 +121,7 @@ export const QuestionCard = ({
 							</li>
 						)}
 					</>
-				) : isResponding === true ? (
+				) : isResponding ? (
 					<li
 						onClick={() => {
 							response({

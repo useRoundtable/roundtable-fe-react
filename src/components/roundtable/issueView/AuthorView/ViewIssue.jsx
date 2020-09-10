@@ -13,7 +13,6 @@ import { ListDisplay } from "../../../memberList/ListDisplay";
 export const ViewIssue = ({ issue, IBID, setIsEditing }) => {
 	const { issueid } = useParams();
 	const user = getUser();
-	console.log("user", user);
 
 	return (
 		<section className="issue view">

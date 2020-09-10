@@ -16,7 +16,6 @@ export const Login = ({ redirectTo, setIsRegistering }) => {
 			window.location.assign(redirectTo);
 		},
 	});
-	console.log(window.location.pathname.split("/"));
 	return (
 		<>
 			<nav className="login">

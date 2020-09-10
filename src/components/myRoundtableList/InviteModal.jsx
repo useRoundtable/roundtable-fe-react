@@ -20,7 +20,6 @@ export const InviteModal = ({
 	const [email, setEmail] = useState("");
 
 	if (error) {
-		console.log(error);
 		return <p>{error.message}</p>;
 	}
 	return (

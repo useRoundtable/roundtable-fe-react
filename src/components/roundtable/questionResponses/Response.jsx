@@ -7,7 +7,6 @@ import { parseDate } from "../../../utils/index";
 import { ListDisplay } from "../../memberList/ListDisplay";
 
 export const Response = ({ response }) => {
-	console.log(response);
 	return (
 		<section className="answer">
 			<div className="answerContent">
