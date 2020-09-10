@@ -29,12 +29,12 @@ export const ViewIssue = ({ issue, IBID, setIsEditing }) => {
 			</article>
 			<article className="message">
 				<a
-					className="button edit stickyTop floatRight"
+					className="button small edit stickyTop floatRight"
 					onClick={() => {
 						setIsEditing(true);
 					}}
 				>
-					Edit
+					Edit Issue
 				</a>
 				<ul className="stats">
 					<li className="members">

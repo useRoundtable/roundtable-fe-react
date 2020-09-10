@@ -34,11 +34,11 @@ export const NavBar = () => {
 							<h6> My Roundtables</h6>
 						</Link>
 					</li>
-					<li>
+					{/*<li>
 						<Link to="/explore">
 							<h6>Explore</h6>
 						</Link>
-					</li>
+					</li>*/}
 					<li className="account toggleDropdown">
 						<Link>
 							{data ? (

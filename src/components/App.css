@@ -1675,7 +1675,7 @@ article.edit section.issue.view article.question > .questionContent:before {
 	transition: height 0.2s ease-in-out;
 	z-index: -1;
 }
-article.edit section.issue.view article.question > .questionContent:hover .quill:before, article.edit section.issue.view article.question > .questionContent.active .quill:before {display:none;}
+article.edit section.issue.view article.question > .questionContent.active .quill:before {left:-25px;}
 
 /* Correction */ article.edit section.issue article.message > ul.stats, article.edit section.issue .questionContent > ul.stats {margin:0;}
 /* Correction */ article.edit section.issue article.message > ul.stats > li, article.edit section.issue .questionContent > ul.stats > li {padding:0 10px;}
@@ -2304,6 +2304,10 @@ article.edit section.issue textarea:valid {
 	section.table.createNew ul.roundtable {
 		transform:translate(-4em,-4em);
 	}
+	section.table .image {width:100%;border-radius:50vw 50vw 3em 3em;}
+	section.table .image:before {background:linear-gradient(180deg, rgba(255,220,0,0.75) 0%, rgba(255,255,255,0) 85%) no-repeat;background-position:0 -15em;}
+	section.table:hover > .image:before {background-position:0 -10em;}
+	section.table > .image:after {background:linear-gradient(145deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,1) 60%)}
 	article.edit section {padding:20px 20px;}
 	article.edit section.issueList ul.issueList > li > ul.options {
 		text-align:center;

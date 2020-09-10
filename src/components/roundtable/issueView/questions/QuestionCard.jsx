@@ -34,9 +34,7 @@ export const QuestionCard = ({
 			<div
 				className={`questionContent ${isResponding ? "active" : ""}`}
 				onClick={() => {
-					if (isResponding === true) {
-						setIsResponding(0);
-					} else {
+					if (isResponding === false) {
 						setIsResponding(qNumber);
 					}
 				}}
@@ -56,7 +54,7 @@ export const QuestionCard = ({
 								setIsEditing(qNumber);
 							}}
 						>
-							Edit
+							Edit Question
 						</li>
 						{isResponding ? (
 							<li className="button"
