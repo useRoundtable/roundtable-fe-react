@@ -62,22 +62,22 @@ export const Home = () => {
 									<h6>Join</h6>
 								</a>
 							</li>
-							<li
+							{/*<li
 								className={display === "explore" ? "selected" : ""}
 								onClick={() => setDisplay("explore")}
 							>
 								<a href="javascript:void(0)">
 									<h6>Explore</h6>
 								</a>
-							</li>
-							<li
+							</li>*/}
+							{/*<li
 								classname={display === "pricing" ? "selected" : ""}
 								onClick={() => setDisplay("pricing")}
 							>
 								<a href="javascript:void(0)">
 									<h6>Price</h6>
 								</a>
-							</li>
+							</li>*/}
 						</ul>
 					</nav>
 					<HomeContent display={display} />
