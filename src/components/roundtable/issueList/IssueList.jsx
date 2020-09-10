@@ -9,7 +9,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_ISSUE as newIssue } from "../../../resolvers/mutations";
 import { IBR as issueQuery } from "../../../resolvers/queries";
 
-export const IssueList = () => {
+export const IssueList = ({ owner }) => {
+	const { id } = getUser();
 	const location = useLocation();
 	const { roundtableId } = useParams();
 
@@ -42,81 +43,92 @@ export const IssueList = () => {
 	if (data.issuesByRTId.length === 0) {
 		return (
 			<div>
-				<section className="issueList">
-					<h5> Create your first Issue!</h5>
-					<ul className="issueList">
-						<li className="new">
-							<h3 className="issue">
-								<span className="number">Issue #1</span>
-								<input
-									id="newIssue"
-									name="newIssue"
-									type="text"
-									value={issueTitle}
-									placeholder="What is the subject?"
-									required="required"
-									onChange={(e) => setIssueTitle(e.target.value)}
-								/>
-								<label for="newIssue" className="newIssueLabel"></label>
-								<span className="title">New Issue&hellip;</span>
-								<a
-									className="button"
-									onClick={(e) => {
-										createIssue({
-											variables: {
-												title: issueTitle,
-												roundtable: roundtableId,
-												currentStatus: "Just Adding Questions!",
-											},
-										});
-									}}
-								>
-									+ Create
-								</a>
-							</h3>
-						</li>
-					</ul>
-				</section>
+				{owner === id ? (
+					<section className="issueList">
+						<h5> Create your first Issue!</h5>
+						<ul className="issueList">
+							<li className="new">
+								<h3 className="issue">
+									<span className="number">Issue #1</span>
+									<input
+										id="newIssue"
+										name="newIssue"
+										type="text"
+										value={issueTitle}
+										placeholder="What is the subject?"
+										required="required"
+										onChange={(e) => setIssueTitle(e.target.value)}
+									/>
+									<label
+										for="newIssue"
+										className="newIssueLabel"
+									></label>
+									<span className="title">New Issue&hellip;</span>
+									<a
+										className="button"
+										onClick={(e) => {
+											createIssue({
+												variables: {
+													title: issueTitle,
+													roundtable: roundtableId,
+													currentStatus: "Just Adding Questions!",
+												},
+											});
+										}}
+									>
+										+ Create
+									</a>
+								</h3>
+							</li>
+						</ul>
+					</section>
+				) : (
+					""
+				)}
 			</div>
 		);
 	}
 
 	return (
 		<section className="issueList">
-			<ul className="issueList">
-				<li className="new">
-					<h3 className="issue">
-						<span className="number">
-							Issue #{data.issuesByRTId.length + 1}
-						</span>
-						<input
-							id="newIssue"
-							name="newIssue"
-							type="text"
-							value={issueTitle}
-							placeholder="What is the subject?"
-							required
-							onChange={(e) => setIssueTitle(e.target.value)}
-						/>
-						<label for="newIssue" className="newIssueLabel"></label>
-						<span className="title">New Issue&hellip;</span>
-						<a
-							className="button"
-							onClick={(e) => {
-								createIssue({
-									variables: {
-										title: issueTitle,
-										roundtable: roundtableId,
-										currentStatus: "Just Adding Questions!",
-									},
-								});
-							}}
-						>
-							+ Create
-						</a>
-					</h3>
-				</li>
-			</ul>
+			{id === owner ? (
+				<ul className="issueList">
+					<li className="new">
+						<h3 className="issue">
+							<span className="number">
+								Issue #{data.issuesByRTId.length + 1}
+							</span>
+							<input
+								id="newIssue"
+								name="newIssue"
+								type="text"
+								value={issueTitle}
+								placeholder="What is the subject?"
+								required
+								onChange={(e) => setIssueTitle(e.target.value)}
+							/>
+							<label for="newIssue" className="newIssueLabel"></label>
+							<span className="title">New Issue&hellip;</span>
+							<a
+								className="button"
+								onClick={(e) => {
+									createIssue({
+										variables: {
+											title: issueTitle,
+											roundtable: roundtableId,
+											currentStatus: "Just Adding Questions!",
+										},
+									});
+								}}
+							>
+								+ Create
+							</a>
+						</h3>
+					</li>
+				</ul>
+			) : (
+				""
+			)}
 			<h4>Current Issue</h4>
 			<ul className="issueList currentIssue">
 				<IssueCard
