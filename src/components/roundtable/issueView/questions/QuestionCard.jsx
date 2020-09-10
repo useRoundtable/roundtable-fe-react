@@ -52,7 +52,14 @@ export const QuestionCard = ({
 			)}
 			<ul className="stats">
 				{data.responses.length === 0 ? (
-					<li className="members">
+					<li
+						className="members"
+						onClick={() => {
+							window.location.assign(
+								`/roundtable/${roundtableId}/issue/${issueid}/question/${data.id}`
+							);
+						}}
+					>
 						Awaiting Responses
 						<ul className="members waiting">
 							<li></li>
