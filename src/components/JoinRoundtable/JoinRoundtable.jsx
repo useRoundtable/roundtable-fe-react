@@ -41,16 +41,15 @@ export const JoinRoundtable = () => {
 						join({
 							variables: {
 								roundtable: roundtableId,
-								user,
+								user: user.id,
 							},
 						});
 					}}
 				>
 					Join
 				</button>
-				<button>Login/Register</button>
 			</article>
 		);
 	}
-	return <LoginRender redirectTo={window.location} />;
+	return <LoginRender redirectTo={window.location.pathname} />;
 };

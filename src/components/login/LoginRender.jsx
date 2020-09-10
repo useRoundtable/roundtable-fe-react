@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Login } from "./Login";
 import { Join } from "../home/homeContent/join/Join";
 
-export const LoginRender = () => {
+export const LoginRender = ({ redirectTo }) => {
 	const [isRegistering, setIsRegistering] = useState(false);
 	if (isRegistering) {
 		return (
@@ -13,6 +13,8 @@ export const LoginRender = () => {
 			/>
 		);
 	} else {
-		return <Login setIsRegistering={setIsRegistering} />;
+		return (
+			<Login setIsRegistering={setIsRegistering} redirectTo={redirectTo} />
+		);
 	}
 };
