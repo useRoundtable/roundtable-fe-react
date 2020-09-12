@@ -40,10 +40,11 @@ export const IssueList = ({ owner }) => {
 			</section>
 		);
 	}
+
 	if (data.issuesByRTId.length === 0) {
 		return (
 			<div>
-				{owner === id ? (
+				{owner == id ? (
 					<section className="issueList">
 						<h5> Create your first Issue!</h5>
 						<ul className="issueList">
@@ -91,7 +92,7 @@ export const IssueList = ({ owner }) => {
 
 	return (
 		<section className="issueList">
-			{id === owner ? (
+			{id == owner ? (
 				<ul className="issueList">
 					<li className="new">
 						<h3 className="issue">
