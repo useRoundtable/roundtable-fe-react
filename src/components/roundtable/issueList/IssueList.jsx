@@ -41,7 +41,6 @@ export const IssueList = ({ owner }) => {
 		);
 	}
 
-	console.log(owner, id, "Checking IDs")
 	if (data.issuesByRTId.length === 0) {
 		return (
 			<div>
