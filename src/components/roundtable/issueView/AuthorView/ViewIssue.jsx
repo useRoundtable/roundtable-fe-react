@@ -24,7 +24,7 @@ export const ViewIssue = ({ issue, IBID, setIsEditing }) => {
 							? parseDate(issue.publishedAt)
 							: parseDate(issue.publishDate)}
 					</span>
-					<span className="title">{issue.title}!</span>
+					<span className="title">{issue.title}</span>
 				</h3>
 			</article>
 			<article className="message">
