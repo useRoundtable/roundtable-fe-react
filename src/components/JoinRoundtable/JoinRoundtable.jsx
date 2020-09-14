@@ -17,10 +17,11 @@ import { useParams } from "react-router-dom";
 
 export const JoinRoundtable = () => {
 	const { roundtableId } = useParams();
+	const href = window.location.origin
 	const token = localStorage.getItem("authorization");
 	const [join, { error }] = useMutation(addMember, {
 		onCompleted({ addMember }) {
-			window.location.assign(`roundtable/${roundtableId}`);
+			window.location.replace(`${href}/roundtable/${roundtableId}`);
 		},
 	});
 
