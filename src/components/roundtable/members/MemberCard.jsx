@@ -3,13 +3,15 @@ import React from "react";
 export const MemberCard = ({ user }) => {
 	return (
 		<li>
+			{user.avatar ? 
 			<span className="avatar">
 				<img
 					alt="avatar"
-					src="https://pbs.twimg.com/profile_images/1217113645907349505/u6wRx3nJ_400x400.jpg"
+					src={user.avatar}
 				/>
-			</span>
-			<h4>{user.firstName ? user.firstName : user.userName}</h4>
+			</span> : ""}
+			{/* TODO: Be sure to add extra render logic here later. */}
+			<h4>{user.firstName ? `${user.firstName}` : user.userName}</h4>
 			<a href="javascript:void(0)" className="button">
 				View Profile
 			</a>

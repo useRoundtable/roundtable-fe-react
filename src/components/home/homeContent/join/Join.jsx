@@ -110,11 +110,12 @@ export const Join = ({ redirectTo, setIsRegistering }) => {
 						});
 					}}
 				>
-					Get Started
+					{/*TODO: Make this more multi component friendly Get Started */}
+					Register
 				</a>
 				{window.location.pathname.split("/")[1] === "roundtable" ? (
 					<a
-						className="button big"
+						className="button"
 						onClick={() => setIsRegistering(false)}
 					>
 						Login
