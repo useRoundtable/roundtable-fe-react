@@ -517,7 +517,7 @@ section.table.createNew textarea:valid {min-height:250px;}*/
 /* Quill */
 /* Remove this when we enable images */.ql-image {display:none!important;}
 .quill {position:relative;}
-.quill:before {content:'';position:absolute;top:-3px;left:-40px;width:5px;height:calc(100% + 6px);border-radius:10px;background:rgba(255,220,0,0.25);}
+.quill:before {content:'';position:absolute;top:-3px;left:-25px;width:5px;height:calc(100% + 6px);border-radius:10px;background:rgba(255,220,0,0.25);}
 .ql-container {
 	font-size: inherit;
 }
@@ -869,6 +869,7 @@ ul.stats ul.members {
 	float: left;
 	margin: 0 0.5em 0 0;
 	padding: 0.5em 0;
+	line-height:2em;
 }
 ul.stats ul.members li {
 	position: relative;
@@ -884,6 +885,9 @@ ul.stats ul.members li {
 }
 ul.stats ul.members li:first-child {
 	margin: 0;
+}
+ul.stats ul.members li:last-child {
+	margin-right:5px;
 }
 ul.stats ul.members li > em {
 	position: relative;
@@ -1452,6 +1456,7 @@ article.edit section.issueList ul.issueList > li ul.stats {
 article.edit section.issueList ul.issueList > li ul.stats > li {
 	margin: 0;
 	font-weight: 500;
+	float:left;
 }
 article.edit section.issueList ul.issueList > li ul.stats > li:before {
 	display: none;
@@ -1555,9 +1560,27 @@ article.edit section.issue article > h3 .date {
 	cursor: pointer;
 }
 article.edit section.issue article.message {
+	position:relative;
 	display: block;
 	margin: 0 auto;
+	padding:0 0 .5em 0;
 	max-width: 800px;
+}
+article.edit section.issue article.message:after {
+	content: "";
+	position: absolute;
+	top: -0.75em;
+	left: -1.5em;
+	width: calc(100% + 3em);
+	height: calc(100% + 1.5em);
+	background: transparent;
+	box-shadow: none;
+	border-radius: 1.5em;
+	z-index: -1;
+	transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 15px 20px 30px 10px rgba(15, 30, 30, 0.05),
+		0 0 15px 0 rgba(150, 30, 30, 0.03);
 }
 article.edit section.issue article.message p, article.edit section.issue *[class*=Content] p {
 	color: rgba(15, 30, 30, 0.8);
