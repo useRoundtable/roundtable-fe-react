@@ -252,6 +252,7 @@ section.table > .image:after {content:'';position:absolute;top:0;left:0;width:10
 section.table > .image:before {content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.75);background:linear-gradient(75deg, rgba(255,220,0,0.75) 0%, rgba(255,255,255,0) 85%) no-repeat;background-position:-15em 0;z-index:2;opacity:0;transition:background-position .25s ease-in-out, opacity .25s ease-in-out;}
 section.table:hover > .image:before {background-position:-5em 0;opacity:1;transition:background-position .35s ease-in-out, opacity .35s ease-in-out;}
 section.table > .image img {width:100%;height:100%;object-fit:cover;}
+section.table > .toRoundtable {position:absolute;display:block;top:0;left:0;width:100%;height:100%;opacity:0;border:0;outline:0;border-top-left-radius:250px;border-bottom-left-radius:250px;cursor:pointer;}
 section.table ul.roundtable {
 	position: absolute;
 	top: 50%;
@@ -324,6 +325,7 @@ section.table > .issue {
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-bottom: 0;
+	cursor:pointer;
 }
 section.table > .issue > .number {
 	position: absolute;
@@ -2330,6 +2332,7 @@ article.edit section.issue textarea:valid {
 	section.table .image:before {background:linear-gradient(180deg, rgba(255,220,0,0.75) 0%, rgba(255,255,255,0) 85%) no-repeat;background-position:0 -15em;}
 	section.table:hover > .image:before {background-position:0 -10em;}
 	section.table > .image:after {background:linear-gradient(145deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,1) 60%)}
+	section.table .toRoundtable {border-radius:50vw 50vw 3em 3em;}
 	article.edit section {padding:20px 20px;}
 	article.edit section.issueList ul.issueList > li > ul.options {
 		text-align:center;
