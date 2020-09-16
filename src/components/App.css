@@ -2326,10 +2326,10 @@ article.edit section.issue textarea:valid {
 		border-radius:50vw 50vw 3em 3em;
 	}
 	section.table ul.roundtable {
-		top:4em;
+		top:5em;
 		left:50%;
 		transform:translate(-4em,-4em);
-		font-size:2em;
+		font-size:1.5em;
 	}
 	section.table.createNew ul.roundtable {
 		transform:translate(-4em,-4em);
