@@ -46,6 +46,7 @@ export const ROUNDTABLES = gql`
 				}
 			}
 			issues {
+				id
 				title
 			}
 		}
@@ -100,6 +101,8 @@ export const ISSUEBYID = gql`
 			title
 			prompt
 			currentStatus
+			publishedAt
+			publishDate
 			issueAuthor {
 				id
 			}
