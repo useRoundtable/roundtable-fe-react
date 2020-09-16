@@ -119,6 +119,7 @@ export const CreateIssue = () => {
 								variables: {
 									prompt: promptData,
 									title: data.issueById.title,
+									publishDate: publishDate,
 									id: issueid,
 									currentStatus: "Collecting Responses!",
 								},
