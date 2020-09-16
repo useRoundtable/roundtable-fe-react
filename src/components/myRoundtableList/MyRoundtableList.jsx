@@ -25,6 +25,9 @@ export const MyRoundtableList = ({
 	return (
 		<>
 			<section className="table">
+				<div
+				onClick={(e) => enterRoundtable(e, `/roundtable/${id}`)}
+				></div>
 				<span className="image">
 					<img
 						src="https://images.unsplash.com/photo-1598965897289-4768a8799acc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
@@ -52,6 +55,7 @@ export const MyRoundtableList = ({
 						</li>
 					)}
 				</ul>
+				
 				{issues.length ? (
 					<h5 className="issue">
 						<span className="number">Issue #{issues.length}</span>
@@ -69,9 +73,9 @@ export const MyRoundtableList = ({
 					<li>
 						<a
 							className="button new"
-							onClick={(e) => enterRoundtable(e, `/roundtable/${id}`)}
+							onClick={(e) => enterRoundtable(e, `/roundtable/${id}/issue/${issues[0].id}`)}
 						>
-							View Issues
+							View Issue
 						</a>
 					</li>
 					{loggedInUser.id == owner.id ? (
