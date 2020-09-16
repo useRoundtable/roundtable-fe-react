@@ -525,13 +525,12 @@ section.table.createNew textarea:valid {min-height:250px;}*/
 	padding: 1em 0 0;
 }
 .ql-editor > *:last-child {padding-bottom:0;}
-.ql-toolbar {position:-webkit-sticky;position:sticky;top:0;background:rgba(253,253,253,1);z-index:2;}
+.ql-toolbar {position:-webkit-sticky;position:sticky;top:0;background:rgba(255,255,255,1);z-index:2;}
 .ql-toolbar.ql-snow {
 	padding: 10px 0;
 	border: 0;
 	border-bottom: 1px dotted rgba(15, 30, 30, 0.05);
 }
-article.question .ql-toolbar.ql-snow {background:transparent;}
 .ql-container.ql-snow {
 	border: 0;
 }
@@ -580,7 +579,7 @@ article.question .ql-toolbar.ql-snow {background:transparent;}
 .ql-snow .ql-picker.ql-header .ql-picker-label::before, .ql-snow .ql-picker.ql-header .ql-picker-item::before {content:'Normal Text';font-size:1rem;font-weight:400;}
 .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="1"]::before, .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"]::before {content:'Headline';font-size:1.5rem;font-weight:900;}
 
-article.edit section.issue article.message > ul.stats.counter, article.edit section.issue .questionContent > ul.stats.counter {position:sticky;top:0;padding:0;z-index:5;display:inline-block;float:right;}
+article.edit section.issue article.message > ul.stats.counter, article.edit section.issue .questionContent > ul.stats.counter {position:-webkit-sticky;position:sticky;top:0;padding:0;z-index:5;display:inline-block;float:right;}
 article.edit section.issue article.message > ul.stats.counter li, article.edit section.issue .questionContent > ul.stats.counter li {top:1.5em;margin:0;padding:0;line-height:1em;}
 /* Animation States */
 section .roundtable > section,

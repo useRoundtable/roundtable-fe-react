@@ -137,7 +137,7 @@ export const UserProfile = ({ closeModal, user }) => {
 							</a>
 						</div>
 						<div className="description">
-							<h5>New Password</h5>
+							<h5>Password</h5>
 							<p>
 								Set a new password for your account. We will send an
 								email to the{" "}
