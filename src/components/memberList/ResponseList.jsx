@@ -22,11 +22,12 @@ export const ResponseList = ({ issue }) => {
 		return <li>0 Responses</li>;
 	}
 
+	// TODO: Set it up so that it shows unique users for responses
 	return (
 		<>
 			<ul className="members">
 				{data.responsesByIssue.length} Responses
-				{data.responsesByIssue.slice(0,9).map((response) => {
+				{data.responsesByIssue.slice(0, 9).map((response) => {
 					return <ListDisplay info={response.responseAuthor} />;
 				})}
 			</ul>
