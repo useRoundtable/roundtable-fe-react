@@ -49,7 +49,8 @@ export const QuestionCard = ({
 				)}
 				{id === parseInt(data.author.id) ? (
 					<>
-						<li className="button"
+						<li
+							className="button"
 							onClick={() => {
 								setIsEditing(qNumber);
 							}}
@@ -57,7 +58,8 @@ export const QuestionCard = ({
 							Edit Question
 						</li>
 						{isResponding ? (
-							<li className="button"
+							<li
+								className="button"
 								onClick={() => {
 									response({
 										variables: {
@@ -78,7 +80,8 @@ export const QuestionCard = ({
 								Save Response
 							</li>
 						) : (
-							<li className="button"
+							<li
+								className="button"
 								onClick={() => {
 									setIsResponding(qNumber);
 								}}
@@ -88,7 +91,8 @@ export const QuestionCard = ({
 						)}
 					</>
 				) : isResponding ? (
-					<li className="button"
+					<li
+						className="button"
 						onClick={() => {
 							response({
 								variables: {
@@ -109,7 +113,8 @@ export const QuestionCard = ({
 						Save Response
 					</li>
 				) : (
-					<li className="button"
+					<li
+						className="button"
 						onClick={() => {
 							setIsResponding(qNumber);
 						}}
@@ -146,13 +151,9 @@ export const QuestionCard = ({
 					>
 						{data.responses.length} Responses
 						<ul className="members">
-							<li>
-								{data.responses.map((response) => {
-									return (
-										<ListDisplay info={response.responseAuthor} />
-									);
-								})}
-							</li>
+							{data.responses.map((response) => {
+								return <ListDisplay info={response.responseAuthor} />;
+							})}
 						</ul>
 					</li>
 				)}
