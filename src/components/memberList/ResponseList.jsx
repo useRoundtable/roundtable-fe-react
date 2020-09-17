@@ -26,7 +26,7 @@ export const ResponseList = ({ issue }) => {
 		<>
 			<ul className="members">
 				{data.responsesByIssue.length} Responses
-				{data.responsesByIssue.map((response) => {
+				{data.responsesByIssue.slice(0,9).map((response) => {
 					return <ListDisplay info={response.responseAuthor} />;
 				})}
 			</ul>
