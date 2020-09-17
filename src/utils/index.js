@@ -4,6 +4,7 @@ export const enterRoundtable = (e, target) => {
 	e.preventDefault();
 	document.body.classList.add("editing");
 	setTimeout(() => {
+		
 		window.location.assign(target);
 	}, 250);
 };
@@ -25,6 +26,9 @@ export const exitRoundtable = (e, target) => {
 };
 
 export const parseDate = (time) => {
+	if(time === null){
+		return "Publish Date Not Set"
+	}
 	const date = moment(time).format("MMMM Do YYYY");
 	return date;
 };
