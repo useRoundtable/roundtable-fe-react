@@ -12,9 +12,9 @@ export const MemberCard = ({ user }) => {
 			</span> : ""}
 			{/* TODO: Be sure to add extra render logic here later. */}
 			<h4>{user.firstName ? `${user.firstName}` : user.userName}</h4>
-			<a href="javascript:void(0)" className="button">
+			{/* <a href="javascript:void(0)" className="button">
 				View Profile
-			</a>
+			</a> */}
 			<div className="stats">
 				<span>2,572</span>
 				<span className="active">Active</span>

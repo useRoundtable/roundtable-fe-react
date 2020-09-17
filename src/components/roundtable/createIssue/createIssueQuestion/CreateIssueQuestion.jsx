@@ -39,6 +39,7 @@ export const CreateIssueQuestion = ({ questionNum }) => {
 						className="headerFour"
 						value={question}
 						onChange={(e) => setQuestion(e.target.value)}
+						placeholder="Ask a question..."
 					/>
 					<TextField
 						inputValue={inputValue}

@@ -47,7 +47,11 @@ export const ViewIssue = ({ issue, IBID, setIsEditing }) => {
 				<RenderMarkdown source={issue.prompt} />
 			</article>
 			<QuestionRender issueStatus={issue.issueStatus} />
-			<CreateIssueQuestion questionNum={issue.questions.length + 1} />
+			{issue.currentStatus === "Published" ? (
+				""
+			) : (
+				<CreateIssueQuestion questionNum={issue.questions.length + 1} />
+			)}
 		</section>
 	);
 };

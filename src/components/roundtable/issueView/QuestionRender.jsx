@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { QuestionCard } from "./questions/QuestionCard";
+import { PublishedQuestion } from "./questions/PublishedQuestion";
 import { EditQuestion } from "./questions/EditQuestion";
 
 import { QUESTIONS_BY_ISSUE as QBIID } from "../../../resolvers/queries";
@@ -43,9 +44,12 @@ export const QuestionRender = ({ issueStatus }) => {
 					issueid={issueid}
 				/>
 			);
+		} else if (issueStatus === "Published") {
+			return <PublishedQuestion data={question} qNumber={qNumber} />;
 		}
 		return (
 			<QuestionCard
+				issueStatus={issueStatus}
 				data={question}
 				qNumber={qNumber}
 				isResponding={isResponding === qNumber ? true : false}
