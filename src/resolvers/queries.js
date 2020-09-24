@@ -16,10 +16,15 @@ export const ROUNDTABLE_INVITE = gql`
 		roundtableById(id: $id) {
 			roundtableName
 			owner {
-				userName
+				firstName
+				lastName
 			}
 			members {
 				id
+				user {
+				firstName
+				lastName
+				}
 			}
 			issues {
 				id
