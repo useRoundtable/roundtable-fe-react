@@ -60,10 +60,7 @@ export const IssueList = ({ owner }) => {
 										required="required"
 										onChange={(e) => setIssueTitle(e.target.value)}
 									/>
-									<label
-										for="newIssue"
-										className="newIssueLabel"
-									></label>
+									<label for="newIssue" className="newIssueLabel"></label>
 									<span className="title">New Issue&hellip;</span>
 									<a
 										className="button"
@@ -136,14 +133,6 @@ export const IssueList = ({ owner }) => {
 					card={data.issuesByRTId[data.issuesByRTId.length - 1]}
 					issueNumber={data.issuesByRTId.length}
 				/>
-				{/* {data.issuesByRTId.slice(0, 1).map((issue) => {
-					return (
-						<IssueCard
-							card={issue}
-							issueNumber={data.issuesByRTId.length}
-						/>
-					);
-				})} */}
 			</ul>
 			<h4>
 				{data.issuesByRTId.length - 1 === 1
