@@ -113,15 +113,12 @@ export const Join = ({ redirectTo, setIsRegistering }) => {
 					{/*TODO: Make this more multi component friendly Get Started */}
 					Register
 				</a>
-				{window.location.pathname.split("/")[1] === "roundtable" ? (
-					<a
-						className="button"
-						onClick={() => setIsRegistering(false)}
-					>
+				{window.location.pathname === "/" ? (
+					""
+				) : (
+					<a className="button" onClick={() => setIsRegistering(false)}>
 						Login
 					</a>
-				) : (
-					""
 				)}
 			</form>
 		</article>

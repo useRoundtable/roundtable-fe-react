@@ -41,12 +41,7 @@ export const Roundtable = () => {
 						<Route
 							exact
 							path={`${path}`}
-							render={() => (
-								<IssueList
-									data={data.roundtableById.issues}
-									owner={data.roundtableById.owner.id}
-								/>
-							)}
+							render={() => <IssueList owner={data.roundtableById.owner.id} />}
 						/>
 						<Route
 							exact

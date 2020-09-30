@@ -2,6 +2,8 @@ import React from "react";
 
 import { useParams } from "react-router-dom";
 
+import {getUser} from '../../../auth'
+
 import { useQuery } from "@apollo/client";
 import { RESPONSES_BY_QUESTION as responses } from "../../../resolvers/queries";
 
@@ -11,6 +13,8 @@ import { RenderMarkdown } from "../../universalComponents/RenderMarkdown";
 
 export const QuestionResponses = ({ questionNum }) => {
 	const { questionid } = useParams();
+
+	const user = getUser()
 
 	const { data, loading } = useQuery(responses, {
 		variables: {

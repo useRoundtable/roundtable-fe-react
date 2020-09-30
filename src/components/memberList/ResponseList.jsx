@@ -2,32 +2,36 @@ import React from "react";
 
 import { ListDisplay } from "./ListDisplay";
 
-import { ISSUE_RESPONSES as getResponses } from "../../resolvers/queries";
+import { UNIQUE_RESPONDERS as uniqueResponders } from "../../resolvers/queries";
+
 import { useQuery } from "@apollo/client";
 
 export const ResponseList = ({ issue }) => {
-	const { data, loading, error } = useQuery(getResponses, {
+	const {
+		data: responders,
+		loading: responderLoading,
+		error: responderError,
+	} = useQuery(uniqueResponders, {
 		variables: {
-			issueId: +issue,
+			id: +issue,
 		},
 	});
 
-	if (loading) {
+	if (responderLoading) {
 		return <p> loading </p>;
 	}
-	if (error) {
-		return <p>{error.message}</p>;
+	if (responderError) {
+		return <p>{responderError.message}</p>;
 	}
-	if (!data) {
-		return <li>0 Responses</li>;
+	if (!responders) {
+		return <li>0 Responders</li>;
 	}
 
-	// TODO: Set it up so that it shows unique users for responses
 	return (
 		<>
 			<ul className="members">
-				{data.responsesByIssue.length} Responses
-				{data.responsesByIssue.slice(0, 9).map((response) => {
+				{responders.uniqueResponders.length} Responders
+				{responders.uniqueResponders.slice(0, 9).map((response) => {
 					return <ListDisplay info={response.responseAuthor} />;
 				})}
 			</ul>

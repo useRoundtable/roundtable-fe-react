@@ -22,7 +22,7 @@ export const Response = ({ response }) => {
 			<ul className="stats">
 				<li className="members">
 					<ul className="members">
-						<ListDisplay info={response} />
+						<ListDisplay info={response.responseAuthor} />
 					</ul>
 					{response.responseAuthor.firstName
 						? response.responseAuthor.firstName

@@ -3,7 +3,7 @@ import { MyRoundtableList } from "../myRoundtableList/MyRoundtableList";
 import { CreateRoundtable } from "../createRoundtable/CreateRoundtable";
 import { useQuery } from "@apollo/client";
 import { RTAnimation } from "../animation/roundtableAni";
-import { Login } from "../login/Login";
+import { LoginRender } from "../login/LoginRender";
 
 import { ROUNDTABLES as RTbyUID } from "../../resolvers/queries";
 
@@ -33,7 +33,7 @@ export const Dashboard = () => {
 		return (
 			<>
 				<h4>Please login to continue</h4>
-				<Login redirectTo={window.location} />
+				<LoginRender redirectTo={window.location} />
 			</>
 		);
 	}
