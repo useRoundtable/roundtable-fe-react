@@ -5,7 +5,7 @@ import { NavBar } from "./navigation/NavBar";
 import { Dashboard } from "./dashboard/Dashboard";
 import { RTAnimation } from "./animation/roundtableAni.jsx";
 import { Roundtable } from "./roundtable/roundtable.jsx";
-import { Login } from "./login/Login";
+import { LoginRender } from "./login/LoginRender";
 import { NewRoundtable } from "./createRoundtable/newRoundtable/NewRoundtable";
 
 import "./App.css";
@@ -25,7 +25,7 @@ function App() {
 				<Route
 					path="/login"
 					render={() => {
-						return <Login redirectTo={"/dashboard"} />;
+						return <LoginRender redirectTo={"/dashboard"} />;
 					}}
 				/>
 			</Router>
