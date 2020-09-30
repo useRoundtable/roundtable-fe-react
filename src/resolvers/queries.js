@@ -76,15 +76,13 @@ export const ROUNDTABLE = gql`
 			roundtableName
 			issues {
 				id
-				title
-				prompt
-				currentStatus
 			}
 			owner {
 				id
 			}
 			members {
 				user {
+					avatar
 					userName
 					firstName
 					lastName
@@ -114,6 +112,7 @@ export const ISSUEBYID = gql`
 					content
 					responseAuthor {
 						userName
+						avatar
 					}
 				}
 			}
@@ -134,6 +133,7 @@ export const QUESTIONS_BY_ISSUE = gql`
 				responses {
 					content
 					responseAuthor {
+						id
 						userName
 						firstName
 						lastName
@@ -196,6 +196,8 @@ export const CREATE_ISSUE = gql`
 				id
 				firstName
 				lastName
+				userName
+				avatar
 			}
 		}
 	}
@@ -239,17 +241,18 @@ export const RESPONSES_BY_QUESTION = gql`
 	}
 `;
 
-// Replace above query with Commented out Query once BE is updated-
-// export const ISSUE_RESPONSES = gql`
-// 	query responsesByIssue($issueId: ID!) {
-// 		responseAuthor(issueId: $issueId) {
-// 			firstName
-// 			lastName
-// 			userName
-// 			avatar
-// 		}
-// 	}
-// `;
+export const UNIQUE_RESPONDERS = gql`
+	query uniqueResponders($id: ID!) {
+		uniqueResponders(id: $id) {
+			responseAuthor {
+				userName
+				firstName
+				lastName
+				avatar
+			}
+		}
+	}
+`;
 
 // questionDetail <--------- ADD THIS TO THE RESPONSE LATER
 export const QUESTIONSBYISSUEID = gql`
