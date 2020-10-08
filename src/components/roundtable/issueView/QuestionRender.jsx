@@ -44,7 +44,7 @@ export const QuestionRender = ({ issueStatus }) => {
 					issueid={issueid}
 				/>
 			);
-		} else if (issueStatus === "Published") {
+		} else if (data.issueById.published) {
 			return <PublishedQuestion data={question} qNumber={qNumber} />;
 		}
 		return (

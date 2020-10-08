@@ -137,7 +137,7 @@ export const IssueList = ({ owner }) => {
 			<h4>
 				{data.issuesByRTId.length - 1 === 1
 					? "Previous Issue"
-					: `${data.issuesByRTId.length - 1} Previous Issues`}{" "}
+					: `${data.issuesByRTId.length - 1} Published Issues`}{" "}
 			</h4>
 			<ul className="issueList allIssues">
 				{data.issuesByRTId

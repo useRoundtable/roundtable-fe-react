@@ -30,7 +30,11 @@ export const IssueCard = ({ card, issueNumber }) => {
 					<h3 className="issue">
 						<span className="number">Issue #{issueNumber}</span>
 						<span className="title">{card.title}</span>
-						<span className="status">{card.currentStatus}</span>
+						<span className="status">
+							{card.published
+								? `Published ${card.publishedAt}`
+								: `Publishing ${card.publishDate}`}
+						</span>
 						<span className="message">
 							<RenderMarkdown source={card.prompt} />
 						</span>
@@ -65,11 +69,7 @@ export const IssueCard = ({ card, issueNumber }) => {
 							<a
 								className="button notPriority"
 								// onClick={(e) => enterRoundtable(e, "/roundtable/edit")}
-							>
-								{card.currentStatus === "Published"
-									? `${card.publishedAt}`
-									: `${card.publishDate}`}
-							</a>
+							></a>
 						</li>
 					</ul>
 					<ul className="stats">

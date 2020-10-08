@@ -22,8 +22,8 @@ export const ROUNDTABLE_INVITE = gql`
 			members {
 				id
 				user {
-				firstName
-				lastName
+					firstName
+					lastName
 				}
 			}
 			issues {
@@ -68,6 +68,7 @@ export const IBR = gql`
 			issueKudos
 			publishedAt
 			publishDate
+			published
 			issueAuthor {
 				id
 			}
@@ -128,6 +129,7 @@ export const ISSUEBYID = gql`
 export const QUESTIONS_BY_ISSUE = gql`
 	query questionByIssue($id: ID!) {
 		issueById(id: $id) {
+			published
 			questions {
 				author {
 					id
