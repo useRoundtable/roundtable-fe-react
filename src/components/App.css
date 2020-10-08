@@ -2298,7 +2298,7 @@ article.edit section.issue textarea:valid {
 		font-size: 0.75em;
 	}
 	nav.navigation > ul > li a {padding:15px 20px 0;}
-	nav.navigation > ul > li h6:after {top:-20px;}
+	nav.navigation > ul > li h6:after {top:-20px;border-radius:0;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
 	nav.navigation > ul:hover > li.selected h6:after {top:-20px;}
 	nav.navigation > ul > li.selected h6:after, nav.navigation > ul:hover > li:hover h6:after {top:-15px;}
 	body.editing > nav {
