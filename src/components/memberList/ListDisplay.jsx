@@ -8,7 +8,7 @@ export const ListDisplay = ({ info }) => {
 	if (loading) {
 		return (
 			<li>
-				<em>T</em>
+				<em>O</em>
 			</li>
 		);
 	}

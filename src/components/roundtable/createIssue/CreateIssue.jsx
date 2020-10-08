@@ -54,9 +54,7 @@ export const CreateIssue = () => {
 					<span class="number">New Issue</span>
 					<span class="status">{data.issueById.currentStatus}</span>
 					<span class="title">
-						{data.issueById.title
-							? `${data.issueById.title}`
-							: `Add a title`}
+						{data.issueById.title ? `${data.issueById.title}` : `Add a title`}
 					</span>
 				</h3>
 			</article>
@@ -105,9 +103,7 @@ export const CreateIssue = () => {
 			</article>
 			{questions.map((question) => {
 				questionNumber++;
-				return (
-					<Question question={question} questionNum={questionNumber} />
-				);
+				return <Question question={question} questionNum={questionNumber} />;
 			})}
 			<CreateIssueQuestion questionNum={questions.length + 1} />
 			<ul>
