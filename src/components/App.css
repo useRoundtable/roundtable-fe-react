@@ -756,6 +756,7 @@ article.edit header .close {
 }
 article.edit header .close span {
 	position: absolute;
+	display:block;
 	top: 50%;
 	left: 50%;
 	width: 1em;
@@ -770,6 +771,8 @@ article.edit header .close span {
 	overflow: hidden;
 	transition: transform 0.25s ease-in-out;
 }
+article.edit header .close span:before {content:'';position:absolute;display:inline-block;top:50%;left:50%;width:.5em;height:.08em;transform:translate(-50%,-50%) rotate(45deg);background:rgba(15,30,30,1);border-radius:.08em;}
+article.edit header .close span:after {content:'';position:absolute;display:inline-block;top:50%;left:50%;width:.5em;height:.08em;transform:translate(-50%,-50%) rotate(-45deg);background:rgba(15,30,30,1);border-radius:.08em;}
 article.edit header .close:hover span {
 	transform: translate(-50%, -50%) rotate(-90deg) scale(0.9);
 }
@@ -1758,6 +1761,33 @@ article.edit
 	box-shadow: 15px 20px 30px 10px rgba(15, 30, 30, 0.05),
 		0 0 15px 0 rgba(150, 30, 30, 0.03);
 }
+
+.questionContent .close {
+	position: absolute;
+	display:block;
+	top: -.35em;
+	right: -.5em;
+	width: 0;
+	height: 0;
+	background:rgba(255,255,255,1);
+	box-shadow:7px 10px 10px 3px rgba(15, 30, 30, 0.05), 0 0 5px 0 rgba(150, 30, 30, 0.03);
+	transform: rotate(0deg) scale(1) translate(0,3px);
+	font-size: 4em;
+	line-height: 1.25em;
+	font-family: "Biryani", Helvetica, Arial, sans-serif;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 50%;
+	overflow: hidden;
+	transition: transform 0.15s ease-in-out, opacity .15s ease-in-out, width 0s .15s, height 0s .15s, box-shadow .15s ease-in-out;
+	opacity:0;
+}
+.questionContent.active .close {width:1em;height:1em;opacity:1;top:-.35em;transform:rotate(0deg) scale(1) translate(0,0);transition: transform 0.15s ease-in-out, opacity .15s ease-in-out, width 0s 0s, height 0s 0s, box-shadow .15s ease-in-out;}
+.questionContent.active .close:hover {box-shadow:10px 15px 15px 5px rgba(15, 30, 30, 0.05), 0 0 8px 0 rgba(150, 30, 30, 0.03);}
+.questionContent .close:before {content:'';position:absolute;display:inline-block;top:50%;left:50%;width:.5em;height:.08em;transform:translate(-50%,-50%) rotate(45deg) scale(1);background:rgba(15,30,30,1);border-radius:.08em;transition:transform .2s ease-in-out;transform-origin:50% 50%;}
+.questionContent .close:after {content:'';position:absolute;display:inline-block;top:50%;left:50%;width:.5em;height:.08em;transform:translate(-50%,-50%) rotate(-45deg) scale(1);background:rgba(15,30,30,1);border-radius:.08em;transition:transform .2s ease-in-out;transform-origin:50% 50%;}
+.questionContent .close:hover:before {transform:translate(-50%,-50%) rotate(-45deg) scale(0.9);}
+.questionContent .close:hover:after {transform:translate(-50%,-50%) rotate(-135deg) scale(0.9);}
 
 article.edit section.issue article.question p {
 	color: rgba(15, 30, 30, 0.8);

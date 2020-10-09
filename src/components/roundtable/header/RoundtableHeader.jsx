@@ -17,7 +17,7 @@ export const RoundtableHeader = ({ members, issueCount, title }) => {
 					className="close"
 					onClick={(e) => exitRoundtable(e, "/dashboard")}
 				>
-					<span>&times;</span>
+					<span></span>
 				</a>
 			</header>
 			<nav>

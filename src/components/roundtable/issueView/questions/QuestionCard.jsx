@@ -39,6 +39,7 @@ export const QuestionCard = ({
 					}
 				}}
 			>
+				<span className="close"></span>
 				<h6 className="questionNumber">Question {qNumber}</h6>
 				<h4 className="question">{data.question}</h4>
 				<RenderMarkdown source={data.questionDetail} />
