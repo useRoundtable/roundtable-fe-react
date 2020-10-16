@@ -15,8 +15,12 @@ import {
 	ApolloLink,
 	concat,
 } from "@apollo/client";
-
-const httpLink = new HttpLink({ uri: "https://tryroundtable.herokuapp.com" });
+let httpLink = ""
+if(process.env.REACT_APP_DEVELOPMENT_DB){
+	httpLink = new HttpLink({ uri: process.env.REACT_APP_DEVELOPMENT_DB });
+}else {
+	httpLink = new HttpLink({ uri: process.env.REACT_APP_DATABASE_URL });
+}
 
 const authMiddleWare = new ApolloLink((operation, forward) => {
 	if (getUser()) {
@@ -35,7 +39,6 @@ const authMiddleWare = new ApolloLink((operation, forward) => {
 });
 
 const client = new ApolloClient({
-	// uri: "localhost:4000",
 	cache: new InMemoryCache(),
 	link: concat(authMiddleWare, httpLink),
 	credentials: "include",
