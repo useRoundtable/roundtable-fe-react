@@ -11,6 +11,7 @@ export const Join = ({ redirectTo, setIsRegistering }) => {
 	const [lastName, setLastName] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
+	const [unmatched, setUnmatched] = useState(false);
 
 	const [registerUser, { loading }] = useMutation(register, {
 		onCompleted({ createUser }) {
@@ -71,6 +72,7 @@ export const Join = ({ redirectTo, setIsRegistering }) => {
 					/>
 					<label for="join-lastName">Last Name</label>
 				</div>
+				{unmatched === true ? "Passwords do not match!" : ""}
 				<div className="field">
 					<input
 						name="join-password"
@@ -83,6 +85,7 @@ export const Join = ({ redirectTo, setIsRegistering }) => {
 					/>
 					<label for="join-password">Password</label>
 				</div>
+				{unmatched === true ? "Passwords do not match!" : ""}
 				<div className="field">
 					<input
 						name="join-confirmPassword"
@@ -99,15 +102,19 @@ export const Join = ({ redirectTo, setIsRegistering }) => {
 					className="button big"
 					href="javascript:void(0)"
 					onClick={() => {
-						registerUser({
-							variables: {
-								email,
-								password,
-								firstName,
-								lastName,
-								userName: username,
-							},
-						});
+						{
+							password === confirmPassword
+								? registerUser({
+										variables: {
+											email,
+											password,
+											firstName,
+											lastName,
+											userName: username,
+										},
+								  })
+								: setUnmatched(true);
+						}
 					}}
 				>
 					{/*TODO: Make this more multi component friendly Get Started */}

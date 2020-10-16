@@ -19,7 +19,7 @@ import { useParams } from "react-router-dom";
 
 export const JoinRoundtable = () => {
 	const { roundtableId } = useParams();
-	const href = window.location.origin
+	const href = window.location.origin;
 	const token = localStorage.getItem("authorization");
 	const [join, { error }] = useMutation(addMember, {
 		onCompleted({ addMember }) {
@@ -38,9 +38,7 @@ export const JoinRoundtable = () => {
 	if (loading) {
 		return <p>loading</p>;
 	}
-	console.log(user);
 	if (error) {
-		console.log(error);
 		return <p>{error.message}</p>;
 	}
 
@@ -66,12 +64,13 @@ export const JoinRoundtable = () => {
 				</article>
 				<article className="message">
 					<h2></h2>
-					<h2>{data.roundtableById.owner.firstName} {data.roundtableById.owner.lastName}</h2>
+					<h2>
+						{data.roundtableById.owner.firstName}{" "}
+						{data.roundtableById.owner.lastName}
+					</h2>
 					<blockquote>Roundtable Description</blockquote>
 				</article>
-				<MemberView 
-					members={data.roundtableById.members}
-				/>
+				<MemberView members={data.roundtableById.members} />
 			</section>
 		);
 	}
